@@ -1,0 +1,14 @@
+load_file("nrngui.hoc")
+load_file("IS3_M2_Passive.ses")
+
+totalnsegs = 0
+totallengths = 0
+	
+for (dendn = 0; dendn<=57; dendn = dendn+1){
+	print "Section Number: ", dendn
+	totalnsegs = totalnsegs + dend[dendn].nseg
+	totallengths = totallengths + dend[dendn].L
+}
+
+AVG_COMPARTMENT_L = totallengths/totalnsegs
+print "Average Compartment Length = ", AVG_COMPARTMENT_L
