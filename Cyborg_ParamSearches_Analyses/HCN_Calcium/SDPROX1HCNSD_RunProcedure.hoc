@@ -1,0 +1,209 @@
+// Note that this script runs a simulation of the full morphology IS3 model at increasing current injection values. A voltage vector data file is created in each iteration.
+load_file("nrngui.hoc")
+load_file("IS3_M2_SDPROX1.hoc") // Loads IS3 model with full morphology & properties
+
+access soma
+
+// Initialize variables
+tstop = 3000 // (ms)
+N_iterations = 4 // Number of different current injections
+v_init = -69.7
+steps_per_ms = 10
+dt = 0.1
+objectvar stim, noise
+objref recV, recI
+inj = 0 // Starting current injection (nA)
+modnum = 0
+
+objref fok
+strdef filename
+//strdef MODEL_TOPDIR
+//MODEL_TOPDIR = "/Users/sandygm5/Desktop/Fast\ KDRF/Case\ 3"
+//strdef model_abs_path
+
+noise = new InGauss(0)
+noise.del = 0
+noise.dur = tstop
+noise.mean = 0
+noise.stdev = 0.01
+
+// soma.gbar_Ika = 0 // Ka Conductance
+// soma.gksoma_Ksoma = 0 // Kdrf Conductance
+// soma.gna_Nasoma = 0 // NaT Conductance
+// soma.gbar_nap = 0 // NaP Conductance
+
+minKa = 0.03 // Minimum Conductance Value
+maxKa = 0.07 // Maximum Conductance Value
+nstepsKa = 3 // Number of conductance steps during run
+itvlKa = (maxKa - minKa)/(nstepsKa-1) // Conductance interval between steps
+
+minKdrf = 0.25
+maxKdrf = 0.3
+nstepsKdrf = 3
+itvlKdrf = (maxKdrf - minKdrf)/(nstepsKdrf-1)
+
+minNaT = 0.07
+maxNaT = 0.075
+nstepsNaT = 3
+itvlNaT = (maxNaT - minNaT)/(nstepsNaT-1)
+
+minNaP = 0.00005
+maxNaP = 0.0001
+nstepsNaP = 3
+itvlNaP = (maxNaP - minNaP)/(nstepsNaP-1)
+	
+minDIST = 55
+maxDIST = 95
+nstepsDIST = 3
+itvlDIST = (maxDIST - minDIST)/(nstepsDIST-1)
+
+minCaN = 0.001
+maxCaN = 0.008
+nstepsCaN = 3
+itvlCaN = (maxCaN - minCaN)/(nstepsCaN-1)
+
+minCaPQ = 0.0001
+maxCaPQ = 0.0002
+nstepsCaPQ = 3
+itvlCaPQ = (maxCaPQ - minCaPQ)/(nstepsCaPQ-1)
+
+minCaR = 0.0001
+maxCaR = 0.0008
+nstepsCaR = 3
+itvlCaR = (maxCaR - minCaR)/(nstepsCaR-1)
+
+minCaT = 0.0001
+maxCaT = 0.0003
+nstepsCaT = 3
+itvlCaT = (maxCaT - minCaT)/(nstepsCaT-1)
+
+minCaL = 0.0001
+maxCaL = 0.0003
+nstepsCaL = 3
+itvlCaL = (maxCaL - minCaL)/(nstepsCaL-1)
+
+minIh = 0.00001
+maxIh = 0.00003
+nstepsIh = 3
+itvlIh = (maxIh - minIh)/(nstepsIh-1)
+
+// Distance from soma in which there are VGCs
+for(m=minDIST; m<=maxDIST; m=m+itvlDIST) {
+DISTANCE_FROM_SOMA = m
+		
+// Ika conductance loop
+for(g=minKa; g<=maxKa; g=g+itvlKa) {
+forsec somatic {
+gbar_Ika = g
+}
+IKA_VAL = g
+
+// Ikdrf conductance loop
+for(h=minKdrf; h<=maxKdrf; h=h+itvlKdrf) {
+forsec somatic {
+gksoma_Ksoma = h
+}
+IKDRF_VAL = h
+
+// Inat conductance loop
+for(k=minNaT; k<=maxNaT; k=k+itvlNaT) {
+forsec somatic {
+gna_Nasoma = k
+}
+INAT_VAL = k
+
+// Inap conductance loop
+for(l=minNaP; l<=maxNaP; l=l+itvlNaP) {
+forsec somatic {
+gbar_nap = l
+}
+
+// Ican conductance loop
+for(n=minCaN; n<=maxCaN; n=n+itvlCaN) {
+forsec somatic {
+gCav2_2bar_Cav2_2_0079 = n
+}
+ICaN_VAL = n
+	
+// Icap/q conductance loop
+for(o=minCaPQ; o<=maxCaPQ; o=o+itvlCaPQ) {
+forsec somatic {
+gCav2_1bar_Cav2_1_0078 = o
+}
+ICaPQ_VAL = o
+	
+// Icar conductance loop
+for(p=minCaR; p<=maxCaR; p=p+itvlCaR) {
+forsec somatic {
+gCav2_3bar_Cav2_3_0082 = p
+}
+ICaR_VAL = p
+	
+// Icat conductance loop
+for(q=minCaT; q<=maxCaT; q=q+itvlCaT) {
+forsec somatic {
+gbar_cat = q
+}
+ICaT_VAL = q
+	
+// Ical conductance loop
+for(r=minCaL; r<=maxCaL; r=r+itvlCaL) {
+forsec somatic {
+gcalbar_cal = r
+}
+ICaL_VAL = r
+	
+// Ih conductance loop
+for(s=minIh; s<=maxIh; s=s+itvlIh) {
+forsec somatic {
+gkhbar_Ih = s
+}
+IH_VAL = s
+
+modnum = modnum + 1 // Counts model number
+
+// Main iteration loop
+for(i=1; i<=N_iterations; i=i+1) {
+
+// Adjust all inhomogeneous distributions of VGCs
+biophys_inhomo()
+
+// Changes current injection amplitude on every iteration (nA)
+if (i==1) inj = -0.1
+if (i==2) inj = 0.02
+if (i==3) inj = 0.05
+if (i==4) inj = 0.5
+
+stim = new IClamp(0.5)
+stim.del = 250
+stim.dur = 800
+stim.amp = inj
+
+// Records voltage vector
+recV= new Vector()
+recV.record(&soma.v(0.5))
+
+// Runs a simulation of the model
+init()
+run()
+
+// Store vectors into files
+sprint(filename, "model_%g_ModNum_%g_NaT_%g_NaP_%g_Kdrf_%g_KA_%g_DistFromSoma_%g_InjectionMagnitude.dat",modnum,gna_Nasoma,gbar_nap,gksoma_Ksoma,gbar_Ika,DISTANCE_FROM_SOMA,stim.amp) // Changes filename on each iteration
+//sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+fok = new File(filename)
+fok.wopen(filename)
+recV.vwrite(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+fok.close()
+
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
