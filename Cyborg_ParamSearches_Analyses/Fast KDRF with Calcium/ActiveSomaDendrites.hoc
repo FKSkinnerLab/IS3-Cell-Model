@@ -1,0 +1,131 @@
+// Note that this script runs a simulation of the full morphology IS3 model at increasing current injection values. A voltage vector data file is created in each iteration.
+
+load_file("nrngui.hoc")
+load_file("IS3_M2_ActiveSomaDendrites.ses") // Loads IS3 model with full morphology & properties
+
+access soma
+
+// Initialize variables
+tstop = 3000 // (ms)
+N_iterations = 4 // Number of different current injections
+objectvar stim
+objref recV
+objref recI
+inj = 0 // Starting current injection (nA)
+modnum = 0
+
+objref fok
+strdef filename
+strdef MODEL_TOPDIR
+MODEL_TOPDIR = "/Users/sandygm5/Desktop/Fast\ KDRF\ with\ Calcium/Case 2"
+strdef model_abs_path
+
+soma.gbar_Ika = 0 // Ka Conductance
+soma.gksoma_Ksoma = 0 // Kdrf Conductance
+soma.gna_Nasoma = 0 // NaT Conductance
+soma.gbar_nap = 0 // NaP Conductance
+
+forsec somatic {
+gcalbar_cal = 0.0001 // CaL Conductance
+}
+forsec Dendrites {
+gcalbar_cal = 0.0001 // CaL Conductance
+}
+forsec somatic {
+gbar_cat = 0.0002 // CaT Conductance
+}
+forsec Dendrites {
+gbar_cat = 0.0002 // CaT Conductance
+}
+
+minKa = 0.05 // Minimum Conductance Value
+maxKa = 0.07 // Maximum Conductance Value
+nstepsKa = 3 // Number of conductance steps during run
+itvlKa = (maxKa - minKa)/(nstepsKa-1) // Conductance interval between steps
+
+minKdrf = 0.1
+maxKdrf = 0.12
+nstepsKdrf = 3
+itvlKdrf = (maxKdrf - minKdrf)/(nstepsKdrf-1)
+
+minNaT = 0.04
+maxNaT = 0.05
+nstepsNaT = 3
+itvlNaT = (maxNaT - minNaT)/(nstepsNaT-1)
+
+minNaP = 0.0002
+maxNaP = 0.0003
+nstepsNaP = 3
+itvlNaP = (maxNaP - minNaP)/(nstepsNaP-1)
+
+// Ika conductance loop
+for(g=minKa; g<=maxKa; g=g+itvlKa) {
+forsec somatic {
+gbar_Ika = g
+}
+forsec Dendrites {
+gbar_Ika = g
+}
+
+// Ikdrf conductance loop
+for(h=minKdrf; h<=maxKdrf; h=h+itvlKdrf) {
+forsec somatic {
+gksoma_Ksoma = h
+}
+forsec Dendrites {
+gksoma_Ksoma = h
+}
+
+// Inat conductance loop
+for(k=minNaT; k<=maxNaT; k=k+itvlNaT) {
+forsec somatic {
+gna_Nasoma = k
+}
+forsec Dendrites {
+gna_Nasoma = k
+}
+
+// Inap conductance loop
+for(l=minNaP; l<=maxNaP; l=l+itvlNaP) {
+forsec somatic {
+gbar_nap = l
+}
+
+modnum = modnum + 1 // Counts model number
+
+// Main iteration loop
+for(i=1; i<=N_iterations; i=i+1) {
+
+// Changes current injection amplitude on every iteration (nA)
+if (i==1) inj = -0.1
+if (i==2) inj = 0.02
+if (i==3) inj = 0.05
+if (i==4) inj = 0.5
+
+stim = new IClamp(0.5)
+stim.del = 250
+stim.dur = 800
+stim.amp = inj
+
+// Records voltage vector
+recV= new Vector()
+recV.record(&soma.v(0.5))
+
+// Runs a simulation of the model
+init()
+run()
+
+// Store vectors into files
+sprint(filename, "model_%g_ModNum_%g_NaT_%g_NaP_%g_Kdrf_%g_KA_%g_InjectionMagnitude.dat",modnum,gna_Nasoma,gbar_nap,gksoma_Ksoma,gbar_Ika,stim.amp) // Changes filename on each iteration
+sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+fok = new File(filename)
+fok.wopen(model_abs_path)
+recV.vwrite(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+fok.close()
+
+}
+}
+}
+}
+}
+
