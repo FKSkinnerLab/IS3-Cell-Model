@@ -1,0 +1,64 @@
+// Note that this script runs a simulation of the full morphology IS3 model at increasing current injection values. A voltage vector data file is created in each iteration.
+
+load_file("IS3_M2_Case9Star.hoc") // Loads IS3 model with full morphology & properties
+
+access soma
+
+// Initialize variables
+tstop = 3000 // (ms)
+N_iterations = 4 // Number of different current injections
+v_init = -69.7
+steps_per_ms = 10
+dt = 0.1
+objectvar stim
+objectvar noise
+objref recV
+objref recI
+inj = 0 // Starting current injection (nA)
+modnum = 0
+
+objref fok
+strdef filename
+strdef MODEL_TOPDIR
+MODEL_TOPDIR = "~/Desktop/SkinnerLab/Usages/TopModelMeasurements/Rerunning_89Star/Outputs"
+strdef model_abs_path
+
+noise = new InGauss(0)
+noise.del = 0
+noise.dur = tstop
+noise.mean = 0
+noise.stdev = 0.01
+
+// Main iteration loop
+for(i=1; i<=N_iterations; i=i+1) {
+
+// Changes current injection amplitude on every iteration (nA)
+if (i==1) inj = -0.1
+if (i==2) inj = 0.02
+if (i==3) inj = 0.05
+if (i==4) inj = 0.5
+
+stim = new IClamp(0.5)
+stim.del = 250
+stim.dur = 800
+stim.amp = inj
+
+// Records voltage vector
+recV= new Vector()
+recV.record(&soma.v(0.5))
+
+// Runs a simulation of the model
+init()
+run()
+
+// Store vectors into files
+sprint(filename, "model_1_ModNum_%g_NaT_%g_NaP_%g_Kdrf_%g_KA_%g_InjectionMagnitude.dat",gna_Nasoma,gbar_nap,gksoma_Ksoma,gbar_Ika,stim.amp) // Changes filename on each iteration
+sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+fok = new File(filename)
+fok.wopen(filename)
+recV.vwrite(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+fok.close()
+
+}
+
+
