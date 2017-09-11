@@ -1,0 +1,406 @@
+// This script is used to search the synaptic parameter space of the IS3 model by varying the number of excitatory and inhibitory synapses as well as their presynaptic spike rates
+
+load_file("nrngui.hoc")
+load_file("IS3_M2_Case8StarRevised.hoc") // Loads IS3 model with full morphology & properties (as well as parameters and point processes)
+		
+SRexcsyncount = 0
+SLMexcsyncount = 0
+inhsyncount = 0
+count = 0 // for indexing purposes to do with the input vectors
+for (dendn = 0; dendn<=57; dendn = dendn+1){
+	print "Section Number: ", dendn_vec.x[dendn]
+			
+	for (i = 1; i<=dend[dendn].nseg; i = i+1) {
+		if (dendn > 17 && dendn < 23) { // Skip putting synapses on axonal segments
+			count = count + 1
+		 	break
+		}
+	
+		// Specifies proportion along section (i.e. from 0 to 1)
+		prop = ((dend[dendn].L/dend[dendn].nseg)*i - (dend[dendn].L/dend[dendn].nseg)/2)/dend[dendn].L // finds the center of each segment, as defined by its proportional distance along each section; (prop = (i-0.5)/dend[dendn].nseg also works)
+			
+		// Assign optimized synapse parameter values to 9 excitatory synapses on the compartment if in SR
+		if (distance(prop)<=300) {
+			access dend[dendn]
+			for (l = 1; l<=9; l = l + 1){
+				SRexcsynapses[SRexcsyncount] = new Exp2Syn(prop)
+				dend[dendn] SRexcsynapses[SRexcsyncount].loc(prop) // assign to current compartment
+				SRexcsynapses[SRexcsyncount].tau1 = risetime_vec.x[count]
+				SRexcsynapses[SRexcsyncount].tau2 = decaytime_vec.x[count]
+				SRexcsynapses[SRexcsyncount].e = 0
+				SRexcnss[SRexcsyncount] = new VecStim(prop)
+				SRexcncs[SRexcsyncount] = new NetCon(SRexcnss[SRexcsyncount], SRexcsynapses[SRexcsyncount])
+				SRexcncs[SRexcsyncount].weight = minweight_vec.x[count]
+				SRexcsyncount = SRexcsyncount + 1
+			}
+		}		
+		
+		// Assign optimized synapse parameter values to 9 excitatory synapses on the compartment if in SLM
+		if (distance(prop)>300) { // i.e. if greater than 300 um away from soma
+			access dend[dendn]
+			for (l = 1; l<=9; l = l + 1){
+				SLMexcsynapses[SLMexcsyncount] = new Exp2Syn(prop)
+				dend[dendn] SLMexcsynapses[SLMexcsyncount].loc(prop) // assign to current compartment
+				SLMexcsynapses[SLMexcsyncount].tau1 = risetime_vec.x[count]
+				SLMexcsynapses[SLMexcsyncount].tau2 = decaytime_vec.x[count]
+				SLMexcsynapses[SLMexcsyncount].e = 0
+				SLMexcnss[SLMexcsyncount] = new VecStim(prop)
+				SLMexcncs[SLMexcsyncount] = new NetCon(SLMexcnss[SLMexcsyncount], SLMexcsynapses[SLMexcsyncount])
+				SLMexcncs[SLMexcsyncount].weight = minweight_vec.x[count]
+				SLMexcsyncount = SLMexcsyncount + 1
+			}
+		}
+		
+		// Assign optimized synapse parameter values to 2 inhibitory synapses on the compartment
+		for (m = 1; m<=2; m = m + 1){
+			inhsynapses[inhsyncount] = new Exp2Syn(prop)
+			dend[dendn] inhsynapses[inhsyncount].loc(prop) // assign to current compartment
+			inhsynapses[inhsyncount].tau1 = risetimeinh_vec.x[count]
+			inhsynapses[inhsyncount].tau2 = decaytimeinh_vec.x[count]
+			inhsynapses[inhsyncount].e = -70
+			inhnss[inhsyncount] = new VecStim(prop)
+			inhncs[inhsyncount] = new NetCon(inhnss[inhsyncount], inhsynapses[inhsyncount])
+			inhncs[inhsyncount].weight = minweightinh_vec.x[count]
+			inhsyncount = inhsyncount + 1
+		}
+		count = count + 1		
+	}	
+}
+// Generate randomized indexing for random synapse selection
+objref r, randSRexcindex, randSLMexcindex, randinhindex
+proc randomize_syns() {
+	r = new Random($1*10 + $2) // Ensures different random seeds for each example and example repeat
+	randSRexcindex = new Vector(nSRexcsyns)
+	randSLMexcindex = new Vector(nSLMexcsyns)
+	randinhindex = new Vector(ninhsyns)
+	tempindex = 0
+	repeats = 1 // Initialize at 1 so it does skip the while loop
+	for (i = 0; i < nSRexcsyns; i = i + 1){
+		while (repeats > 0){
+			repeats = 0 // Reset the count of repeats to 0 for next iteration
+			tempindex = r.discunif(-1, nSRexcsyns-1) // Generate random integer
+			for k=0,nSRexcsyns-1 repeats = repeats + (tempindex == randSRexcindex.x[k]) // Check if value repeats (i.e. if repeats > 0)
+		}
+		randSRexcindex.x[i] = tempindex // Assign value if not repeated
+		repeats = 1 // Re-initialize to 1 so it doesn't skip while loop
+	}
+	tempindex = 0
+	repeats = 1 // Initialize at 1 so it does skip the while loop
+	for (i = 0; i < nSLMexcsyns; i = i + 1){
+		while (repeats > 0){
+			repeats = 0 // Reset the count of repeats to 0 for next iteration
+			tempindex = r.discunif(-1, nSLMexcsyns-1) // Generate random integer
+			for k=0,nSLMexcsyns-1 repeats = repeats + (tempindex == randSLMexcindex.x[k]) // Check if value repeats (i.e. if repeats > 0)
+		}
+		randSLMexcindex.x[i] = tempindex // Assign value if not repeated
+		repeats = 1 // Re-initialize to 1 so it doesn't skip while loop
+	}
+	tempindex = 0
+	repeats = 1 // Initialize at 1 so it does skip the while loop
+	for (i = 0; i < ninhsyns; i = i + 1){
+		while (repeats > 0){
+			repeats = 0 // Reset the count of repeats to 0 for next iteration
+			tempindex = r.discunif(-1, ninhsyns-1) // Generate random integer
+			for k=0,ninhsyns-1 repeats = repeats + (tempindex == randinhindex.x[k]) // Check if value repeats (i.e. if repeats > 0)
+		}
+		randinhindex.x[i] = tempindex // Assign value if not repeated
+		repeats = 1 // Re-initialize to 1 so it doesn't skip while loop
+	}
+}
+
+access soma
+// Create new synapses to generate theta-timed spiking
+objectvar sw, apc, apctimes, rSRexc, rSRexcvec, rSLMexc, rSLMexcvec, rinh, rinhvec, frecSRExcPreSpikeTrains, frecSLMExcPreSpikeTrains, frecInhPreSpikeTrains, rSRexcMat, rSLMexcMat, rinhMat
+objectvar ExcThetaSRsyns[9], ExcThetaSLMsyns[9], InhThetaSRsyns[4], InhThetaSLMsyns[4], ExcThetaSRsynsNCS[9], ExcThetaSLMsynsNCS[9], InhThetaSRsynsNCS[4], InhThetaSLMsynsNCS[4], ExcThetaSRsynsNSS[9], ExcThetaSLMsynsNSS[9], InhThetaSRsynsNSS[4], InhThetaSLMsynsNSS[4]
+
+objref SRprop_vec, SRdend_vec, SLMprop_vec, SLMdend_vec
+SRprop_vec = new Vector(9)
+SRdend_vec = new Vector(9)
+SLMprop_vec = new Vector(9)
+SLMdend_vec = new Vector(9)
+
+SRprop_vec.x[0] = 0.5
+SRprop_vec.x[1] = 0.5
+SRprop_vec.x[2] = 1
+SRprop_vec.x[3] = 0.5
+SRprop_vec.x[4] = 0.5
+SRprop_vec.x[5] = 0.5
+SRprop_vec.x[6] = 0.5
+SRprop_vec.x[7] = 1
+SRprop_vec.x[8] = 0.5
+
+SRdend_vec.x[0] = 3
+SRdend_vec.x[1] = 5
+SRdend_vec.x[2] = 2
+SRdend_vec.x[3] = 23
+SRdend_vec.x[4] = 24
+SRdend_vec.x[5] = 42
+SRdend_vec.x[6] = 32
+SRdend_vec.x[7] = 27
+SRdend_vec.x[8] = 57
+
+SLMprop_vec.x[0] = 0.9
+SLMprop_vec.x[1] = 0.5
+SLMprop_vec.x[2] = 0.5
+SLMprop_vec.x[3] = 0.5
+SLMprop_vec.x[4] = 0.5
+SLMprop_vec.x[5] = 0.5
+SLMprop_vec.x[6] = 0.9
+SLMprop_vec.x[7] = 0.5
+SLMprop_vec.x[8] = 0.5
+
+SLMdend_vec.x[0] = 5
+SLMdend_vec.x[1] = 56
+SLMdend_vec.x[2] = 37
+SLMdend_vec.x[3] = 40
+SLMdend_vec.x[4] = 11
+SLMdend_vec.x[5] = 14
+SLMdend_vec.x[6] = 15
+SLMdend_vec.x[7] = 47
+SLMdend_vec.x[8] = 51
+
+access soma
+distance()
+
+for (i = 0; i<9; i = i+1){
+	access dend[SRdend_vec.x[i]]
+	dist = distance(SRprop_vec.x[i])
+	ExcThetaSRsyns[i] = new Exp2Syn(SRprop_vec.x[i])
+	dend[SRdend_vec.x[i]] ExcThetaSRsyns[0].loc(SRprop_vec.x[i]) // assign to current compartment
+	ExcThetaSRsyns[i].tau1 = 2.9936e-04 
+	ExcThetaSRsyns[i].tau2 = 2.4216
+	ExcThetaSRsyns[i].e = 0
+	ExcThetaSRsynsNSS[i] = new NetStim(SRprop_vec.x[i])
+	ExcThetaSRsynsNSS[i].interval = tstop
+	ExcThetaSRsynsNSS[i].number = 0
+	ExcThetaSRsynsNSS[i].start = tstop
+	ExcThetaSRsynsNSS[i].noise = 0
+	ExcThetaSRsynsNCS[i] = new NetCon(ExcThetaSRsynsNSS[i], ExcThetaSRsyns[i])
+	ExcThetaSRsynsNCS[i].weight = 0.00000230814*dist + 0.00022016666
+		
+	access dend[SLMdend_vec.x[i]]
+	dist = distance(SLMprop_vec.x[i])
+	ExcThetaSLMsyns[i] = new Exp2Syn(SLMprop_vec.x[i])
+	dend[SLMdend_vec.x[i]] ExcThetaSRsyns[0].loc(SLMprop_vec.x[i]) // assign to current compartment
+	ExcThetaSLMsyns[i].tau1 = 6.1871e-04 
+	ExcThetaSLMsyns[i].tau2 = 3.1975
+	ExcThetaSLMsyns[i].e = 0
+	ExcThetaSLMsynsNSS[i] = new NetStim(SLMprop_vec.x[i])
+	ExcThetaSLMsynsNSS[i].interval = tstop
+	ExcThetaSLMsynsNSS[i].number = 0
+	ExcThetaSLMsynsNSS[i].start = tstop
+	ExcThetaSLMsynsNSS[i].noise = 0
+	ExcThetaSLMsynsNCS[i] = new NetCon(ExcThetaSLMsynsNSS[i], ExcThetaSLMsyns[i])
+	ExcThetaSLMsynsNCS[i].weight = 0.00000230814*dist + 0.00022016666
+}
+
+for (i = 0; i<4; i = i+1){
+	access dend[SRdend_vec.x[i]]
+	dist = distance(SRprop_vec.x[i])
+	InhThetaSRsyns[i] = new Exp2Syn(SRprop_vec.x[i])
+	dend[SRdend_vec.x[i]] InhThetaSRsyns[0].loc(SRprop_vec.x[i]) // assign to current compartment
+	InhThetaSRsyns[i].tau1 = 0.1013
+	InhThetaSRsyns[i].tau2 = 4.8216
+	InhThetaSRsyns[i].e = -70
+	InhThetaSRsynsNSS[i] = new NetStim(SRprop_vec.x[i])
+	InhThetaSRsynsNSS[i].interval = tstop
+	InhThetaSRsynsNSS[i].number = 0
+	InhThetaSRsynsNSS[i].start = tstop
+	InhThetaSRsynsNSS[i].noise = 0
+	InhThetaSRsynsNCS[i] = new NetCon(InhThetaSRsynsNSS[i], InhThetaSRsyns[i])
+	InhThetaSRsynsNCS[i].weight = 0.00000469125*dist + 0.0002695779
+		
+	access dend[SLMdend_vec.x[i]]
+	dist = distance(SLMprop_vec.x[i])
+	InhThetaSLMsyns[i] = new Exp2Syn(SLMprop_vec.x[i])
+	dend[SLMdend_vec.x[i]] InhThetaSRsyns[0].loc(SLMprop_vec.x[i]) // assign to current compartment
+	InhThetaSLMsyns[i].tau1 = 0.1013 
+	InhThetaSLMsyns[i].tau2 = 4.8216
+	InhThetaSLMsyns[i].e = -70
+	InhThetaSLMsynsNSS[i] = new NetStim(SLMprop_vec.x[i])
+	InhThetaSLMsynsNSS[i].interval = tstop
+	InhThetaSLMsynsNSS[i].number = 0
+	InhThetaSLMsynsNSS[i].start = tstop
+	InhThetaSLMsynsNSS[i].noise = 0
+	InhThetaSLMsynsNCS[i] = new NetCon(InhThetaSLMsynsNSS[i], InhThetaSLMsyns[i])
+	InhThetaSLMsynsNCS[i].weight = 0.00000469125*dist + 0.0002695779
+}
+
+// Record presynaptic theta spike times
+objectvar ThetaSRexcprespiketrains[9], ThetaSLMexcprespiketrains[9], ThetaSRinhprespiketrains[4], ThetaSLMinhprespiketrains[4], thetaMat, frecThetaSpikeTrains
+	
+for i=0,8 ThetaSRexcprespiketrains[i] = new Vector()
+for i=0,8 ThetaSLMexcprespiketrains[i] = new Vector()
+for i=0,3 ThetaSRinhprespiketrains[i] = new Vector()
+for i=0,3 ThetaSLMinhprespiketrains[i] = new Vector()
+	
+for i=0,8 ExcThetaSRsynsNCS[i].record(ThetaSRexcprespiketrains[i])
+for i=0,8 ExcThetaSLMsynsNCS[i].record(ThetaSLMexcprespiketrains[i])
+for i=0,3 InhThetaSRsynsNCS[i].record(ThetaSRinhprespiketrains[i])
+for i=0,3 InhThetaSLMsynsNCS[i].record(ThetaSLMinhprespiketrains[i])
+
+access soma
+
+proc f() {
+	rSRexc = new Random($6*10+$7+28293) // Ensures different random seeds on each iteration
+	rSRexc.uniform(0,tstop)
+	rSLMexc = new Random($6*10+$7+51234)
+	rSLMexc.uniform(0,tstop)
+	rinh = new Random($6*10+$7+81221)
+	rinh.uniform(0,tstop)
+	
+	inhsyncount = $1
+	excsyncount = $2
+	inhsynspikes = $3
+	excSRsynspikes = $4
+	excSLMsynspikes = $4
+	SaveExample = $5
+	nexccommon = 9
+	ninhcommon = 4
+	AddRhythm = $8
+
+	// Re-initialize all inhibitory synapses such that they are silent when starting a new iteration
+	rinhvec = new Vector(0)
+	for i=0,ninhsyns-1 inhnss[randinhindex.x[i]].play(rinhvec)
+	
+	// Re-initialize all excitatory synapses such that they are silent when starting a new iteration
+	rSRexcvec = new Vector(0)
+	for i=0,nSRexcsyns-1 SRexcnss[randSRexcindex.x[i]].play(rSRexcvec)
+	rSLMexcvec = new Vector(0)
+	for i=0,nSLMexcsyns-1 SLMexcnss[randSLMexcindex.x[i]].play(rSLMexcvec)
+	
+	// Assign excitatory spike times
+	if (excSRsynspikes > 0 && excSLMsynspikes > 0) {
+		rSRexcMat = new Matrix(int((excsyncount)/2),excSRsynspikes)
+		rSLMexcMat = new Matrix(int((excsyncount)/2),excSLMsynspikes)
+		for (i=0; i < int((excsyncount)/2); i = i + 1){ // On each iteration add 1 SR and 1 SLM excitatory synapse
+	
+			// Sample new spike times for common inputs
+			rSRexcvec = new Vector(excSRsynspikes)
+			rSRexcvec.setrand(rSRexc)
+			rSRexcvec.sort()
+			rSLMexcvec = new Vector(excSLMsynspikes)
+			rSLMexcvec.setrand(rSLMexc)
+			rSLMexcvec.sort()
+
+			xcom = 1
+			// Common input loop where synapses are given the same input until the maximum number of common inputs is passed
+			while (xcom <= nexccommon && i < int((excsyncount)/2) && i < nSLMexcsyns && i < nSRexcsyns) {
+		
+				// Add SR excitatory inputs
+				SRexcnss[randSRexcindex.x[i]].play(rSRexcvec)
+				for k=0,excSRsynspikes-1 rSRexcMat.x[i][k] = rSRexcvec.x[k]
+		
+				// Add SLM excitatory inputs and if out of SLM synapses add SR inputs intead
+				SLMexcnss[randSLMexcindex.x[i]].play(rSLMexcvec)
+				for k=0,excSLMsynspikes-1 rSLMexcMat.x[i][k] = rSLMexcvec.x[k]
+	
+				i = i + 1 // update indexing
+				xcom = xcom + 1
+			}
+			i = i - 1 // i.e. so that i does not get updated twice resulting in skipped synapses
+		}
+	}
+
+	// Assign inhibitory spike times
+	if (inhsynspikes > 0){
+		rinhMat = new Matrix(inhsyncount,inhsynspikes)
+		for (i=0; i < inhsyncount; i = i + 1){ 
+			rinhvec = new Vector(inhsynspikes)
+			rinhvec.setrand(rinh) 
+			rinhvec.sort()
+
+			xcom = 1
+			while (xcom <= ninhcommon && i < inhsyncount) {
+				inhnss[randinhindex.x[i]].play(rinhvec)
+				// Build Spike Time Matrix
+				for k=0,inhsynspikes-1 rinhMat.x[i][k] = rinhvec.x[k]
+
+				i = i + 1
+				xcom = xcom + 1
+			}
+			i = i - 1 // i.e. so that i does not get updated twice resulting in skipped synapses
+		}
+	}
+	
+	if (AddRhythm == 1) {
+		for (p = 0; p < 9; p = p + 1){
+			ExcThetaSRsynsNSS[p].interval = (1/8)*1000 // i.e. 8Hz converted to a time interval in ms
+			ExcThetaSRsynsNSS[p].number = 8*tstop/1000 // i.e. if 8 Hz, there should be 80 presynaptic spikes in 10 seconds (per synapse)
+			ExcThetaSRsynsNSS[p].start = 0
+			ExcThetaSRsynsNSS[p].noise = 0
+		}
+	}else{
+		for (p = 0; p < 9; p = p + 1){
+			ExcThetaSRsynsNSS[p].interval = tstop
+			ExcThetaSRsynsNSS[p].number = 0
+			ExcThetaSRsynsNSS[p].start = tstop
+			ExcThetaSRsynsNSS[p].noise = 0
+		}
+	}
+	
+	if (SaveExample==1){
+		if (AddRhythm == 1){ // Change later when adding more synapses
+			// Save Excitatory Raster Matrices
+			sprint(filename4,"SRExcPreSpikeTrains_%g_NumInh_%g_NumExc_%g_InhSpikes_%g_ExcSRSpikes_%g_ExcSLMSpikes_%g_NumExcCommon_%g_NumInhCommon_%g_AddRhythmTrue.dat",inhsyncount,excsyncount,inhsynspikes,excSRsynspikes,excSLMsynspikes,nexccommon,ninhcommon,AddRhythm)
+			frecSRExcPreSpikeTrains = new File(filename4)
+			frecSRExcPreSpikeTrains.wopen(filename4)
+			if (excSRsynspikes > 0) {
+				rSRexcMat.fprint(frecSRExcPreSpikeTrains,"%f\t") // Spike times sampled from random distribution
+			}
+			frecSRExcPreSpikeTrains.close()
+
+			sprint(filename7,"SLMExcPreSpikeTrains_%g_NumInh_%g_NumExc_%g_InhSpikes_%g_ExcSRSpikes_%g_ExcSLMSpikes_%g_NumExcCommon_%g_NumInhCommon_%g_AddRhythmTrue.dat",inhsyncount,excsyncount,inhsynspikes,excSRsynspikes,excSLMsynspikes,nexccommon,ninhcommon,AddRhythm)
+			frecSLMExcPreSpikeTrains = new File(filename7)
+			frecSLMExcPreSpikeTrains.wopen(filename7)
+			if (excSLMsynspikes > 0) {
+				rSLMexcMat.fprint(frecSLMExcPreSpikeTrains,"%f\t") // Spike times sampled from random distribution
+			}
+			frecSLMExcPreSpikeTrains.close()
+
+			// Save Inhibitory Raster Matrix
+			sprint(filename5,"InhPreSpikeTrains_%g_NumInh_%g_NumExc_%g_InhSpikes_%g_ExcSRSpikes_%g_ExcSLMSpikes_%g_NumExcCommon_%g_NumInhCommon_%g_AddRhythmTrue.dat",inhsyncount,excsyncount,inhsynspikes,excSRsynspikes,excSLMsynspikes,nexccommon,ninhcommon,AddRhythm)
+			frecInhPreSpikeTrains = new File(filename5)
+			frecInhPreSpikeTrains.wopen(filename5)
+			if (inhsynspikes > 0){
+				rinhMat.fprint(frecInhPreSpikeTrains,"%f\t") // Spike times sampled from random distribution
+			}
+			frecInhPreSpikeTrains.close()
+		}
+		
+		apc = new APCount(0.5)
+		apctimes = new Vector()
+		apc.thresh = -20
+		apc.record(apctimes)
+		
+		// Run Simulation and Record Vm Vector
+		recV = new Vector()
+		recV.record(&soma.v(0.5))
+		run()
+		sprint(filename1,"model_%g_NumInh_%g_NumExc_%g_InhSpikes_%g_ExcSRSpikes_%g_ExcSLMSpikes_%g_NumExcCommon_%g_NumInhCommon_%g_AddRhythmTrue.dat",inhsyncount,excsyncount,inhsynspikes,excSRsynspikes,excSLMsynspikes,nexccommon,ninhcommon,AddRhythm)
+		frecV = new File(filename1)
+		frecV.wopen(filename1)
+		recV.vwrite(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+		frecV.close()
+			
+		if (AddRhythm == 1){
+			// Build Theta Spike Matrix
+			numSpikes = 8*tstop/1000
+			thetaMat = new Matrix(9,numSpikes)
+			for (x = 0; x < 9; x = x + 1){
+				for y = 0,numSpikes-1 thetaMat.x[x][y] = ThetaSRexcprespiketrains[x].x[y]
+			}
+			//Save Theta Spike Matrix
+			sprint(filename2,"ThetaSpikeTrains_%g_NumInh_%g_NumExc_%g_InhSpikes_%g_ExcSRSpikes_%g_ExcSLMSpikes_%g_NumExcCommon_%g_NumInhCommon_%g_AddRhythmTrue.dat",inhsyncount,excsyncount,inhsynspikes,excSRsynspikes,excSLMsynspikes,nexccommon,ninhcommon,AddRhythm)
+			frecThetaSpikeTrains = new File(filename2)
+			frecThetaSpikeTrains.wopen(filename2)
+			thetaMat.fprint(frecThetaSpikeTrains,"%f\t") // Spike times sampled from random distribution
+			frecThetaSpikeTrains.close()
+		}
+	}else{
+		// Run Simulation and Record Vm Vector
+		recV = new Vector()
+		recV.record(&soma.v(0.5))
+		run()
+	}
+}

@@ -1,0 +1,13 @@
+#!/bin/sh
+if test "x${NRNHOME}" = "x" ; then
+	NRNHOME="/home/alexandreguet-mccreight/neuron/nrn"
+fi
+if test "x${NRNBIN}" = "x" ; then
+	NRNBIN="/home/alexandreguet-mccreight/neuron/nrn/x86_64/bin/"
+fi
+if test "" = "yes" ; then
+	NRNIV="${NRNBIN}nrniv.app/Contents/MacOS/nrniv"
+else
+	NRNIV="${NRNBIN}nrniv"
+fi
+"${NRNIV}" -dll "/home/alexandreguet-mccreight/Resilio Sync/SkinnerLab/Usages/RhythmTests_N1/Theta/SynapseNumberEstimates/SLMExcInput/SDprox1/x86_64/.libs/libnrnmech.so" "$@"
