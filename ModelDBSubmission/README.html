@@ -1,0 +1,66 @@
+<p>
+This is a readme for the models associated with the paper:
+</p>
+<p>
+Guet-McCreight A, Camiré O, Topolnik L, Skinner FK. (2016). Using a Semi-Automated Strategy to Develop Multi-Compartment Models That Predict Biophysical Properties of Interneuron-Specific 3 (IS3) Cells in Hippocampus.eNeuro. 3(4).
+</p>
+<p>
+URL: <a href="http://eneuro.org/content/3/4/ENEURO.0087-16.2016">http://eneuro.org/content/3/4/ENEURO.0087-16.2016</a>
+</p>
+<p>
+These files were contributed by A Guet-McCreight.
+</p>
+<p>
+This model will also be available in Open Source Brain
+(<a href="http://opensourcebrain.org">http://opensourcebrain.org</a>).
+</p>
+<p>
+----------------------<br>
+<b>MODEL USAGE</b><br>
+----------------------
+</p>
+<p>
+<b>PREFACE:</b><br>
+Each folder contains mod files, a hoc file that specifies the model (i.e. *_TopModel.hoc), as well as an init.hoc file that simulates and plots the results of a current protocol for the model (i.e. -100 pA, 20 pA, 50 pA, and 500 pA).
+</p>
+<p>
+<b>FOLDERS AND NOMENCLATURE:</b><br>
+Note that there is a different version of an interneuron specific 3 morphologically-detailed model in each folder, where each folder contains a model with different types of channels or distributions of channels, as outlined here (note that the <b>figure numbers</b> indicate where the voltage plots for these models are found in the publication):
+</p>
+<p>
+S.1 = Channels in soma only (slow and fast delayed rectifier potassium channels; <b>Figure 4A1</b>)<br>
+S.2 = Channels in soma only (slow delayed rectifier potassium channels removed; <b>Figure 4A2</b>)<br>
+SD = Channels in soma and dendrites (<b>Figure 4A3</b>)<br>
+SDprox1 = Channels in soma and proximal dendrites (A-type potassium channels in soma and proximal dendrites; <b>Figure 7C1</b>)<br>
+SDprox2 = Channels in soma and proximal dendrites (A-type potassium channels in soma only; <b>Figure 7D1</b>)
+</p>
+<p>
+Note that each of these models is generated from having done an ion channel conductance parameter search in order to identify channel conductance combinations that best capture the experimental data. Also note that SDprox1 and SDprox2 best capture IS3 cell electrophysiology and backpropagating action potentials.
+</p>
+<p>
+<b>MOD FILES:</b><br>
+Before running a model, first compile the mod files accordingly. For example, using Unix/Linux, run the "nrnivmodl" command from within the model folder directory. Alternatively, using a Mac, drag all of the mod files to the "mknrndll" icon (or right-click and open with). For more options, consult:
+</p>
+<p>
+<a href="https://www.neuron.yale.edu/neuron/faq">https://www.neuron.yale.edu/neuron/faq</a>
+</p>
+<p>
+<b>RUNNING SIMULATION:</b><br>
+To run and plot the current injection protocol simulation, simply run the "init.hoc" file (this file can be found in all of the folders). To do this in Unix/Linux use the command "nrniv init.hoc". To do this on a Mac, drag the init.hoc file to the "nrngui" icon (or right-click and open with).
+</p>
+<p>
+<b>EXPECTED RESULTS:</b><br>
+S1:<br>
+<img src="./S1.png" alt="screenshot">
+<br>
+S2:<br>
+<img src="./S2.png" alt="screenshot">
+<br>
+SD:<br>
+<img src="./SD.png" alt="screenshot">
+<br>
+SDprox1:<br>
+<img src="./SDprox1.png" alt="screenshot">
+<br>
+SDprox2:<br>
+<img src="./SDprox2.png" alt="screenshot">
