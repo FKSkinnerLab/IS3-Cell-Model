@@ -1,0 +1,2 @@
+#!/bin/sh
+ibrun --npernode=8 /projects/ps-nsg/home/nsguser/applications/neuron7.4/installdir/x86_64/bin/nrniv  -mpi SingleSynapseTest9.hoc 

@@ -1,0 +1,131 @@
+// This script is used to identify synaptic weights necessary to evoke somatic action potentials at different distance from the soma
+
+load_file("IS3_M2_Case8StarRevised.hoc") // Loads IS3 model with full morphology & properties
+
+access soma
+
+// Set Parameters
+tstop = 100 // (ms)
+v_init = -69.7
+steps_per_ms = 10
+dt = 0.1
+dendn = 0 // Specifies section - still need to adjust distance vector though
+sec_divs = 10 // Specifies spatial resolution for the section being analyzed (e.g. 4 = 5 points along dendrite section, dendn)
+	
+// Initialize variables
+objectvar noise, AP_N, syn, nc, ns, weight_vec, dist_vec, fok, fdist, nil, fih
+strdef filename, filename2, MODEL_TOPDIR, model_abs_path, model_abs_path2
+	
+MODEL_TOPDIR = "/Users/alexgm/Desktop/SkinnerLab/Usages/Single\ Synapse\ Tests/SD50TopModelTests/Case8StarTopModelOutput"	
+
+// Initialize vectors
+weight_vec = new Vector(sec_divs+1,0)
+dist_vec = new Vector(sec_divs+1,0)
+	
+// Create Point Processes
+soma noise = new InGauss(0) // Simulates stochastic gating
+noise.del = 0
+noise.dur = tstop
+noise.mean = 0
+noise.stdev = 0.01 
+	
+// Ika conductance
+forsec somatic {
+gbar_Ika = 0.07
+}
+
+// Ikdrf conductance
+forsec somatic {
+gksoma_Ksoma = 0.25
+}
+
+// Inat conductance
+forsec somatic {
+gna_Nasoma = 0.07
+}
+
+// Inap conductance
+forsec somatic {
+gbar_nap = 0.000075
+}
+
+// Adjust nonlinear distributions to those in optimal model
+IKA_VAL = 0.07
+IKDRF_VAL = 0.25
+INAT_VAL = 0.07
+DISTANCE_FROM_SOMA = 75
+biophys_inhomo()
+
+soma AP_N = new APCount(0) // Counts spikes at soma
+AP_N.thresh = -20 // Threshold for rising spike identification
+
+dend[dendn] syn = new Exp2Syn(0) // Creates 1 two state kinetic scheme synapse
+syn.tau1 = 0.2 // Rise time
+syn.tau2 = 2 // Decay time
+syn.e = 0 // Reversal Potential
+	
+nc = new NetCon(nil, syn) // Specifies a network connection to syn
+fih = new FInitializeHandler("nc.event(0)") // Creates 1 presynaptic event during initialization targeted to syn
+	
+for (dendn = 0; dendn<=57; dendn = dendn+1){
+	print dendn
+	for (i = 0; i<=sec_divs; i = i+1) {
+	
+		// Specifies proportion along section (i.e. from 0 to 1)
+		prop = i*(1/sec_divs)
+		
+		// Records distance along section according to current proportion along section
+		dist_vec.x[i] = dend[dendn].L*(prop)
+		
+		// Changes Exp2Syn's location to current proportion along section
+		dend[dendn] syn.loc(prop)
+
+		// Increases weight (uS) incrementally until a somatic spike is identified using APCount
+		for (l = 0; l <= 39; l = l+1) {
+			
+			// Change resolution to larger weight intervals if weight is not small
+			if (l < 10) {
+				nc.weight = (l)*0.001 // Increase weight by 0.001 uS increments
+			}
+			if (l > 9 && l<20) {
+				nc.weight = (l-9)*0.01 // Increase weight by 0.01 uS increments
+			}
+			if (l > 19 && l<30) {
+				nc.weight = (l-19)*0.1 // Increase weight by 0.1 uS increments
+			}
+			if (l > 29) {
+				nc.weight = (l-29)*1 // Increase weight by 1 uS increments 
+			}
+			
+				run() // Run simulation
+			
+			if (AP_N.n > 0) {
+				weight_vec.x[i] = nc.weight // Threshold weight (uS)
+				break
+			}
+			if (l > 38) {
+				weight_vec.x[i] = (l-29)*1 // If weight = 1, then threshold was not attained
+				break
+			}
+		}
+	}
+
+	// Store corresponding weight & distance vectors in files
+	sprint(filename, "model_%g_dend_weightvec.dat",dendn)
+	sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+	fok = new File(filename)
+	fok.wopen(model_abs_path)
+	weight_vec.printf(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+	fok.close()
+	
+	sprint(filename2, "model_%g_dend_distvec.dat",dendn)
+	sprint(model_abs_path2, "%s/%s", MODEL_TOPDIR, filename2)
+	fdist = new File(filename2)
+	fdist.wopen(model_abs_path2)
+	dist_vec.printf(fdist)
+	fdist.close()
+}
+
+
+
+

@@ -1,0 +1,20 @@
+Translating IKa.mod into IKa.c
+Notice: Assignment to the GLOBAL variable, "htau", is not thread safe
+Notice: Assignment to the GLOBAL variable, "hinf", is not thread safe
+Notice: Assignment to the GLOBAL variable, "mtau", is not thread safe
+Notice: Assignment to the GLOBAL variable, "minf", is not thread safe
+Translating ingauss.mod into ingauss.c
+Thread Safe
+Translating Ksoma.mod into Ksoma.c
+Notice: Assignment to the GLOBAL variable, "ntau", is not thread safe
+Notice: Assignment to the GLOBAL variable, "nexp", is not thread safe
+Notice: Assignment to the GLOBAL variable, "ninf", is not thread safe
+Translating Nap.mod into Nap.c
+Notice: Assignment to the GLOBAL variable, "mtau", is not thread safe
+Notice: Assignment to the GLOBAL variable, "minf", is not thread safe
+Translating Nasoma.mod into Nasoma.c
+Notice: Assignment to the GLOBAL variable, "htau", is not thread safe
+Notice: Assignment to the GLOBAL variable, "hexp", is not thread safe
+Notice: Assignment to the GLOBAL variable, "hinf", is not thread safe
+Notice: Assignment to the GLOBAL variable, "mtau", is not thread safe
+Notice: Assignment to the GLOBAL variable, "minf", is not thread safe
