@@ -13,6 +13,8 @@ In this case one could submit code to the neuroscience gateway (NSG) for high-pe
 
 Also note that this code uses code written by Adam Taylor to create clutter based dimensional reordering plots (Taylor et al, 2006; see "stack-ordering" folder within the "AddedScriptsAndToolboxes" folder). Once again, make sure to update the path to the toolbox.
 
+Also note that the Matlab code used to analyze the results uses a dated and personally edited version (see the "AddedScriptsAndToolboxes" folder) of the Matlab toolbox "PANDORA" (https://www.mathworks.com/matlabcentral/fileexchange/60237-cengique-pandora-matlab). One can either use the code in the "AddedScriptsAndToolboxes" folder or download an updated version of PANDORA from the website and then adjust the code (some functions in my scripts are possibly only available in the toolbox version that I edited).
+
 Make sure to update all directory paths as they were possibly changed during the development of this Github repository.
 
 Run Procedure:
