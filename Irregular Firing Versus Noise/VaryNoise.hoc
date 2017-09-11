@@ -1,0 +1,57 @@
+// This script is used to identify synaptic weights necessary to evoke somatic action potentials at different distance from the soma
+
+load_file("IS3_M2_Case7TopModel.hoc") // Loads IS3 model with full morphology & properties
+
+access soma
+
+// Set Parameters
+tstop = 5000 // (ms)
+v_init = -69.7
+steps_per_ms = 10
+dt = 0.1
+	
+// Initialize variables
+objectvar noise, stim, fok, recV
+strdef filename, MODEL_TOPDIR, model_abs_path
+	
+MODEL_TOPDIR = "/Users/sandygm5/Desktop/Irregular\ Firing\ Versus\ Noise/Case7Output"
+
+// Create IClamp
+stim = new IClamp(0.5)
+stim.del = 0
+stim.dur = tstop
+stim.amp = 0
+
+// Create Point Processes
+soma noise = new InGauss(0) // Simulates stochastic gating
+noise.del = 0
+noise.dur = tstop
+noise.mean = 0
+noise.stdev = 0
+	
+for (k = 0.02; k <= 0.05; k = k+0.0005)
+	
+	stim.amp = k
+	
+	for (l = 0.01; l <= 0.1; l = l+0.01) {
+	
+		// Increase noise standard deviation
+		noise.stdev = l
+	
+		// Records voltage vector
+		recV= new Vector()
+		recV.record(&soma.v(0.5))
+
+		run() // Run simulation
+
+		// Store corresponding weight & distance vectors in files
+		sprint(filename, "model_%g_StimAmp_%g_NoiseStDev_IrregularFiring.dat",k,l)
+		sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+		fok = new File(filename)
+		fok.wopen(model_abs_path)
+		recV.vwrite(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+		fok.close()
+		
+	}
+}
+
