@@ -1,0 +1,3 @@
+load_file("nrngui.hoc")
+load_file("IS3_M1_Passive.ses")
+load_file("dendrogram.hoc")

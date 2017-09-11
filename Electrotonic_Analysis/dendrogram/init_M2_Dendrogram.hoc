@@ -1,0 +1,148 @@
+load_file("nrngui.hoc")
+load_file("IS3_M2_Passive.ses")
+load_file("dendrogram.hoc")
+
+Tree1MaxDistance = 0
+Tree2AMaxDistance = 0
+Tree2BMaxDistance = 0
+Tree2CMaxDistance = 0
+Tree3MaxDistance = 0
+TreeAxonMaxDistance = 0
+
+Tree1SummedLength = 0
+Tree2ASummedLength = 0
+Tree2BSummedLength = 0
+Tree2CSummedLength = 0
+Tree3SummedLength = 0
+TreeAxonSummedLength = 0
+
+Tree1SA = 0
+Tree2ASA = 0
+Tree2BSA = 0
+Tree2CSA = 0
+Tree3SA = 0
+TreeAxonSA = 0
+dend23sa = 0
+	
+dendn = 0
+access dend[23]
+dend23L = L
+
+div = 1/nseg
+for (i = 1; i <= nseg; i = i + 1){
+	dend23sa = dend23sa + area(div*i-0.000001)
+}
+//dend23sa = PI*((sqrt((L^2)+((diam(0)/2)-(diam(1)/2))^2))*((diam(0)/2)+(diam(1)/2)))
+	
+// Maximum Distal Length
+access soma
+distance()
+access dend[14]
+Tree1MaxDistance = distance(1)
+access dend[56]
+Tree2AMaxDistance = distance(1)
+access dend[40]
+Tree2BMaxDistance = distance(1)
+access dend[41]
+Tree2CMaxDistance = distance(1)
+access dend[2]
+Tree3MaxDistance = distance(1)
+access dend[19]
+TreeAxonMaxDistance = distance(1)
+
+print "Tree 1 Max Distance = ", Tree1MaxDistance 
+print "Tree 2A Max Distance = ", Tree2AMaxDistance
+print "Tree 2B Max Distance = ", Tree2BMaxDistance
+print "Tree 2C Max Distance = ", Tree2CMaxDistance
+print "Tree 3 Max Distance = ", Tree3MaxDistance
+print "Axon Max Distance = ", TreeAxonMaxDistance
+		
+// Summed length of all segments and diameter per um
+for (dendn = 3; dendn<=17; dendn = dendn + 1) {
+	access dend[dendn]
+//	distance()
+	div = 1/nseg	
+	for (i = 1; i <= nseg; i = i + 1){
+		//Tree1SA = Tree1SA + (PI*((sqrt(((L*div)^2)+((diam(div*i-div)/2)-(diam(div)/2))^2))*((diam(div*i-div)/2)+(diam(div)/2))))
+		//Tree1SA2 = Tree1SA2 + PI*diam(div*i)*L*div
+		Tree1SA = Tree1SA + area(div*i-0.000001)
+	}
+		
+	Tree1Length = Tree1Length + L
+//	tempsa = PI*((sqrt((L^2)+((diam(0)/2)-(diam(1)/2))^2))*((diam(0)/2)+(diam(1)/2)))
+//	Tree1SA = Tree1SA + tempsa
+}
+print "Tree 1 Summed Distance (um) = ", Tree1Length
+print "Tree 1 Surface Area (um2) = ", Tree1SA
+	
+for (dendn = 42; dendn<=57; dendn = dendn + 1) {
+	access dend[dendn]
+	Tree2ALength = Tree2ALength + L
+	
+	div = 1/nseg
+	for (i = 1; i <= nseg; i = i + 1){
+		Tree2ASA = Tree2ASA + area(div*i-0.000001)
+	}
+	
+//	tempsa = PI*((sqrt((L^2)+((diam(0)/2)-(diam(1)/2))^2))*((diam(0)/2)+(diam(1)/2)))
+//	Tree2ASA = Tree2ASA + tempsa
+}
+Tree2ASA = Tree2ASA + dend23sa
+Tree2ALength = Tree2ALength + dend23L
+print "Tree 2A Summed Distance (um) = ", Tree2ALength
+print "Tree 2A Surface Area (um2) = ", Tree2ASA
+	
+for (dendn = 23; dendn<=40; dendn = dendn + 1) {
+	access dend[dendn]
+	Tree2BLength = Tree2BLength + L
+	
+	div = 1/nseg
+	for (i = 1; i <= nseg; i = i + 1){
+		Tree2BSA = Tree2BSA + area(div*i-0.000001)
+	}
+//	tempsa = PI*((sqrt((L^2)+((diam(0)/2)-(diam(1)/2))^2))*((diam(0)/2)+(diam(1)/2)))
+//	Tree2BSA = Tree2BSA + tempsa
+}
+print "Tree 2B Summed Distance (um) = ", Tree2BLength
+print "Tree 2B Surface Area (um2) = ", Tree2BSA
+	
+access dend[41]
+Tree2CLength = dend23L + L
+	
+div = 1/nseg
+for (i = 1; i <= nseg; i = i + 1){
+	Tree2CSA = Tree2CSA + area(div*i-0.000001)
+}
+
+Tree2CSA = Tree2CSA + dend23sa
+print "Tree 2C Summed Distance (um) = ", Tree2CLength
+print "Tree 2C Surface Area (um2) = ", Tree2CSA
+	
+for (dendn = 0; dendn<=2; dendn = dendn + 1) {
+	access dend[dendn]
+	Tree3Length = Tree3Length + L
+		
+	div = 1/nseg
+	for (i = 1; i <= nseg; i = i + 1){
+		Tree3SA = Tree3SA + area(div*i-0.000001)
+	}
+	
+//	tempsa = PI*((sqrt((L^2)+((diam(0)/2)-(diam(1)/2))^2))*((diam(0)/2)+(diam(1)/2)))
+//	Tree3SA = Tree3SA + tempsa
+}
+print "Tree 3 Summed Distance (um) = ", Tree3Length
+print "Tree 3 Surface Area (um2) = ", Tree3SA
+	
+for (dendn = 18; dendn<=22; dendn = dendn + 1) {
+	access dend[dendn]
+	TreeAxonLength = TreeAxonLength + L
+		
+	div = 1/nseg
+	for (i = 1; i <= nseg; i = i + 1){
+		TreeAxonSA = TreeAxonSA + area(div*i-0.000001)
+	}
+//	tempsa = PI*((sqrt((L^2)+((diam(0)/2)-(diam(1)/2))^2))*((diam(0)/2)+(diam(1)/2)))
+//	TreeAxonSA = TreeAxonSA + tempsa
+}
+print "Axon Summed Distance (um) = ", TreeAxonLength
+print "Axon Surface Area (um2) = ", TreeAxonSA

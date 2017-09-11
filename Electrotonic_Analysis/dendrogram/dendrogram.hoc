@@ -1,0 +1,114 @@
+// $Id: dendrogram.hoc,v 1.2 2007/06/14 22:11:04 ted Exp ted $
+
+/*
+Recursively draw a dendrogram that shows the branching pattern of a cell.
+The default section and the root section must be identical (as they will be,
+if proper coding style is used to create the model, and there is no abuse of 
+the access keyword).
+This is not particularly efficient or clever, but it worked adequately for my purposes.
+
+Based on dendrogram_subsets.hoc
+N.T. Carnevale 1/4/2006
+*/
+
+xorigin = 0
+yorigin = 1
+yloc = yorigin
+ydelta = 1
+
+
+objref dgram
+dgram = new Graph(0)
+dgram.size(0,150,0,30)
+dgram.view(0, 0, 150, 30, 597, 38, 300.48, 200.32)
+dgram.yaxis(3)  // no axes
+
+
+/*
+rather than having to switch back and forth between SectionLists 
+and SectionRefs, and having to infer the y coord of the parent branch, 
+it seems easier to do everything with an elaboration of the SectionRef class
+*/
+
+begintemplate BranchRef
+/*
+sr         a SectionRef that refers to the actual section
+i	   an integer, intended to be set equal to the ordinal position of the BranchRef
+	      in the tufts List
+x,y        where its representation in a dendrogram starts
+setorigin  a convenience for specifying x and y with a single statement
+parbr      BranchRef of the parent (NULLobject if this particular one is a root)
+*/
+public sr, i, x, y, setorigin, parbr
+objref sr, parbr
+  proc init() {
+    sr = new SectionRef()
+    i = 0  // to start with
+    setorigin(0,0)
+  }
+  proc setorigin() {
+    x = $1
+    y = $2
+  }
+endtemplate BranchRef
+
+objref cell_brefs
+cell_brefs = new List()
+
+// recursively add all children of the BranchRef argument
+proc add_children() { local ii, x0, y0, dy  localobj tobj
+  x0 = $2
+  y0 = $&3
+  dy = $4
+/* The section stack allows only 20 items, so it is important to 
+   avoid section recursion.  Consequently this
+  if ($o1.sr.nchild > 0) for ii = 0,$o1.sr.nchild-1 $o1.sr.child[ii] {
+    tobj = new BranchRef()
+   should be changed as follows:
+*/
+  if ($o1.sr.nchild > 0) for ii = 0,$o1.sr.nchild-1 {
+    $o1.sr.child[ii] { tobj = new BranchRef() }
+    tobj.setorigin(x0, y0)
+    tobj.parbr = $o1  // so we can discover y coord of parent branch
+    add_children(tobj, x0+tobj.sr.sec.L, &y0, dy)
+    cell_brefs.append(tobj)
+    cell_brefs.object(cell_brefs.count()-1).i = cell_brefs.count()-1
+    if (ii < $o1.sr.nchild-1) y0 += dy  // prepare for next branch
+  }
+  $&3 = y0
+}
+
+objref tempobj
+tempobj = new BranchRef()
+tempobj.setorigin(xorigin, yloc)
+add_children(tempobj, xorigin+L, &yloc, ydelta)
+cell_brefs.append(tempobj)
+cell_brefs.object(cell_brefs.count()-1).i = cell_brefs.count()-1
+
+objref nul
+
+// this can be made smarter
+proc connectchildren() {
+  for ii=0,cell_brefs.count-1 {
+    dgram.brush(0)  // hairline
+    if (cell_brefs.object(ii).parbr != nul) {
+      dgram.beginline()
+      dgram.line(cell_brefs.object(ii).x, cell_brefs.object(ii).parbr.y)
+      dgram.line(cell_brefs.object(ii).x, cell_brefs.object(ii).y)
+    }
+  }
+}
+
+proc drawtree() { local ii
+  dgram.erase()
+  for ii=0,cell_brefs.count-1 {
+    dgram.brush(2)  // moderately wide
+    dgram.beginline()
+    dgram.line(cell_brefs.object(ii).x, cell_brefs.object(ii).y)
+    dgram.line(cell_brefs.object(ii).x + cell_brefs.object(ii).sr.sec.L, cell_brefs.object(ii).y)
+  }
+  connectchildren()
+  dgram.exec_menu("View = plot")
+}
+
+drawtree()

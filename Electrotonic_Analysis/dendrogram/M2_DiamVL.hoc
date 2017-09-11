@@ -1,0 +1,44 @@
+load_file("nrngui.hoc")
+load_file("IS3_M2_Passive.ses")
+
+objectvar diamvec, Lvec, fok, fok2
+strdef filename, MODEL_TOPDIR, model_abs_path, filename2, MODEL_TOPDIR2, model_abs_path2
+
+MODEL_TOPDIR = "/Users/alexgm/Desktop/SkinnerLab/Usages/Electrotonic_Analysis/dendrogram"
+
+diamvec = new Vector(60,0)
+Lvec = new Vector(60,0)
+	
+dendn = 0
+access dend[23]
+dend23L = L
+dend23d = diam(1)
+	
+access soma
+distance()
+diamvec.x[0] = diam
+Lvec.x[0] = distance(0)
+				
+for (dendn = 0; dendn<=57; dendn = dendn + 1) {
+	access dend[dendn]
+	diamvec.x[dendn+1] = diam(1)
+	Lvec.x[dendn+1] = distance(1)
+
+}
+
+sprint(filename, "model_MorphologyDIAMETERS.dat")
+sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+fok = new File(filename)
+fok.wopen(model_abs_path)
+diamvec.printf(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+fok.close()
+	
+sprint(filename2, "model_MorphologyLENGTHS.dat")
+sprint(model_abs_path2, "%s/%s", MODEL_TOPDIR, filename2)
+fok2 = new File(filename2)
+fok2.wopen(model_abs_path2)
+Lvec.printf(fok2) // Use printf instead of vwrite if you want a text file instead of a binary file
+fok2.close()
+	
+	
+	
