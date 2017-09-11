@@ -1,0 +1,10 @@
+Unloading compiler-dependent module mvapich2_ib/2.1
+Unloading compiler-dependent module gsl/2.1
+Unloading compiler-dependent module openmpi_ib/1.8.4
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100     3  100     3    0     0     69      0 --:--:-- --:--:-- --:--:--    75
+/bin/tar: ./scheduler_stdout.txt: file changed as we read it
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100     3  100     3    0     0     62      0 --:--:-- --:--:-- --:--:--    62

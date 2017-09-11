@@ -1,0 +1,5138 @@
+numprocs=48
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	0 
+	0 
+	0 
+	0 
+	1 
+	1 
+	1 
+	0 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	221 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	221 
+	1 
+	221 
+	1 
+	1 
+	1 
+	1 
+	1 
+	221 
+	1 
+	1 
+	1 
+	1 
+	1 
+	221 
+	1 
+	221 
+	1 
+	1 
+	1 
+	1 
+	221 
+	1 
+	1 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+	1.4236286 
+	-0.2020619 
+	1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 1 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 5 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 2 
+Section Number: 2 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 5 
+Section Number: 5 
+Section Number: 6 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 6 
+Section Number: 7 
+Section Number: 9 
+Section Number: 9 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 8 
+Section Number: 9 
+Section Number: 7 
+Section Number: 8 
+Section Number: 9 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 3 
+Section Number: 3 
+Section Number: 13 
+Section Number: 13 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 11 
+Section Number: 12 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 14 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 3 
+Section Number: 15 
+Section Number: 15 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	0 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	221 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	221 
+	1 
+	221 
+	1 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	1 
+	1 
+	221 
+	1 
+	1 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+	1 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 1 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+	221 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 6 
+Section Number: 5 
+Section Number: 6 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 6 
+Section Number: 7 
+Section Number: 6 
+Section Number: 7 
+Section Number: 5 
+Section Number: 6 
+Section Number: 6 
+Section Number: 7 
+Section Number: 5 
+Section Number: 5 
+Section Number: 6 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 7 
+Section Number: 8 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 6 
+Section Number: 7 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+	1 
+	1 
+	1.4236286 
+	-0.2020619 
+	1 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 11 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 0 
+Section Number: 0 
+Section Number: 0 
+Section Number: 1 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 13 
+Section Number: 12 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 2 
+Section Number: 2 
+Section Number: 2 
+Section Number: 3 
+Section Number: 3 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 3 
+Section Number: 4 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 5 
+Section Number: 6 
+Section Number: 7 
+Section Number: 8 
+Section Number: 8 
+Section Number: 8 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 9 
+Section Number: 10 
+Section Number: 10 
+Section Number: 10 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 11 
+Section Number: 12 
+Section Number: 12 
+Section Number: 12 
+Section Number: 13 
+Section Number: 13 
+Section Number: 13 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 14 
+Section Number: 15 
+Section Number: 15 
+Section Number: 15 
+Vm = -61.1403251443, Vm STD = 3.29059361993, ISICV = 0, Amp = 0, HC = 2
+Vm = -61.1403251443, Vm STD = 3.29059361993, ISICV = 0, Amp = 0, HC = 2
+Vm = -61.1403251443, Vm STD = 3.29059361993, ISICV = 0, Amp = 0, HC = 2
+Vm = -60.6808711243, Vm STD = 2.14340992291, ISICV = 0.683957350374, Amp = 64.1489540817, HC = 1
+Vm = -60.843231516, Vm STD = 2.19217297093, ISICV = 0.709199558805, Amp = 63.7524552354, HC = 1
+Vm = -60.4369386054, Vm STD = 2.19149466666, ISICV = 0.67922405124, Amp = 63.9281244317, HC = 1
+Vm = -60.7217479737, Vm STD = 2.16406671928, ISICV = 0.721511574788, Amp = 64.004151042, HC = 1
+Vm = -62.1409174582, Vm STD = 2.6156331672, ISICV = 0.880409713707, Amp = 66.8484481592, HC = 3
+Vm = -60.9637887222, Vm STD = 2.36754418368, ISICV = 0.751877000141, Amp = 65.0771318839, HC = 2
+Vm = -62.099840302, Vm STD = 2.68112839153, ISICV = 0.891552219499, Amp = 66.8026398771, HC = 3
+Vm = -61.0094740021, Vm STD = 2.30445258849, ISICV = 0.718351265276, Amp = 63.8297855645, HC = 2
+Vm = -60.8057955444, Vm STD = 2.30362211718, ISICV = 0.756015929657, Amp = 65.1003749996, HC = 2
+Vm = -61.0094740021, Vm STD = 2.30445258849, ISICV = 0.718351265276, Amp = 63.8297855645, HC = 2
+Vm = -60.9202219756, Vm STD = 2.32922819476, ISICV = 0.744582833387, Amp = 65.1647441353, HC = 2
+Vm = -60.8985233107, Vm STD = 2.24365843217, ISICV = 0.717890969358, Amp = 63.7133305927, HC = 2
+Vm = -62.300762617, Vm STD = 2.56132809938, ISICV = 0.885348207714, Amp = 66.9187128752, HC = 3
+Vm = -62.0715344161, Vm STD = 2.64741938942, ISICV = 0.913169468955, Amp = 66.8493829591, HC = 3
+Vm = -62.3571725572, Vm STD = 2.54073813041, ISICV = 0.892133426597, Amp = 66.4161261501, HC = 3
+Vm = -62.1755251034, Vm STD = 2.63181993111, ISICV = 0.918877281709, Amp = 66.6283357858, HC = 3
+Vm = -61.0094740021, Vm STD = 2.30445258849, ISICV = 0.718351265276, Amp = 63.8297855645, HC = 2
+Vm = -60.8555918979, Vm STD = 2.76919470836, ISICV = 0.848266633148, Amp = 66.1407968667, HC = 3
+Vm = -60.8792744788, Vm STD = 2.81749224184, ISICV = 0.828358224421, Amp = 65.9034436867, HC = 3
+Vm = -60.8830166036, Vm STD = 2.84629338505, ISICV = 0.793042702246, Amp = 66.0016563513, HC = 2
+Vm = -60.8557105119, Vm STD = 2.79302541413, ISICV = 0.791845419773, Amp = 66.0824762344, HC = 2
+Vm = -61.1356143327, Vm STD = 3.00586047893, ISICV = 0.823248776832, Amp = 66.5652624506, HC = 3
+Vm = -61.219994307, Vm STD = 2.97615457805, ISICV = 0.820328573316, Amp = 66.525524573, HC = 3
+Vm = -61.2628634753, Vm STD = 2.94973775567, ISICV = 0.84521149126, Amp = 66.5706929743, HC = 3
+Vm = -60.9637386745, Vm STD = 2.90579368925, ISICV = 0.81274669271, Amp = 65.6776856526, HC = 3
+Vm = -60.5768773229, Vm STD = 2.8002497778, ISICV = 0.791615122436, Amp = 64.9596028821, HC = 2
+Vm = -59.8061120452, Vm STD = 2.58056001555, ISICV = 0.677666128301, Amp = 64.1123779663, HC = 2
+Vm = -61.1709649974, Vm STD = 2.96197986318, ISICV = 0.834703272096, Amp = 66.6263981119, HC = 3
+Vm = -60.6723718022, Vm STD = 2.77897220822, ISICV = 0.860286253894, Amp = 65.0183756597, HC = 3
+Vm = -60.752409342, Vm STD = 2.82234564474, ISICV = 0.861459172253, Amp = 64.9763441588, HC = 3
+Vm = -61.305844099, Vm STD = 3.06817420998, ISICV = 0.810837757033, Amp = 66.0037802887, HC = 3
+Vm = -61.2940950998, Vm STD = 3.02600691905, ISICV = 0.804213326766, Amp = 66.0268343635, HC = 3
+Vm = -60.8268039551, Vm STD = 2.79861920947, ISICV = 0.847900958033, Amp = 64.8345170616, HC = 3
+Vm = -61.305844099, Vm STD = 3.06817420998, ISICV = 0.810837757033, Amp = 66.0037802887, HC = 3
+Vm = -61.6097154763, Vm STD = 3.16435097893, ISICV = 0.88116559158, Amp = 66.5164336514, HC = 3
+Vm = -60.9822727393, Vm STD = 2.84651668868, ISICV = 0.795898592093, Amp = 65.7905554902, HC = 2
+Vm = -61.305844099, Vm STD = 3.06817420998, ISICV = 0.810837757033, Amp = 66.0037802887, HC = 3
+Vm = -61.704507001, Vm STD = 3.10248248135, ISICV = 0.870123401409, Amp = 66.5762165688, HC = 3
+Vm = -60.8950843377, Vm STD = 2.84867396094, ISICV = 0.817718548255, Amp = 64.7629846953, HC = 3
+Vm = -60.0238265251, Vm STD = 2.57382996832, ISICV = 0.747859502053, Amp = 64.3111272846, HC = 2
+Vm = -61.0350503304, Vm STD = 2.90925788819, ISICV = 0.817961286509, Amp = 65.2418452562, HC = 3
+Vm = -61.2608142409, Vm STD = 2.98115971843, ISICV = 0.796885191858, Amp = 66.3711096066, HC = 2
+Vm = -61.3238382699, Vm STD = 2.94827903133, ISICV = 0.818201254477, Amp = 66.5407444016, HC = 3
+Vm = -60.8950843377, Vm STD = 2.84867396094, ISICV = 0.817718548255, Amp = 64.7629846953, HC = 3
+Vm = -60.8950843377, Vm STD = 2.84867396094, ISICV = 0.817718548255, Amp = 64.7629846953, HC = 3
+Vm = -61.6819923626, Vm STD = 3.14505430426, ISICV = 0.885470085541, Amp = 66.6508530162, HC = 3
+Vm = -61.6819923626, Vm STD = 3.14505430426, ISICV = 0.885470085541, Amp = 66.6508530162, HC = 3
+Vm = -61.7469034852, Vm STD = 3.16590750764, ISICV = 1.06125155076, Amp = 67.0450035658, HC = 3
+Vm = -62.7125661241, Vm STD = 2.88340496535, ISICV = 0.957166262724, Amp = 67.6471462192, HC = 3
+Vm = -62.6872581741, Vm STD = 2.90801793447, ISICV = 0.943222961122, Amp = 67.1983228123, HC = 3
+Vm = -62.7253440703, Vm STD = 2.86086516267, ISICV = 1.00931313611, Amp = 67.3466587331, HC = 3
+Vm = -62.6918577445, Vm STD = 2.87481262841, ISICV = 1.00910537503, Amp = 67.642461456, HC = 3
+Vm = -63.2086802856, Vm STD = 3.15207420381, ISICV = 0.965685532964, Amp = 69.0753132226, HC = 3
+Vm = -62.7266717887, Vm STD = 2.84402985465, ISICV = 1.01970361995, Amp = 67.5628733275, HC = 3
+Vm = -62.6021734097, Vm STD = 2.92589384642, ISICV = 1.11153189283, Amp = 67.7440237055, HC = 3
+Vm = -62.6117793023, Vm STD = 2.90200353106, ISICV = 1.03654141467, Amp = 67.5946272873, HC = 3
+Vm = -63.3402533377, Vm STD = 3.13417824247, ISICV = 0.888670722558, Amp = 68.8852328404, HC = 3
+Vm = -63.5508565232, Vm STD = 2.95944400583, ISICV = 0.931038242625, Amp = 68.1918703905, HC = 3
+Vm = -62.6898873511, Vm STD = 3.44868120872, ISICV = 1.05182123354, Amp = 68.7404467529, HC = 3
+Vm = -62.782960671, Vm STD = 3.44430934317, ISICV = 0.965060768773, Amp = 68.7300216454, HC = 3
+Vm = -62.4845620504, Vm STD = 3.38292340571, ISICV = 0.956660080843, Amp = 68.5313176939, HC = 3
+Vm = -62.5271083946, Vm STD = 3.29806190598, ISICV = 0.933670127944, Amp = 68.7331900166, HC = 3
+Vm = -62.435687703, Vm STD = 3.41668941557, ISICV = 0.931606094625, Amp = 67.8633736217, HC = 3
+Vm = -62.4997869286, Vm STD = 3.39016944531, ISICV = 0.942901992601, Amp = 67.8809296166, HC = 3
+Vm = -62.8146839625, Vm STD = 3.4211921679, ISICV = 0.90212007467, Amp = 68.4003721729, HC = 3
+Vm = -62.8951933077, Vm STD = 3.3933418924, ISICV = 0.928533491881, Amp = 68.5632599721, HC = 3
+Vm = -62.1976494594, Vm STD = 3.34879966213, ISICV = 0.913311690088, Amp = 67.1259586508, HC = 3
+Vm = -62.435687703, Vm STD = 3.41668941557, ISICV = 0.931606094625, Amp = 67.8633736217, HC = 3
+Vm = -62.8824501349, Vm STD = 3.43141602992, ISICV = 0.920372302842, Amp = 68.2149010983, HC = 3
+Vm = -62.3971049936, Vm STD = 3.45481800117, ISICV = 0.934883355068, Amp = 67.534380316, HC = 3
+Vm = -61.7985954286, Vm STD = 3.19416510711, ISICV = 0.931380659832, Amp = 67.1828748777, HC = 3
+Vm = -62.435687703, Vm STD = 3.41668941557, ISICV = 0.931606094625, Amp = 67.8633736217, HC = 3
+Vm = -62.4466395112, Vm STD = 3.38409026496, ISICV = 0.923475130193, Amp = 68.0240131348, HC = 3
+Vm = -61.7287015691, Vm STD = 3.27109212002, ISICV = 1.03131456427, Amp = 67.0759735232, HC = 3
+Vm = -61.7095401348, Vm STD = 3.2257291362, ISICV = 0.907569106992, Amp = 67.0561824077, HC = 3
+Vm = -62.1976494594, Vm STD = 3.34879966213, ISICV = 0.913311690088, Amp = 67.1259586508, HC = 3
+Vm = -62.1976494594, Vm STD = 3.34879966213, ISICV = 0.913311690088, Amp = 67.1259586508, HC = 3
+Vm = -61.8067512326, Vm STD = 3.21449919093, ISICV = 0.92137056049, Amp = 66.8970473793, HC = 3
+Vm = -62.7956711611, Vm STD = 3.45832260282, ISICV = 0.926772493305, Amp = 68.0963168166, HC = 3
+Vm = -62.7956711611, Vm STD = 3.45832260282, ISICV = 0.926772493305, Amp = 68.0963168166, HC = 3
+Vm = -61.6711917719, Vm STD = 3.19472933353, ISICV = 0.954554540042, Amp = 66.8043598911, HC = 3
+Vm = -62.7997130092, Vm STD = 3.50909365783, ISICV = 0.90490504261, Amp = 68.6458609598, HC = 3
+Vm = -61.767381382, Vm STD = 3.29003218556, ISICV = 0.975340753187, Amp = 66.7315515314, HC = 3
+Vm = -61.8648168952, Vm STD = 3.2509942634, ISICV = 0.945238318381, Amp = 66.4668135593, HC = 3
+Vm = -62.7956711611, Vm STD = 3.45832260282, ISICV = 0.926772493305, Amp = 68.0963168166, HC = 3
+Vm = -62.8081393058, Vm STD = 3.41406570868, ISICV = 0.936542477842, Amp = 68.3922709703, HC = 3
+Vm = -62.8820053012, Vm STD = 3.42843289604, ISICV = 0.910609084401, Amp = 68.4940478486, HC = 3
+Vm = -62.5197357187, Vm STD = 3.3729121628, ISICV = 0.951382467779, Amp = 67.9668389624, HC = 3
+Vm = -61.8648168952, Vm STD = 3.2509942634, ISICV = 0.945238318381, Amp = 66.4668135593, HC = 3
+Vm = -61.8648168952, Vm STD = 3.2509942634, ISICV = 0.945238318381, Amp = 66.4668135593, HC = 3
+Vm = -62.9436576375, Vm STD = 3.49493260352, ISICV = 0.935726894977, Amp = 68.3528277357, HC = 3
+Vm = -62.4228446918, Vm STD = 3.45805539746, ISICV = 0.924288417562, Amp = 67.8260962986, HC = 3
+Vm = -62.8605898999, Vm STD = 3.53162832666, ISICV = 0.928477286622, Amp = 68.4963409053, HC = 3
+Vm = -62.8692164882, Vm STD = 3.56542990609, ISICV = 0.913633984833, Amp = 68.1392216729, HC = 3
+Vm = -62.9179909401, Vm STD = 3.54615950036, ISICV = 0.898332597682, Amp = 68.3195659655, HC = 3
+Vm = -62.9179909401, Vm STD = 3.54615950036, ISICV = 0.898332597682, Amp = 68.3195659655, HC = 3
+Vm = -63.8364064171, Vm STD = 1.87395795659, ISICV = 0, Amp = 73.0150419763, HC = 1
+Vm = -63.898488121, Vm STD = 2.04616601474, ISICV = 1.59496861543, Amp = 67.437138844, HC = 2
+Vm = -64.1523250789, Vm STD = 1.91037120805, ISICV = 0, Amp = 72.450471841, HC = 1
+Vm = -63.9104173149, Vm STD = 1.89749498002, ISICV = 0, Amp = 67.8884755545, HC = 1
+Vm = -64.2256369532, Vm STD = 2.05166973525, ISICV = 1.53616084164, Amp = 69.7897515802, HC = 2
+Vm = -63.9757480785, Vm STD = 1.79822434214, ISICV = 0.714706420958, Amp = 68.3386385019, HC = 1
+Vm = -63.9323324443, Vm STD = 1.82033688765, ISICV = 0, Amp = 71.2188344327, HC = 1
+Vm = -63.8707319236, Vm STD = 2.09046161073, ISICV = 1.25868826249, Amp = 68.6848419697, HC = 2
+Vm = -63.9594512147, Vm STD = 2.01827801333, ISICV = 0, Amp = 69.6491306711, HC = 1
+Vm = -64.0640439739, Vm STD = 2.15957070471, ISICV = 0.795078722799, Amp = 69.5605472383, HC = 1
+Vm = -64.0525145467, Vm STD = 2.23679397995, ISICV = 0.861947085181, Amp = 71.7654703109, HC = 3
+Vm = -64.0993684264, Vm STD = 2.09905706413, ISICV = 0.762781693331, Amp = 69.5324485878, HC = 1
+Vm = -64.2099617984, Vm STD = 2.10424314484, ISICV = 0.433609515627, Amp = 71.7068476218, HC = 1
+Vm = -64.155528791, Vm STD = 2.19752980553, ISICV = 1.82010098944, Amp = 70.4584495636, HC = 2
+Vm = -64.5557958475, Vm STD = 1.46522875483, ISICV = 0, Amp = 0, HC = 1
+Vm = -64.1074331276, Vm STD = 2.3017441266, ISICV = 0.845867757183, Amp = 69.459959078, HC = 3
+Vm = -64.4999591332, Vm STD = 1.56431825066, ISICV = 0, Amp = 0, HC = 1
+Vm = -64.0659482975, Vm STD = 2.19673479985, ISICV = 1.24355970409, Amp = 70.4389325078, HC = 2
+Vm = -63.9186037041, Vm STD = 2.256088657, ISICV = 1.17500413567, Amp = 69.6373075619, HC = 3
+Vm = -63.9575591918, Vm STD = 1.77269242289, ISICV = 0, Amp = 69.6225841702, HC = 1
+Vm = -64.1902286649, Vm STD = 2.14829096056, ISICV = 1.32261689004, Amp = 70.3336327283, HC = 2
+Vm = -63.8601142857, Vm STD = 1.71602130808, ISICV = 0, Amp = 71.043007332, HC = 1
+Vm = -63.7701727313, Vm STD = 2.01790096681, ISICV = 0, Amp = 69.3687161276, HC = 1
+Vm = -63.8418365551, Vm STD = 1.79275061943, ISICV = 0, Amp = 67.1920748968, HC = 1
+Vm = -64.1948276874, Vm STD = 2.04590459461, ISICV = 0.918577956537, Amp = 70.5669767417, HC = 2
+Vm = -63.8696131489, Vm STD = 2.18077954627, ISICV = 0.749447645682, Amp = 70.3162208655, HC = 1
+Vm = -63.9785719296, Vm STD = 1.65704732293, ISICV = 0, Amp = 74.7935544923, HC = 1
+Vm = -64.1209785602, Vm STD = 2.32742908932, ISICV = 1.20409312772, Amp = 70.0956644389, HC = 3
+Vm = -64.6092957309, Vm STD = 1.40691410598, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.8112928838, Vm STD = 1.95347021715, ISICV = 0, Amp = 66.4671097758, HC = 1
+Vm = -64.5597539508, Vm STD = 1.4423493226, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.8204057279, Vm STD = 1.98630836411, ISICV = 1.5813629319, Amp = 68.2173258378, HC = 2
+Vm = -64.3265136375, Vm STD = 2.21317869503, ISICV = 1.12808847097, Amp = 70.0035530161, HC = 3
+Vm = -64.6694294611, Vm STD = 1.63981271946, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.9795868261, Vm STD = 1.63617731307, ISICV = 0, Amp = 73.8836817081, HC = 1
+Vm = -64.6392982624, Vm STD = 1.64402523646, ISICV = 0, Amp = 0, HC = 1
+Vm = -64.0499663877, Vm STD = 1.7943920348, ISICV = 1.20072532686, Amp = 66.1618723963, HC = 2
+Vm = -64.2745541465, Vm STD = 2.21670911639, ISICV = 0.731368215392, Amp = 68.0845339114, HC = 2
+Vm = -63.839810943, Vm STD = 1.84769581678, ISICV = 0.685422093564, Amp = 67.2282826335, HC = 1
+Vm = -64.1620574372, Vm STD = 2.22847348198, ISICV = 1.06843905749, Amp = 70.2177023396, HC = 3
+Vm = -64.0850306938, Vm STD = 2.35887202761, ISICV = 1.13060644092, Amp = 71.0921784979, HC = 3
+Vm = -64.2908091774, Vm STD = 2.26009277812, ISICV = 0.998097126835, Amp = 70.5548875458, HC = 3
+Vm = -64.6331384535, Vm STD = 1.36582228277, ISICV = 0, Amp = 0, HC = 1
+Vm = -64.3244377231, Vm STD = 2.20125345581, ISICV = 0.764848907176, Amp = 70.4075152601, HC = 2
+Vm = -62.9179909401, Vm STD = 3.54615950036, ISICV = 0.898332597682, Amp = 68.3195659655, HC = 3
+Vm = -64.1470667363, Vm STD = 2.27681396426, ISICV = 1.17244084426, Amp = 71.5435129433, HC = 3
+Vm = -64.2856944942, Vm STD = 2.32402450548, ISICV = 1.11409952943, Amp = 70.4416063329, HC = 3
+Vm = -64.2241232831, Vm STD = 2.42677974925, ISICV = 1.15072877922, Amp = 70.7897371983, HC = 3
+Vm = -64.1199345016, Vm STD = 2.55307949354, ISICV = 0.92538654828, Amp = 71.4583054521, HC = 3
+Vm = -64.174643178, Vm STD = 2.45235399844, ISICV = 1.27673412897, Amp = 71.3641854488, HC = 3
+Vm = -64.3718006286, Vm STD = 2.34341601307, ISICV = 1.242472605, Amp = 72.1583769829, HC = 3
+Vm = -64.2857039303, Vm STD = 2.32123330381, ISICV = 0.982108751016, Amp = 71.9351215109, HC = 3
+Vm = -64.3607861008, Vm STD = 2.34564535481, ISICV = 1.31414400117, Amp = 70.546732238, HC = 3
+Vm = -64.3401090901, Vm STD = 2.39520279589, ISICV = 1.08260376593, Amp = 70.980238286, HC = 3
+Vm = -64.4633125169, Vm STD = 2.49727368638, ISICV = 1.03798670359, Amp = 69.9162942721, HC = 3
+Vm = -64.289346261, Vm STD = 2.33753250269, ISICV = 1.04333866012, Amp = 70.5983890837, HC = 3
+Vm = -64.3230234066, Vm STD = 2.44261320252, ISICV = 1.16351423813, Amp = 71.0380702196, HC = 3
+Vm = -64.383024774, Vm STD = 2.59418476149, ISICV = 0.697455744697, Amp = 70.3829547439, HC = 2
+Vm = -64.3667651904, Vm STD = 2.41394230763, ISICV = 1.03580714275, Amp = 70.086881616, HC = 3
+Vm = -64.3324907098, Vm STD = 2.43818789342, ISICV = 1.25276529004, Amp = 71.5734135167, HC = 3
+Vm = -64.3551347986, Vm STD = 2.37005292734, ISICV = 1.35009440328, Amp = 71.2470687789, HC = 3
+Vm = -64.437571671, Vm STD = 2.49705376639, ISICV = 0.926731371601, Amp = 70.6827037448, HC = 3
+Vm = -64.4135766473, Vm STD = 2.31725866683, ISICV = 1.08800687877, Amp = 69.3000983154, HC = 3
+Vm = -64.4617102927, Vm STD = 2.49954636277, ISICV = 0.88811985816, Amp = 70.1064731378, HC = 3
+Vm = -64.3111281235, Vm STD = 2.44648840913, ISICV = 1.18401746689, Amp = 70.4829395651, HC = 3
+Vm = -64.4198023236, Vm STD = 2.52702376833, ISICV = 1.04556908316, Amp = 71.526297212, HC = 3
+Vm = -64.4129919338, Vm STD = 2.57966844684, ISICV = 0.867890696582, Amp = 71.5411305795, HC = 3
+Vm = -64.522432059, Vm STD = 2.55940544314, ISICV = 1.04019122065, Amp = 71.6138344056, HC = 3
+Vm = -64.4425033822, Vm STD = 2.5935408524, ISICV = 0.979243759349, Amp = 71.2768814826, HC = 3
+Vm = -64.5964737931, Vm STD = 2.52525723743, ISICV = 0.970568553527, Amp = 71.0550704699, HC = 3
+Vm = -64.4184172763, Vm STD = 2.60893064612, ISICV = 0.936311476749, Amp = 71.2220651811, HC = 3
+Vm = -64.5791176952, Vm STD = 2.52043709722, ISICV = 0.669383654909, Amp = 71.7040949911, HC = 2
+Vm = -64.5371833864, Vm STD = 2.66745235533, ISICV = 0.999525320061, Amp = 71.8595717765, HC = 3
+Vm = -64.5838453765, Vm STD = 2.51972118158, ISICV = 0.99888426382, Amp = 71.1411734335, HC = 3
+Vm = -64.6059987947, Vm STD = 2.49762655641, ISICV = 0.785049604815, Amp = 71.7865441755, HC = 2
+Vm = -64.4631281505, Vm STD = 2.58373392987, ISICV = 1.33872023511, Amp = 70.9836990246, HC = 3
+Vm = -64.6373528995, Vm STD = 2.53041023363, ISICV = 1.03491620535, Amp = 71.8775155111, HC = 3
+Vm = -64.4151014898, Vm STD = 2.63311185106, ISICV = 1.29603995303, Amp = 70.7794530418, HC = 3
+Vm = -64.7324481996, Vm STD = 2.61015078932, ISICV = 1.09921058163, Amp = 72.7179831682, HC = 3
+Vm = -64.7347301347, Vm STD = 2.59788587827, ISICV = 0.985609203909, Amp = 72.1273663354, HC = 3
+Vm = -64.5813488306, Vm STD = 2.58688360428, ISICV = 0.957746571779, Amp = 71.4806343812, HC = 3
+Vm = -64.632012224, Vm STD = 2.70434791183, ISICV = 0.872267296675, Amp = 72.0808170535, HC = 3
+Vm = -64.6687347662, Vm STD = 2.6312279857, ISICV = 0.981265503111, Amp = 71.4882429834, HC = 3
+Vm = -64.6595107756, Vm STD = 2.50815544114, ISICV = 1.02388506244, Amp = 72.4102458122, HC = 3
+Vm = -64.6511210339, Vm STD = 2.68238203755, ISICV = 0.757017463432, Amp = 70.7530622812, HC = 2
+Vm = -64.7203645294, Vm STD = 2.59948299968, ISICV = 0.968260348759, Amp = 72.9172030924, HC = 3
+Vm = -64.7293873629, Vm STD = 2.58764466675, ISICV = 0.827094688255, Amp = 71.0350155924, HC = 3
+Vm = -64.5902715393, Vm STD = 2.58123127644, ISICV = 0.780792935703, Amp = 71.4445397675, HC = 2
+Vm = -64.7015070376, Vm STD = 2.66765624528, ISICV = 0.880337522742, Amp = 71.9201364719, HC = 3
+Vm = -64.6899321227, Vm STD = 2.65791065763, ISICV = 0.948292771595, Amp = 72.0825177992, HC = 3
+Vm = -64.7246010144, Vm STD = 2.60807048069, ISICV = 0.93965886586, Amp = 72.0662687156, HC = 3
+Vm = -64.9063988746, Vm STD = 2.58439950576, ISICV = 0.869203865499, Amp = 72.519674767, HC = 3
+Vm = -64.899085828, Vm STD = 2.56843618846, ISICV = 0.839945530025, Amp = 72.0453410776, HC = 3
+Vm = -64.8626622683, Vm STD = 2.60692378227, ISICV = 0.870488976007, Amp = 72.9441083185, HC = 3
+Vm = -64.8700842278, Vm STD = 2.57569443899, ISICV = 1.04840658929, Amp = 72.9668953226, HC = 3
+Vm = -64.8292508833, Vm STD = 2.66116339641, ISICV = 1.05468900338, Amp = 73.0374108453, HC = 3
+Vm = -63.1509769926, Vm STD = 1.57664340297, ISICV = 0, Amp = 65.0524110585, HC = 1
+Vm = -64.8244534297, Vm STD = 2.63864443518, ISICV = 0.886155326042, Amp = 72.7224752668, HC = 3
+Vm = -64.8512122298, Vm STD = 2.65608734337, ISICV = 0.92989386678, Amp = 73.3505590471, HC = 3
+Vm = -63.5648694339, Vm STD = 1.54431774688, ISICV = 0, Amp = 0, HC = 1
+Vm = -62.9230940127, Vm STD = 1.76890176402, ISICV = 0, Amp = 66.5652772638, HC = 1
+Vm = -62.9671706974, Vm STD = 1.74160911529, ISICV = 0, Amp = 67.0711532809, HC = 1
+Vm = -62.9164992375, Vm STD = 1.85892554346, ISICV = 0.281739686748, Amp = 70.5349212715, HC = 1
+Vm = -62.9102113293, Vm STD = 1.91953861659, ISICV = 1.35978715934, Amp = 68.2226012765, HC = 2
+Vm = -62.8863312454, Vm STD = 1.9857576709, ISICV = 1.55509250326, Amp = 68.983271152, HC = 2
+Vm = -62.8998005176, Vm STD = 1.95035261188, ISICV = 0.823143272281, Amp = 69.4838686619, HC = 2
+Vm = -64.8311844511, Vm STD = 2.67749247433, ISICV = 1.01662554742, Amp = 72.8383540396, HC = 3
+Vm = -64.8378783664, Vm STD = 2.69355874312, ISICV = 1.11196561075, Amp = 72.0877550326, HC = 3
+Vm = -63.0874125156, Vm STD = 1.81148081989, ISICV = 1.0170301789, Amp = 66.5648436375, HC = 2
+Vm = -63.0370973773, Vm STD = 1.89756556698, ISICV = 0, Amp = 69.2253236858, HC = 1
+Vm = -64.8040829131, Vm STD = 2.69749397812, ISICV = 0.8811562421, Amp = 73.7386734883, HC = 3
+Vm = -62.9183485094, Vm STD = 1.96466068244, ISICV = 0.774368524992, Amp = 65.9676178106, HC = 1
+Vm = -63.050405363, Vm STD = 1.63350736769, ISICV = 0, Amp = 69.704244718, HC = 1
+Vm = -63.0921454038, Vm STD = 1.86618135037, ISICV = 1.56630736496, Amp = 68.1699433142, HC = 2
+Vm = -62.9684047544, Vm STD = 2.01821831461, ISICV = 1.3245643605, Amp = 66.7016011724, HC = 2
+Vm = -62.953930695, Vm STD = 2.12462852024, ISICV = 1.27154370661, Amp = 67.967527763, HC = 2
+Vm = -63.0310883382, Vm STD = 1.9727210852, ISICV = 1.05925429871, Amp = 67.1657264872, HC = 2
+Vm = -63.002129448, Vm STD = 1.75408771407, ISICV = 0.691541931722, Amp = 70.8214367727, HC = 1
+Vm = -62.9877273904, Vm STD = 2.10784641113, ISICV = 1.55870310898, Amp = 68.9629512464, HC = 2
+Vm = -63.0166381645, Vm STD = 2.1567027609, ISICV = 1.27824195628, Amp = 68.1733510461, HC = 2
+Vm = -63.1277989888, Vm STD = 2.02614784646, ISICV = 0.793473728882, Amp = 69.3484266926, HC = 1
+Vm = -63.1544961319, Vm STD = 2.06010435571, ISICV = 0.548206644985, Amp = 71.3285151684, HC = 1
+Vm = -63.1374260997, Vm STD = 2.13420251691, ISICV = 1.59922365027, Amp = 68.3904432619, HC = 2
+Vm = -63.148201275, Vm STD = 2.105701547, ISICV = 1.71280732653, Amp = 66.10273483, HC = 2
+Vm = -63.2568279948, Vm STD = 2.00748169329, ISICV = 0.9674847677, Amp = 68.3573692772, HC = 2
+Vm = -63.0610729023, Vm STD = 2.08657245341, ISICV = 1.22153038697, Amp = 68.1249884419, HC = 2
+Vm = -63.1962585218, Vm STD = 2.3733573224, ISICV = 1.17733023288, Amp = 69.7018874698, HC = 3
+Vm = -63.1936417872, Vm STD = 2.24476855754, ISICV = 0.805900369933, Amp = 69.6247360198, HC = 3
+Vm = -63.3547773485, Vm STD = 2.28499349277, ISICV = 1.0092912415, Amp = 69.6392782264, HC = 3
+Vm = -63.1764302246, Vm STD = 2.23502373465, ISICV = 1.22898933026, Amp = 69.7574091671, HC = 3
+Vm = -63.0879563163, Vm STD = 2.30381403401, ISICV = 1.08465565709, Amp = 69.665264958, HC = 3
+Vm = -63.2653130012, Vm STD = 2.31275393214, ISICV = 0.77206482918, Amp = 68.5222234646, HC = 2
+Vm = -63.3739544475, Vm STD = 2.19268662924, ISICV = 0.871381212833, Amp = 68.4967290957, HC = 2
+Vm = -63.2834513795, Vm STD = 2.24447580269, ISICV = 0.623010484748, Amp = 69.002900452, HC = 2
+Vm = -63.1457329744, Vm STD = 2.17716272272, ISICV = 0.962665631788, Amp = 69.2198695598, HC = 2
+Vm = -63.189037756, Vm STD = 2.22778941055, ISICV = 0.897142924761, Amp = 68.7663124619, HC = 3
+Vm = -63.3055015399, Vm STD = 2.35558332497, ISICV = 0.902452289239, Amp = 69.0429600604, HC = 3
+Vm = -63.2200166982, Vm STD = 2.44896037656, ISICV = 0.81218243418, Amp = 68.7604177606, HC = 3
+Vm = -63.3153849086, Vm STD = 2.39742016958, ISICV = 1.10741981875, Amp = 69.4582699878, HC = 3
+Vm = -63.3384523525, Vm STD = 2.39243788987, ISICV = 0.990893658078, Amp = 69.1490058724, HC = 3
+Vm = -63.2643196955, Vm STD = 2.42812545021, ISICV = 0.976472702244, Amp = 70.2119041787, HC = 3
+Vm = -63.3380086083, Vm STD = 2.35888985998, ISICV = 1.05557957724, Amp = 69.3058947325, HC = 3
+Vm = -63.3167365746, Vm STD = 2.38838264895, ISICV = 0.695958121236, Amp = 70.2215125248, HC = 2
+Vm = -63.2797650085, Vm STD = 2.44370068214, ISICV = 0.773061941967, Amp = 68.7184404526, HC = 2
+Vm = -63.3603617163, Vm STD = 2.40840298772, ISICV = 1.08250550843, Amp = 69.4379745094, HC = 3
+Vm = -63.3228112459, Vm STD = 2.45486765474, ISICV = 0.988318527604, Amp = 69.3759963281, HC = 3
+Vm = -63.4985412673, Vm STD = 2.29617004211, ISICV = 1.0406039826, Amp = 70.3026458703, HC = 3
+Vm = -63.4062062948, Vm STD = 2.50192628776, ISICV = 1.07863018459, Amp = 70.7803352463, HC = 3
+Vm = -63.3490361745, Vm STD = 2.50694853401, ISICV = 0.76993573596, Amp = 70.5180046318, HC = 2
+Vm = -63.3393469563, Vm STD = 2.49697499608, ISICV = 0.839622373756, Amp = 69.4408310874, HC = 3
+Vm = -63.4165128217, Vm STD = 2.47108252456, ISICV = 0.913406902997, Amp = 71.2616740823, HC = 3
+Vm = -63.5231685895, Vm STD = 2.51515318108, ISICV = 0.80161650075, Amp = 70.4278528226, HC = 3
+Vm = -63.4778202046, Vm STD = 2.52308732715, ISICV = 1.41137798374, Amp = 69.655693326, HC = 3
+Vm = -63.4875589067, Vm STD = 2.51887049204, ISICV = 0.999245181746, Amp = 69.7853654153, HC = 3
+Vm = -63.5158835325, Vm STD = 2.49929745105, ISICV = 1.14565155269, Amp = 68.5811380955, HC = 3
+Vm = -63.4971443576, Vm STD = 2.4849276599, ISICV = 0.934608842433, Amp = 70.4218019532, HC = 3
+Vm = -63.4601215276, Vm STD = 2.59940674839, ISICV = 0.938429091834, Amp = 70.833404006, HC = 3
+Vm = -63.4513603375, Vm STD = 2.61125528591, ISICV = 0.893112127544, Amp = 71.8042170484, HC = 3
+Vm = -63.5536829115, Vm STD = 2.57126751809, ISICV = 0.996859043812, Amp = 70.3262861168, HC = 3
+Vm = -63.4836197349, Vm STD = 2.5611749271, ISICV = 0.800766749232, Amp = 70.5234271173, HC = 3
+Vm = -63.607312895, Vm STD = 2.66051139985, ISICV = 0.902933657915, Amp = 70.1938522337, HC = 3
+Vm = -63.6599954405, Vm STD = 2.61922272661, ISICV = 0.799311959773, Amp = 70.3079633258, HC = 2
+Vm = -63.7098768431, Vm STD = 2.56304107241, ISICV = 0.768830846146, Amp = 71.1335178616, HC = 2
+Vm = -63.7863751858, Vm STD = 2.47205085306, ISICV = 0.83321910429, Amp = 70.0615913495, HC = 3
+Vm = -63.6382924366, Vm STD = 2.48773120808, ISICV = 0.9536530458, Amp = 69.9855514159, HC = 3
+Vm = -63.6158885561, Vm STD = 2.72121783931, ISICV = 0.754635995106, Amp = 70.5876286821, HC = 2
+Vm = -63.5814288778, Vm STD = 2.69747118129, ISICV = 1.00549930176, Amp = 69.9412116786, HC = 3
+Vm = -63.6352232391, Vm STD = 2.67167196948, ISICV = 0.786840907449, Amp = 70.7376454704, HC = 2
+Vm = -63.6477945214, Vm STD = 2.75498691232, ISICV = 0.927991838191, Amp = 70.9473783631, HC = 3
+Vm = -63.7235095889, Vm STD = 2.6684268341, ISICV = 0.678982566559, Amp = 71.0045190273, HC = 2
+Vm = -63.6818813039, Vm STD = 2.6900077188, ISICV = 0.823372222449, Amp = 71.3635579876, HC = 3
+Vm = -63.8576284623, Vm STD = 2.66493426309, ISICV = 0.918875576776, Amp = 71.1594835425, HC = 3
+Vm = -63.7252177669, Vm STD = 2.79687079245, ISICV = 0.909294965829, Amp = 70.1450242791, HC = 3
+Vm = -63.8204405583, Vm STD = 2.66958103688, ISICV = 0.79240782031, Amp = 70.4234854156, HC = 2
+Vm = -63.880715198, Vm STD = 2.65017059287, ISICV = 0.836013132282, Amp = 71.2102945997, HC = 3
+Vm = -63.8451390496, Vm STD = 2.68201617857, ISICV = 0.865943822943, Amp = 71.3668755663, HC = 3
+Vm = -63.6742569316, Vm STD = 2.8424020542, ISICV = 0.872345115983, Amp = 71.0380694667, HC = 3
+Vm = -63.9121081442, Vm STD = 2.72169102521, ISICV = 0.774240807093, Amp = 71.2633587766, HC = 2
+Vm = -63.8826296758, Vm STD = 2.7540286458, ISICV = 0.850481108815, Amp = 71.3881342312, HC = 3
+Vm = -63.9074412178, Vm STD = 2.70382734937, ISICV = 0.816554549641, Amp = 70.9276889495, HC = 3
+Vm = -63.8837599209, Vm STD = 2.72470325807, ISICV = 0.937163248866, Amp = 71.5143092972, HC = 3
+Vm = -63.8530311574, Vm STD = 2.75577386422, ISICV = 0.997959016978, Amp = 71.4107015553, HC = 3
+Vm = -63.9254964697, Vm STD = 2.66746060082, ISICV = 0.931012473399, Amp = 72.2520583968, HC = 3
+Vm = -63.7635138434, Vm STD = 2.83953379495, ISICV = 0.95994425977, Amp = 70.2878164653, HC = 3
+Vm = -63.9743071629, Vm STD = 2.70695460316, ISICV = 0.862150371206, Amp = 70.85202613, HC = 3
+Vm = -63.9368854703, Vm STD = 2.69274521365, ISICV = 0.884349193393, Amp = 71.014172397, HC = 3
+Vm = -63.8468866256, Vm STD = 2.82210013381, ISICV = 0.965195926958, Amp = 71.4020337159, HC = 3
+Vm = -63.9078528999, Vm STD = 2.79097288874, ISICV = 0.858796307634, Amp = 71.0256717942, HC = 3
+Vm = -63.8993284463, Vm STD = 2.80925249462, ISICV = 0.909253876668, Amp = 71.3219387701, HC = 3
+Vm = -63.8974063186, Vm STD = 2.84419819508, ISICV = 0.916950805137, Amp = 72.3480353846, HC = 3
+Vm = -64.0433701322, Vm STD = 2.74009847545, ISICV = 0.841208027949, Amp = 71.1328108823, HC = 3
+Vm = -63.9776574388, Vm STD = 2.74350821014, ISICV = 0.84042558173, Amp = 71.8197666824, HC = 3
+Vm = -64.129356708, Vm STD = 2.66586822639, ISICV = 0.937357982508, Amp = 71.4353099675, HC = 3
+Vm = -64.065787375, Vm STD = 2.74792837206, ISICV = 0.911715845021, Amp = 71.4879639156, HC = 3
+Vm = -64.0150679091, Vm STD = 2.77300544201, ISICV = 0.834433875815, Amp = 71.6691322231, HC = 3
+Vm = -64.1060889469, Vm STD = 2.73467234093, ISICV = 0.841075265207, Amp = 72.7602284114, HC = 3
+Vm = -64.0777189874, Vm STD = 2.78051909434, ISICV = 0.761758210596, Amp = 72.077243962, HC = 2
+Vm = -64.0343329631, Vm STD = 2.81839676186, ISICV = 0.926678497074, Amp = 71.8981655335, HC = 3
+Vm = -63.417637148, Vm STD = 1.67713058755, ISICV = 0, Amp = 68.6353064447, HC = 1
+Vm = -64.0110719802, Vm STD = 2.84055122966, ISICV = 0.78710449741, Amp = 71.3630721385, HC = 2
+Vm = -63.3999512354, Vm STD = 1.70140621579, ISICV = 0.470784588267, Amp = 69.4236034051, HC = 1
+Vm = -63.3628834819, Vm STD = 1.84522158714, ISICV = 0.706048256952, Amp = 68.3076782811, HC = 1
+Vm = -63.2274967421, Vm STD = 1.96959587292, ISICV = 0.631691954559, Amp = 70.1149688195, HC = 1
+Vm = -63.3315827972, Vm STD = 1.9466357571, ISICV = 1.37610409557, Amp = 68.6825699729, HC = 2
+Vm = -64.1623229889, Vm STD = 2.76509789017, ISICV = 0.87115708302, Amp = 71.6814525039, HC = 3
+Vm = -64.0909794522, Vm STD = 2.81545002024, ISICV = 0.826245312109, Amp = 72.2191503111, HC = 3
+Vm = -64.0253650024, Vm STD = 1.45931634042, ISICV = 0, Amp = 0, HC = 1
+Vm = -64.0168277792, Vm STD = 1.47203702708, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.3993126184, Vm STD = 1.510030833, ISICV = 0, Amp = 72.7646901358, HC = 1
+Vm = -63.2172884636, Vm STD = 1.98384550885, ISICV = 0.85482815746, Amp = 65.4203187935, HC = 2
+Vm = -63.4357500788, Vm STD = 1.55061374221, ISICV = 0, Amp = 68.7202422141, HC = 1
+Vm = -63.4912408844, Vm STD = 1.85717343343, ISICV = 0.575003827786, Amp = 69.4603695531, HC = 1
+Vm = -63.5104308032, Vm STD = 1.71109499052, ISICV = 0, Amp = 64.8311013482, HC = 1
+Vm = -63.3193398494, Vm STD = 1.92435134004, ISICV = 0, Amp = 73.3601191909, HC = 1
+Vm = -63.4744081639, Vm STD = 1.77473046952, ISICV = 1.33929714505, Amp = 71.287152201, HC = 2
+Vm = -63.4837090265, Vm STD = 1.67610767173, ISICV = 0, Amp = 62.1044417319, HC = 1
+Vm = -63.4335133252, Vm STD = 1.94040599136, ISICV = 1.55043189057, Amp = 69.2356290853, HC = 2
+Vm = -63.4315679996, Vm STD = 1.98772956117, ISICV = 1.26357641991, Amp = 68.6164935798, HC = 2
+Vm = -63.4050851162, Vm STD = 2.06725816174, ISICV = 1.14005546335, Amp = 66.867503071, HC = 2
+Vm = -63.3236405266, Vm STD = 1.84199568127, ISICV = 0, Amp = 71.3489621271, HC = 1
+Vm = -63.3134546706, Vm STD = 1.84621856406, ISICV = 0, Amp = 72.3841956004, HC = 1
+Vm = -63.599637753, Vm STD = 1.9197562985, ISICV = 0.953296497293, Amp = 68.4581243306, HC = 2
+Vm = -63.373177535, Vm STD = 2.06065339542, ISICV = 1.60568569513, Amp = 69.3662466304, HC = 2
+Vm = -63.3654908847, Vm STD = 2.04583159061, ISICV = 0.95287923525, Amp = 67.4859365351, HC = 2
+Vm = -63.368681351, Vm STD = 2.10901513502, ISICV = 1.47433893895, Amp = 67.0261622213, HC = 2
+Vm = -63.4810274706, Vm STD = 2.04255660251, ISICV = 0.92529437786, Amp = 68.9792375332, HC = 2
+Vm = -63.5406336088, Vm STD = 2.11277825087, ISICV = 1.102219442, Amp = 69.3161620729, HC = 2
+Vm = -63.5274668989, Vm STD = 2.18579762665, ISICV = 1.0023437127, Amp = 68.7506160402, HC = 2
+Vm = -63.5397553902, Vm STD = 2.11241310696, ISICV = 1.3099365935, Amp = 68.9661150349, HC = 2
+Vm = -63.7109936335, Vm STD = 2.10168453073, ISICV = 0.860964281321, Amp = 70.876313119, HC = 2
+Vm = -63.4608254164, Vm STD = 2.25604834157, ISICV = 0.881951759288, Amp = 70.2337066794, HC = 3
+Vm = -63.4784973337, Vm STD = 2.20083615559, ISICV = 0.807742637316, Amp = 68.7653169881, HC = 3
+Vm = -63.6101936745, Vm STD = 2.18722445939, ISICV = 0.695574846393, Amp = 69.3384901832, HC = 1
+Vm = -63.6519973521, Vm STD = 2.19936424702, ISICV = 0.867610729263, Amp = 71.2456319589, HC = 2
+Vm = -63.6895684372, Vm STD = 2.1850940071, ISICV = 0.824615576217, Amp = 72.1845362656, HC = 2
+Vm = -63.5762386273, Vm STD = 2.34899839921, ISICV = 1.38234155762, Amp = 69.6652617382, HC = 3
+Vm = -63.6604790836, Vm STD = 2.24392223735, ISICV = 0.92035965384, Amp = 70.1561388159, HC = 3
+Vm = -63.6305419904, Vm STD = 2.37148629887, ISICV = 0.90125485205, Amp = 70.3043948709, HC = 3
+Vm = -63.7899525181, Vm STD = 2.27568894326, ISICV = 1.01856903673, Amp = 68.4200811937, HC = 3
+Vm = -63.5937237749, Vm STD = 2.40218099659, ISICV = 0.901174936849, Amp = 70.7180109905, HC = 3
+Vm = -63.5887132447, Vm STD = 2.38359333726, ISICV = 1.02022688334, Amp = 69.5662059787, HC = 3
+Vm = -63.8011774793, Vm STD = 2.27494543266, ISICV = 1.0482322922, Amp = 68.4289039369, HC = 3
+Vm = -63.7511802723, Vm STD = 2.34845277185, ISICV = 1.18067455147, Amp = 71.5753113218, HC = 3
+Vm = -63.6535299491, Vm STD = 2.36955443174, ISICV = 0.925603597052, Amp = 70.0550290092, HC = 3
+Vm = -63.7380374559, Vm STD = 2.33443781309, ISICV = 1.13666842662, Amp = 69.6417818026, HC = 3
+Vm = -63.7023112445, Vm STD = 2.39862909464, ISICV = 1.4142549442, Amp = 69.7427682951, HC = 3
+Vm = -63.7168492085, Vm STD = 2.44581238947, ISICV = 1.21157159035, Amp = 70.699648333, HC = 3
+Vm = -63.7660348503, Vm STD = 2.41549961271, ISICV = 0.926441629681, Amp = 70.9240863637, HC = 3
+Vm = -63.7030178646, Vm STD = 2.46861558587, ISICV = 0.931482355912, Amp = 71.3401348528, HC = 3
+Vm = -63.8959637409, Vm STD = 2.43171517277, ISICV = 0.968444276649, Amp = 69.4713050391, HC = 3
+Vm = -63.8569967828, Vm STD = 2.42859992632, ISICV = 1.2885888737, Amp = 70.8432061997, HC = 3
+Vm = -63.8008900059, Vm STD = 2.52411884217, ISICV = 1.4809418896, Amp = 70.5217686237, HC = 3
+Vm = -63.7667149951, Vm STD = 2.47439682642, ISICV = 0.935210057616, Amp = 70.0595664171, HC = 3
+Vm = -63.8324291389, Vm STD = 2.5489928187, ISICV = 1.05382997467, Amp = 70.3908833676, HC = 3
+Vm = -63.883657913, Vm STD = 2.48344255327, ISICV = 0.878184466022, Amp = 70.4367244244, HC = 3
+Vm = -63.785236827, Vm STD = 2.41352922497, ISICV = 1.01643914893, Amp = 70.5592588199, HC = 3
+Vm = -63.8002661022, Vm STD = 2.59065519415, ISICV = 1.18841978752, Amp = 70.9231220825, HC = 3
+Vm = -63.8756816602, Vm STD = 2.49249564463, ISICV = 0.915053152119, Amp = 71.2502486263, HC = 3
+Vm = -63.9192798236, Vm STD = 2.49014751689, ISICV = 1.10385980342, Amp = 70.5972112345, HC = 3
+Vm = -63.9078713431, Vm STD = 2.40942222248, ISICV = 1.23795425292, Amp = 70.8208544084, HC = 3
+Vm = -63.8307500641, Vm STD = 2.57447947047, ISICV = 1.09319985967, Amp = 71.0426320889, HC = 3
+Vm = -64.0676274165, Vm STD = 2.49692407036, ISICV = 0.908265356323, Amp = 70.4715458039, HC = 3
+Vm = -63.9392724348, Vm STD = 2.62776537752, ISICV = 0.797436256424, Amp = 71.1435640774, HC = 2
+Vm = -64.008426704, Vm STD = 2.55238285053, ISICV = 0.903284669835, Amp = 69.4821875447, HC = 3
+Vm = -63.9606122306, Vm STD = 2.6089214741, ISICV = 1.00042544758, Amp = 69.4482738421, HC = 3
+Vm = -64.0482673567, Vm STD = 2.61406833959, ISICV = 0.742608507539, Amp = 70.7665685628, HC = 2
+Vm = -63.9724702556, Vm STD = 2.61234476816, ISICV = 0.788632865067, Amp = 69.8447269185, HC = 2
+Vm = -64.0243713733, Vm STD = 2.64172933685, ISICV = 0.843488840814, Amp = 70.4373299691, HC = 3
+Vm = -64.021605822, Vm STD = 2.63042481655, ISICV = 0.805623081797, Amp = 70.4447457736, HC = 3
+Vm = -63.9476857369, Vm STD = 2.67439287498, ISICV = 0.771423568204, Amp = 70.1150657037, HC = 2
+Vm = -63.9997571725, Vm STD = 2.67878101863, ISICV = 0.803563398844, Amp = 71.5091939807, HC = 3
+Vm = -64.0830892392, Vm STD = 2.64661878021, ISICV = 1.11692188203, Amp = 70.8551074135, HC = 3
+Vm = -64.1701084972, Vm STD = 2.56760955257, ISICV = 0.889003296604, Amp = 69.3591945073, HC = 3
+Vm = -64.1499217861, Vm STD = 2.64354295284, ISICV = 0.900625404801, Amp = 69.9614527398, HC = 3
+Vm = -64.2131858186, Vm STD = 2.55778357042, ISICV = 0.914381123051, Amp = 70.1772281168, HC = 3
+Vm = -64.1307634622, Vm STD = 2.73728597047, ISICV = 0.768134652642, Amp = 72.0360262013, HC = 2
+Vm = -64.090694514, Vm STD = 2.73782261161, ISICV = 1.2467348758, Amp = 69.9884927971, HC = 3
+Vm = -64.1598390593, Vm STD = 2.63910206218, ISICV = 0.955441242365, Amp = 70.5296039437, HC = 3
+Vm = -64.1807391809, Vm STD = 2.62669094215, ISICV = 0.934342306708, Amp = 70.7149804848, HC = 3
+Vm = -64.2164434225, Vm STD = 2.63008286039, ISICV = 0.641013282047, Amp = 71.2185396777, HC = 2
+Vm = -64.1945903041, Vm STD = 2.65065813789, ISICV = 0.846031267519, Amp = 71.7157575379, HC = 3
+Vm = -64.2708761509, Vm STD = 2.6043594005, ISICV = 0.901336935049, Amp = 70.8767519072, HC = 3
+Vm = -64.266653889, Vm STD = 2.6545278487, ISICV = 0.912807276847, Amp = 71.7242318356, HC = 3
+Vm = -64.2222511447, Vm STD = 2.63687781888, ISICV = 0.96080503038, Amp = 70.6660277476, HC = 3
+Vm = -64.256923371, Vm STD = 2.66013472021, ISICV = 0.757657840868, Amp = 72.0951078595, HC = 2
+Vm = -64.2558920128, Vm STD = 2.69616325351, ISICV = 0.772635632764, Amp = 72.0873907463, HC = 2
+Vm = -64.2313117743, Vm STD = 2.68878283073, ISICV = 0.926635152849, Amp = 71.1197437424, HC = 3
+Vm = -64.2599098718, Vm STD = 2.67943898098, ISICV = 0.999131904248, Amp = 72.0839936985, HC = 3
+Vm = -64.2367222141, Vm STD = 2.74545594553, ISICV = 0.81420217234, Amp = 71.5797336074, HC = 3
+Vm = -64.1962362641, Vm STD = 2.75373280985, ISICV = 0.780716525577, Amp = 71.6553648749, HC = 2
+Vm = -64.2538571637, Vm STD = 2.73741673546, ISICV = 0.848531297164, Amp = 72.3946392642, HC = 3
+Vm = -64.4602777008, Vm STD = 2.7147905743, ISICV = 0.841527967527, Amp = 71.6184324027, HC = 3
+Vm = -64.466357197, Vm STD = 2.6676584309, ISICV = 0.797068460014, Amp = 71.1807513846, HC = 2
+Vm = -64.4324116282, Vm STD = 2.69720877904, ISICV = 0.854369922801, Amp = 72.5556140717, HC = 3
+Vm = -64.3354786709, Vm STD = 2.82165108086, ISICV = 0.928388443366, Amp = 71.5979627823, HC = 3
+Vm = -64.4006745035, Vm STD = 2.7866224277, ISICV = 1.04977627274, Amp = 71.4954685599, HC = 3
+Vm = -61.9353278041, Vm STD = 1.78027042723, ISICV = 0.96493331794, Amp = 70.6240019044, HC = 2
+Vm = -64.3619923819, Vm STD = 2.81775857027, ISICV = 0.84821640691, Amp = 72.4578801028, HC = 3
+Vm = -64.4025114127, Vm STD = 2.80526502298, ISICV = 0.915867840652, Amp = 72.9028052085, HC = 3
+Vm = -61.9948132099, Vm STD = 1.65907120118, ISICV = 0.306192281017, Amp = 67.4778489821, HC = 1
+Vm = -61.8847395113, Vm STD = 1.8484627324, ISICV = 1.09037831259, Amp = 65.754660088, HC = 2
+Vm = -61.8477211599, Vm STD = 1.80622680202, ISICV = 0.231078370871, Amp = 64.0858932497, HC = 1
+Vm = -61.963671937, Vm STD = 1.66498669775, ISICV = 0.503487066131, Amp = 66.1268397539, HC = 1
+Vm = -64.4135487597, Vm STD = 2.73445890112, ISICV = 0.837598693238, Amp = 72.5679185093, HC = 3
+Vm = -61.9266192345, Vm STD = 1.6938562867, ISICV = 1.11779652613, Amp = 66.2553608678, HC = 2
+Vm = -61.8577387689, Vm STD = 1.90741918266, ISICV = 1.00739033025, Amp = 67.5972126354, HC = 2
+Vm = -64.4267194859, Vm STD = 2.79905790203, ISICV = 0.88335901549, Amp = 72.4733866333, HC = 3
+Vm = -64.4260805228, Vm STD = 2.73134958274, ISICV = 0.899675694276, Amp = 72.2469764049, HC = 3
+Vm = -61.8392605714, Vm STD = 1.89488669651, ISICV = 0.802973097766, Amp = 65.712997769, HC = 2
+Vm = -61.8471261186, Vm STD = 1.90033392848, ISICV = 0.713876652549, Amp = 68.34436688, HC = 1
+Vm = -61.8449109493, Vm STD = 1.89239581054, ISICV = 0.805665810186, Amp = 68.3009479424, HC = 2
+Vm = -61.8514928109, Vm STD = 1.88720975903, ISICV = 0.799320808888, Amp = 65.331860688, HC = 1
+Vm = -61.8616688131, Vm STD = 1.89948199216, ISICV = 1.19612182522, Amp = 67.1015530269, HC = 2
+Vm = -61.8675216268, Vm STD = 1.96857313586, ISICV = 1.16122205848, Amp = 64.5703307168, HC = 2
+Vm = -61.9268904455, Vm STD = 1.9616281732, ISICV = 1.13142905966, Amp = 66.9298495566, HC = 2
+Vm = -61.9239351381, Vm STD = 1.94950057458, ISICV = 0.893506859916, Amp = 64.2787055792, HC = 2
+Vm = -61.8685035586, Vm STD = 2.04056074938, ISICV = 0.788789781787, Amp = 66.1232353086, HC = 1
+Vm = -61.8811423723, Vm STD = 1.98362053859, ISICV = 0.757469875709, Amp = 65.7459539252, HC = 1
+Vm = -61.8201637384, Vm STD = 2.08491699163, ISICV = 1.43365804836, Amp = 67.4841049352, HC = 2
+Vm = -61.8240603598, Vm STD = 2.06654694316, ISICV = 0.882346032339, Amp = 66.4733053574, HC = 2
+Vm = -61.8365155723, Vm STD = 2.07817573875, ISICV = 0.897729571552, Amp = 67.7342017483, HC = 2
+Vm = -61.9061773098, Vm STD = 2.03774294908, ISICV = 0.754402556178, Amp = 65.7920291969, HC = 1
+Vm = -61.8831260858, Vm STD = 2.10727341709, ISICV = 0.915725889752, Amp = 65.0840085688, HC = 2
+Vm = -61.8946756568, Vm STD = 2.16436808455, ISICV = 0.842249612506, Amp = 65.8642673617, HC = 2
+Vm = -61.9038353041, Vm STD = 2.09378400847, ISICV = 1.41887551605, Amp = 65.5661823078, HC = 2
+Vm = -61.9128311929, Vm STD = 2.09922568329, ISICV = 0.965382927169, Amp = 66.3614502327, HC = 2
+Vm = -61.9495631499, Vm STD = 2.03247298221, ISICV = 1.38889528107, Amp = 64.7622131085, HC = 2
+Vm = -61.8818060324, Vm STD = 2.13170475584, ISICV = 0.889788883875, Amp = 65.2836503963, HC = 2
+Vm = -61.9232441022, Vm STD = 2.12687985023, ISICV = 0.84890837455, Amp = 65.3863887207, HC = 2
+Vm = -61.8903267286, Vm STD = 2.15062322602, ISICV = 0.87736858511, Amp = 65.1955345241, HC = 2
+Vm = -61.9114186608, Vm STD = 2.14738487254, ISICV = 1.17155508818, Amp = 64.9023622858, HC = 2
+Vm = -61.9551118761, Vm STD = 2.21199255107, ISICV = 0.854445037666, Amp = 67.0141412932, HC = 3
+Vm = -62.0423551645, Vm STD = 2.16476597106, ISICV = 0.892865674293, Amp = 67.479133105, HC = 2
+Vm = -61.9962495384, Vm STD = 2.2343998546, ISICV = 0.815832954191, Amp = 66.2226995046, HC = 3
+Vm = -62.0405304271, Vm STD = 2.24246904146, ISICV = 0.893235679632, Amp = 66.4985803601, HC = 3
+Vm = -62.083187742, Vm STD = 2.23059934211, ISICV = 0.914395541543, Amp = 66.9714985269, HC = 3
+Vm = -62.0108082156, Vm STD = 2.29551431734, ISICV = 0.729668765996, Amp = 68.0643449725, HC = 2
+Vm = -61.9741544651, Vm STD = 2.33463441727, ISICV = 0.992561438618, Amp = 66.2439565791, HC = 3
+Vm = -61.9978370753, Vm STD = 2.29675051173, ISICV = 1.03987058096, Amp = 67.4214280413, HC = 3
+Vm = -62.0123694078, Vm STD = 2.30348942672, ISICV = 0.734369373148, Amp = 68.152580811, HC = 2
+Vm = -62.0482624567, Vm STD = 2.29350711435, ISICV = 1.02041433705, Amp = 66.7862805882, HC = 3
+Vm = -62.0193628909, Vm STD = 2.31020365964, ISICV = 0.756818596473, Amp = 66.0910062281, HC = 2
+Vm = -62.0401974448, Vm STD = 2.32417951415, ISICV = 1.13268589086, Amp = 66.1486505656, HC = 3
+Vm = -62.0778952314, Vm STD = 2.29926656102, ISICV = 1.06200647702, Amp = 66.8285375397, HC = 3
+Vm = -62.0363409407, Vm STD = 2.36747932084, ISICV = 1.11165076357, Amp = 66.2541738149, HC = 3
+Vm = -62.0428392079, Vm STD = 2.38145124982, ISICV = 1.01333037969, Amp = 66.3396254338, HC = 3
+Vm = -62.0287276248, Vm STD = 2.46100534757, ISICV = 0.993725837285, Amp = 66.6076055207, HC = 3
+Vm = -62.2139895073, Vm STD = 2.43822858592, ISICV = 0.731376051733, Amp = 67.6270487171, HC = 2
+Vm = -62.0838150289, Vm STD = 2.30651020263, ISICV = 0.874100411071, Amp = 65.6129419472, HC = 3
+Vm = -62.0164542515, Vm STD = 2.40630301887, ISICV = 0.967531311795, Amp = 64.9208317507, HC = 3
+Vm = -62.0016627555, Vm STD = 2.43974248055, ISICV = 0.990684920819, Amp = 66.7815464925, HC = 3
+Vm = -62.1192655134, Vm STD = 2.51177170281, ISICV = 0.866327959569, Amp = 66.7489445343, HC = 3
+Vm = -62.1474884598, Vm STD = 2.52964731595, ISICV = 0.886716548443, Amp = 66.4919293746, HC = 3
+Vm = -62.0286361641, Vm STD = 2.40456429918, ISICV = 1.09489372868, Amp = 67.5652206879, HC = 3
+Vm = -62.2377103895, Vm STD = 2.42278255501, ISICV = 1.07091804011, Amp = 66.3947625863, HC = 3
+Vm = -62.264420875, Vm STD = 2.42714220621, ISICV = 0.835705779237, Amp = 68.1722469154, HC = 3
+Vm = -62.1470088335, Vm STD = 2.56528115163, ISICV = 0.812813712072, Amp = 67.0497235644, HC = 3
+Vm = -62.156100543, Vm STD = 2.54445675206, ISICV = 0.810838003077, Amp = 67.6426952866, HC = 3
+Vm = -62.2437521935, Vm STD = 2.46874614182, ISICV = 0.684128322376, Amp = 67.8145974956, HC = 2
+Vm = -62.219394202, Vm STD = 2.50742360095, ISICV = 0.841551579105, Amp = 66.4939378615, HC = 3
+Vm = -62.2475945892, Vm STD = 2.55107495048, ISICV = 0.910866562639, Amp = 69.4961207838, HC = 3
+Vm = -62.1746790051, Vm STD = 2.5445108212, ISICV = 0.725214861064, Amp = 67.1661880308, HC = 2
+Vm = -62.2428067592, Vm STD = 2.57933765685, ISICV = 0.875865931513, Amp = 68.437781715, HC = 3
+Vm = -62.2599715185, Vm STD = 2.56789238177, ISICV = 0.769490188174, Amp = 68.3062259837, HC = 2
+Vm = -62.1959947813, Vm STD = 2.61089958445, ISICV = 0.724847703761, Amp = 67.5139449486, HC = 2
+Vm = -62.3711213405, Vm STD = 2.52875969929, ISICV = 0.919353562541, Amp = 67.8297291296, HC = 3
+Vm = -62.2794324367, Vm STD = 2.56282177754, ISICV = 1.05232361389, Amp = 68.1289148463, HC = 3
+Vm = -62.3115430202, Vm STD = 2.57507192527, ISICV = 0.986239509082, Amp = 68.111423084, HC = 3
+Vm = -62.3274126847, Vm STD = 2.56097983734, ISICV = 0.776886492375, Amp = 67.9882702185, HC = 2
+Vm = -62.3071221477, Vm STD = 2.54229346885, ISICV = 0.995957605079, Amp = 68.0291860592, HC = 3
+Vm = -62.2952183695, Vm STD = 2.62776643978, ISICV = 0.777941034344, Amp = 67.8095366811, HC = 2
+Vm = -62.2900576578, Vm STD = 2.56194225713, ISICV = 1.01261932775, Amp = 67.4957741561, HC = 3
+Vm = -62.4128659824, Vm STD = 2.61268061806, ISICV = 0.971209820876, Amp = 67.197408385, HC = 3
+Vm = -62.413361399, Vm STD = 2.60518892086, ISICV = 0.891490603917, Amp = 67.9162650093, HC = 3
+Vm = -62.3863438573, Vm STD = 2.6127393378, ISICV = 0.873444114634, Amp = 67.0394678137, HC = 3
+Vm = -62.3959375992, Vm STD = 2.62108531541, ISICV = 0.883366085514, Amp = 67.3395780732, HC = 3
+Vm = -62.3801452194, Vm STD = 2.6244486563, ISICV = 0.882599685723, Amp = 68.8968725327, HC = 3
+Vm = -62.4494282444, Vm STD = 2.62549984149, ISICV = 0.934723681532, Amp = 68.1796674759, HC = 3
+Vm = -62.2784977551, Vm STD = 2.70930120969, ISICV = 0.889136660978, Amp = 67.9841106527, HC = 3
+Vm = -62.3109458178, Vm STD = 2.658236973, ISICV = 0.860709804255, Amp = 68.1992017197, HC = 3
+Vm = -62.3650912116, Vm STD = 2.65185925965, ISICV = 0.965762936841, Amp = 67.839866867, HC = 3
+Vm = -62.4044207594, Vm STD = 2.73346337752, ISICV = 0.829596520948, Amp = 68.2774921795, HC = 3
+Vm = -62.3627332641, Vm STD = 2.77629706535, ISICV = 0.857715616983, Amp = 67.4334920082, HC = 3
+Vm = -62.3929172876, Vm STD = 2.76678951812, ISICV = 0.771705386639, Amp = 67.7449511862, HC = 2
+Vm = -62.4325143959, Vm STD = 2.76499150713, ISICV = 1.00957775179, Amp = 67.9999407281, HC = 3
+Vm = -62.484208446, Vm STD = 2.72707073927, ISICV = 0.866146204054, Amp = 68.2572138538, HC = 3
+Vm = -62.4599894077, Vm STD = 2.72410911574, ISICV = 0.894493251695, Amp = 67.7679121221, HC = 3
+Vm = -62.5313942176, Vm STD = 2.73267984072, ISICV = 0.928583545674, Amp = 66.9932041587, HC = 3
+Vm = -62.46425336, Vm STD = 2.76209552031, ISICV = 0.819533587323, Amp = 67.716564862, HC = 3
+Vm = -62.5350452642, Vm STD = 2.72239269369, ISICV = 0.864175031253, Amp = 68.0792154704, HC = 3
+Vm = -62.6192298167, Vm STD = 2.76605121564, ISICV = 0.720585287611, Amp = 67.5070648991, HC = 2
+Vm = -63.9942417764, Vm STD = 1.39348428074, ISICV = 0, Amp = 63.1694563651, HC = 1
+Vm = -64.5253202857, Vm STD = 1.33387326445, ISICV = 0, Amp = 0, HC = 1
+Vm = -62.577192311, Vm STD = 2.82747346034, ISICV = 0.967105751868, Amp = 68.8346762325, HC = 3
+Vm = -64.4759249394, Vm STD = 1.41245853136, ISICV = 0, Amp = 0, HC = 1
+Vm = -62.6054216867, Vm STD = 2.83861969449, ISICV = 0.898047035226, Amp = 68.956474693, HC = 3
+Vm = -62.5847074038, Vm STD = 2.89844325957, ISICV = 0.839571388266, Amp = 68.2494374914, HC = 3
+Vm = -62.5333749065, Vm STD = 2.88698252612, ISICV = 0.948331954192, Amp = 68.1998834867, HC = 3
+Vm = -62.5664050859, Vm STD = 2.86156382969, ISICV = 0.846481650813, Amp = 68.9205912933, HC = 3
+Vm = -62.4148711031, Vm STD = 2.80782324478, ISICV = 1.05353397291, Amp = 67.8749549106, HC = 3
+Vm = -64.4520819822, Vm STD = 1.42477058493, ISICV = 0, Amp = 0, HC = 1
+Vm = -62.6216901515, Vm STD = 2.84661445593, ISICV = 0.996449276949, Amp = 68.3522726407, HC = 3
+Vm = -63.8344384584, Vm STD = 1.55182047072, ISICV = 0, Amp = 70.8558389839, HC = 1
+Vm = -62.6118191914, Vm STD = 2.86311329226, ISICV = 0.770487029992, Amp = 67.9251825083, HC = 2
+Vm = -62.6151568603, Vm STD = 2.89781444212, ISICV = 0.778254634909, Amp = 68.0935028455, HC = 2
+Vm = -64.4767833409, Vm STD = 1.39740322095, ISICV = 0, Amp = 0, HC = 1
+Vm = -62.6235868578, Vm STD = 2.83897415178, ISICV = 0.87670540307, Amp = 68.6494402082, HC = 3
+Vm = -63.8433036638, Vm STD = 1.62571243177, ISICV = 0, Amp = 64.15406191, HC = 1
+Vm = -63.8148940576, Vm STD = 1.60453808649, ISICV = 0, Amp = 67.9523245194, HC = 1
+Vm = -63.7810312565, Vm STD = 1.67237687984, ISICV = 0, Amp = 71.0807608138, HC = 1
+Vm = -64.3887187776, Vm STD = 1.58051164339, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.9485276265, Vm STD = 1.60156282063, ISICV = 0, Amp = 70.7187667591, HC = 1
+Vm = -63.9931675511, Vm STD = 1.60503376572, ISICV = 0, Amp = 70.0419588807, HC = 1
+Vm = -63.9341867167, Vm STD = 1.62917266196, ISICV = 0, Amp = 69.0561737639, HC = 1
+Vm = -63.9447182121, Vm STD = 1.65045608204, ISICV = 0, Amp = 72.5853179617, HC = 1
+Vm = -63.9373769441, Vm STD = 1.65259069129, ISICV = 0, Amp = 69.3778005591, HC = 1
+Vm = -63.8547437372, Vm STD = 1.70163408942, ISICV = 0, Amp = 68.5736979206, HC = 1
+Vm = -63.899443391, Vm STD = 1.7301018723, ISICV = 0, Amp = 69.8893810661, HC = 1
+Vm = -63.8731972487, Vm STD = 1.79437353926, ISICV = 0, Amp = 71.7147421814, HC = 1
+Vm = -63.8460332393, Vm STD = 1.71898262172, ISICV = 0, Amp = 74.3962348698, HC = 1
+Vm = -63.9937644029, Vm STD = 1.85073005326, ISICV = 0, Amp = 68.6040310117, HC = 1
+Vm = -63.8656480897, Vm STD = 1.82060659788, ISICV = 1.11082173375, Amp = 71.7084119969, HC = 2
+Vm = -64.012403416, Vm STD = 1.89064480121, ISICV = 0, Amp = 69.7980415481, HC = 1
+Vm = -64.5098878217, Vm STD = 1.86279210135, ISICV = 0, Amp = 0, HC = 1
+Vm = -64.5190732302, Vm STD = 1.82857328213, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.9578231972, Vm STD = 1.88318072304, ISICV = 0, Amp = 67.3387553609, HC = 1
+Vm = -63.8736265641, Vm STD = 1.97333479283, ISICV = 0, Amp = 69.2329821359, HC = 1
+Vm = -63.9753047182, Vm STD = 1.91827571217, ISICV = 0.540031680513, Amp = 72.2231047892, HC = 1
+Vm = -63.9100087951, Vm STD = 1.95971568754, ISICV = 0, Amp = 69.1492128985, HC = 1
+Vm = -64.3972348003, Vm STD = 2.00752315441, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.8705187797, Vm STD = 2.04768580701, ISICV = 0, Amp = 71.4204575657, HC = 1
+Vm = -63.8672228259, Vm STD = 1.97006088612, ISICV = 0, Amp = 66.9170461234, HC = 1
+Vm = -63.9648435095, Vm STD = 2.00076320447, ISICV = 0.84593153416, Amp = 69.1111187914, HC = 2
+Vm = -63.9975866004, Vm STD = 1.9910594751, ISICV = 0, Amp = 70.9957200051, HC = 1
+Vm = -63.9683161034, Vm STD = 2.053936558, ISICV = 0.624234186291, Amp = 71.8606017488, HC = 1
+Vm = -64.0389073037, Vm STD = 2.02904264457, ISICV = 1.49136487206, Amp = 68.604788976, HC = 2
+Vm = -63.8901176305, Vm STD = 1.91540437803, ISICV = 0, Amp = 70.0952240251, HC = 1
+Vm = -63.9334747117, Vm STD = 2.13406690528, ISICV = 1.34923835835, Amp = 72.8436046125, HC = 2
+Vm = -63.9681727014, Vm STD = 2.08776740319, ISICV = 0.740401771184, Amp = 71.6317650325, HC = 1
+Vm = -63.8048260769, Vm STD = 2.14274832798, ISICV = 0, Amp = 68.0881731576, HC = 1
+Vm = -63.8291594704, Vm STD = 2.09622478777, ISICV = 0, Amp = 67.0935094745, HC = 1
+Vm = -63.7834920463, Vm STD = 2.21554091512, ISICV = 0.858644455525, Amp = 70.1411137207, HC = 3
+Vm = -63.9714966821, Vm STD = 2.1344934753, ISICV = 0.95301108185, Amp = 69.0966047607, HC = 2
+Vm = -63.8379677905, Vm STD = 2.18882940352, ISICV = 0.933563656087, Amp = 67.9377451123, HC = 2
+Vm = -63.8921872735, Vm STD = 2.07495466446, ISICV = 0.800276022089, Amp = 66.936175775, HC = 2
+Vm = -63.7834978367, Vm STD = 2.19541460999, ISICV = 1.03709596955, Amp = 71.9511791633, HC = 2
+Vm = -64.0372046387, Vm STD = 2.13441071575, ISICV = 0.877006149091, Amp = 70.353991251, HC = 2
+Vm = -63.9878189327, Vm STD = 2.1880043936, ISICV = 1.0067348464, Amp = 70.9670966712, HC = 2
+Vm = -63.7334574871, Vm STD = 2.29731840277, ISICV = 0.862413707378, Amp = 70.694081255, HC = 3
+Vm = -64.000872685, Vm STD = 2.26271881937, ISICV = 1.34567584393, Amp = 68.3726325924, HC = 3
+Vm = -63.9741905658, Vm STD = 2.19763232199, ISICV = 0.921948427689, Amp = 68.7191570221, HC = 2
+Vm = -64.0839486314, Vm STD = 2.2600749216, ISICV = 0.512585314316, Amp = 67.3457407726, HC = 2
+Vm = -64.0422361065, Vm STD = 2.31178835629, ISICV = 0.754545659583, Amp = 68.8912137282, HC = 2
+Vm = -64.0931004673, Vm STD = 2.25421572512, ISICV = 0.858134924798, Amp = 67.2070161292, HC = 3
+Vm = -64.0945978301, Vm STD = 2.2875356746, ISICV = 1.02134138568, Amp = 68.0732129509, HC = 3
+Vm = -64.0456833386, Vm STD = 2.34774596606, ISICV = 1.17207795528, Amp = 70.1375283897, HC = 3
+Vm = -64.0820180917, Vm STD = 2.30952617682, ISICV = 1.44542235681, Amp = 69.6216706055, HC = 3
+Vm = -64.053785489, Vm STD = 2.31097322081, ISICV = 0.972341721431, Amp = 69.1566315755, HC = 3
+Vm = -64.0343721357, Vm STD = 2.44964356187, ISICV = 0.921632842382, Amp = 69.9961162932, HC = 3
+Vm = -64.0916093605, Vm STD = 2.34259469109, ISICV = 0.898920417359, Amp = 68.8254033149, HC = 3
+Vm = -64.079355223, Vm STD = 2.35071462085, ISICV = 1.04589156149, Amp = 66.388851823, HC = 3
+Vm = -64.2142539483, Vm STD = 2.36800562184, ISICV = 0.927075920797, Amp = 70.9164800858, HC = 3
+Vm = -64.1808820008, Vm STD = 2.42323033072, ISICV = 0.888147212487, Amp = 69.1527580576, HC = 3
+Vm = -64.2155891614, Vm STD = 2.38248748189, ISICV = 0.78925609531, Amp = 70.2875661097, HC = 2
+Vm = -64.1794891355, Vm STD = 2.41236308289, ISICV = 0.916738520005, Amp = 72.1217789288, HC = 3
+Vm = -64.2136017423, Vm STD = 2.39647662168, ISICV = 1.08713528861, Amp = 70.1414971733, HC = 3
+Vm = -64.1665727531, Vm STD = 2.45497943157, ISICV = 1.37368259429, Amp = 71.0649886808, HC = 3
+Vm = -64.1595411218, Vm STD = 2.49064862585, ISICV = 0.912502556503, Amp = 71.0951823845, HC = 3
+Vm = -64.1789765188, Vm STD = 2.45759488784, ISICV = 0.870400623379, Amp = 71.5116030529, HC = 3
+Vm = -64.2207365838, Vm STD = 2.52390728925, ISICV = 0.762245232896, Amp = 72.1121185598, HC = 2
+Vm = -64.1702707403, Vm STD = 2.49849992488, ISICV = 0.994397937008, Amp = 70.1070216079, HC = 3
+Vm = -64.2371466472, Vm STD = 2.54542046918, ISICV = 0.709847895056, Amp = 71.4562686469, HC = 2
+Vm = -64.1624143796, Vm STD = 2.46761015846, ISICV = 0.79651142048, Amp = 70.372752716, HC = 2
+Vm = -64.2756024962, Vm STD = 2.49034261839, ISICV = 1.17430118118, Amp = 70.1400654327, HC = 3
+Vm = -64.2578526819, Vm STD = 2.51369008055, ISICV = 0.892825305122, Amp = 70.8679732803, HC = 3
+Vm = -64.2256132607, Vm STD = 2.54587287686, ISICV = 0.945950890845, Amp = 70.9791542717, HC = 3
+Vm = -64.2734155011, Vm STD = 2.49234214661, ISICV = 1.01399365927, Amp = 71.4916324731, HC = 3
+Vm = -64.2439032835, Vm STD = 2.54355467824, ISICV = 0.911266513247, Amp = 71.9725469536, HC = 3
+Vm = -64.2371508574, Vm STD = 2.58276857177, ISICV = 0.838866868162, Amp = 71.5284700864, HC = 3
+Vm = -64.2250996478, Vm STD = 2.59017027947, ISICV = 1.05530575301, Amp = 71.6054177, HC = 3
+Vm = -64.2816148708, Vm STD = 2.54160536545, ISICV = 0.833304456241, Amp = 70.0810172949, HC = 3
+Vm = -64.3309709018, Vm STD = 2.52531411101, ISICV = 0.902242557123, Amp = 69.4888434876, HC = 3
+Vm = -64.3665003046, Vm STD = 2.55096550962, ISICV = 0.744628809182, Amp = 69.6329549184, HC = 2
+Vm = -64.2050085621, Vm STD = 2.70373654851, ISICV = 1.07235863309, Amp = 70.703044526, HC = 3
+Vm = -64.3225918186, Vm STD = 2.5610572555, ISICV = 1.07633906585, Amp = 71.3333346219, HC = 3
+Vm = -64.2362756087, Vm STD = 2.6776539072, ISICV = 0.904438959594, Amp = 71.4971765453, HC = 3
+Vm = -64.2329526542, Vm STD = 2.64877111905, ISICV = 0.985045561104, Amp = 70.8937564738, HC = 3
+Vm = -64.2722703156, Vm STD = 2.64613581487, ISICV = 0.989424178194, Amp = 71.3927664142, HC = 3
+Vm = -64.2797050562, Vm STD = 2.65681762181, ISICV = 0.898071225732, Amp = 71.4039666727, HC = 3
+Vm = -64.2563517349, Vm STD = 2.66837602498, ISICV = 0.813896219692, Amp = 71.2560810359, HC = 3
+Vm = -64.3300766554, Vm STD = 2.61928122693, ISICV = 1.02698578902, Amp = 70.8116296221, HC = 3
+Vm = -64.2932266887, Vm STD = 2.71817855449, ISICV = 0.991604277969, Amp = 70.4868224464, HC = 3
+Vm = -64.3239303207, Vm STD = 2.6992632188, ISICV = 0.970132494138, Amp = 70.741256684, HC = 3
+Vm = -64.4027710032, Vm STD = 2.62266372701, ISICV = 0.898073504718, Amp = 71.6276059004, HC = 3
+Vm = -64.3612732898, Vm STD = 2.67335128572, ISICV = 0.834679560484, Amp = 71.6356828675, HC = 3
+Vm = -64.3597554585, Vm STD = 2.67979819541, ISICV = 0.937070390519, Amp = 71.1679590132, HC = 3
+Vm = -64.3394512529, Vm STD = 2.71321779339, ISICV = 1.1124458858, Amp = 70.3824841673, HC = 3
+Vm = -64.3560201488, Vm STD = 2.69751925226, ISICV = 1.16905729585, Amp = 71.6071309162, HC = 3
+Vm = -64.3489756775, Vm STD = 2.73653007954, ISICV = 1.14352919151, Amp = 70.2829579016, HC = 3
+Vm = -64.3599284353, Vm STD = 2.67183281383, ISICV = 1.01703066138, Amp = 72.2142945863, HC = 3
+Vm = -64.339687981, Vm STD = 2.69484595929, ISICV = 1.0953426051, Amp = 72.1419282346, HC = 3
+Vm = -61.9866768606, Vm STD = 1.60439900775, ISICV = 0, Amp = 60.0881859461, HC = 1
+Vm = -62.4567067129, Vm STD = 1.62003889319, ISICV = 0, Amp = 0, HC = 1
+Vm = -61.8616955592, Vm STD = 1.66732404864, ISICV = 0, Amp = 64.6128430807, HC = 1
+Vm = -61.9632193324, Vm STD = 1.61409296526, ISICV = 0, Amp = 68.2405035053, HC = 1
+Vm = -61.9326247449, Vm STD = 1.70536384551, ISICV = 0, Amp = 63.5887110599, HC = 1
+Vm = -61.9350459302, Vm STD = 1.78859352391, ISICV = 1.10325818971, Amp = 62.9660840387, HC = 2
+Vm = -61.984297691, Vm STD = 1.78246308226, ISICV = 0.888627885177, Amp = 66.0210824678, HC = 2
+Vm = -61.9596378298, Vm STD = 1.76993130138, ISICV = 0.82217356162, Amp = 64.5040578237, HC = 2
+Vm = -61.9248504727, Vm STD = 1.83621111404, ISICV = 1.30397329588, Amp = 60.4931438486, HC = 2
+Vm = -61.9067996519, Vm STD = 1.89574133867, ISICV = 0.65550249652, Amp = 64.8693583969, HC = 1
+Vm = -62.0081127958, Vm STD = 1.86701154986, ISICV = 0.500819551667, Amp = 63.6127990561, HC = 1
+Vm = -62.0066077703, Vm STD = 1.91961916992, ISICV = 0.940294997688, Amp = 64.2706665671, HC = 2
+Vm = -61.9810770276, Vm STD = 1.98068036034, ISICV = 0.580330073686, Amp = 66.8625434713, HC = 1
+Vm = -61.9475151877, Vm STD = 2.0261914269, ISICV = 0, Amp = 62.1883504156, HC = 1
+Vm = -61.9906735626, Vm STD = 1.96648564436, ISICV = 1.11562415208, Amp = 63.9573950205, HC = 2
+Vm = -61.912906132, Vm STD = 2.10035348448, ISICV = 0.953953755221, Amp = 64.3324683415, HC = 2
+Vm = -61.8666780139, Vm STD = 2.14480864931, ISICV = 0.9008239609, Amp = 67.2479415667, HC = 2
+Vm = -61.9777218406, Vm STD = 2.0373090531, ISICV = 0.900061012927, Amp = 64.9939255069, HC = 2
+Vm = -61.9364804604, Vm STD = 2.08832249696, ISICV = 1.2154137098, Amp = 64.0188738707, HC = 2
+Vm = -61.9210562399, Vm STD = 2.11139313225, ISICV = 0.876243287434, Amp = 64.355329792, HC = 2
+Vm = -61.9761692871, Vm STD = 2.01565914339, ISICV = 0.968586932913, Amp = 63.86150775, HC = 2
+Vm = -62.0528931649, Vm STD = 1.99820543181, ISICV = 1.38928247138, Amp = 63.6499701295, HC = 2
+Vm = -62.0182155348, Vm STD = 2.04980053457, ISICV = 0.789602776719, Amp = 64.201305565, HC = 1
+Vm = -62.0405882151, Vm STD = 2.0559459898, ISICV = 0.595007993775, Amp = 66.5897359499, HC = 1
+Vm = -62.0401889085, Vm STD = 2.04154869227, ISICV = 0.735586336155, Amp = 64.9752192109, HC = 1
+Vm = -62.0451237774, Vm STD = 2.04219538755, ISICV = 0.967468999267, Amp = 66.9752969185, HC = 2
+Vm = -62.0315157521, Vm STD = 2.10220520385, ISICV = 1.0501572853, Amp = 66.7332078356, HC = 2
+Vm = -61.980767247, Vm STD = 2.16052559416, ISICV = 0.569866170874, Amp = 66.5860484619, HC = 1
+Vm = -62.0197876114, Vm STD = 2.12746585162, ISICV = 0.719691401203, Amp = 64.9238573472, HC = 1
+Vm = -61.9903379975, Vm STD = 2.11409814116, ISICV = 0.956318110159, Amp = 65.3248332369, HC = 2
+Vm = -61.9978595643, Vm STD = 2.17883186684, ISICV = 0.755499697131, Amp = 66.685408661, HC = 1
+Vm = -62.0071647612, Vm STD = 2.16377011232, ISICV = 1.24301139349, Amp = 65.3924525095, HC = 2
+Vm = -62.0985768392, Vm STD = 2.10130313098, ISICV = 1.17450539884, Amp = 65.8319744508, HC = 2
+Vm = -62.0653148469, Vm STD = 2.21998114702, ISICV = 0.969999247362, Amp = 67.4687231058, HC = 3
+Vm = -62.0605941099, Vm STD = 2.24366603666, ISICV = 1.0211137586, Amp = 66.2345243537, HC = 3
+Vm = -62.0573185449, Vm STD = 2.23599126654, ISICV = 0.964472907722, Amp = 65.3418013806, HC = 3
+Vm = -62.0396798662, Vm STD = 2.29103233505, ISICV = 1.2515309267, Amp = 66.9220501502, HC = 3
+Vm = -62.0186063734, Vm STD = 2.27560573072, ISICV = 0.964431215782, Amp = 66.4789526465, HC = 3
+Vm = -62.0535927692, Vm STD = 2.2616749236, ISICV = 0.844313245413, Amp = 67.8221599525, HC = 3
+Vm = -62.127381231, Vm STD = 2.31046654397, ISICV = 0.948049408281, Amp = 66.4410753336, HC = 3
+Vm = -62.1016953155, Vm STD = 2.28077843738, ISICV = 0.967394401365, Amp = 64.8719018098, HC = 3
+Vm = -62.1719926443, Vm STD = 2.23854491207, ISICV = 0.911463750904, Amp = 64.010857118, HC = 3
+Vm = -62.1542477792, Vm STD = 2.36162559981, ISICV = 0.824154662604, Amp = 66.9215719474, HC = 3
+Vm = -62.1191559543, Vm STD = 2.33503027231, ISICV = 0.821181021123, Amp = 66.0304669203, HC = 3
+Vm = -62.172991534, Vm STD = 2.327414067, ISICV = 0.826719695734, Amp = 66.0333422688, HC = 3
+Vm = -62.1683813042, Vm STD = 2.29129627656, ISICV = 0.768719380663, Amp = 67.293980909, HC = 2
+Vm = -62.0887490036, Vm STD = 2.42247713639, ISICV = 1.04201747027, Amp = 65.7732197156, HC = 3
+Vm = -62.0678734089, Vm STD = 2.41047947544, ISICV = 0.937015471475, Amp = 67.8988762836, HC = 3
+Vm = -62.0719830379, Vm STD = 2.44547854095, ISICV = 0.746674601525, Amp = 68.6989096795, HC = 2
+Vm = -62.1396264799, Vm STD = 2.36250889941, ISICV = 0.94897576738, Amp = 66.6249497991, HC = 3
+Vm = -62.167677628, Vm STD = 2.43661671254, ISICV = 0.943618444139, Amp = 65.8900468307, HC = 3
+Vm = -62.2087874779, Vm STD = 2.4354612091, ISICV = 0.738449238699, Amp = 67.4229676792, HC = 2
+Vm = -62.2344458617, Vm STD = 2.46478173253, ISICV = 0.742876334306, Amp = 66.3855548437, HC = 2
+Vm = -62.2683602173, Vm STD = 2.41159469932, ISICV = 0.779833513977, Amp = 66.8405685431, HC = 2
+Vm = -62.2617701334, Vm STD = 2.44037995965, ISICV = 0.699565522487, Amp = 67.8957039144, HC = 2
+Vm = -62.2551654368, Vm STD = 2.46227549663, ISICV = 0.977931250182, Amp = 66.9201109482, HC = 3
+Vm = -62.1790908876, Vm STD = 2.52547662239, ISICV = 0.897296369837, Amp = 66.4350266013, HC = 3
+Vm = -62.2641455276, Vm STD = 2.47908520724, ISICV = 0.88854635005, Amp = 67.1564560954, HC = 3
+Vm = -62.3124007125, Vm STD = 2.46045775907, ISICV = 0.774239096751, Amp = 66.7120558976, HC = 2
+Vm = -62.1867067191, Vm STD = 2.52538267136, ISICV = 0.877026828813, Amp = 67.6808406091, HC = 3
+Vm = -62.2867149222, Vm STD = 2.48087988027, ISICV = 1.0990860413, Amp = 65.5999812135, HC = 3
+Vm = -62.3165844086, Vm STD = 2.49332467436, ISICV = 1.00424298311, Amp = 67.4255956838, HC = 3
+Vm = -62.360685657, Vm STD = 2.50492155081, ISICV = 0.949106231399, Amp = 66.683585253, HC = 3
+Vm = -62.260767405, Vm STD = 2.58149882608, ISICV = 0.898037797922, Amp = 66.5135207176, HC = 3
+Vm = -62.3183675894, Vm STD = 2.51472012729, ISICV = 0.86981839128, Amp = 67.1226039825, HC = 3
+Vm = -62.3079595516, Vm STD = 2.52820005258, ISICV = 0.999917584492, Amp = 67.7641623116, HC = 3
+Vm = -62.3280071644, Vm STD = 2.46947711473, ISICV = 0.973511947941, Amp = 68.2354791942, HC = 3
+Vm = -62.2895808526, Vm STD = 2.50861502824, ISICV = 0.865153956959, Amp = 67.5536755795, HC = 3
+Vm = -62.2709766493, Vm STD = 2.589901721, ISICV = 0.841026580235, Amp = 67.4178541722, HC = 3
+Vm = -62.320293515, Vm STD = 2.51662871103, ISICV = 1.05824253941, Amp = 67.1987372497, HC = 3
+Vm = -62.4014153795, Vm STD = 2.5681753705, ISICV = 0.834760804924, Amp = 67.8057433142, HC = 3
+Vm = -62.3410046603, Vm STD = 2.64408137421, ISICV = 0.871058049845, Amp = 67.432716716, HC = 3
+Vm = -62.4190700269, Vm STD = 2.57485375494, ISICV = 0.803517186069, Amp = 67.0827472553, HC = 3
+Vm = -62.4335187576, Vm STD = 2.58666111526, ISICV = 0.960286209162, Amp = 67.55838856, HC = 3
+Vm = -62.3703422694, Vm STD = 2.64707241591, ISICV = 0.814522244721, Amp = 68.6777745351, HC = 3
+Vm = -62.3435807755, Vm STD = 2.68709502219, ISICV = 0.987505589556, Amp = 67.5326973918, HC = 3
+Vm = -62.3811323945, Vm STD = 2.67691404447, ISICV = 0.909123291032, Amp = 67.3857285877, HC = 3
+Vm = -62.4048791788, Vm STD = 2.6783311861, ISICV = 0.920699421265, Amp = 67.7369112402, HC = 3
+Vm = -62.4035969547, Vm STD = 2.6962972869, ISICV = 1.01188657728, Amp = 67.3133013095, HC = 3
+Vm = -62.4367765352, Vm STD = 2.65493056692, ISICV = 0.88594846712, Amp = 67.1467393837, HC = 3
+Vm = -62.5306538114, Vm STD = 2.66069282623, ISICV = 0.919605754843, Amp = 67.9801185536, HC = 3
+Vm = -62.5103836292, Vm STD = 2.69449553511, ISICV = 0.789047189766, Amp = 67.9981688068, HC = 2
+Vm = -62.5549250853, Vm STD = 2.68251799287, ISICV = 1.01377408284, Amp = 67.8133231862, HC = 3
+Vm = -62.5357400722, Vm STD = 2.64809851813, ISICV = 0.877571304546, Amp = 68.0436877059, HC = 3
+Vm = -62.4596782058, Vm STD = 2.75931253209, ISICV = 0.834090655265, Amp = 67.0700366738, HC = 3
+Vm = -62.5132028656, Vm STD = 2.68512925121, ISICV = 0.883745643463, Amp = 66.9356245705, HC = 3
+Vm = -62.5063927332, Vm STD = 2.74832088075, ISICV = 0.861877332331, Amp = 66.4456960833, HC = 3
+Vm = -62.547917774, Vm STD = 2.72772796341, ISICV = 0.835511268332, Amp = 67.2574467015, HC = 3
+Vm = -62.5369754651, Vm STD = 2.73871690258, ISICV = 0.873455585094, Amp = 67.3850124516, HC = 3
+Vm = -62.4986717774, Vm STD = 2.84073874848, ISICV = 0.696573726056, Amp = 67.8591567828, HC = 2
+Vm = -62.4739365964, Vm STD = 2.79253016253, ISICV = 0.855335488035, Amp = 68.4371967308, HC = 3
+Vm = -62.5737680457, Vm STD = 2.71175622586, ISICV = 0.869887103657, Amp = 68.1187817534, HC = 3
+Vm = -62.5244099855, Vm STD = 2.79920925192, ISICV = 0.915355031855, Amp = 67.8447008486, HC = 3
+Vm = -62.4994966707, Vm STD = 2.79643476794, ISICV = 0.822457078371, Amp = 67.7350467935, HC = 3
+Vm = -62.5807037123, Vm STD = 2.74162312729, ISICV = 0.825405644331, Amp = 67.3942807738, HC = 3
+Vm = -62.4327530808, Vm STD = 1.98771142895, ISICV = 1.19838666938, Amp = 64.0848262319, HC = 2
+Vm = -62.5337393931, Vm STD = 2.83302456014, ISICV = 1.05017533824, Amp = 67.4124350539, HC = 3
+Vm = -62.5216799441, Vm STD = 2.00717248429, ISICV = 1.01971709647, Amp = 65.6734024599, HC = 2
+Vm = -62.575456525, Vm STD = 2.83298304379, ISICV = 0.764236711299, Amp = 67.8527407066, HC = 2
+Vm = -62.3613974727, Vm STD = 2.09753542081, ISICV = 1.0956445322, Amp = 64.6087682059, HC = 2
+Vm = -62.6160618371, Vm STD = 2.78001309374, ISICV = 0.929670017782, Amp = 66.6704394684, HC = 3
+Vm = -62.5649288747, Vm STD = 2.80961896972, ISICV = 0.799875677315, Amp = 67.5880298072, HC = 2
+Vm = -62.4246529471, Vm STD = 2.885642744, ISICV = 0.905890507653, Amp = 67.3628824437, HC = 3
+Vm = -62.6041863641, Vm STD = 2.08121612784, ISICV = 1.04768217338, Amp = 64.9453377875, HC = 2
+Vm = -62.3495263318, Vm STD = 2.31621225704, ISICV = 1.14937276783, Amp = 64.3866473475, HC = 3
+Vm = -62.5806719105, Vm STD = 2.16240992477, ISICV = 0.989496830529, Amp = 65.5617707905, HC = 2
+Vm = -62.5338137341, Vm STD = 2.25453514918, ISICV = 1.10829108232, Amp = 65.4038343169, HC = 3
+Vm = -62.5594658557, Vm STD = 2.17044599105, ISICV = 1.00712621563, Amp = 65.7077460379, HC = 2
+Vm = -62.2605656668, Vm STD = 2.5458702383, ISICV = 1.03285784966, Amp = 64.7336104727, HC = 3
+Vm = -62.8586686856, Vm STD = 2.11865453933, ISICV = 0.996074312501, Amp = 65.3092456429, HC = 2
+Vm = -62.7939311017, Vm STD = 2.26620718293, ISICV = 0.824062654721, Amp = 66.3808785983, HC = 3
+Vm = -62.953394279, Vm STD = 2.22206001323, ISICV = 1.05838226535, Amp = 66.1050447372, HC = 3
+Vm = -62.784189714, Vm STD = 2.20738928755, ISICV = 1.11343823523, Amp = 65.5863245472, HC = 3
+Vm = -62.7567586521, Vm STD = 2.27767502138, ISICV = 1.06005520088, Amp = 66.1758749563, HC = 3
+Vm = -62.2605406621, Vm STD = 2.58976564302, ISICV = 1.04276610371, Amp = 64.7859727314, HC = 3
+Vm = -62.9366863062, Vm STD = 2.31414688401, ISICV = 1.0920611854, Amp = 66.8598833222, HC = 3
+Vm = -62.9562877879, Vm STD = 2.24944680241, ISICV = 1.07731541453, Amp = 66.8033961509, HC = 3
+Vm = -62.9898973032, Vm STD = 2.26661481223, ISICV = 1.15158202067, Amp = 66.2092746791, HC = 3
+Vm = -62.8187277688, Vm STD = 2.34867889439, ISICV = 0.991251363419, Amp = 66.0277118008, HC = 3
+Vm = -62.8440687917, Vm STD = 2.32443890673, ISICV = 1.01029538303, Amp = 65.7685419026, HC = 3
+Vm = -63.3781891063, Vm STD = 2.35382476791, ISICV = 0.829703809994, Amp = 68.053802385, HC = 3
+Vm = -63.3353798566, Vm STD = 2.42510268109, ISICV = 0.752817356377, Amp = 68.0490972397, HC = 2
+Vm = -63.2124731234, Vm STD = 2.52113826717, ISICV = 0.77400078535, Amp = 67.953753366, HC = 2
+Vm = -63.3571700086, Vm STD = 2.41181691487, ISICV = 1.00283356118, Amp = 67.8408135858, HC = 3
+Vm = -63.3939321945, Vm STD = 2.44561287115, ISICV = 0.97875528356, Amp = 68.1378066497, HC = 3
+Vm = -63.3470574163, Vm STD = 2.51427140921, ISICV = 1.02646943907, Amp = 68.1126289582, HC = 3
+Vm = -63.3633482052, Vm STD = 2.51247755576, ISICV = 1.02808904717, Amp = 68.0426498291, HC = 3
+Vm = -63.3804898497, Vm STD = 2.51795687183, ISICV = 0.992923842102, Amp = 67.7600552782, HC = 3
+Vm = -63.2021869464, Vm STD = 2.55320288237, ISICV = 1.33783175561, Amp = 68.5694250639, HC = 3
+Vm = -63.2943345785, Vm STD = 2.49430749974, ISICV = 0.915576860518, Amp = 67.590125282, HC = 3
+Vm = -63.3202375353, Vm STD = 2.5427667763, ISICV = 1.12132830866, Amp = 68.2319041667, HC = 3
+Vm = -63.3205714218, Vm STD = 2.49481119709, ISICV = 0.952661729324, Amp = 67.5594369218, HC = 3
+Vm = -63.4051233168, Vm STD = 2.5064061574, ISICV = 0.855342608931, Amp = 67.7499190874, HC = 3
+Vm = -63.4088649144, Vm STD = 2.53036550596, ISICV = 0.850428940766, Amp = 67.9104551044, HC = 3
+Vm = -63.378563052, Vm STD = 2.51807994027, ISICV = 0.931770542447, Amp = 66.955256695, HC = 3
+Vm = -63.4296017522, Vm STD = 2.53315134663, ISICV = 0.816683721015, Amp = 67.7996545503, HC = 3
+Vm = -63.0934665905, Vm STD = 2.74189552049, ISICV = 0.90541686905, Amp = 66.9891078523, HC = 3
+Vm = -63.6245845989, Vm STD = 2.70427515831, ISICV = 1.02023138586, Amp = 67.8591027935, HC = 3
+Vm = -63.5170035025, Vm STD = 2.68651455337, ISICV = 0.904197517201, Amp = 68.7434709197, HC = 3
+Vm = -63.5428842072, Vm STD = 2.70804757722, ISICV = 0.984094128823, Amp = 67.6156585948, HC = 3
+Vm = -63.0483416291, Vm STD = 2.78637842763, ISICV = 0.942549899872, Amp = 66.8562369044, HC = 3
+Vm = -63.6044086875, Vm STD = 2.62140808663, ISICV = 0.992814042257, Amp = 67.8604345471, HC = 3
+Vm = -63.6364800958, Vm STD = 2.66654519486, ISICV = 0.96549254509, Amp = 68.4746186077, HC = 3
+Vm = -63.7154771588, Vm STD = 2.58532336193, ISICV = 1.07555310188, Amp = 68.0872435432, HC = 3
+Vm = -63.7052398041, Vm STD = 2.62245901725, ISICV = 1.06386266253, Amp = 68.1753441137, HC = 3
+Vm = -63.7042569444, Vm STD = 2.6285683416, ISICV = 0.969221978384, Amp = 68.0951722243, HC = 3
+Vm = -63.5045178329, Vm STD = 2.72336063083, ISICV = 1.0426542809, Amp = 67.7221569153, HC = 3
+Vm = -63.6951373708, Vm STD = 2.70836299662, ISICV = 0.870053666141, Amp = 68.2799178892, HC = 3
+Vm = -63.1271253284, Vm STD = 2.76232137005, ISICV = 0.940349812232, Amp = 67.5506226, HC = 3
+Vm = -63.518830507, Vm STD = 2.69907352495, ISICV = 1.05186517211, Amp = 67.3119106751, HC = 3
+Vm = -63.1128895226, Vm STD = 2.78781344222, ISICV = 0.939893699596, Amp = 67.3783058148, HC = 3
+Vm = -63.7532032375, Vm STD = 2.75007106842, ISICV = 0.828750224509, Amp = 68.2204680391, HC = 3
+Vm = -63.6931381213, Vm STD = 2.72128095738, ISICV = 0.935267807832, Amp = 67.8295165637, HC = 3
+Vm = -63.7558479707, Vm STD = 2.67372013136, ISICV = 0.963193244469, Amp = 68.1159525801, HC = 3
+Vm = -63.8271709122, Vm STD = 2.67727581445, ISICV = 0.991147319441, Amp = 68.1034662852, HC = 3
+Vm = -63.7965184999, Vm STD = 2.70336861696, ISICV = 0.933809682436, Amp = 68.133538616, HC = 3
+Vm = -63.8568208392, Vm STD = 2.65637361984, ISICV = 1.0001587969, Amp = 67.9313065065, HC = 3
+Vm = -63.8312423243, Vm STD = 2.70464944496, ISICV = 0.996153681657, Amp = 68.102637404, HC = 3
+Vm = -63.8123271247, Vm STD = 2.82190583262, ISICV = 0.923685569385, Amp = 68.8970446557, HC = 3
+Vm = -63.6054874574, Vm STD = 2.79941666604, ISICV = 1.03009692927, Amp = 68.0795206405, HC = 3
+Vm = -63.7853017805, Vm STD = 2.76610189605, ISICV = 0.968058645058, Amp = 68.3581064867, HC = 3
+Vm = -63.8382684396, Vm STD = 2.72000386823, ISICV = 1.01451620739, Amp = 68.684877783, HC = 3
+Vm = -63.8423474156, Vm STD = 2.76468330267, ISICV = 1.0469122209, Amp = 67.7352943185, HC = 3
+Vm = -63.6291958361, Vm STD = 2.78421571842, ISICV = 1.02863700851, Amp = 67.5958517372, HC = 3
+Vm = -63.8100533112, Vm STD = 2.79663142932, ISICV = 1.08964167924, Amp = 68.1686155615, HC = 3
+Vm = -63.8, Vm STD = 2.76724549392, ISICV = 1.02319570154, Amp = 68.1353500529, HC = 3
+Vm = -63.8111288945, Vm STD = 2.80922187694, ISICV = 1.0921921627, Amp = 67.8184532795, HC = 3
+Vm = -63.8573980854, Vm STD = 2.82771950176, ISICV = 1.03309163953, Amp = 67.5874849086, HC = 3
+Vm = -63.7238003511, Vm STD = 2.79658327224, ISICV = 1.08550516669, Amp = 67.7778716004, HC = 3
+Vm = -64.0830660259, Vm STD = 2.77546243619, ISICV = 1.09525296648, Amp = 69.4559272889, HC = 3
+Vm = -63.6670445956, Vm STD = 2.85573795241, ISICV = 1.06660276781, Amp = 67.6796415848, HC = 3
+Vm = -64.0322723043, Vm STD = 2.92843303717, ISICV = 0.926646579247, Amp = 69.5263508656, HC = 3
+Vm = -63.9406395425, Vm STD = 2.93934132142, ISICV = 1.00940617326, Amp = 68.7583157549, HC = 3
+Vm = -63.9965916837, Vm STD = 2.91465653552, ISICV = 1.04452788371, Amp = 69.0840597134, HC = 3
+Vm = -63.99846657, Vm STD = 2.90032193988, ISICV = 1.04600241935, Amp = 68.9433606301, HC = 3
+Vm = -63.9874944225, Vm STD = 2.9275549365, ISICV = 1.13368563274, Amp = 68.3254959604, HC = 3
+Vm = -64.014536039, Vm STD = 2.9412739367, ISICV = 1.119873563, Amp = 68.0087906854, HC = 3
+Vm = -63.994862704, Vm STD = 2.93776892428, ISICV = 1.13788588263, Amp = 68.0244778681, HC = 3
+Vm = -63.9625620813, Vm STD = 2.86335399247, ISICV = 1.07004449139, Amp = 67.8301350433, HC = 3
+Vm = -64.5758015743, Vm STD = 2.97638210824, ISICV = 1.22380017331, Amp = 70.0507754156, HC = 3
+Vm = -63.9267227178, Vm STD = 2.88556884912, ISICV = 1.07171498315, Amp = 67.7621631345, HC = 3
+Vm = -64.4010996858, Vm STD = 3.19067802945, ISICV = 1.06535831072, Amp = 70.8013333277, HC = 3
+Vm = -64.4832179138, Vm STD = 3.07504947959, ISICV = 1.14118403856, Amp = 69.2443239292, HC = 3
+Vm = -64.4656271806, Vm STD = 3.06416007041, ISICV = 1.19329008144, Amp = 69.6797645881, HC = 3
+Vm = -64.4796346103, Vm STD = 3.09313498212, ISICV = 1.15083162708, Amp = 69.4448807849, HC = 3
+Vm = -64.5151617089, Vm STD = 3.04897366336, ISICV = 0.955172140411, Amp = 69.9970265966, HC = 3
+Vm = -64.5192813906, Vm STD = 3.06395671218, ISICV = 1.17097113017, Amp = 69.1074551444, HC = 3
+Vm = -64.5032692567, Vm STD = 3.02930548436, ISICV = 1.07161947675, Amp = 69.042467216, HC = 3
+Vm = -64.4010996858, Vm STD = 3.19067802945, ISICV = 1.06535831072, Amp = 70.8013333277, HC = 3
+Vm = -64.5197505702, Vm STD = 3.08824462923, ISICV = 1.14330288845, Amp = 69.4321735816, HC = 3
+Vm = -64.5758015743, Vm STD = 2.97638210824, ISICV = 1.22380017331, Amp = 70.0507754156, HC = 3
+Vm = -64.4938638625, Vm STD = 3.04412247345, ISICV = 1.08207906028, Amp = 69.0384304085, HC = 3
+Vm = -64.4656271806, Vm STD = 3.06416007041, ISICV = 1.19329008144, Amp = 69.6797645881, HC = 3
+Vm = -64.4832179138, Vm STD = 3.07504947959, ISICV = 1.14118403856, Amp = 69.2443239292, HC = 3
+Vm = -64.5151617089, Vm STD = 3.04897366336, ISICV = 0.955172140411, Amp = 69.9970265966, HC = 3
+Vm = -64.5192813906, Vm STD = 3.06395671218, ISICV = 1.17097113017, Amp = 69.1074551444, HC = 3
+Vm = -64.4796346103, Vm STD = 3.09313498212, ISICV = 1.15083162708, Amp = 69.4448807849, HC = 3
+Vm = -64.5032692567, Vm STD = 3.02930548436, ISICV = 1.07161947675, Amp = 69.042467216, HC = 3
+Vm = -64.5197505702, Vm STD = 3.08824462923, ISICV = 1.14330288845, Amp = 69.4321735816, HC = 3
+Vm = -64.4938638625, Vm STD = 3.04412247345, ISICV = 1.08207906028, Amp = 69.0384304085, HC = 3
+Vm = -63.1726564463, Vm STD = 1.4444897529, ISICV = 0, Amp = 70.5427565941, HC = 1
+Vm = -63.5477657369, Vm STD = 1.60562041528, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.1109106771, Vm STD = 1.58693347026, ISICV = 0, Amp = 67.7674818688, HC = 1
+Vm = -63.0538848823, Vm STD = 1.63565031851, ISICV = 0, Amp = 65.6388543523, HC = 1
+Vm = -62.8707434053, Vm STD = 1.67742313332, ISICV = 0, Amp = 67.2059192982, HC = 1
+Vm = -62.9277837593, Vm STD = 1.78136859639, ISICV = 0, Amp = 64.8099113096, HC = 1
+Vm = -62.9640323746, Vm STD = 1.79395424388, ISICV = 0, Amp = 68.4034379108, HC = 1
+Vm = -63.0181235478, Vm STD = 1.88486183753, ISICV = 0, Amp = 70.4699650724, HC = 1
+Vm = -63.1040002723, Vm STD = 1.90107983206, ISICV = 0.6109753536, Amp = 65.9611682204, HC = 1
+Vm = -62.9091775435, Vm STD = 1.93216899152, ISICV = 0.815738511475, Amp = 65.7184996592, HC = 2
+Vm = -63.0340733851, Vm STD = 1.90519280448, ISICV = 0.662338793144, Amp = 67.3568916142, HC = 1
+Vm = -62.9341678858, Vm STD = 1.83623807796, ISICV = 0, Amp = 68.9241446979, HC = 1
+Vm = -63.0458141849, Vm STD = 1.94365845772, ISICV = 0.677556481694, Amp = 66.0485965946, HC = 1
+Vm = -62.914173285, Vm STD = 1.93841896815, ISICV = 1.01542884684, Amp = 67.7309370625, HC = 2
+Vm = -63.0577111106, Vm STD = 1.9093354101, ISICV = 1.022037568, Amp = 68.0439430592, HC = 2
+Vm = -63.0137798526, Vm STD = 1.99844334449, ISICV = 0.710675918841, Amp = 69.8903876276, HC = 1
+Vm = -62.95785167, Vm STD = 1.98848726063, ISICV = 0.883218111175, Amp = 68.3423983742, HC = 2
+Vm = -62.9864929763, Vm STD = 2.0424046592, ISICV = 0.954587087629, Amp = 69.5727858416, HC = 2
+Vm = -62.9778325472, Vm STD = 2.10359443174, ISICV = 0.988351412669, Amp = 68.2662531792, HC = 2
+Vm = -62.9928304542, Vm STD = 2.13492942643, ISICV = 1.10831189659, Amp = 68.555197084, HC = 2
+Vm = -63.0805924748, Vm STD = 2.07525003367, ISICV = 0.668164759781, Amp = 68.6565813014, HC = 1
+Vm = -63.1843576697, Vm STD = 2.06322954202, ISICV = 0.558843055855, Amp = 69.3386511292, HC = 1
+Vm = -63.1025085519, Vm STD = 2.12931016532, ISICV = 0.764236227181, Amp = 68.4531495063, HC = 1
+Vm = -63.0924614029, Vm STD = 2.16455682563, ISICV = 1.06415258847, Amp = 70.0024404566, HC = 2
+Vm = -63.1180365009, Vm STD = 2.09942619658, ISICV = 1.18784419262, Amp = 67.3685519612, HC = 2
+Vm = -63.0031637952, Vm STD = 2.25805507852, ISICV = 0.930634452355, Amp = 68.2904278729, HC = 3
+Vm = -63.029710307, Vm STD = 2.11746734048, ISICV = 0.863260500036, Amp = 69.1309898543, HC = 2
+Vm = -63.017406062, Vm STD = 2.19864774593, ISICV = 0.931225112849, Amp = 69.719019015, HC = 2
+Vm = -63.1870206788, Vm STD = 2.30440036877, ISICV = 1.98728044741, Amp = 68.8683291704, HC = 3
+Vm = -63.1318681319, Vm STD = 2.2152493359, ISICV = 0.906161797135, Amp = 68.9885320937, HC = 3
+Vm = -63.0994357352, Vm STD = 2.21790409981, ISICV = 1.405556075, Amp = 69.9408398871, HC = 3
+Vm = -63.1932426392, Vm STD = 2.30296886963, ISICV = 0.993992443686, Amp = 70.5784052691, HC = 3
+Vm = -63.2715204457, Vm STD = 2.24450875747, ISICV = 1.426738133, Amp = 69.3667006491, HC = 3
+Vm = -63.2276270096, Vm STD = 2.29974263116, ISICV = 1.19175692069, Amp = 69.0658467288, HC = 3
+Vm = -63.2301854653, Vm STD = 2.2552371429, ISICV = 1.108964779, Amp = 69.4265631681, HC = 3
+Vm = -63.2038272449, Vm STD = 2.3205741782, ISICV = 1.13160094538, Amp = 69.669096722, HC = 3
+Vm = -63.2678503819, Vm STD = 2.31080298856, ISICV = 0.869940715478, Amp = 68.1888783676, HC = 3
+Vm = -63.242239649, Vm STD = 2.35438451026, ISICV = 0.748953575904, Amp = 69.0993325606, HC = 2
+Vm = -63.2693165328, Vm STD = 2.37581847008, ISICV = 0.898404988172, Amp = 69.5190104002, HC = 3
+Vm = -63.426238324, Vm STD = 2.4112858258, ISICV = 0.765103380507, Amp = 70.3675973955, HC = 2
+Vm = -63.27440123, Vm STD = 2.30081100462, ISICV = 0.820449929536, Amp = 69.735165119, HC = 3
+Vm = -63.4485180044, Vm STD = 2.42408332948, ISICV = 1.01234973202, Amp = 71.4275424551, HC = 3
+Vm = -63.4152795762, Vm STD = 2.47458599247, ISICV = 0.714881227346, Amp = 70.4112283105, HC = 2
+Vm = -63.4872254702, Vm STD = 2.42344153654, ISICV = 0.783923548989, Amp = 70.9977368575, HC = 2
+Vm = -63.3339769687, Vm STD = 2.51185129351, ISICV = 1.09125413873, Amp = 71.0326618871, HC = 3
+Vm = -63.4255100352, Vm STD = 2.46612247381, ISICV = 0.782081019265, Amp = 69.5868490304, HC = 2
+Vm = -63.418291606, Vm STD = 2.5365323863, ISICV = 0.745020491397, Amp = 70.0621935966, HC = 2
+Vm = -63.3884275033, Vm STD = 2.54604985478, ISICV = 0.866816143928, Amp = 70.1875163433, HC = 3
+Vm = -63.3780093169, Vm STD = 2.56513430009, ISICV = 0.90120738709, Amp = 70.4210497609, HC = 3
+Vm = -63.4559223675, Vm STD = 2.55261079228, ISICV = 0.91181595315, Amp = 69.5470439075, HC = 3
+Vm = -63.4900504796, Vm STD = 2.57886645753, ISICV = 0.999606280943, Amp = 71.1892302061, HC = 3
+Vm = -63.4327875643, Vm STD = 2.71230458402, ISICV = 0.933507662871, Amp = 69.9037837172, HC = 3
+Vm = -63.5071980711, Vm STD = 2.5998785209, ISICV = 0.861902100556, Amp = 70.5978951772, HC = 3
+Vm = -63.590270567, Vm STD = 2.55185983096, ISICV = 0.806824359399, Amp = 70.3473977374, HC = 3
+Vm = -63.5599078616, Vm STD = 2.55675207721, ISICV = 0.914862551967, Amp = 69.924112374, HC = 3
+Vm = -63.5563244674, Vm STD = 2.59468638151, ISICV = 0.765040397503, Amp = 71.4248245472, HC = 2
+Vm = -63.5530413596, Vm STD = 2.58322226417, ISICV = 0.791656883847, Amp = 70.2988181181, HC = 2
+Vm = -63.5253046716, Vm STD = 2.65946363923, ISICV = 0.804937903181, Amp = 71.0435675999, HC = 3
+Vm = -63.5574736842, Vm STD = 2.60275081658, ISICV = 0.804393778973, Amp = 70.9652007289, HC = 3
+Vm = -63.4849928036, Vm STD = 2.7354084637, ISICV = 0.954536351572, Amp = 71.0353650477, HC = 3
+Vm = -63.5283640766, Vm STD = 2.63938813719, ISICV = 0.722061916844, Amp = 71.6802053287, HC = 2
+Vm = -63.5505099277, Vm STD = 2.64826470872, ISICV = 0.989059249996, Amp = 71.9247692919, HC = 3
+Vm = -63.5818689283, Vm STD = 2.67093977782, ISICV = 1.06319648039, Amp = 70.2524222164, HC = 3
+Vm = -63.6104592084, Vm STD = 2.67387554584, ISICV = 1.05018783278, Amp = 70.8493740057, HC = 3
+Vm = -63.5925210165, Vm STD = 2.64621530087, ISICV = 0.887701052123, Amp = 71.0725305466, HC = 3
+Vm = -63.6212233945, Vm STD = 2.67361702274, ISICV = 0.734977306115, Amp = 70.5801637197, HC = 2
+Vm = -63.5928474853, Vm STD = 2.7292498433, ISICV = 0.913674629038, Amp = 71.0410345857, HC = 3
+Vm = -63.5771948133, Vm STD = 2.67616108834, ISICV = 1.03126033529, Amp = 71.499393895, HC = 3
+Vm = -63.5895850542, Vm STD = 2.71439499973, ISICV = 0.950924000355, Amp = 71.216876298, HC = 3
+Vm = -63.7755153738, Vm STD = 2.75664071985, ISICV = 0.923082870917, Amp = 71.6518738545, HC = 3
+Vm = -63.6676140888, Vm STD = 2.61942101746, ISICV = 0.90111208011, Amp = 70.1526125295, HC = 3
+Vm = -63.7230574934, Vm STD = 2.78564311047, ISICV = 0.844691754695, Amp = 72.1174743595, HC = 3
+Vm = -63.6660867044, Vm STD = 2.8765498985, ISICV = 0.760835853186, Amp = 71.2006275877, HC = 2
+Vm = -63.7338633558, Vm STD = 2.76166256716, ISICV = 0.843137500617, Amp = 71.2118525522, HC = 3
+Vm = -63.8283315819, Vm STD = 2.69862432719, ISICV = 0.857848087952, Amp = 71.5331755681, HC = 3
+Vm = -63.7804109355, Vm STD = 2.7185059672, ISICV = 0.853613054783, Amp = 71.5908591852, HC = 3
+Vm = -63.7089095664, Vm STD = 2.80750946445, ISICV = 0.764616278313, Amp = 71.4784427225, HC = 2
+Vm = -63.73972469, Vm STD = 2.7875682169, ISICV = 0.824350356635, Amp = 71.7809840457, HC = 3
+Vm = -63.7788287456, Vm STD = 2.75305048689, ISICV = 0.793260130709, Amp = 71.095934827, HC = 2
+Vm = -63.9978289295, Vm STD = 2.7802155179, ISICV = 0.870100608237, Amp = 71.9799160265, HC = 3
+Vm = -63.9263352879, Vm STD = 2.89711844164, ISICV = 0.865770816272, Amp = 71.8438316504, HC = 3
+Vm = -63.7724069588, Vm STD = 2.74827212362, ISICV = 0.795433539254, Amp = 71.7510299383, HC = 2
+Vm = -63.8827648049, Vm STD = 2.90753284046, ISICV = 0.804314290754, Amp = 71.8330226038, HC = 3
+Vm = -64.0270175876, Vm STD = 2.80043359832, ISICV = 0.813131295027, Amp = 71.9488418718, HC = 3
+Vm = -63.9692206535, Vm STD = 2.88073700886, ISICV = 0.814674002895, Amp = 71.4520364221, HC = 3
+Vm = -63.9865702091, Vm STD = 2.82442086368, ISICV = 0.831528566277, Amp = 71.4708062951, HC = 3
+Vm = -63.8729944705, Vm STD = 2.92040112628, ISICV = 0.829210321508, Amp = 72.7388497146, HC = 3
+Vm = -64.0033110928, Vm STD = 2.82295761018, ISICV = 0.748190635885, Amp = 71.8010672058, HC = 2
+Vm = -63.9463314456, Vm STD = 2.88548113561, ISICV = 0.761025751631, Amp = 72.0071432562, HC = 2
+Vm = -63.957688871, Vm STD = 2.88368363932, ISICV = 0.760919444366, Amp = 71.8518731176, HC = 2
+Vm = -64.1617020222, Vm STD = 2.83457509638, ISICV = 0.804809142587, Amp = 71.7074062879, HC = 3
+Vm = -64.1572025779, Vm STD = 2.8538236929, ISICV = 0.752042436501, Amp = 71.5524252978, HC = 2
+Vm = -64.1634395716, Vm STD = 2.88012987744, ISICV = 0.778951453319, Amp = 71.4358695857, HC = 2
+Vm = -64.1638423029, Vm STD = 2.86487104645, ISICV = 0.750347653603, Amp = 72.1458448211, HC = 2
+Vm = -64.1021008299, Vm STD = 2.8943556127, ISICV = 0.825707231652, Amp = 71.519913799, HC = 3
+Vm = -64.1368931673, Vm STD = 2.88517824182, ISICV = 0.866442609413, Amp = 71.1956584722, HC = 3
+Vm = -64.1265418516, Vm STD = 2.93194077486, ISICV = 0.781500606992, Amp = 71.8715756315, HC = 2
+Vm = -64.1748330324, Vm STD = 2.88272620468, ISICV = 0.746023050875, Amp = 72.2237539988, HC = 2
+Vm = -64.064769394, Vm STD = 2.94711316773, ISICV = 0.78295014154, Amp = 72.4592764597, HC = 2
+Vm = -64.1432059515, Vm STD = 2.88588930222, ISICV = 0.70641425836, Amp = 71.8484334177, HC = 2
+Vm = -64.0350123474, Vm STD = 1.45412708768, ISICV = 0, Amp = 0, HC = 1
+Vm = -64.0252481929, Vm STD = 1.49767563873, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.5323931624, Vm STD = 1.56152245979, ISICV = 0, Amp = 67.6747989664, HC = 1
+Vm = -63.9498299584, Vm STD = 1.55217488927, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.3831227125, Vm STD = 1.68257243818, ISICV = 0, Amp = 59.8056757206, HC = 1
+Vm = -63.8954937528, Vm STD = 1.6534735001, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.4638702693, Vm STD = 1.60744946311, ISICV = 0, Amp = 66.884653867, HC = 1
+Vm = -64.0066116392, Vm STD = 1.48592010688, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.4564676617, Vm STD = 1.60679300584, ISICV = 0, Amp = 68.2256846397, HC = 1
+Vm = -63.441873665, Vm STD = 1.63910273468, ISICV = 0, Amp = 72.4655842574, HC = 1
+Vm = -64.0512437954, Vm STD = 1.72495856611, ISICV = 0, Amp = 0, HC = 1
+Vm = -64.0433596753, Vm STD = 1.7385935777, ISICV = 0, Amp = 0, HC = 1
+Vm = -64.0386076772, Vm STD = 1.74589936377, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.4519710014, Vm STD = 1.68170126147, ISICV = 0, Amp = 69.1327732204, HC = 1
+Vm = -63.4157788195, Vm STD = 1.86804817962, ISICV = 0, Amp = 68.7088062935, HC = 1
+Vm = -63.4260183579, Vm STD = 1.96496379099, ISICV = 0.477773018329, Amp = 71.4109427599, HC = 1
+Vm = -63.3447214116, Vm STD = 1.9525051639, ISICV = 0, Amp = 67.2513385716, HC = 1
+Vm = -63.4366108504, Vm STD = 1.883280344, ISICV = 0, Amp = 71.1077157734, HC = 1
+Vm = -63.4903470316, Vm STD = 1.87652400737, ISICV = 1.01416942747, Amp = 69.2618645344, HC = 2
+Vm = -63.4516095562, Vm STD = 1.95423421098, ISICV = 0, Amp = 68.0396181987, HC = 1
+Vm = -64.0501210884, Vm STD = 1.94508883193, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.4753875811, Vm STD = 1.7949927098, ISICV = 0.435597575949, Amp = 66.024187991, HC = 1
+Vm = -63.5890460687, Vm STD = 1.96418564282, ISICV = 0.954125895055, Amp = 70.326917717, HC = 2
+Vm = -63.4365849722, Vm STD = 2.1263591742, ISICV = 0, Amp = 73.7620406343, HC = 1
+Vm = -63.5345413198, Vm STD = 1.96951172457, ISICV = 1.38432422681, Amp = 62.9918969222, HC = 2
+Vm = -63.5375990347, Vm STD = 1.97062542507, ISICV = 0.977974194037, Amp = 68.3349003052, HC = 2
+Vm = -63.5342032887, Vm STD = 1.95015507452, ISICV = 0.955237616524, Amp = 68.6969279986, HC = 2
+Vm = -63.4134991737, Vm STD = 1.97206340912, ISICV = 1.11864390661, Amp = 70.9819026898, HC = 2
+Vm = -63.4226523831, Vm STD = 2.12838680834, ISICV = 1.04976161605, Amp = 67.4732610216, HC = 2
+Vm = -63.5847168006, Vm STD = 2.07255846983, ISICV = 0.57976009749, Amp = 67.6998107026, HC = 1
+Vm = -63.6119673617, Vm STD = 2.1254815034, ISICV = 0.639614913469, Amp = 68.3569167051, HC = 1
+Vm = -63.591742962, Vm STD = 2.12358855587, ISICV = 0.680695808394, Amp = 69.6183470196, HC = 1
+Vm = -63.5182704287, Vm STD = 1.95868456658, ISICV = 1.66771035606, Amp = 69.6956410102, HC = 2
+Vm = -63.602955725, Vm STD = 2.07957499208, ISICV = 0.786018318985, Amp = 69.6547911109, HC = 1
+Vm = -63.5284433187, Vm STD = 2.19586484385, ISICV = 1.11167302388, Amp = 66.4139880952, HC = 2
+Vm = -63.519688632, Vm STD = 2.19358538035, ISICV = 0.736177735384, Amp = 71.4062554865, HC = 1
+Vm = -63.5704681017, Vm STD = 2.24826132916, ISICV = 0.868861728869, Amp = 67.8537019519, HC = 3
+Vm = -63.5509436566, Vm STD = 2.15806190686, ISICV = 1.30976601843, Amp = 68.418167537, HC = 2
+Vm = -63.5156956131, Vm STD = 2.19182194665, ISICV = 0.863581733169, Amp = 70.2158277117, HC = 2
+Vm = -63.5467287267, Vm STD = 2.20290635088, ISICV = 0.508465184167, Amp = 68.7661108092, HC = 2
+Vm = -63.6481071307, Vm STD = 2.24714735588, ISICV = 0.30701608884, Amp = 67.6948601143, HC = 2
+Vm = -63.601797634, Vm STD = 2.26574271572, ISICV = 1.2512188294, Amp = 69.6634531082, HC = 3
+Vm = -63.648357749, Vm STD = 2.25932056415, ISICV = 0.69688494511, Amp = 69.3367688984, HC = 2
+Vm = -63.6021288723, Vm STD = 2.26030691912, ISICV = 0.875634439923, Amp = 68.8715464213, HC = 3
+Vm = -63.6283332193, Vm STD = 2.29408857388, ISICV = 0.942339183547, Amp = 68.2298404578, HC = 3
+Vm = -63.6119459225, Vm STD = 2.32145921275, ISICV = 0.879091113586, Amp = 69.2458698371, HC = 3
+Vm = -63.6019905602, Vm STD = 2.32850117839, ISICV = 1.41722588152, Amp = 69.4195639427, HC = 3
+Vm = -63.5973354589, Vm STD = 2.31223852812, ISICV = 1.21757198045, Amp = 69.8682469033, HC = 3
+Vm = -63.5640475217, Vm STD = 2.37104808478, ISICV = 1.16578042043, Amp = 69.7305491782, HC = 3
+Vm = -63.5515215684, Vm STD = 2.39685995813, ISICV = 1.22529877539, Amp = 68.4984455922, HC = 3
+Vm = -63.6900383272, Vm STD = 2.38268550613, ISICV = 0.868892847212, Amp = 67.8898023066, HC = 3
+Vm = -63.6679138425, Vm STD = 2.42994871899, ISICV = 0.819788729169, Amp = 68.85255504, HC = 3
+Vm = -63.6115987586, Vm STD = 2.43940434368, ISICV = 1.24563067858, Amp = 67.9918345117, HC = 3
+Vm = -63.5989091005, Vm STD = 2.44752849162, ISICV = 0.831654303087, Amp = 69.887269122, HC = 3
+Vm = -63.5747121837, Vm STD = 2.47822341332, ISICV = 1.01873432999, Amp = 69.4970743214, HC = 3
+Vm = -63.6192713872, Vm STD = 2.49022059632, ISICV = 1.00079715883, Amp = 68.9874345504, HC = 3
+Vm = -63.6741882033, Vm STD = 2.42927634329, ISICV = 0.778683369246, Amp = 67.5523843681, HC = 2
+Vm = -63.7137663484, Vm STD = 2.43433840827, ISICV = 0.866192821726, Amp = 67.4207170159, HC = 3
+Vm = -63.6182526915, Vm STD = 2.51997214026, ISICV = 1.13744248583, Amp = 67.4652042262, HC = 3
+Vm = -63.6492898104, Vm STD = 2.48424057419, ISICV = 0.776577600502, Amp = 69.7728731256, HC = 2
+Vm = -63.7014243575, Vm STD = 2.57215108815, ISICV = 1.07775879861, Amp = 70.336447451, HC = 3
+Vm = -63.7482662728, Vm STD = 2.53403081568, ISICV = 1.05159441101, Amp = 69.4884102744, HC = 3
+Vm = -63.7209157918, Vm STD = 2.56112700366, ISICV = 0.960434775685, Amp = 72.2630519223, HC = 3
+Vm = -63.7194621275, Vm STD = 2.58020533816, ISICV = 0.972797332896, Amp = 71.5577857091, HC = 3
+Vm = -63.7226126451, Vm STD = 2.57201222688, ISICV = 0.967061105334, Amp = 71.028052679, HC = 3
+Vm = -63.7049085235, Vm STD = 2.57790448447, ISICV = 0.909372235551, Amp = 69.8947682871, HC = 3
+Vm = -63.7535672515, Vm STD = 2.58143996714, ISICV = 1.2464830335, Amp = 71.1752996233, HC = 3
+Vm = -63.7757951539, Vm STD = 2.52447136893, ISICV = 0.851899914548, Amp = 70.6714376858, HC = 3
+Vm = -63.7890114283, Vm STD = 2.55061357633, ISICV = 0.785839615998, Amp = 70.5937961721, HC = 2
+Vm = -63.9043592173, Vm STD = 2.69134779031, ISICV = 0.846218207667, Amp = 69.8394644572, HC = 3
+Vm = -63.8934239035, Vm STD = 2.69408457055, ISICV = 0.685035155598, Amp = 70.0165745245, HC = 2
+Vm = -63.8636246696, Vm STD = 2.74326018156, ISICV = 0.947704887334, Amp = 70.5873184008, HC = 3
+Vm = -63.8559066352, Vm STD = 2.74315124474, ISICV = 0.81848595081, Amp = 71.246598725, HC = 3
+Vm = -63.7043707497, Vm STD = 2.60855839323, ISICV = 0.995394943796, Amp = 70.7261596768, HC = 3
+Vm = -63.8880794389, Vm STD = 2.71072075318, ISICV = 0.781298725677, Amp = 70.6496313334, HC = 2
+Vm = -63.9362970898, Vm STD = 2.6809008205, ISICV = 0.849143442185, Amp = 69.6178067846, HC = 3
+Vm = -63.9543914702, Vm STD = 2.65111238305, ISICV = 0.8138045744, Amp = 69.6229288139, HC = 3
+Vm = -63.9270814762, Vm STD = 2.70953021554, ISICV = 0.975313612883, Amp = 70.1239986413, HC = 3
+Vm = -63.9388960877, Vm STD = 2.68445785634, ISICV = 0.643608742018, Amp = 70.9996821628, HC = 2
+Vm = -63.9142005935, Vm STD = 2.76294275601, ISICV = 0.966436532396, Amp = 71.088764847, HC = 3
+Vm = -63.8956488803, Vm STD = 2.71073607325, ISICV = 0.671020645072, Amp = 70.4555264638, HC = 2
+Vm = -63.896317671, Vm STD = 2.7773917182, ISICV = 1.19613363921, Amp = 71.1556077064, HC = 3
+Vm = -63.9105458062, Vm STD = 2.75556733866, ISICV = 1.19211520767, Amp = 71.7699112972, HC = 3
+Vm = -63.9386848968, Vm STD = 2.75209655783, ISICV = 1.09610404895, Amp = 71.5019570963, HC = 3
+Vm = -63.9146061089, Vm STD = 2.77405436419, ISICV = 1.38427568524, Amp = 72.0889739098, HC = 3
+Vm = -63.8960999139, Vm STD = 2.7796360324, ISICV = 1.65757001881, Amp = 71.810796435, HC = 3
+Vm = -63.9678504762, Vm STD = 2.72379119229, ISICV = 1.24445562748, Amp = 71.6132081716, HC = 3
+Vm = -63.9159758143, Vm STD = 2.74696607573, ISICV = 1.2879000736, Amp = 71.9120765055, HC = 3
+Vm = -63.9888647798, Vm STD = 2.72210440673, ISICV = 1.02370218915, Amp = 71.111095998, HC = 3
+Vm = -63.9250249679, Vm STD = 2.78990651189, ISICV = 0.821251258478, Amp = 71.0266051774, HC = 3
+Vm = -64.072404078, Vm STD = 2.83937112401, ISICV = 1.00062749302, Amp = 71.0181757184, HC = 3
+Vm = -63.994194054, Vm STD = 2.91170683186, ISICV = 0.972489013896, Amp = 71.1411807179, HC = 3
+Vm = -64.0514442588, Vm STD = 2.85690453116, ISICV = 0.939400830689, Amp = 71.7518858107, HC = 3
+Vm = -64.1015391629, Vm STD = 2.80638025784, ISICV = 1.02635227731, Amp = 71.1425258446, HC = 3
+Vm = -64.1182374214, Vm STD = 2.78183588098, ISICV = 1.05332847016, Amp = 70.190939352, HC = 3
+Vm = -64.0186457546, Vm STD = 2.89340008338, ISICV = 1.05529589691, Amp = 71.388676728, HC = 3
+Vm = -64.1425774404, Vm STD = 2.7406145531, ISICV = 0.813530390223, Amp = 71.958440688, HC = 3
+Vm = -64.0207030923, Vm STD = 2.8492867289, ISICV = 0.860844268269, Amp = 71.5978262742, HC = 3
+Vm = -64.0960806055, Vm STD = 2.78878954424, ISICV = 0.972519894448, Amp = 71.2590871886, HC = 3
+Vm = -62.1606903627, Vm STD = 1.64331482011, ISICV = 0.835197603792, Amp = 68.129541419, HC = 2
+Vm = -62.1283616359, Vm STD = 1.70257553845, ISICV = 0.289129182267, Amp = 66.0136200562, HC = 1
+Vm = -64.1051910747, Vm STD = 2.79226522455, ISICV = 0.875397514204, Amp = 71.3270896, HC = 3
+Vm = -62.091838253, Vm STD = 1.80237987371, ISICV = 0.813558748626, Amp = 64.5820703342, HC = 2
+Vm = -62.1099454572, Vm STD = 1.72259203748, ISICV = 0.793380178531, Amp = 66.9247700757, HC = 1
+Vm = -62.0939786567, Vm STD = 1.82273924575, ISICV = 0.976745266479, Amp = 68.0141080302, HC = 2
+Vm = -62.1407964918, Vm STD = 1.76805984081, ISICV = 0.671302452658, Amp = 64.6157136246, HC = 1
+Vm = -62.027064817, Vm STD = 1.90888718284, ISICV = 0.676259778069, Amp = 66.4826113055, HC = 1
+Vm = -62.027030953, Vm STD = 1.93110475787, ISICV = 0.695694923755, Amp = 68.8928693226, HC = 1
+Vm = -62.0129674049, Vm STD = 1.91885449626, ISICV = 0.606516467341, Amp = 65.5839755462, HC = 1
+Vm = -62.060252992, Vm STD = 1.87535033253, ISICV = 1.15754391202, Amp = 66.4703820376, HC = 2
+Vm = -62.1377295492, Vm STD = 1.92153016448, ISICV = 0.964131765576, Amp = 63.9842623354, HC = 2
+Vm = -62.1383978314, Vm STD = 1.9219709626, ISICV = 1.0549506435, Amp = 67.5252653515, HC = 2
+Vm = -62.0758728853, Vm STD = 1.95958614658, ISICV = 0.719335488744, Amp = 68.6792715726, HC = 1
+Vm = -62.1355049083, Vm STD = 2.01391969426, ISICV = 0.982053357781, Amp = 65.809688011, HC = 2
+Vm = -62.0845184717, Vm STD = 1.98355004981, ISICV = 0.815466726835, Amp = 68.8660554773, HC = 2
+Vm = -62.1314520962, Vm STD = 2.00561254339, ISICV = 1.11333166936, Amp = 67.8324810631, HC = 2
+Vm = -62.1282950266, Vm STD = 2.01152087464, ISICV = 1.03493829302, Amp = 67.1626470161, HC = 2
+Vm = -62.1527634406, Vm STD = 1.98562928308, ISICV = 0.894534091952, Amp = 68.3536000939, HC = 2
+Vm = -62.1522834056, Vm STD = 2.01722203131, ISICV = 0.67697195391, Amp = 67.1547455843, HC = 1
+Vm = -62.1099168103, Vm STD = 2.06351772098, ISICV = 0.908456608977, Amp = 66.5015862072, HC = 2
+Vm = -62.2153642239, Vm STD = 2.01048263499, ISICV = 0.648098665453, Amp = 67.957902842, HC = 1
+Vm = -62.2390421284, Vm STD = 2.09671500877, ISICV = 0.889496191952, Amp = 67.2669430444, HC = 2
+Vm = -62.2027527246, Vm STD = 2.10378582359, ISICV = 0.921715318738, Amp = 68.0678995108, HC = 2
+Vm = -62.2410929672, Vm STD = 2.09478649126, ISICV = 0.965624133248, Amp = 67.3385697543, HC = 2
+Vm = -62.1856376087, Vm STD = 2.17520692515, ISICV = 1.23254884514, Amp = 66.7132701301, HC = 2
+Vm = -62.2273585125, Vm STD = 2.14338113863, ISICV = 1.00955127926, Amp = 67.0002982042, HC = 2
+Vm = -62.1592297723, Vm STD = 2.24273136846, ISICV = 0.886615439863, Amp = 68.7348245984, HC = 3
+Vm = -62.1970252484, Vm STD = 2.17664282008, ISICV = 0.815344781189, Amp = 67.9445420638, HC = 2
+Vm = -62.2978988365, Vm STD = 2.24728276145, ISICV = 0.832313252332, Amp = 66.0642076105, HC = 3
+Vm = -62.1508041649, Vm STD = 2.20772050388, ISICV = 0.839022015069, Amp = 67.3528298567, HC = 3
+Vm = -62.2049230204, Vm STD = 2.12918810108, ISICV = 0.698181738585, Amp = 64.3812323058, HC = 1
+Vm = -62.3189006156, Vm STD = 2.25726480822, ISICV = 0.8717019401, Amp = 67.3175749547, HC = 3
+Vm = -62.3256401558, Vm STD = 2.2518056368, ISICV = 1.00697690142, Amp = 67.4480534378, HC = 3
+Vm = -62.2797433654, Vm STD = 2.31532476693, ISICV = 0.6865160729, Amp = 66.4960299358, HC = 2
+Vm = -62.2471578016, Vm STD = 2.30158210739, ISICV = 0.953476436167, Amp = 67.6776353319, HC = 3
+Vm = -62.2385285779, Vm STD = 2.34200887688, ISICV = 0.860197014139, Amp = 67.1054880321, HC = 3
+Vm = -62.2259196444, Vm STD = 2.38021987608, ISICV = 1.19931275449, Amp = 66.6332514145, HC = 3
+Vm = -62.2412182932, Vm STD = 2.35641607447, ISICV = 0.975438811885, Amp = 65.5529900413, HC = 3
+Vm = -62.218419146, Vm STD = 2.39817410089, ISICV = 0.7191877973, Amp = 68.098112655, HC = 2
+Vm = -62.2495877503, Vm STD = 2.3668928596, ISICV = 0.884050063274, Amp = 67.7851390953, HC = 3
+Vm = -62.440673569, Vm STD = 2.40901515836, ISICV = 1.07798343205, Amp = 68.4819902984, HC = 3
+Vm = -62.3659127437, Vm STD = 2.41946943608, ISICV = 0.771222863299, Amp = 67.4717756719, HC = 2
+Vm = -62.3917738721, Vm STD = 2.40464358711, ISICV = 0.918278881302, Amp = 67.9413831086, HC = 3
+Vm = -62.4177424694, Vm STD = 2.43012884893, ISICV = 0.98547304474, Amp = 66.9847140568, HC = 3
+Vm = -62.3927211673, Vm STD = 2.43778537612, ISICV = 0.834600975011, Amp = 68.04263926, HC = 3
+Vm = -62.4153566031, Vm STD = 2.45924842046, ISICV = 0.94658262313, Amp = 67.3033829354, HC = 3
+Vm = -62.4216331061, Vm STD = 2.46761870114, ISICV = 0.930396943111, Amp = 68.1583321934, HC = 3
+Vm = -62.4290045357, Vm STD = 2.43123797821, ISICV = 0.944240958065, Amp = 68.9311200807, HC = 3
+Vm = -62.3854772474, Vm STD = 2.49444624876, ISICV = 1.07326654655, Amp = 67.6741705727, HC = 3
+Vm = -62.3414773267, Vm STD = 2.53871371935, ISICV = 0.954300391545, Amp = 67.670165731, HC = 3
+Vm = -62.4309455959, Vm STD = 2.49466236143, ISICV = 0.998751744579, Amp = 68.1518889141, HC = 3
+Vm = -62.4461240082, Vm STD = 2.46835703969, ISICV = 0.845027640771, Amp = 66.8498134635, HC = 3
+Vm = -62.3874045126, Vm STD = 2.56767725657, ISICV = 0.912141332159, Amp = 68.3437830477, HC = 3
+Vm = -62.4791639467, Vm STD = 2.48232251384, ISICV = 1.02980205391, Amp = 67.5851612591, HC = 3
+Vm = -62.4314361405, Vm STD = 2.49301990433, ISICV = 1.03060695271, Amp = 67.4040474045, HC = 3
+Vm = -62.4561756809, Vm STD = 2.51361315287, ISICV = 0.86979773781, Amp = 67.6385445351, HC = 3
+Vm = -62.4658863077, Vm STD = 2.54266154847, ISICV = 0.878915805918, Amp = 67.3838454179, HC = 3
+Vm = -62.4657193947, Vm STD = 2.55507770713, ISICV = 0.988281062022, Amp = 67.726925259, HC = 3
+Vm = -62.395099851, Vm STD = 2.59827246526, ISICV = 1.12252478213, Amp = 68.3540292316, HC = 3
+Vm = -62.4465230651, Vm STD = 2.60858726469, ISICV = 0.90729098897, Amp = 68.5402183113, HC = 3
+Vm = -62.5329540973, Vm STD = 2.63674132812, ISICV = 0.958045892329, Amp = 67.7902350284, HC = 3
+Vm = -62.4590594925, Vm STD = 2.69566470763, ISICV = 1.1625230846, Amp = 68.5003690865, HC = 3
+Vm = -62.5939586799, Vm STD = 2.61467563512, ISICV = 0.996649446322, Amp = 69.2389164985, HC = 3
+Vm = -62.5835640954, Vm STD = 2.60102546125, ISICV = 0.870284819012, Amp = 68.3826412971, HC = 3
+Vm = -62.5598034848, Vm STD = 2.63699333739, ISICV = 0.738268627541, Amp = 68.4177460967, HC = 2
+Vm = -62.6250473456, Vm STD = 2.63833923696, ISICV = 0.869758546695, Amp = 68.1389960498, HC = 3
+Vm = -62.6343126515, Vm STD = 2.66720575227, ISICV = 0.835022343609, Amp = 68.3121058235, HC = 3
+Vm = -62.5934032398, Vm STD = 2.65876292928, ISICV = 0.895781538507, Amp = 68.9010357083, HC = 3
+Vm = -62.6260525738, Vm STD = 2.60891594304, ISICV = 0.830965408071, Amp = 69.0477820543, HC = 3
+Vm = -62.6052505791, Vm STD = 2.65442500605, ISICV = 0.882488950085, Amp = 69.3406059556, HC = 3
+Vm = -62.7184123859, Vm STD = 2.75566146738, ISICV = 0.738474305692, Amp = 68.7127772083, HC = 2
+Vm = -62.7447660592, Vm STD = 2.76445489708, ISICV = 0.732324802937, Amp = 68.7666256023, HC = 2
+Vm = -62.6650661712, Vm STD = 2.77117975566, ISICV = 0.741220616446, Amp = 68.6537356005, HC = 2
+Vm = -62.7135664302, Vm STD = 2.7666529697, ISICV = 0.897455504898, Amp = 69.333873896, HC = 3
+Vm = -62.6795856837, Vm STD = 2.76032561379, ISICV = 0.93121050661, Amp = 68.8865643862, HC = 3
+Vm = -62.7565332574, Vm STD = 2.77678820535, ISICV = 0.88196740968, Amp = 68.8885175463, HC = 3
+Vm = -62.7485637498, Vm STD = 2.76918840803, ISICV = 0.832968645884, Amp = 68.1762242951, HC = 3
+Vm = -62.7260547989, Vm STD = 2.80996660634, ISICV = 0.824774587777, Amp = 68.7228217013, HC = 3
+Vm = -62.7033366614, Vm STD = 2.79778604159, ISICV = 0.822902324552, Amp = 69.6015828142, HC = 3
+Vm = -62.7797976585, Vm STD = 2.78336383214, ISICV = 0.791977976828, Amp = 68.0207639301, HC = 2
+Vm = -62.7402018421, Vm STD = 2.86721357703, ISICV = 0.821916413109, Amp = 69.7048129463, HC = 3
+Vm = -62.8040676451, Vm STD = 2.85596735753, ISICV = 0.920135391793, Amp = 69.2407581845, HC = 3
+Vm = -62.7137346725, Vm STD = 2.79595348278, ISICV = 0.919230181006, Amp = 67.9088991371, HC = 3
+Vm = -62.8156123989, Vm STD = 2.84040683994, ISICV = 0.922227599298, Amp = 68.6925772606, HC = 3
+Vm = -62.7343201606, Vm STD = 2.87204008546, ISICV = 0.714071715938, Amp = 69.7168360073, HC = 2
+Vm = -62.8361185244, Vm STD = 2.81476414344, ISICV = 0.784387431783, Amp = 69.4611740645, HC = 2
+Vm = -62.7990122102, Vm STD = 2.88218478483, ISICV = 0.832357739905, Amp = 69.2455754241, HC = 3
+Vm = -62.8511586007, Vm STD = 2.82783293196, ISICV = 0.824233430236, Amp = 69.5924141318, HC = 3
+Vm = -62.8833492008, Vm STD = 2.79540203422, ISICV = 0.823311129168, Amp = 68.9944890335, HC = 3
+Vm = -62.860597368, Vm STD = 2.81679204786, ISICV = 0.820389509488, Amp = 69.6960086874, HC = 3
+Vm = -63.0169746645, Vm STD = 2.86474206743, ISICV = 0.826702296054, Amp = 69.7391065172, HC = 3
+Vm = -63.0987397921, Vm STD = 2.80702385503, ISICV = 0.827206246026, Amp = 69.140972507, HC = 3
+Vm = -63.0679642711, Vm STD = 2.85137230815, ISICV = 0.901815462149, Amp = 69.700362376, HC = 3
+Vm = -63.0437047942, Vm STD = 2.81294361033, ISICV = 0.810206645715, Amp = 69.6328429334, HC = 3
+Vm = -62.9967040044, Vm STD = 2.8847787695, ISICV = 0.835144284294, Amp = 70.4698992159, HC = 3
+Vm = -63.0527064797, Vm STD = 2.86336435024, ISICV = 0.826715822755, Amp = 70.1636733569, HC = 3
+Vm = -63.0883727517, Vm STD = 2.81662530122, ISICV = 0.942745012563, Amp = 70.3819105262, HC = 3
+Vm = -63.0704867371, Vm STD = 2.83533895586, ISICV = 0.831983087756, Amp = 70.0111687642, HC = 3
+Vm = -61.7020906122, Vm STD = 1.66858456895, ISICV = 0, Amp = 63.6806226508, HC = 1
+Vm = -62.1851126174, Vm STD = 1.63514688802, ISICV = 0, Amp = 0, HC = 1
+Vm = -63.0706549167, Vm STD = 2.85482201264, ISICV = 0.90112294753, Amp = 69.872804952, HC = 3
+Vm = -63.0710579714, Vm STD = 2.83276418039, ISICV = 0.921741950436, Amp = 70.1176357528, HC = 3
+Vm = -61.7064324137, Vm STD = 1.69200014231, ISICV = 0, Amp = 66.5743670004, HC = 1
+Vm = -61.78125, Vm STD = 1.71046956413, ISICV = 0, Amp = 67.4458614219, HC = 1
+Vm = -61.6581641195, Vm STD = 1.72422306393, ISICV = 0.414112550808, Amp = 62.4401078072, HC = 1
+Vm = -61.6984418095, Vm STD = 1.70939838516, ISICV = 1.0562373567, Amp = 62.6052951267, HC = 2
+Vm = -61.7015612973, Vm STD = 1.7607702873, ISICV = 0.86413239341, Amp = 64.6360211033, HC = 2
+Vm = -61.6637235203, Vm STD = 1.79886848637, ISICV = 1.47255068865, Amp = 65.0368536948, HC = 2
+Vm = -61.6439343998, Vm STD = 1.80283204727, ISICV = 0, Amp = 64.8108272663, HC = 1
+Vm = -61.6883376946, Vm STD = 1.78842042992, ISICV = 0.948190226218, Amp = 64.9056895914, HC = 2
+Vm = -61.6596693421, Vm STD = 1.80068854084, ISICV = 0.534639147942, Amp = 65.3511660664, HC = 1
+Vm = -61.7464470987, Vm STD = 1.75506545357, ISICV = 0.710143160384, Amp = 63.7444869318, HC = 1
+Vm = -61.7003762284, Vm STD = 1.80539151868, ISICV = 0.832139869217, Amp = 61.9717185595, HC = 2
+Vm = -61.6007848031, Vm STD = 1.89852959949, ISICV = 0.0860242166142, Amp = 66.6573168564, HC = 1
+Vm = -61.6605290316, Vm STD = 1.82631157298, ISICV = 1.0174041688, Amp = 62.8449530579, HC = 2
+Vm = -61.6186705094, Vm STD = 1.8732513503, ISICV = 0.948954898568, Amp = 65.4625884325, HC = 2
+Vm = -61.6786123459, Vm STD = 1.90363616255, ISICV = 1.08388683569, Amp = 62.479178715, HC = 2
+Vm = -61.6900408481, Vm STD = 1.86080733045, ISICV = 1.5265019823, Amp = 64.8753372266, HC = 2
+Vm = -61.6375645834, Vm STD = 1.90977138365, ISICV = 0.840351472638, Amp = 64.0460439008, HC = 2
+Vm = -61.6648354819, Vm STD = 1.95569200898, ISICV = 1.27597380686, Amp = 64.5107450969, HC = 2
+Vm = -61.7264132291, Vm STD = 1.95435803699, ISICV = 0.919993779443, Amp = 63.0242817681, HC = 2
+Vm = -61.7435417884, Vm STD = 2.01858362827, ISICV = 0.886947104788, Amp = 64.6700093182, HC = 2
+Vm = -61.7440693135, Vm STD = 1.97891575012, ISICV = 0.906178160184, Amp = 66.2438444461, HC = 2
+Vm = -61.6886380041, Vm STD = 1.99056159479, ISICV = 1.45197902807, Amp = 65.283352223, HC = 2
+Vm = -61.6690944371, Vm STD = 2.07830603919, ISICV = 0.808295283542, Amp = 64.6295289917, HC = 2
+Vm = -61.7402659997, Vm STD = 2.00122464287, ISICV = 0.7647298071, Amp = 65.6453096601, HC = 1
+Vm = -61.6869402286, Vm STD = 2.09823721562, ISICV = 0.933634148886, Amp = 65.5505859321, HC = 2
+Vm = -61.7196905455, Vm STD = 2.04023810848, ISICV = 0.464846560789, Amp = 65.4636153172, HC = 1
+Vm = -61.6631150501, Vm STD = 2.09785875372, ISICV = 0.523338402915, Amp = 65.8332106627, HC = 1
+Vm = -61.6207145038, Vm STD = 2.14632273692, ISICV = 0.795814186991, Amp = 65.3492298093, HC = 1
+Vm = -61.7578646219, Vm STD = 2.13581970553, ISICV = 0.868607672548, Amp = 66.3220419921, HC = 2
+Vm = -61.7874185289, Vm STD = 2.10121063199, ISICV = 0.780597816184, Amp = 65.5532280797, HC = 1
+Vm = -61.7451292848, Vm STD = 2.17463965859, ISICV = 0.906811409842, Amp = 65.1722903191, HC = 2
+Vm = -61.7645837042, Vm STD = 2.16955459865, ISICV = 1.27441452114, Amp = 66.845426663, HC = 2
+Vm = -61.7879561655, Vm STD = 2.08942191406, ISICV = 0.998104114118, Amp = 64.9629826504, HC = 2
+Vm = -61.7957947004, Vm STD = 2.16731165517, ISICV = 0.931073326853, Amp = 65.4615359151, HC = 2
+Vm = -61.7569412202, Vm STD = 2.17616721469, ISICV = 0.927288545674, Amp = 64.7551675195, HC = 2
+Vm = -61.7318304526, Vm STD = 2.25304227237, ISICV = 0.916632805988, Amp = 65.6312543279, HC = 3
+Vm = -61.6963848998, Vm STD = 2.24406420947, ISICV = 0.81529431232, Amp = 62.731771047, HC = 3
+Vm = -61.6866184113, Vm STD = 2.27631869429, ISICV = 0.856421017361, Amp = 65.9835264877, HC = 3
+Vm = -61.8269798897, Vm STD = 2.19731927398, ISICV = 0.717210173203, Amp = 63.525267227, HC = 1
+Vm = -61.7738998133, Vm STD = 2.24328022558, ISICV = 0.980390726682, Amp = 63.2364748495, HC = 3
+Vm = -61.8031383077, Vm STD = 2.22840858349, ISICV = 1.09124454168, Amp = 65.9021775001, HC = 3
+Vm = -61.7944202958, Vm STD = 2.25947425392, ISICV = 1.14524398724, Amp = 65.5422384127, HC = 3
+Vm = -61.7631239017, Vm STD = 2.36001994452, ISICV = 0.93765170597, Amp = 65.6284949095, HC = 3
+Vm = -61.761366275, Vm STD = 2.36557789748, ISICV = 1.00693358258, Amp = 64.5559356934, HC = 3
+Vm = -61.7569049906, Vm STD = 2.32487430219, ISICV = 0.860723388926, Amp = 65.2044057537, HC = 3
+Vm = -61.7840566977, Vm STD = 2.35032172194, ISICV = 0.939337587436, Amp = 66.1997468523, HC = 3
+Vm = -61.7975083674, Vm STD = 2.26202261306, ISICV = 0.753104929796, Amp = 66.6347123154, HC = 2
+Vm = -61.7987095274, Vm STD = 2.31202788936, ISICV = 0.86331528394, Amp = 66.1668079464, HC = 3
+Vm = -61.8431916418, Vm STD = 2.33332943078, ISICV = 0.893044335171, Amp = 65.7338520719, HC = 3
+Vm = -61.8172519683, Vm STD = 2.37846051045, ISICV = 1.18972897091, Amp = 65.6291868991, HC = 3
+Vm = -61.8502855951, Vm STD = 2.3290341397, ISICV = 0.966272257402, Amp = 66.1331481599, HC = 3
+Vm = -61.8216833262, Vm STD = 2.40177476089, ISICV = 1.27098682131, Amp = 65.0799700186, HC = 3
+Vm = -61.8640805136, Vm STD = 2.35893661285, ISICV = 0.894536205878, Amp = 64.7055565362, HC = 3
+Vm = -61.8239920764, Vm STD = 2.38452831831, ISICV = 0.947655775152, Amp = 66.7054452397, HC = 3
+Vm = -61.8616974986, Vm STD = 2.41034891139, ISICV = 0.854109125725, Amp = 66.0527308363, HC = 3
+Vm = -61.8468274679, Vm STD = 2.41820127398, ISICV = 0.994463172277, Amp = 65.4096918147, HC = 3
+Vm = -61.9017320398, Vm STD = 2.39317273373, ISICV = 1.0010657675, Amp = 66.5551697702, HC = 3
+Vm = -61.8690396789, Vm STD = 2.40926736647, ISICV = 1.19329842161, Amp = 66.1435782672, HC = 3
+Vm = -61.8782354053, Vm STD = 2.42467371924, ISICV = 0.759522164395, Amp = 65.5115008163, HC = 2
+Vm = -61.9104964722, Vm STD = 2.38102174859, ISICV = 0.718232200542, Amp = 64.1293196146, HC = 2
+Vm = -61.8487575129, Vm STD = 2.43308298394, ISICV = 1.08979658455, Amp = 64.9864693775, HC = 3
+Vm = -61.8665719452, Vm STD = 2.42608216077, ISICV = 1.02511912552, Amp = 66.2647505553, HC = 3
+Vm = -61.9038942268, Vm STD = 2.39803962148, ISICV = 1.06424602264, Amp = 65.3982728503, HC = 3
+Vm = -61.8288807567, Vm STD = 2.44043154046, ISICV = 0.951082278223, Amp = 66.1546695128, HC = 3
+Vm = -61.8560837691, Vm STD = 2.49579683554, ISICV = 0.799204512463, Amp = 65.7750289289, HC = 2
+Vm = -61.8762565849, Vm STD = 2.44084478979, ISICV = 0.912731825049, Amp = 65.226229448, HC = 3
+Vm = -61.8492885547, Vm STD = 2.46578401026, ISICV = 0.947917100273, Amp = 66.2716465982, HC = 3
+Vm = -61.8392063473, Vm STD = 2.46678400901, ISICV = 0.783529801952, Amp = 65.4570889837, HC = 2
+Vm = -62.021598949, Vm STD = 2.55484584099, ISICV = 0.819633945608, Amp = 66.5347662579, HC = 3
+Vm = -62.0308070217, Vm STD = 2.50032601109, ISICV = 0.878090738659, Amp = 65.7107093039, HC = 3
+Vm = -62.0444227218, Vm STD = 2.53386957705, ISICV = 0.885370801229, Amp = 66.6843498143, HC = 3
+Vm = -61.9529574917, Vm STD = 2.62516172245, ISICV = 0.945366248899, Amp = 65.8253545787, HC = 3
+Vm = -62.0175196278, Vm STD = 2.59079729466, ISICV = 0.995966016609, Amp = 66.9951511635, HC = 3
+Vm = -62.0716911317, Vm STD = 2.51870902811, ISICV = 0.986129588377, Amp = 66.2013219199, HC = 3
+Vm = -62.1163176115, Vm STD = 2.48170622831, ISICV = 0.821383068709, Amp = 66.5787124, HC = 3
+Vm = -62.0455310123, Vm STD = 2.58941649699, ISICV = 0.810548623757, Amp = 66.6584292225, HC = 3
+Vm = -62.0904309198, Vm STD = 2.53567053421, ISICV = 0.842292747213, Amp = 66.8491672108, HC = 3
+Vm = -62.0447978648, Vm STD = 2.55594156729, ISICV = 0.847307928386, Amp = 66.9181818362, HC = 3
+Vm = -62.0413583138, Vm STD = 2.67609532924, ISICV = 0.8798570092, Amp = 67.0292120846, HC = 3
+Vm = -61.9870504606, Vm STD = 2.74549511822, ISICV = 0.900789374899, Amp = 65.7549443699, HC = 3
+Vm = -62.1315187753, Vm STD = 2.5912621957, ISICV = 0.803993941158, Amp = 66.1418604058, HC = 3
+Vm = -62.1037620916, Vm STD = 2.66521582315, ISICV = 0.784375228332, Amp = 66.7312378851, HC = 2
+Vm = -62.1341328549, Vm STD = 2.65526854205, ISICV = 0.800891045894, Amp = 66.8052488461, HC = 3
+Vm = -62.0274222927, Vm STD = 2.72432058972, ISICV = 0.959090083223, Amp = 67.3914911147, HC = 3
+Vm = -61.968141707, Vm STD = 2.75043294451, ISICV = 0.852578038713, Amp = 66.81485583, HC = 3
+Vm = -62.1750620347, Vm STD = 2.58832048089, ISICV = 0.84368584937, Amp = 66.2984496287, HC = 3
+Vm = -62.0827487421, Vm STD = 2.68285836103, ISICV = 0.73385283245, Amp = 67.6575827209, HC = 2
+Vm = -62.0990448809, Vm STD = 2.67439522312, ISICV = 0.778563366416, Amp = 67.7674856095, HC = 2
+Vm = -62.2349092962, Vm STD = 2.70846843239, ISICV = 0.928257068352, Amp = 67.9810664255, HC = 3
+Vm = -62.1947575551, Vm STD = 2.69737628219, ISICV = 0.917613237923, Amp = 67.2441756711, HC = 3
+Vm = -62.1821551819, Vm STD = 2.73469268814, ISICV = 0.81276347063, Amp = 67.7896129857, HC = 3
+Vm = -62.1681740196, Vm STD = 2.74924933589, ISICV = 1.06819959998, Amp = 67.705646151, HC = 3
+Vm = -62.2433364652, Vm STD = 2.71431178796, ISICV = 0.821350815645, Amp = 67.7661856921, HC = 3
+Vm = -62.2391899085, Vm STD = 2.712106447, ISICV = 0.778113610533, Amp = 67.6570594129, HC = 2
+Vm = -62.261186329, Vm STD = 2.68606340683, ISICV = 0.801052348583, Amp = 67.8551265824, HC = 3
+Vm = -62.164862193, Vm STD = 2.78715554325, ISICV = 0.9109686021, Amp = 67.5248944956, HC = 3
+Vm = -62.235706427, Vm STD = 2.74270229017, ISICV = 0.879291602953, Amp = 68.0674642686, HC = 3
+Vm = -62.2083348768, Vm STD = 2.72666416377, ISICV = 0.935350246202, Amp = 67.7900031844, HC = 3
+721.854408979

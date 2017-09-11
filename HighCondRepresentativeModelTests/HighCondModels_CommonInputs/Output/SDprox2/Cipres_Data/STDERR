@@ -1,0 +1,1142 @@
+NEURON -- Release 7.4 (1341:2ccabed20677) 2015-05-31
+Duke, Yale, and the BlueBrain Project -- Copyright 1984-2015
+See http://www.neuron.yale.edu/neuron/credits
+
+Additional mechanisms from files
+ mod_nsgportal/IKa.mod mod_nsgportal/ingauss.mod mod_nsgportal/Ksoma.mod mod_nsgportal/Nap.mod mod_nsgportal/Nasoma.mod mod_nsgportal/vecevent.mod
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below threshold after last spike.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:82: RuntimeWarning: Degrees of freedom <= 0 for slice
+  warnings.warn("Degrees of freedom <= 0 for slice", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:94: RuntimeWarning: invalid value encountered in true_divide
+  arrmean, rcount, out=arrmean, casting='unsafe', subok=False)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:116: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
+  warnings.warn("Mean of empty slice.", RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/numpy/core/_methods.py:70: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_amplitude: 
+Voltage never goes below or above threshold in spike detection.
+
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+Feature [peak_voltage] is missing
+AP_amplitude: Error calculating peak_voltage
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature AP_begin_indices: 
+ At least one spike required for calculation of min_AHP_indices.
+
+Feature [min_AHP_indices] is missing
+
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+  RuntimeWarning)
+/projects/ps-nsg/home/nsguser/.local/lib/python2.7/site-packages/efel/api.py:319: RuntimeWarning: Error while calculating feature ISI_CV: 
+ Three spikes required for calculation of ISI_values.
+
+Feature [ISI_values] is missing
+
+  RuntimeWarning)
+/opt/scipy/2.7/lib/python2.7/site-packages/matplotlib/collections.py:590: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
