@@ -1,0 +1,74 @@
+// This script is used to simulate a single spike onto the soma of the same cell multiple times with the purpose of analyzing the consistency of the spike time of the IS3 cell in response to the single presynaptic spike. Synaptic weight and noise standard deviation are varied
+
+load_file("IS3_M2_Case9Star.hoc") // Loads IS3 model with full morphology & properties
+
+access soma
+
+// Set Parameters
+tstop = 20 // (ms)
+v_init = -69.7
+steps_per_ms = 10
+dt = 0.1
+N_neurons = 10
+	
+// Initialize variables
+objectvar noise, AP_N, syn, nc, ns, spiketimes_vec, fok, fih, nil
+strdef filename, MODEL_TOPDIR, model_abs_path
+	
+MODEL_TOPDIR = "/Users/sandygm5/Desktop/Synchronous\ Firing\ Tests/Case9StarOutput"
+	
+// Initialize vectors
+spiketimes_vec = new Vector(N_neurons,0)
+	
+// Create Point Processes
+soma noise = new InGauss(0) // Simulates stochastic gating
+noise.del = 0
+noise.dur = tstop
+noise.mean = 0
+noise.stdev = 0
+
+soma AP_N = new APCount(0) // Counts spikes at soma
+AP_N.thresh = -20 // Threshold for rising spike identification
+
+soma syn = new Exp2Syn(0) // Creates 1 two state kinetic scheme synapse
+syn.tau1 = 0.2 // Rise time
+syn.tau2 = 2 // Decay time
+syn.e = 0 // Reversal Potential
+	
+nc = new NetCon(nil, syn) // Specifies a network connection to syn
+fih = new FInitializeHandler("nc.event(0)") // Creates 1 presynaptic event during initialization targeted to syn
+	
+for (h = 0.01; h<=0.1; h = h+0.01){
+	
+	noise.stdev = h // Increase noise on each iteration
+	
+	for (i = 0.002; i<=0.008; i = i+0.0001) {
+	
+		nc.weight = i // 0.0001 nS to 0.002nS
+
+		for (l = 0; l <= 9; l = l+1) {
+			
+			run() // Run simulation
+			
+			if(AP_N.n > 0){
+				spiketimes_vec.x[l] = AP_N.time // Spike time (ms)
+			} else{
+				spiketimes_vec.x[l] = 0 // If no spike, spike time = 0
+			}
+			
+		}
+		
+	// Store corresponding weight, noise & spiketime vectors in files
+	sprint(filename, "model_%g_weight_%g_noisestdev_spiketimes.dat",nc.weight,noise.stdev)
+	sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+	fok = new File(filename)
+	fok.wopen(model_abs_path)
+	spiketimes_vec.printf(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+	fok.close()
+		
+	}
+}
+
+
+
+
