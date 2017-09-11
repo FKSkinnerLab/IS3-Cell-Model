@@ -1,0 +1,21 @@
+Task label=SDprox2_E_IND_I_IND
+Task ID=26436
+Tool=NEURON74_PY_TG
+created on=2017-03-16 06:28:54.0
+JobHandle=NGBW-JOB-NEURON74_PY_TG-1A40A729FD7D404688CD6309DB35570C
+resource=comet
+User ID=717
+User Name=agmccrei
+email=alexandre.guet.mccreight@mail.utoronto.ca
+
+Output=(outputfile,scheduler_stdout.txt scheduler_stderr.txt output.tar.gz,UNKNOWN,UNKNOWN,UNKNOWN)
+JOBID=8212298
+
+job_properties ({'Task': 'ID=26436', 'resource': 'comet', 'created': 'on=2017-03-16 06:28:54.0', 'Tool': 'NEURON74_PY_TG', 'JobHandle': 'NGBW-JOB-NEURON74_PY_TG-1A40A729FD7D404688CD6309DB35570C', 'JOBID': '8212298', 'User': 'Name=agmccrei', 'Output': '(outputfile,scheduler_stdout.txt scheduler_stderr.txt output.tar.gz,UNKNOWN,UNKNOWN,UNKNOWN)', 'email': 'alexandre.guet.mccreight@mail.utoronto.ca'})
+
+gatewayuser (agmccrei)
+
+gateway_submit_attributes=/opt/ctss/gateway_submit_attributes/gateway_submit_attributes -gateway_user agmccrei@nsgportal.org -submit_time "`date '+%F %T %:z'`" -jobid 8212298
+
+gateway_submit_attributes retval (0) output (INFO - Gateway attributes [ gateway_user = agmccrei@nsgportal.org ; submit_time = 2017-03-16 06:29:47 -07:00 ; jobid = 8212298 ] submitted successfully.
+)

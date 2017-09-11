@@ -1,0 +1,8 @@
+// This script is used to search the synaptic parameter space of the IS3 model by varying the number of excitatory and inhibitory synapses as well as their presynaptic spike rates
+
+load_file("nrngui.hoc")
+
+// Set up parallel bulletin-board context
+objectvar pc
+pc = new ParallelContext()
+print pc.nhost

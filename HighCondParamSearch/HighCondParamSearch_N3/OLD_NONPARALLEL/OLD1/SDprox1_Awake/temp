@@ -1,0 +1,5 @@
+Translating vecevent.mod into vecevent.c
+Thread Safe
+Notice: ARTIFICIAL_CELL is a synonym for POINT_PROCESS which hints that it
+only affects and is affected by discrete events. As such it is not
+located in a section and is not associated with an integrator

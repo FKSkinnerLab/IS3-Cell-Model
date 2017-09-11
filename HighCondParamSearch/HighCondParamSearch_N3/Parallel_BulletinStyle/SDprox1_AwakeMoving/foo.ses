@@ -1,0 +1,26 @@
+{load_file("nrngui.hoc")}
+objectvar save_window_, rvp_
+objectvar scene_vector_[2]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin ParallelComputeTool[0]
+{
+load_file("parcom.hoc", "ParallelComputeTool")
+}
+{ocbox_ = ParallelComputeTool[0]}
+{object_push(ocbox_)}
+{change_nthread(8, 1)}
+{multisplit(1)}
+{busywait(1)}
+{object_pop()}
+{
+
+ocbox_.map("ParallelComputeTool[0]", 241, 265, 197.76, 219.84)
+}
+objref ocbox_
+//End ParallelComputeTool[0]
+
+objectvar scene_vector_[1]
+{doNotify()}

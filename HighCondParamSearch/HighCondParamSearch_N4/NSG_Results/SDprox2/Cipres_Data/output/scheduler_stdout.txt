@@ -1,0 +1,11 @@
+OK
+./batch_command.cmdline
+./batch_command.run
+./batch_command.status
+./COMMANDLINE
+./epilog
+./inputfile
+./_JOBINFO.TXT
+./nsgdebug
+./scheduler.conf
+./scheduler_stderr.txt

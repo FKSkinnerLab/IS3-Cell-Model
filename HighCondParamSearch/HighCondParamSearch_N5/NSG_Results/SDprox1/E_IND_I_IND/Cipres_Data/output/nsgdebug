@@ -1,0 +1,1 @@
+argv (['/projects/ps-nsg/home/nsguser/ngbw/contrib/scripts/submit.py', 'id=csd403', 'https://nsgdev.sdsc.edu:8443/portal2/taskupdate.action?taskId=26415', 'inputfile /projects/ps-nsg/home/nsguser/applications/neuron7.4/installdir/x86_64/bin/nrniv -python '])

@@ -1,0 +1,2 @@
+#!/bin/bash
+curl https://nsgdev.sdsc.edu:8443/portal2/taskupdate.action?taskId=25675\&status=DONE

@@ -1,0 +1,3 @@
+#!/bin/sh
+export PYTHONPATH=/projects/ps-nsg/home/nsguser/applications/neuron7.4/src/nrnpython/INSTALL/lib/python2.7/site-packages:$PYTHONPATH
+ibrun --npernode=24 /projects/ps-nsg/home/nsguser/applications/neuron7.4/installdir/x86_64/bin/nrniv -python  -python -mpi init.py 

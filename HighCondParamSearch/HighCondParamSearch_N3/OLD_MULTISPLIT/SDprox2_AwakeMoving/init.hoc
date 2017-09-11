@@ -1,0 +1,4 @@
+// load parameter search function & run parameter search
+load_file("SynParamSearch.hoc")
+load_file("foo.ses")
+f()

@@ -1,0 +1,13 @@
+#!/bin/sh
+if test "x${NRNHOME}" = "x" ; then
+	NRNHOME="/projects/ps-nsg/home/nsguser/applications/neuron7.4/installdir"
+fi
+if test "x${NRNBIN}" = "x" ; then
+	NRNBIN="/projects/ps-nsg/home/nsguser/applications/neuron7.4/installdir/x86_64/bin/"
+fi
+if test "" = "yes" ; then
+	NRNIV="${NRNBIN}nrniv.app/Contents/MacOS/nrniv"
+else
+	NRNIV="${NRNBIN}nrniv"
+fi
+"${NRNIV}" -dll "/projects/ps-nsg/home/nsguser/ngbw/workspace/NGBW-JOB-NEURON74_PY_TG-4D1016F636BB4A8CABA51E71E7BB36C7/SDprox2/x86_64/.libs/libnrnmech.so" "$@"
