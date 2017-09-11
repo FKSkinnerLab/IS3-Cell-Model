@@ -1,0 +1,116 @@
+// Note that this script runs a simulation of the full morphology IS3 model at increasing current injection values. A voltage vector data file is created in each iteration.
+
+load_file("nrngui.hoc")
+load_file("IS3_M2_DendriticRecordings.ses") // Loads IS3 model with full morphology & properties
+
+access soma
+
+// Initialize variables
+tstop = 3000 // (ms)
+objectvar stim
+objref recVS
+objref recVD1
+objref recVD2
+objref recVD3
+objref recVD4
+objref recVD5
+Case = 7
+
+objref fok
+objref fdist
+strdef filename
+strdef filename2
+strdef MODEL_TOPDIR
+MODEL_TOPDIR = "~/Desktop/SkinnerLab/Usages/Simulation\ Dendritic\ Recordings/Recordings"
+strdef model_abs_path
+strdef model_abs_path2
+
+// Ika conductance
+forsec somatic {
+gbar_Ika = 0.1
+}
+forsec Dendrites {
+gbar_Ika = 0.1
+}
+
+// Ikdrf conductance
+forsec somatic {
+gksoma_Ksoma = 0.1
+}
+forsec Dendrites {
+gksoma_Ksoma = 0.1
+}
+
+// Inat conductance
+forsec somatic {
+gna_Nasoma = 0.06
+}
+forsec Dendrites {
+gna_Nasoma = 0.06
+}
+
+// Inap conductance
+forsec somatic {
+gbar_nap = 0.0002
+}
+
+stim = new IClamp(0.5)
+stim.del = 250
+stim.dur = 2
+stim.amp = 0.8
+
+// Records voltage vector
+recVS= new Vector()
+recVS.record(&soma.v(0.5))
+recVD1= new Vector()
+recVD1.record(&dend.v(0.01))
+recVD2= new Vector()
+recVD2.record(&dend.v(0.5))
+recVD3= new Vector()
+recVD3.record(&dend.v(1))
+recVD4= new Vector()
+recVD4.record(&dend[2].v(0.5))
+recVD5= new Vector()
+recVD5.record(&dend[2].v(1))
+
+// Runs a simulation of the model
+init()
+run()
+
+// Store vectors into files
+sprint(filename, "model_%g_Case_BasalDendriteRecordings.dat",Case)
+sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+fok = new File(filename)
+fok.wopen(model_abs_path)
+recVS.printf(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+recVD1.printf(fok)
+recVD2.printf(fok)
+recVD3.printf(fok)
+recVD4.printf(fok)
+recVD5.printf(fok)
+fok.close()
+	
+access dend
+distance()
+
+objref distances
+distances = new Vector(6, 0)
+distances.x[0] = distance(0)
+distances.x[1] = distance(0.01)
+distances.x[2] = distance(0.5)
+distances.x[3] = distance(1)
+summ = distance(1)
+
+access dend[2]
+distance()
+	
+distances.x[4] = distance(0.5) + summ
+distances.x[5] = distance(1) + summ
+
+sprint(filename2, "model_%g_Case_BasalDistances.dat",Case)
+sprint(model_abs_path2, "%s/%s", MODEL_TOPDIR, filename2)
+fdist = new File(filename2)
+fdist.wopen(model_abs_path2)
+distances.printf(fdist)
+fdist.close()
+	

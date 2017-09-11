@@ -1,0 +1,112 @@
+// Note that this script runs a simulation of the full morphology IS3 model at increasing current injection values. A voltage vector data file is created in each iteration.
+
+load_file("nrngui.hoc")
+load_file("IS3_M2_Case9StarRevised.hoc") // Loads IS3 model with full morphology & properties
+
+access soma
+
+// Initialize variables
+tstop = 3000 // (ms)
+N_iterations = 4 // Number of different current injections
+v_init = -69.7
+steps_per_ms = 10
+dt = 0.1
+
+objectvar stim, noise
+objref recVS, recVD1, recVD2, recVD3, recVD4, recVD5, fok, fdist
+Case = 9
+
+strdef filename, filename2, MODEL_TOPDIR
+MODEL_TOPDIR = "/Users/alexgm/Desktop/SkinnerLab/Usages/Simulation\ Dendritic\ Recordings/SD50TopModels/Case9StarModel/Recordings"
+strdef model_abs_path
+strdef model_abs_path2
+
+// Noise
+noise = new InGauss(0)
+noise.del = 0
+noise.dur = tstop
+noise.mean = 0
+noise.stdev = 0.01
+
+// Ika conductance
+forsec somatic {
+gbar_Ika = 0.03
+}
+
+// Ikdrf conductance
+forsec somatic {
+gksoma_Ksoma = 0.295
+}
+
+// Inat conductance
+forsec somatic {
+gna_Nasoma = 0.055
+}
+
+// Inap conductance
+forsec somatic {
+gbar_nap = 0.000015
+}
+
+// Adjust nonlinear distributions to those in optimal model
+IKDRF_VAL = 0.295
+INAT_VAL = 0.055
+DISTANCE_FROM_SOMA = 75
+biophys_inhomo()
+
+stim = new IClamp(0.5)
+stim.del = 250
+stim.dur = 2
+stim.amp = 0.8
+
+// Records voltage vector
+recVS= new Vector()
+recVS.record(&soma.v(0.5))
+recVD1= new Vector()
+recVD1.record(&dend[3].v(0.01))
+recVD2= new Vector()
+recVD2.record(&dend[3].v(0.25))
+recVD3= new Vector()
+recVD3.record(&dend[3].v(0.5))
+recVD4= new Vector()
+recVD4.record(&dend[3].v(0.75))
+recVD5= new Vector()
+recVD5.record(&dend[3].v(1))
+
+// Runs a simulation of the model
+init()
+run()
+
+// Store vectors into files
+sprint(filename, "model_%g_Case_DendriteRecordings.dat",Case)
+sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+fok = new File(filename)
+fok.wopen(model_abs_path)
+recVS.printf(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+recVD1.printf(fok)
+recVD2.printf(fok)
+recVD3.printf(fok)
+recVD4.printf(fok)
+recVD5.printf(fok)
+fok.close()
+
+objref distances
+distances = new Vector(6, 0)
+
+access soma
+distance()
+distances.x[0] = distance(0.5)
+
+access dend[3]
+distances.x[1] = distance(0.01)
+distances.x[2] = distance(0.25)
+distances.x[3] = distance(0.5)
+distances.x[4] = distance(0.75)
+distances.x[5] = distance(1)
+
+sprint(filename2, "model_%g_Case_Distances.dat",Case)
+sprint(model_abs_path2, "%s/%s", MODEL_TOPDIR, filename2)
+fdist = new File(filename2)
+fdist.wopen(model_abs_path2)
+distances.printf(fdist)
+fdist.close()
