@@ -1,0 +1,2 @@
+#!/bin/sh
+ibrun --npernode=1 /projects/ps-nsg/home/nsguser/applications/neuron7.3/nrn-7.3/x86_64/bin/nrniv  -mpi Case7_RunProcedure.hoc 

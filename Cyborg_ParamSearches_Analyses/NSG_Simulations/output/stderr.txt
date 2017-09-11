@@ -1,0 +1,6 @@
+NEURON -- VERSION 7.3 ansi (1119:b3f8ab0f8203) 2014-07-18
+Duke, Yale, and the BlueBrain Project -- Copyright 1984-2014
+See http://www.neuron.yale.edu/neuron/credits
+
+Additional mechanisms from files
+ mod_nsgportal/IKa.mod mod_nsgportal/ingauss.mod mod_nsgportal/Ksoma.mod mod_nsgportal/Nap.mod mod_nsgportal/Nasoma.mod

@@ -1,0 +1,23 @@
+Task label=Case 7 Tests
+Task ID=12807
+Tool=NEURON73_TG
+created on=2015-03-18 12:26:53.0
+JobHandle=NGBW-JOB-NEURON73_TG-1588248102084D1399E01BF0648C672B
+resource=trestles
+User ID=717
+User Name=agmccrei
+email=alexandre.guet.mccreight@mail.utoronto.ca
+
+Output=(outputfile,scheduler_stdout.txt scheduler_stderr.txt output.tar.gz,UNKNOWN,UNKNOWN,UNKNOWN)
+ChargeFactor=1.000000
+cores=1
+JOBID=2545361.trestles-fe1.local
+
+job_properties ({'ChargeFactor': '1.000000', 'Task': 'ID=12807', 'resource': 'trestles', 'created': 'on=2015-03-18 12:26:53.0', 'Tool': 'NEURON73_TG', 'JobHandle': 'NGBW-JOB-NEURON73_TG-1588248102084D1399E01BF0648C672B', 'JOBID': '2545361.trestles-fe1.local', 'User': 'Name=agmccrei', 'cores': '1', 'Output': '(outputfile,scheduler_stdout.txt scheduler_stderr.txt output.tar.gz,UNKNOWN,UNKNOWN,UNKNOWN)', 'email': 'alexandre.guet.mccreight@mail.utoronto.ca'})
+
+gatewayuser (agmccrei)
+
+gateway-submit-attributes=/opt/ctss/globus/bin/gateway-submit-attributes 2545361.trestles-fe1.local agmccrei@nsgportal.org
+
+gateway-submit-attributes retval (0) output (Gateway user attribute (agmccrei@nsgportal.org) submitted for job 2545361.trestles-fe1.local.
+)
