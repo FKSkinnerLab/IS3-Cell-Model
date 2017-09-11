@@ -1,0 +1,568 @@
+/*---------------------------------------------------------------------
+
+   Written by Alessandro Limongiello
+   University "Federico II" of Naples, 2012-2013
+
+-----------------------------------------------------------------------*/
+
+
+/*---------------------------------------------
+                    STIMULATION
+  ---------------------------------------------*/
+
+gnabar_NaFSoma0 = 10
+gcabar_CaP2Soma0 = 0.0005
+gkbar_KhSoma0 = 0.0005
+
+gcabar_CaP20 = 0.004
+gcabar_CaT0 = 0.0015
+gcabar_CaE0 = 0.008
+gkbar_Khh0 = 0.0006
+gkbar_KM0  = 0.00001
+gkbar_KA0  = 0.08
+gkbar_KD0  = 0.09
+gkbar_KC30  = 0.06
+
+proc channelsByMiyasho01(){ local ii,i
+
+    
+    forsec "soma.*" {  
+//        insert NaF  gnabar_NaF = gnabar_NaFSoma0
+//        insert NaP  gnabar_NaP = gnabar_NaP
+//        insert CaP2 cai = 4e-5 cao = 2.4 gcabar_CaP2 = gcabar_CaP2Soma0
+//        insert CaT cai = 4e-5 cao = 2.4  gcabar_CaT = 0
+//        insert CaE cai = 4e-5 cao = 2.4  gcabar_CaE = 0
+//        insert Khh gkbar_Khh = gkbar_Khh
+//        insert KM gkbar_KM = gkbar_KM
+//        insert KA gkbar_KA = gkbar_KA
+//        insert KD  gkbar_KD  = 0
+//        insert Kh   gkbar_Kh = gkbar_KhSoma0
+//        insert cad taur_cad = 2 cainf_cad = 4e-5 kt_cad = 4e-5 kd_cad = 4e-5 
+    }
+    
+    forsec SmoothSectList{
+//         insert CaP2 cai = 4e-5 cao = 2.4 gcabar_CaP2 = gcabar_CaP20
+//         insert CaT cai = 4e-5 cao = 2.4  gcabar_CaT = gcabar_CaT0
+//         insert CaE cai = 4e-5 cao = 2.4  gcabar_CaE = gcabar_CaE0
+//         insert Khh gkbar_Khh = gkbar_Khh0
+//         insert KM  gkbar_KM  = gkbar_KM0
+//         insert KA  gkbar_KA  = gkbar_KA0
+//         insert KD  gkbar_KD  = gkbar_KD0
+//         insert KC3 gkbar_KC3  = gkbar_KC30
+//         insert K23 gkbar_K23 = gkbar_K23
+//         insert cad taur_cad = 2 cainf_cad = 4e-5 kt_cad = 4e-5 kd_cad = 4e-5            
+    }
+    
+    forsec TrunkSectList{
+//        insert CaP2 cai = 4e-5 cao = 2.4 gcabar_CaP2 = gcabar_CaP20
+//        insert CaT cai = 4e-5 cao = 2.4  gcabar_CaT = gcabar_CaT0
+//        insert CaE cai = 4e-5 cao = 2.4  gcabar_CaE = gcabar_CaE0
+//         insert Khh gkbar_Khh = gkbar_Khh0
+//         insert KM  gkbar_KM  = gkbar_KM0
+//         insert KA  gkbar_KA  = gkbar_KA0
+//         insert KD  gkbar_KD  = gkbar_KD0
+//         insert KC3 gkbar_KC3  = gkbar_KC30
+//         insert K23 gkbar_K23 = gkbar_K23
+//         insert cad taur_cad = 2 cainf_cad = 4e-5 kt_cad = 4e-5 kd_cad = 4e-5            
+    }
+    
+    forsec SpinySectList{
+//         insert CaP2 cai = 4e-5 cao = 2.4 gcabar_CaP2 = gcabar_CaP20
+//         insert CaT cai = 4e-5 cao = 2.4  gcabar_CaT = gcabar_CaT0
+//         insert CaE cai = 4e-5 cao = 2.4  gcabar_CaE = gcabar_CaE0
+//         insert Khh gkbar_Khh = gkbar_Khh0
+//         insert KM  gkbar_KM  = gkbar_KM0
+//         insert KA  gkbar_KA  = gkbar_KA0
+//         insert KD  gkbar_KD  = gkbar_KD0
+//         insert KC3 gkbar_KC3  = gkbar_KC30
+//         insert K23 gkbar_K23 = gkbar_K23
+//         insert cad taur_cad = 2 cainf_cad = 4e-5 kt_cad = 4e-5 kd_cad = 4e-5            
+    }
+    
+    for (i = 0; i < eqSomaVector.size(); i = i + 1){
+        ii = eqSomaVector.x(i)
+        eqSection[ii] {   
+//            insert NaF  gnabar_NaF = gnabar_NaFSoma0*surfFact.x(ii)
+//            insert NaP  gnabar_NaP = gnabar_NaP*surfFact.x(ii)
+//            insert CaP2 cai = 4e-5 cao = 2.4 gcabar_CaP2 = gcabar_CaP2Soma0*surfFact.x(ii)
+//            insert CaT cai = 4e-5 cao = 2.4  gcabar_CaT = 0*surfFact.x(ii)
+//            insert CaE cai = 4e-5 cao = 2.4  gcabar_CaE = 0*surfFact.x(ii)
+//            insert Khh gkbar_Khh = gkbar_Khh*surfFact.x(ii)
+//            insert KM gkbar_KM = gkbar_KM*surfFact.x(ii)
+//            insert KA gkbar_KA = gkbar_KA*surfFact.x(ii)
+//            insert KD  gkbar_KD  = 0*surfFact.x(ii)
+//            insert Kh   gkbar_Kh = gkbar_KhSoma0*surfFact.x(ii)
+//            insert cad taur_cad = 2 cainf_cad = 4e-5 kt_cad = 4e-5 kd_cad = 4e-5 
+        } 
+    }
+
+    for (i = 0; i < eqTrunkVector.size(); i = i + 1){
+        ii = eqTrunkVector.x(i)
+        eqSection[ii]{
+//             insert CaP2 cai = 4e-5 cao = 2.4 gcabar_CaP2 = gcabar_CaP20*surfFact.x(ii)
+//             insert CaT cai = 4e-5 cao = 2.4  gcabar_CaT = gcabar_CaT0*surfFact.x(ii)
+//             insert CaE cai = 4e-5 cao = 2.4  gcabar_CaE = gcabar_CaE0*surfFact.x(ii)
+//             insert Khh gkbar_Khh = gkbar_Khh0*surfFact.x(ii)
+//             insert KM  gkbar_KM  = gkbar_KM0*surfFact.x(ii)
+//             insert KA  gkbar_KA  = gkbar_KA0*surfFact.x(ii)
+//             insert KD  gkbar_KD  = gkbar_KD0*surfFact.x(ii)
+//             insert KC3 gkbar_KC3  = gkbar_KC30*surfFact.x(ii)
+//             insert K23 gkbar_K23 = gkbar_K23*surfFact.x(ii)
+//             insert cad taur_cad = 2 cainf_cad = 4e-5 kt_cad = 4e-5 kd_cad = 4e-5            
+        }
+    }
+   
+    for (i = 0; i < eqSmoothVector.size(); i = i + 1){
+        ii = eqSmoothVector.x(i)
+        eqSection[ii]{
+//             insert CaP2 cai = 4e-5 cao = 2.4 gcabar_CaP2 = gcabar_CaP20*surfFact.x(ii)
+//             insert CaT cai = 4e-5 cao = 2.4  gcabar_CaT = gcabar_CaT0*surfFact.x(ii)
+//             insert CaE cai = 4e-5 cao = 2.4  gcabar_CaE = gcabar_CaE0*surfFact.x(ii)
+//             insert Khh gkbar_Khh = gkbar_Khh0*surfFact.x(ii)
+//             insert KM  gkbar_KM  = gkbar_KM0*surfFact.x(ii)
+//             insert KA  gkbar_KA  = gkbar_KA0*surfFact.x(ii)
+//             insert KD  gkbar_KD  = gkbar_KD0*surfFact.x(ii)
+//             insert KC3 gkbar_KC3  = gkbar_KC30*surfFact.x(ii)
+//             insert K23 gkbar_K23 = gkbar_K23*surfFact.x(ii)
+//             insert cad taur_cad = 2 cainf_cad = 4e-5 kt_cad = 4e-5 kd_cad = 4e-5            
+        }
+    }
+
+    for (i = 0; i < eqSpinyVector.size(); i = i + 1){
+        ii = eqSpinyVector.x(i)
+        eqSection[ii]{
+//             insert CaP2 cai = 4e-5 cao = 2.4 gcabar_CaP2 = gcabar_CaP20*surfFact.x(ii)
+//             insert CaT cai = 4e-5 cao = 2.4  gcabar_CaT = gcabar_CaT0*surfFact.x(ii)
+//             insert CaE cai = 4e-5 cao = 2.4  gcabar_CaE = gcabar_CaE0*surfFact.x(ii)
+//             insert Khh gkbar_Khh = gkbar_Khh0*surfFact.x(ii)
+//             insert KM  gkbar_KM  = gkbar_KM0*surfFact.x(ii)
+//             insert KA  gkbar_KA  = gkbar_KA0*surfFact.x(ii)
+//             insert KD  gkbar_KD  = gkbar_KD0*surfFact.x(ii)
+//             insert KC3 gkbar_KC3  = gkbar_KC30*surfFact.x(ii)
+//             insert K23 gkbar_K23 = gkbar_K23*surfFact.x(ii)
+//             insert cad taur_cad = 2 cainf_cad = 4e-5 kt_cad = 4e-5 kd_cad = 4e-5            
+        }
+    }
+   
+}
+	
+	
+proc initMiyasho01(){
+     
+	t=0
+
+	finitialize(-65)
+    fcurrent()  
+	
+}
+
+
+objref stimApp,synApp,netConApp,stimEqApp,synEqApp,netConEqApp
+
+tau10 = 0.5  //0.4
+tau20 = 1.2  //0.6
+freqSyn = 80
+syn_asyn = 1 //0
+gmaxSynSeed = 0
+poissonSeed = 987651119
+
+objref randNum,randInterval,randGmax0,randPoss
+objectvar StimList,Exp2SynList,NetConList,StimEqList,Exp2SynEqList,NetConEqList
+
+objref distanceVect
+distanceVect = new Vector(2000)
+
+objref forbiddenVect
+
+gmax00 = 5
+gmaxSynDiv = 10 //2
+
+objref rslist,rs
+rslist = new List()  //random list
+
+proc insertPurkSyn(){ local sec, secApp, possApp, i, intervalApp
+
+    gmax0 = gmax00*1e-3
+    interval_mean = 1000/freqSyn
+    //interval_sd = interval_mean/interval_meanDiv 
+    gmax0_sd = gmax0/gmaxSynDiv    
+    
+    clusterListApp = $o4
+    StimList = new List()
+    rslist = new List()  //random list
+    Exp2SynList = new List()
+    NetConList = new List()
+    randNum = new Random($2)
+    secApp = randNum.discunif(0,NSEC-1)
+    randPoss = new Random($2)
+    possApp = randPoss.uniform(0, 1)
+    
+    //randInterval = new Random(intervalSynSeed)
+    //intervalApp = randInterval.normal(interval_mean,interval_sd^2)
+    randGmax0 = new Random(gmaxSynSeed)
+    gmax0App = randGmax0.normal(gmax0,(gmax0_sd)^2)  
+    
+    access soma 
+    distance()
+    sec = 0
+    forbiddenVect = new Vector()
+       
+    forall { 
+       if (issection("eqSection.*")||issection("soma.*")){
+           forbiddenVect.append(sec)
+       }    
+       //if (diam>3.17) forbiddenVect.append(sec)
+       if (StimulationTypePartial_Total == 0){
+              ifsec SmoothSectList forbiddenVect.append(sec)
+              ifsec TrunkSectList forbiddenVect.append(sec)
+       }else if (sec<stimulatedGroup1Vect.size()){
+             if (stimulatedGroup1Vect.x(sec)!=indexStimulatedCluster) forbiddenVect.append(sec)
+       }
+       
+       sec=sec+1
+    } 
+    
+    numNetStim = 0
+    if (syn_asyn==1) {numNetStim = 1  
+    }else if (syn_asyn==2) {
+          numNetStim = nStimulationClusterList1 
+    }else if (syn_asyn==0) {numNetStim = $1}
+    
+    for (i = 0; i < numNetStim; i = i + 1){
+        stimApp = new NetStim(.5)
+        stimApp.number= 100000 //50
+        stimApp.interval=interval_mean
+        stimApp.start = 0
+        stimApp.noise=noise0       
+        stimApp.seed(poissonSeed)
+        StimList.append(stimApp)          
+    }
+    
+    indexNetStim = 0
+        
+    for (i = 0; i < $1; i = i + 1){
+        secApp = randNum.repick()
+        while (forbiddenVect.contains(secApp)){secApp = randNum.repick()}
+        if(optPrint) print secApp, i
+        sec = 0 
+        forall {
+          if (sec==secApp) {
+            //if (syn_asyn==0) intervalApp = randInterval.repick()
+            possApp = randPoss.repick()
+            gmax0App = randGmax0.repick()
+            if (gmax0App<0) gmax0App=0
+            
+            if(optPrint) print "ALE0: ",gmax0App,secApp                           
+            distanceVect.set(i,distance(0.5))
+
+            synApp = new Exp2Syn(possApp)
+            Exp2SynList.append(synApp)
+            synApp.tau1=tau10
+            synApp.tau2=tau20
+            synApp.e=0
+                
+            if (syn_asyn==1) {
+                  netConApp = new NetCon(StimList.o[0], Exp2SynList.o[i], 0, 0, gmax0App)  
+            }else if (syn_asyn==2) {
+                  indexNetStim = stimulatedGroup1Vect.x(sec)-1                       
+                  netConApp = new NetCon(StimList.o[indexNetStim], Exp2SynList.o[i], 0, 0, gmax0App)      
+            }else if (syn_asyn==0){
+                  netConApp = new NetCon(StimList.o[i], Exp2SynList.o[i], 0, 0, gmax0App)
+            }
+
+//            if (syn_asyn==0) {
+//               netConApp = new NetCon(StimList.o[i], Exp2SynList.o[i], 0, 0, gmax0App)   
+//            }else{
+//               netConApp = new NetCon(StimList.o[0], Exp2SynList.o[i], 0, 0, gmax0App)
+//            }
+
+
+            NetConList.append(netConApp)
+          }
+          sec=sec+1
+        }   
+    }   
+}
+
+
+possEq0 = 0.999
+factTau1Syn = 1
+factTau2Syn = 1
+factGmaxSyn = 1
+
+
+factGmaxSyn0 = 1
+factGmaxSyn1 = 0
+
+
+proc createEqSyn(){local j
+    StimEqList = new List()
+    Exp2SynEqList = new List()
+    NetConEqList = new List()  
+
+    for (j = 0; j < $1; j = j + 1){     
+        stimEqApp = new NetStim(.5)
+        stimEqApp.number = StimList.o[j].number
+        //stimEqApp.interval=StimList.o[j].interval
+        //stimEqApp.start=StimList.o[j].start
+        stimEqApp.noise=StimList.o[j].noise
+        stimEqApp.seed(987651119)                    
+        StimEqList.append(stimEqApp) 
+
+        synEqApp = new Exp2Syn(.5)
+        synEqApp.e = 0  
+        Exp2SynEqList.append(synEqApp)  
+        netConEqApp = new NetCon(StimEqList.o(j),Exp2SynEqList.o(j),0,0,gmax0)   
+        NetConEqList.append(netConEqApp)      
+    }     
+  
+}
+
+
+objectvar alreadyVisited
+
+proc changeSurf(){local sec,j,i,index,possApp
+    clusterListApp = $o1
+    nCluster = clusterListApp.count
+    strdef sname
+    alreadyVisited = new Vector(0,0)    
+    nsyn = $2  
+    
+    for (j = 0; j < nsyn; j = j + 1){
+        possApp=Exp2SynList.o(j).get_loc()
+
+        sname = secname()
+    	sec = 0
+    	forall if (!issection("eqSection.*")){
+            if (issection(sname)) {break}
+            sec=sec+1
+        }
+        
+        for (i = 0; i < nCluster; i = i + 1){
+            if (clusterListApp.o(i).contains(sec)) {break}
+        }        
+        
+        if (!alreadyVisited.contains(sec)) {
+           alreadyVisited.append(sec)
+           orSurf2.set(i,orSurf2.x(i)+secSurf.x(sec))   
+        }        
+        pop_section()
+    }
+    
+    if(optPrint) print "__________surfFact after synapse stimulus__________"
+    
+    for (i = 0; i < nCluster; i = i + 1){
+        if (SURFFACT_PARTIAL_METHOD == 2 ){
+           if (orSurf2.x(i)!=0){
+              surfFact.set(i,surfFactVect.x(i)*orSurf2.x(i)/eqSurf.x(i))
+              surfFactRmCm.set(i,surfFactVect.x(i)*orSurf2.x(i)/eqSurf.x(i))
+           }else{
+              surfFact.set(i,surfFactVect.x(i)*orSurf1.x(i)/eqSurf.x(i))
+              surfFactRmCm.set(i,surfFactVect.x(i)*orSurf1.x(i)/eqSurf.x(i))
+           }
+        }else if (SURFFACT_PARTIAL_METHOD > 2 && SURFFACT_PARTIAL_METHOD < 5){
+           if (orSurf2.x(i)!=0){
+              surfFact.set(i,surfFactVect.x(i)*orSurf2.x(i)/eqSurf.x(i))
+           }else{
+              surfFact.set(i,surfFactVect.x(i)*orSurf1.x(i)/eqSurf.x(i))
+           }              
+        }else if (SURFFACT_PARTIAL_METHOD == 5) {
+              surfFact.set(i,surfFactVect.x(i))
+              surfFactRmCm.set(i,surfFactVect.x(i))
+        }
+        if(optPrint) print surfFact.x(i)
+    }    
+
+}
+
+
+
+objref strobj
+strobj = new StringFunctions()
+
+objref removingList
+objref removingVector
+objref StimEqToSynList
+objref distVect
+
+
+proc findSyn(){ local sec,j,i,index,possApp
+    clusterListApp = $o1
+    nCluster = clusterListApp.count
+    
+    strdef sname
+    StimEqList = new List()
+    Exp2SynEqList = new List()
+    NetConEqList = new List() 
+
+    if(optPrint) {print "Synapsi\tSection number\tSection name\tCluster\tpathRi\tpathRi0\tRi(pathRi- pathRi0)\
+          \tposs\tpathRiEq\tpathRiEq0\tRiEq (pathRiEq - pathRiEq0)\tpossEq\tfactGmaxSyn"}
+    
+    nsyn = $3
+    if ($4==1){ nsyn= NSEC-2 }
+    
+    numNetStim = 0
+    if (syn_asyn==1) {numNetStim = 1  
+    }else if (syn_asyn==2) {
+          numNetStim = nStimulationClusterList1 
+    }else if (syn_asyn==0) {numNetStim = nsyn}
+    
+    StimEqToSynList = new List()
+    
+    for (i = 0; i < numNetStim; i = i + 1){
+        StimEqList.append(StimList.o(i))    
+        StimEqToSynList.append(new Vector(0,0))
+    }
+    
+    
+    for (j = 0; j < nsyn; j = j + 1){
+             
+        possApp=Exp2SynList.o(j).get_loc()
+        sname = secname()
+       	sec = 0
+    	
+    	forall if (!issection("eqSection.*")){
+            if (issection(sname)) {/*print "section number: ",sec*/ break}
+            sec=sec+1
+        }
+
+        for (i = 0; i < nCluster; i = i + 1){
+            if (clusterListApp.o(i).contains(sec)) {/*print "EqSection number: ",i*/ break}
+        }
+          
+
+        if (withLocation==1){    
+           locationSearch2(sec,possApp,i)
+           possEq = eqPoss
+        }else {possEq = possEq0}
+        
+        //print "corr: ","morf ",sec,"poss ",possApp,"eq ",i,"possEq ",possEq
+        
+        factGmaxSyn0 = 1        
+        
+        if ($2==0){
+           if (withLocation==0){
+              factGmaxSyn = factGmaxSyn0*eqsecpathri.x(i)/secpathri.x(sec)
+           }else{
+              factGmaxSyn = factGmaxSyn0*eqLocalpathri/Localpathri
+              if(optPrint) print "pappa: ",eqLocalpathri,Localpathri,eqLocalpathri/Localpathri,factGmaxSyn
+           }      
+           factTauSyn = 1
+        } else if ($2==1){
+           if (withLocation==0){
+              factGmaxSyn = factGmaxSyn0*secpathri.x(sec)^(factGmaxSyn1)
+           }else{
+              factGmaxSyn = factGmaxSyn0*Localpathri^(factGmaxSyn1)
+           }
+           factTauSyn = 1 
+        } else if ($2==2){
+           factGmaxSyn = 1
+           factTauSyn = 1 
+        }       
+        
+    
+        if(optPrint) {print j+1,sec,secname(),"\t",i,secpathri.x(sec),secpathri0.x(sec),\
+              secpathri.x(sec)-secpathri0.x(sec),possApp,eqsecpathri.x(i),eqsecpathri0.x(i),\
+              eqsecpathri.x(i)-eqsecpathri0.x(i),possEq,factGmaxSyn}          
+                        
+        synEqApp = new Exp2Syn(possEq)
+        synEqApp.tau1 = tau10*factTau1Syn
+        synEqApp.tau2 = tau20*factTau2Syn
+        synEqApp.e = 0  
+        Exp2SynEqList.append(synEqApp)  
+
+        ww =   NetConList.o(j).weight        
+      
+        if (syn_asyn==1) {       
+              netConEqApp = new NetCon(StimEqList.o(0),Exp2SynEqList.o(j),0,0,factGmaxSyn*ww)  
+              StimEqToSynList.o(0).append(j)
+        }else if (syn_asyn==2) {
+//              if (eqSmoothVector.contains(i)){ indexNetStim = 1
+//              }else{indexNetStim = 0}                      
+//              netConEqApp = new NetCon(StimEqList.o(indexNetStim),Exp2SynEqList.o(j),0,0,factGmaxSyn*ww) 
+//              StimEqToSynList.o(indexNetStim).append(j)
+          indexNetStim = stimulatedGroup1Vect.x(sec)-1                       
+          netConEqApp = new NetCon(StimEqList.o(indexNetStim),Exp2SynEqList.o(j),0,0,factGmaxSyn*ww) 
+          StimEqToSynList.o(indexNetStim).append(j)
+        }else if (syn_asyn==0){
+              netConEqApp = new NetCon(StimEqList.o(j),Exp2SynEqList.o(j),0,0,factGmaxSyn*ww)
+        }  
+
+        NetConEqList.append(netConEqApp)  
+        
+        eqSection[i] synEqApp.loc(possEq) 
+
+        pop_section()
+        
+        possEqBis=Exp2SynEqList.o(j).get_loc()
+        //print "possEqBis: ", possEqBis
+        pop_section()
+        
+    }
+
+    removingList = new List()
+    removingVector = new Vector(0,0)
+
+
+    if (syn_asyn==1 || syn_asyn==2) {
+       i = 0
+       forsec "eqSection.*"{
+           sname = secname()
+           for (x) if (x>0 && x<1){
+                poss = x 
+                for (jj = 0; jj < StimEqToSynList.count; jj = jj + 1){
+                     removingList.append(new Vector())
+                     for (j = 0; j < StimEqToSynList.o(jj).size(); j = j + 1){
+                        possApp=Exp2SynEqList.o(StimEqToSynList.o(jj).x(j)).get_loc()
+                        if (issection(sname) && poss == possApp){
+                            removingList.o(i).append(StimEqToSynList.o(jj).x(j))       
+                        }
+                        pop_section()                
+                    }
+                    i = i + 1
+                }
+           }
+        }
+
+        for (j = 0; j < removingList.count; j = j + 1){
+            if (removingList.o(j).size()>0) {
+                 for (i = 1; i < removingList.o(j).size(); i = i + 1){
+                     NetConEqList.o(removingList.o(j).x(0)).weight = NetConEqList.o(removingList.o(j).x(0)).weight \
+                                                                     + NetConEqList.o(removingList.o(j).x(i)).weight
+                     removingVector.append(removingList.o(j).x(i))
+                 }             
+                 removingList.o(j).remove(0)     
+            }
+        }
+        
+        removingVector.sort()
+        
+        for (j = removingVector.size()-1; j >=0; j = j - 1){
+            Exp2SynEqList.remove(removingVector.x(j))
+            NetConEqList.remove(removingVector.x(j))        
+        }
+    }
+
+}
+
+
+
+proc locationSearch2(){local nCluster,secNum,orPoss,j
+    {secNum=$1 orPoss=$2 j=$3}
+    
+   
+    if(optPrint) print "______locationSearch________"
+    
+    
+    Localpathri=orPoss*secpathri.x(secNum)+(1-orPoss)*secpathri0.x(secNum)
+    eqLocalpathri=(Localpathri-orMinpathri.x(j))*(eqsecpathri.x(j)-eqsecpathri0.x(j))\
+                   /(orMaxpathri.x(j)-orMinpathri.x(j)) + eqsecpathri0.x(j)
+    eqPoss = (eqLocalpathri-eqsecpathri0.x(j))/(eqsecpathri.x(j)-eqsecpathri0.x(j))
+
+
+    if (eqPoss<=0) eqPoss=0.001
+    if (eqPoss>=1) eqPoss=0.999
+    if(optPrint) print "EqSection number: ",j,"eqPoss: ",eqPoss
+
+}
+

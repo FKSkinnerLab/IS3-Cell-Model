@@ -1,0 +1,1154 @@
+/*---------------------------------------------------------------------
+
+   Written by Alessandro Limongiello
+   University "Federico II" of Naples, 2012-2013
+
+-----------------------------------------------------------------------*/
+
+/*---------------------------------------------
+                   USEFUL PROCEDURES
+  ---------------------------------------------*/
+
+func max(){
+    if ($1 > $2){ 
+       return $1
+    } else {
+      return $2
+    }
+}
+
+/*---------------------------------------------
+         Strahler Numbers Computation
+  ---------------------------------------------*/	
+
+// Useful variables
+objectvar secNameList0
+objectvar secaddress0	// section address	
+objectvar paraddress0	// parentsection address
+objectvar strahlerNumbersVect            // Vector for Strahler Numbers
+objectvar stimulatedGroupVect            // Vector for Stimulated Group
+objref sRef
+objectvar childrenSecListVector	// a List of Vector for children of each section
+objectvar parSecVect    // parent for a section
+
+strdef str,strFile
+
+func strahlerNumbersFunc(){ local sizeVect,ii,sN,egualBool localobj vectApp
+     sizeVect = childrenSecListVector.o($1).size()
+     if (sizeVect==0){
+        strahlerNumbersVect.set($1,1)  
+        return 1}
+     
+     vectApp = new Vector(sizeVect,0)
+     
+
+     egualBool = 1
+     for ii = 0,sizeVect-1{
+         sN = strahlerNumbersFunc(childrenSecListVector.o($1).x(ii))
+         if (ii>0 && vectApp.contains(sN)==0) egualBool=0
+         vectApp.set(ii,sN)
+     }
+     
+     
+     if (egualBool==1){ 
+        strahlerNumbersVect.set($1,vectApp.x(0)+1) 
+        return vectApp.x(0)+1
+     }
+     strahlerNumbersVect.set($1,vectApp.max()) 
+     return vectApp.max()
+
+}
+
+
+proc strahlerNumbersComputation(){local sec,sec1,sec2,ii
+
+    stoprun = 1
+    if (optPrint==1) print "Strahler Numbers Computation"
+
+    if (firstInit ==1){
+        forall delete_section()                       
+        readingFile() 
+        xopen(strFile)		// read geometry file
+        firstInit == 0
+    }else{xopen(strFile)}
+
+    {NSEC=0  forall if (!issection("eqSection.*")){NSEC=NSEC+1}}
+
+	secNameList0=new List()
+    strahlerNumbersVect=new Vector(NSEC,0)		    //set/reset
+    stimulatedGroupVect=new Vector(NSEC,0)		    //set/reset
+    secaddress0=new Vector(NSEC,0)		        //set/reset
+	paraddress0=new Vector(NSEC,0)		        //set/reset
+    childrenSecListVector = new List() 
+   	parSecVect = new Vector(NSEC,0)		//set/reset
+	
+	sec = 0
+	forall if (!issection("eqSection.*")){
+        secNameList0.append(new String(secname()))
+        secaddress0.set(sec, this_section())
+        paraddress0.set(sec, parent_section(0))
+        childrenSecListVector.append(new Vector())
+        sec = sec+1
+    }	
+	
+	for sec1=1,NSEC-1 {
+		for sec2=0,NSEC-1 {
+			if (secaddress0.x(sec2)==paraddress0.x(sec1)) {
+               parSecVect.set(sec1,sec2)
+               childrenSecListVector.o(sec2).append(sec1)            
+            }
+		}
+	}    
+    
+    sNroot = strahlerNumbersFunc(0)
+    
+	if (optPrint){
+        for sec1=0,100 /*NSEC-1*/{
+            sizeVect = childrenSecListVector.o(sec1).size()
+    		if (sizeVect==0){
+               print "(sec,secname,sNum): ", sec1,secNameList0.o(sec1).s,"Leaf",strahlerNumbersVect.x(sec1)
+            }else{
+               printf("\nsec,secname,sNum,children): (%d,%s,%d", sec1,secNameList0.o(sec1).s,strahlerNumbersVect.x(sec1))
+               for ii=0,sizeVect-1 printf(",%d",childrenSecListVector.o(sec1).x(ii))   
+               printf("\n")
+            }          
+    	}	
+     }
+	
+}
+
+objref vbox00
+objectvar sh00
+vbox00 = new VBox() 
+
+proc coloringStrahler(){local sec
+    
+    vbox00 = new VBox()
+    
+    vbox00.intercept(1)
+    sh00 = new Shape()
+    vbox00.intercept(0)
+    vbox00.map("coloringStrahler", 200, 430, 300, 250)
+
+    sec = 0
+    NumSmooth = 0
+    NumSpiny = 0
+    sNorder1 = 0
+    sNorder2 = 0
+    sNorder3 = 0
+    sNorder4 = 0
+    sNorder5 = 0
+    sNorder6 = 0
+    sNorder7 = 0
+    sNorderMajor7 = 0
+    forall if (!issection("eqSection.*")){
+           if (strahlerNumbersVect.x(sec)==1) {NumSpiny = NumSpiny+1 sNorder1 = sNorder1+1 sh00.color(2) 
+           }else if (strahlerNumbersVect.x(sec)==2) {NumSpiny = NumSpiny+1 sNorder2 = sNorder2+1 sh00.color(3)
+           }else if (strahlerNumbersVect.x(sec)==3) {NumSpiny = NumSpiny+1 sNorder3 = sNorder3+1 sh00.color(4)
+           }else if (strahlerNumbersVect.x(sec)==4) {NumSmooth = NumSmooth+1 sNorder4 = sNorder4+1 sh00.color(5)
+           }else if (strahlerNumbersVect.x(sec)==5) {NumSmooth = NumSmooth+1 sNorder5 = sNorder5+1 sh00.color(6)
+           }else if (strahlerNumbersVect.x(sec)==6) {NumSmooth = NumSmooth+1 sNorder6 = sNorder6+1 sh00.color(7)
+           }else if (strahlerNumbersVect.x(sec)==7) {NumSmooth = NumSmooth+1 sNorder7 = sNorder7+1 sh00.color(8)
+           }else if (strahlerNumbersVect.x(sec)>7) {NumSmooth = NumSmooth+1 sNorderMajor7 = sNorderMajor7+1 sh00.color(9)}
+           sec=sec+1
+    }
+    if (optPrint) print "(NumSmooth,NumSpiny,sNorder1,sNorder2,sNorder3,sNorder4,sNorder5,sNorder6,sNorder7,sNorderMajor7): ",\
+          NumSmooth,NumSpiny,sNorder1,sNorder2,sNorder3,sNorder4,sNorder5,sNorder6,sNorder7,sNorderMajor7
+
+    sh00.show(0)
+
+}
+
+
+objref vbox01
+objectvar sh01
+vbox01 = new VBox() 
+objectvar stimulatedGroup1Vect            // Vector for Stimulated Group
+
+proc coloringStimulatedClusters(){local sec
+    
+    vbox01 = new VBox()
+    
+    vbox01.intercept(1)
+    sh01 = new Shape()
+    vbox01.intercept(0)
+    vbox01.map("coloringStimulatedClusters", 0, 130, 270, 250)
+
+
+    sec = 0
+    forall if (!issection("eqSection.*")){
+           if (stimulatedGroup1Vect.x(sec)==1) {sh01.color(2) 
+           }else if (stimulatedGroup1Vect.x(sec)==2) {sh01.color(3)
+           }else if (stimulatedGroup1Vect.x(sec)==3) {sh01.color(4)
+           }else if (stimulatedGroup1Vect.x(sec)==4) {sh01.color(5)
+           }else if (stimulatedGroup1Vect.x(sec)==5) {sh01.color(6)
+           }else if (stimulatedGroup1Vect.x(sec)==6) {sh01.color(7)
+           }else if (stimulatedGroup1Vect.x(sec)==7) {sh01.color(8)
+           }else if (stimulatedGroup1Vect.x(sec)==8) {sh01.color(9)
+           }else if (stimulatedGroup1Vect.x(sec)==9) {sh01.color(11)
+           }else if (stimulatedGroup1Vect.x(sec)==10) {sh01.color(12)
+           }else if (stimulatedGroup1Vect.x(sec)==11) {sh01.color(13)
+           }else if (stimulatedGroup1Vect.x(sec)==12) {sh01.color(14)
+           }else if (stimulatedGroup1Vect.x(sec)==13) {sh01.color(15)
+           }else if (stimulatedGroup1Vect.x(sec)==14) {sh01.color(16)
+           }else if (stimulatedGroup1Vect.x(sec)==15) {sh01.color(17)
+           }else if (stimulatedGroup1Vect.x(sec)==16) {sh01.color(18)
+           }else if (stimulatedGroup1Vect.x(sec)>16) {sh01.color(19)}
+           sec=sec+1
+    }
+
+    sh01.show(0)
+
+}
+
+indexStimulatedCluster = 1
+objref vbox02
+objectvar sh02
+vbox02 = new VBox() 
+
+proc coloringSingleStimulatedCluster(){local nCluster,sec,col,i
+    
+    vbox02 = new VBox()
+    
+    vbox02.intercept(1)
+    sh02 = new Shape()
+    vbox02.intercept(0)
+    vbox02.map("coloringSingleStimulatedCluster", 300, 230, 500, 450)
+
+
+    sec = 0
+    //colNum = indexStimulatedCluster+1
+    forall if (!issection("eqSection.*")){
+           if (stimulatedGroup1Vect.x(sec)==indexStimulatedCluster) {sh02.color(2)}
+           sec=sec+1
+    }
+
+    sh02.show(0)
+
+}
+
+
+
+/*---------------------------------------------
+            Subroutine for setting
+  ---------------------------------------------*/	
+
+
+objectvar factGmaxSynMorphVect
+
+factGmaxSynMorphVect = new Vector(100,1.0)		//set/reset
+
+
+objref fIn
+strdef directory
+
+proc readingFile(){
+
+    fIn = new File()
+    fIn.chooser("", "Reading Morphologic Model", "", "Accept", "", ".\\morphologies")
+    if (fIn.chooser()) {
+       forall delete_section()
+       firstInit = 0
+       fIn.getname(strFile)
+       sprint(directory,"%s",fIn.dir())
+    }else firstInit = 1
+
+}
+
+
+proc PurkinjeSetting(){local sec
+     
+     vbox00.unmap()
+
+     if (optPrint==1) print "AlePurkinjeFunctional Setting"
+     forall delete_section() 
+     xopen(strFile)		// read geometry file
+     firstInit = 0
+     
+     
+     LENGTHMERGINGserialMETHOD = -1
+     LENGTHMERGINGparallelMETHOD = 2
+     DIAMMERGINGserialMETHOD = 0
+     DIAMMERGINGparallelMETHOD = 0
+     RESCALEMOD = 0
+     CUTTINGFACT = 100 //5
+     PRESERVINGsomaMETHOD = 0
+//     PRESERVINGMETHOD = 0 //0 
+//     RaMERGINGMETHOD=1
+//     SURFFACT_PARTIAL_TOTAL = 1
+//     SURFFACT_PARTIAL_METHOD=2
+     withLocation = 1 
+
+     strahlerNumbersComputation()
+      
+	 sec = 0
+	 forall if (!issection("eqSection.*")){
+        if (issection("soma.*")){ 
+           cm = cmSoma  
+           Ra = Ra0 
+//           insert Leak gl_Leak = gl_LeakSoma el_Leak = el_Leak0  
+        }else if (strahlerNumbersVect.x(sec)>3){
+           cm= cmSmoothSec  
+           Ra = Ra0 
+//           insert Leak gl_Leak = gl_LeakSmoothSec el_Leak = el_Leak0
+        }else if (strahlerNumbersVect.x(sec)<=3){
+           cm = cmSpinySect  
+           Ra = Ra0 
+//           insert Leak gl_Leak = gl_LeakSpinySect el_Leak = el_Leak0
+        }
+        
+        sec = sec+1
+     }
+     	
+     geom_nseg()
+     totOr=0
+     forall {totOr=totOr+nseg}   
+     if(optPrint) print "totSegIni: ", totOr 
+     
+     //coloringStrahler()
+
+}
+
+
+
+/*---------------------------------------------
+                   VARIABLE DEFINITION
+  ---------------------------------------------*/
+	
+objectvar order			// number of sections between each section and soma 
+objectvar parsec        // parentsection id for each section
+
+// section data input
+objectvar secri			
+objectvar secpathri		
+objectvar secpathri0
+objectvar secpathImp		
+objectvar secpathImp0
+objectvar secL			
+objectvar secRa			
+objectvar secCm	
+objectvar secdiam
+objectvar secSurf
+//objectvar secApicalBasal
+// section data during the merging		
+objectvar mrgL		
+objectvar mrgdiam	
+objectvar mrgdiamSer
+objectvar mrgdiamPar
+objectvar mrgri	
+objectvar mrgri2
+objectvar mrgSurf
+// equivalent section data after the merging		
+objectvar eqL		
+objectvar eqdiam	
+objectvar eqdiamSer
+objectvar eqdiamPar
+objectvar eqRa
+
+
+objectvar surfFactVect
+objectvar eqri2
+objectvar eqsecpathri
+objectvar eqsecpathri0
+objectvar eqsecpathImp
+objectvar eqsecpathImp0
+objectvar orMinpathri
+objectvar orMaxpathri
+//objectvar eqri	
+objectvar eqSurf
+objectvar orSurf	
+objectvar orSurf1
+objectvar orSurf2
+objectvar surfFact
+objectvar surfFactRmCm
+
+// cluster data
+objectvar clusterParent    // link between each cluster and its parent
+objectvar clusterParentPos // position of each cluster as regards its parent
+objectvar clusterList      // List of clusters
+objectvar newClusterList   // List of clusters after merging Y_group_sections
+objectvar clusterMarker    // Marker to identify each section belonging to its cluster
+objectvar somaVector       // Vector of sections belonging to the soma
+//objectvar axonVector       // Vector of sections belonging to the axon
+
+
+	
+	
+/*---------------------------------------------
+                   INIT PROCEDURE
+  ---------------------------------------------*/	
+	
+	
+proc initDataStruct(){
+
+	order = new Vector(NSEC,0)		//set/reset
+	parsec = new Vector(NSEC,0)		//set/reset
+
+	secri = new Vector(NSEC,0)		//set/reset
+	secpathri = new Vector(NSEC,0.0)		//set/reset
+	secpathri0 = new Vector(NSEC,0.0)		//set/reset
+	secpathImp = new Vector(NSEC,0.0)		//set/reset
+	secpathImp0 = new Vector(NSEC,0.0)		//set/reset	
+	secL = new Vector(NSEC,0)   		//set/reset
+	secRa = new Vector(NSEC,0)   		//set/reset
+	secCm = new Vector(NSEC,0)		//set/reset
+	secdiam = new Vector(NSEC,0)		//set/reset
+	secSurf = new Vector(NSEC,0)		//set/reset
+//	secApicalBasal = new Vector(NSEC,0)		//set/reset if 1=Apical elseif 0=Basal
+	
+	mrgL = new Vector(NSEC,0)   		//set/reset
+	mrgdiam = new Vector(NSEC,0)		//set/reset
+	mrgdiamSer = new Vector(NSEC,0)		//set/reset
+	mrgdiamPar = new Vector(NSEC,0)		//set/reset	
+	mrgri = new Vector(NSEC,0)		//set/reset
+	mrgri2 = new Vector(NSEC,0)		//set/reset
+	mrgSurf = new Vector(NSEC,0)		//set/reset
+	
+    clusterList = new List()	
+	newClusterList = new List()
+	clusterMarker = new Vector(NSEC,-1)		//set/reset
+	somaVector = new Vector(0,0)
+    
+//    axonVector = new Vector(0,0)	
+
+}
+
+
+/*---------------------------------------------
+                   CELL ANALYSIS
+  ---------------------------------------------*/	
+
+// Useful variables
+objectvar secNameList
+objectvar secName
+secNameList=new List()
+objectvar secaddress	// section address	
+objectvar paraddress	// parentsection address
+// data to compute path from each section to the soma
+objectvar rvp			
+objectvar slsoma		
+objectvar slroot
+
+
+proc cellPurkAnalysis(){local sec,sec1,sec2, x
+
+	strdef sname
+
+	{NSEC=0  forall if (!issection("eqSection.*")){NSEC=NSEC+1}}		
+    initDataStruct()
+	secaddress=new Vector(NSEC,0)		//set/reset
+	paraddress=new Vector(NSEC,0)		//set/reset
+            
+	sec = 0
+	forall if (!issection("eqSection.*")){
+        sname =secname() secName = new String(sname) secNameList.append(secName)
+        secaddress.set(sec, this_section())
+        paraddress.set(sec, parent_section(0))
+        secRa.set(sec,Ra)
+        secL.set(sec,abs(L))
+        secCm.set(sec,cm) 
+        secdiam.set(sec,diam)   
+        mrgL.set(sec,abs(L))
+//        if (y3d(1)>=2) secApicalBasal.set(sec,1)
+        if (issection("soma.*")){
+              for(x) if(x>0) {
+                     secSurf.set(sec,secSurf.x(sec)+area(x))
+                     secri.set(sec, secri.x(sec)+ri(x))
+              }
+              //mrgdiam.set(sec,aaa/PI/L)
+              //mrgri.set(sec,secri.x(0))
+              //print sec,totSomaArea,mrgL.x(sec),mrgdiam.x(sec),secri.x(sec)
+              somaVector.append(sec)
+        } else {
+    		  {slsoma=new SectionList() {rvp=new RangeVarPlot("v")}
+    		   {soma  rvp.begin(.5)}  rvp.end(.5)  rvp.list(slsoma)}
+    		  {slroot=new SectionList() {rvp=new RangeVarPlot("v")}
+    		   {ss=0 forsec slsoma{ {if(ss==1) rvp.begin(.5)}  ss=ss+1}}
+    		   rvp.end(.5)  rvp.list(slroot)}
+    	  	  forsec slroot {order.set(sec, order.x(sec)+1) /*print sec,order.x(sec) psection()*/}
+              for(x) if(x>0) {
+                     secSurf.set(sec,secSurf.x(sec)+area(x))
+                     secri.set(sec, secri.x(sec)+ri(x))
+                     /*print sec,secri.x(sec)*/
+              }
+    		  if(secri.x(sec)>9999) secri.set(sec, -9999)
+    		  nsecPath = 0
+              forsec slroot {   nsecPath=nsecPath+1 
+                                for(x) {if(x>0){secpathri.set(sec,secpathri.x(sec)+ri(x))}}
+                            }
+              nsecPath1 = 0
+              forsec slroot {
+                     nsecPath1=nsecPath1+1 
+                     for(x) {if(x>0 && nsecPath1<nsecPath) secpathri0.set(sec,secpathri0.x(sec)+ri(x))}
+              }
+
+              if (PRESERVINGMETHOD==0){             //PRESERVINGMETHOD = 0 by Destexhe
+                     mrgdiamSer.set(sec,secdiam.x(sec))
+                     mrgdiamPar.set(sec,secdiam.x(sec)^2)
+                     //print mrgdiamPar.x(sec)
+                     mrgdiam.set(sec,sqrt(secRa.x(sec)*secL.x(sec)*4/secri.x(sec)/100/PI))                     
+              }else if (PRESERVINGMETHOD==1){
+                     mrgdiam.set(sec,secSurf.x(sec)/secL.x(sec)/PI)
+              }
+              mrgri.set(sec,secri.x(sec))		  
+              mrgri2.set(sec,secri.x(sec))	
+              mrgSurf.set(sec, secSurf.x(sec))
+        }
+    sec=sec+1}	
+	for sec1=1,NSEC-1 {
+		for sec2=0,NSEC-1 {
+			if(secaddress.x(sec2)==paraddress.x(sec1)) {parsec.set(sec1,sec2)}
+		}
+	}
+}
+
+
+
+
+
+/*---------------------------------------------
+                   CLUSTERISING PROCEDURES
+  ---------------------------------------------*/
+xopen("clusterisingMethods.hoc")
+
+/*---------------------------------------------
+                   MERGING PROCEDURES
+  ---------------------------------------------*/
+xopen("mergingMethods.hoc")
+
+/*---------------------------------------------
+                   REDUCTION PROCEDURES
+  ---------------------------------------------*/
+
+
+// Useful variables
+objectvar searchAvailable
+objectvar mergeAvailable
+
+
+
+// seaching the next Y_group_sections / output:  {secA,secB,secP} 
+proc getNextY(){local ii, nsect, idA, idB, sec   //input: Vector of id sections
+
+    // seaching the last available section
+	secA=0			
+	nsect = $o1.size()-1
+	idA = 0 
+	for ii=0,nsect {
+        if(searchAvailable.x(ii)){
+        	sec = $o1.x(ii)	
+            if(order.x(sec)>=order.x(secA)) {secA=sec idA = ii}
+        }
+    }
+    
+    // seaching the brother section of secA
+	secB=0
+	idB = 0
+	for ii=0,nsect {
+        if(searchAvailable.x(ii)){
+        	sec = $o1.x(ii)		
+            if(parsec.x(sec)==parsec.x(secA)&&sec!=secA) {secB=sec idB = ii}
+        }
+    }
+
+    // seaching the parent section of secA
+	secP=0
+	if ($o1.contains(parsec.x(secA))) secP=parsec.x(secA)	
+
+    // marking unavailable sections already visited	
+	searchAvailable.set(idA,0)
+	if (secB!=0) searchAvailable.set(idB,0)
+	
+    if (secA!=0){
+    	if (secP==0){ 
+           mergeAvailable.set(idA,1)
+    	   if (secB!=0) mergeAvailable.set(idB,1)
+        }
+    }
+}
+
+
+// Useful proc used in PurkReduction() after each call of getNextY() and before each call of merge2() or mergeY()
+//        input:   {secA,secB,secP}
+//        output:  {AmRa,AmL,Amdiam,Amri,BmRa,BmL,Bmdiam,Bmri,PmRa,PmL,Pmdiam,Pmri}
+proc shortnms(){
+	{AmRa=0 AmL=0 Amdiam=0 Amri=0 Amsurf=0 AmdiamSer=0 AmdiamPar=0}
+	{BmRa=0 BmL=0 Bmdiam=0 Bmri=0 Bmsurf=0 BmdiamSer=0 BmdiamPar=0}
+	{PmRa=0 PmL=0 Pmdiam=0 Pmri=0 Pmsurf=0 PmdiamSer=0 PmdiamPar=0}
+	if(secA>0) {
+		AmRa=secRa.x(secA)
+		AmL=mrgL.x(secA)  
+		Amdiam=mrgdiam.x(secA)
+		AmdiamSer=mrgdiamSer.x(secA)
+        AmdiamPar=mrgdiamPar.x(secA)
+		Amri=(AmRa*AmL)/(PI*((Amdiam^2)/4)*100)
+		Amsurf = AmL*Amdiam*PI
+	}
+	if(secB>0) {
+		BmRa=secRa.x(secB)
+		BmL=mrgL.x(secB)  
+		Bmdiam=mrgdiam.x(secB) 
+		BmdiamSer=mrgdiamSer.x(secB)
+        BmdiamPar=mrgdiamPar.x(secB)
+		Bmri=(BmRa*BmL)/(PI*((Bmdiam^2)/4)*100)
+		Bmsurf = BmL*Bmdiam*PI
+	}
+	if(secP>0) {
+		PmRa=secRa.x(secP)
+		PmL=mrgL.x(secP)  
+		Pmdiam=mrgdiam.x(secP) 
+		PmdiamSer=mrgdiamSer.x(secP)
+        PmdiamPar=mrgdiamPar.x(secP)
+		Pmri=(PmRa*PmL)/(PI*((Pmdiam^2)/4)*100)
+		Pmsurf = PmL*Pmdiam*PI
+	}
+    
+	if(RESCALEMOD==1){
+	  if(secA>0 && secB>0){
+	    if(AmL>BmL){
+	      {BmL=AmL  mrgL.set(secB,BmL)}
+          if (PRESERVINGMETHOD==0){             //PRESERVINGMETHOD = 0 by Destexhe
+               Bmdiam=sqrt((BmRa*BmL*4)/(Bmri*PI*100))
+        	   BmdiamSer=Bmdiam
+               BmdiamPar=Bmdiam
+          }else if (PRESERVINGMETHOD==1){
+               Bmdiam=Bmsurf/BmL/PI } 
+          mrgdiam.set(secB,Bmdiam) 
+          {Bmsurf = BmL*Bmdiam*PI}
+	    }else if(BmL>AmL){
+	      {AmL=BmL  mrgL.set(secA,AmL)}
+	      if (PRESERVINGMETHOD==0){             //PRESERVINGMETHOD = 0 by Destexhe
+               Amdiam=sqrt((AmRa*AmL*4)/(Amri*PI*100))
+        	   AmdiamSer=Amdiam
+               AmdiamPar=Amdiam               
+          }else if (PRESERVINGMETHOD==1){
+               Amdiam=Amsurf/AmL/PI } 
+          mrgdiam.set(secA,Amdiam)
+	      {Amsurf = AmL*Amdiam*PI}
+	    }
+	  }
+	}
+}
+
+
+// merging procedure of the section secA with its parent secP
+proc mergingParentSec(){
+    mergingSerialMethod(AmRa,PmRa,AmL,PmL,Amdiam,Pmdiam,Amri,Pmri,Amsurf,Pmsurf,AmdiamSer,PmdiamSer,AmdiamPar,PmdiamPar)
+    mrgL.set(secP, newL)
+	mrgri.set(secP, newri)
+	mrgri2.set(secP, Amri+Pmri)
+	mrgSurf.set(secP, max(Amsurf,Pmsurf))
+	mrgdiam.set(secP, newdiam) 
+	mrgdiamSer.set(secP, newdiamSer) 
+	mrgdiamPar.set(secP, newdiamPar) 
+	//print "newdiamPar",newdiamPar,"secP",secNameList.o(secP).s
+}
+
+
+// merging procedure of Y_group_sections
+proc mergingYSec(){local AmL2BmL,BmL2AmL
+	AmL2BmL=AmL/BmL
+	BmL2AmL=BmL/AmL
+	if(AmL2BmL>=CUTTINGFACT){mergingSerialMethod(AmRa,PmRa,AmL,PmL,Amdiam,Pmdiam,Amri,Pmri,Amsurf,Pmsurf,AmdiamSer,PmdiamSer,AmdiamPar,PmdiamPar)}
+    if(BmL2AmL>=CUTTINGFACT){mergingSerialMethod(BmRa,PmRa,BmL,PmL,Bmdiam,Pmdiam,Bmri,Pmri,Bmsurf,Pmsurf,BmdiamSer,PmdiamSer,BmdiamPar,PmdiamPar)} 
+	if(AmL2BmL<CUTTINGFACT && BmL2AmL<CUTTINGFACT){
+       mergingYMethod(AmRa,BmRa,PmRa,AmL,BmL,PmL,Amdiam,Bmdiam,Pmdiam,Amri,Bmri,Pmri,AmdiamSer,BmdiamSer,PmdiamSer,AmdiamPar,BmdiamPar,PmdiamPar)}
+	
+    mrgL.set(secP, newL)
+	mrgri.set(secP, newri)
+	mrgri2.set(secP, newri2)
+	mrgSurf.set(secP, newSurf)
+	mrgdiam.set(secP, newdiam)  
+	mrgdiamSer.set(secP, newdiamSer) 
+	mrgdiamPar.set(secP, newdiamPar) 	
+    //print "newdiamPar da Y",newdiamPar,"secP",secNameList.o(secP).s	
+}
+
+// Useful variables
+objectvar clusterVectApp
+objectvar mergeAvailableApp
+
+// procedure to create a new Cluster List after merging Y_group_sections
+proc newClusters(){local nsect, sec
+    {clusterVectApp = $o1 mergeAvailableApp = $o2}
+    nsect = clusterVectApp.size()
+    clusterVect = new Vector(0,0)
+
+	for ii=0,nsect-1 {
+        if(mergeAvailableApp.x(ii)) {/*print clusterVectApp.x(ii)*/ clusterVect.append(clusterVectApp.x(ii))}
+    }    
+    newClusterList.append(clusterVect)
+
+}
+
+objectvar appVect
+
+proc PurkReduction(){local i, ii, nsect
+
+	eqL=new Vector(clusterList.count,0)   		//set/reset
+	eqdiam=new Vector(clusterList.count,0)		//set/reset
+	eqdiamSer=new Vector(clusterList.count,0)		//set/reset
+	eqdiamPar=new Vector(clusterList.count,0)		//set/reset	
+	//eqRa=new Vector(clusterList.count,0)		//set/reset	
+	eqri2=new Vector(clusterList.count,0)		//set/reset	
+	eqSurf=new Vector(clusterList.count,0)		//set/reset	
+	orSurf=new Vector(clusterList.count,0)		//set/reset
+	orSurf1=new Vector(clusterList.count,0)		//set/reset
+	orSurf2=new Vector(clusterList.count,0)		//set/reset
+	surfFact=new Vector(clusterList.count,1)		//set/reset
+	surfFactRmCm=new Vector(clusterList.count,1)		//set/reset	
+	//eqri=new Vector(clusterList.count,0)		//set/reset
+		
+	newClusterList.append(somaVector)
+	mergingSoma(newClusterList.o(0))
+	iniClusterList = 1
+    	
+	for i=iniClusterList,clusterList.count-1 {
+        nsect = clusterList.o(i).size()   
+        searchAvailable = new Vector(nsect,1)
+        mergeAvailable = new Vector(nsect,0)
+		getNextY(clusterList.o(i))
+		shortnms()
+		while(secA>0) {	
+			if (secB==0 && secP!=0) mergingParentSec()
+			if (secB!=0 && secP!=0) mergingYSec()
+            //print secNameList.o(secA).s,secA,secNameList.o(secB).s,secB,secNameList.o(secP).s,secP
+			getNextY(clusterList.o(i))
+			shortnms()
+		}
+		newClusters(clusterList.o(i),mergeAvailable)
+		mergingAllMethod(newClusterList.o(i),i,nsect)
+
+        totSurf = 0
+        appVect = new Vector(0,0)
+        for ii=0,nsect-1 {
+            appVect.append(secSurf.x(clusterList.o(i).x(ii)))
+            totSurf = totSurf + secSurf.x(clusterList.o(i).x(ii))
+        }
+        //print totSurf
+        
+        if (SURFFACT_PARTIAL_METHOD==0 || SURFFACT_PARTIAL_METHOD==3){
+            orSurf.set(i,appVect.sum())
+            surfFact.set(i,surfFactVect.x(i)*orSurf.x(i)/eqSurf.x(i))
+            surfFactRmCm.set(i,surfFactVect.x(i)*orSurf.x(i)/eqSurf.x(i))
+        }else if (SURFFACT_PARTIAL_METHOD==1 || SURFFACT_PARTIAL_METHOD==4){
+            orSurf.set(i,orSurf1.x(i))
+            surfFact.set(i,surfFactVect.x(i)*orSurf.x(i)/eqSurf.x(i))
+            surfFactRmCm.set(i,surfFactVect.x(i)*orSurf.x(i)/eqSurf.x(i))    
+            //print surfFact.x(i),surfFactRmCm.x(i)
+        }        
+  
+              
+        		
+	}
+}
+
+
+
+/*---------------------------------------------
+            OUTPUT DATA:
+            PRINT CLUSTERLIST
+            CREATING EQUIVALENT CELL
+  ---------------------------------------------*/
+
+// Useful variables
+objectvar clusterListApp
+
+proc printClusterList(){local nCluster,secApp,i,j,ii
+    clusterListApp = $o1
+    nCluster = clusterListApp.count
+    
+    for i=0,nCluster-1{
+        print "_____________________"
+        print "cluster n. ", i
+        
+        for j=0,clusterListApp.o(i).size()-1{
+            secApp = clusterListApp.o(i).x(j)
+            
+            print secApp, secNameList.o(secApp).s, secL.x(secApp),secdiam.x(secApp),mrgdiamPar.x(secApp), secSurf.x(secApp),secpathri0.x(secApp),secpathri.x(secApp)
+        }
+        
+    }    
+    print "Section\tLength (um)\tDiameter (um)\tOld Area (um^2)\tNew Area (um^2)\tArea Fact"
+    
+    for ii=0,nCluster-1 print ii, "\t", eqL.x(ii),"\t", eqdiam.x(ii),"\t",orSurf.x(ii),"\t",eqSurf.x(ii),"\t",surfFactRmCm.x(ii)
+
+    print "eqRa\t orMinpathri\t orMaxpathri\t eqri2\t eqriEffettiva\t eqpathri0\t eqpathri"
+    
+    for ii=0,nCluster-1 {
+        eqSection[ii] {
+             if(RaMERGINGMETHOD==0){RaEq = factEqRa*eqRa.x(ii)}\
+             else if(RaMERGINGMETHOD==1){RaEq = factEqRa*eqri2.x(ii)*PI*(diam/2)^2*100/L}\
+             else if(RaMERGINGMETHOD==2){RaEq = factEqRa*(orMaxpathri.x(ii)-orMinpathri.x(ii))*PI*(diam/2)^2*100/L}
+        }
+        print RaEq,"\t",orMinpathri.x(ii),"\t",orMaxpathri.x(ii),"\t",eqri2.x(ii),"\t",(eqRa.x(ii)*eqL.x(ii))/(PI*((eqdiam.x(ii)^2)/4)*100),"\t",eqsecpathri0.x(ii),"\t",eqsecpathri.x(ii)
+        }
+    
+     
+}
+
+
+// data to compute path from each section to the soma
+objectvar eqrvp			
+objectvar eqslsoma		
+objectvar eqslroot
+
+{create eqSection[2000]}
+
+factEqRa = 1
+
+objref tgAlph
+objref signDx
+objref signDy
+
+proc createPurkEqCell(){local nCluster,appLun,sec,col,i,j,jj,secApp
+    
+    clusterListApp = $o1
+    nCluster = clusterListApp.count
+    eqsecpathri = new Vector(nCluster,0.0)		//set/reset
+    eqsecpathri0 = new Vector(nCluster,0.0)		//set/reset
+    orMinpathri = new Vector(nCluster,10^6)		//set/reset
+    orMaxpathri = new Vector(nCluster,0.0)		//set/reset
+    eqRa = new Vector(nCluster,0.0)		//set/reset
+        
+    TotOrSurf = orSurf.sum(1,orSurf.size-1)
+    TotEqSurf = eqSurf.sum(1,eqSurf.size-1)
+
+
+    for (i = 0; i < nCluster; i = i + 1){
+        
+        for jj=0,clusterListApp.o(i).size()-1{
+            secApp = clusterListApp.o(i).x(jj)
+            eqRa.set(i,eqRa.x(i)+secRa.x(secApp))
+        
+            if (secpathri.x(secApp)>orMaxpathri.x(i)){
+               orMaxpathri.set(i,secpathri.x(secApp))
+            }
+            if (secpathri0.x(secApp)<orMinpathri.x(i)){
+               orMinpathri.set(i,secpathri0.x(secApp))
+            }                
+        }
+        
+        
+        if (clusterListApp.o(i).size()==1){
+          if (parsec.x(secApp)!=0){ //Mod Ale: era secApp invece di 0
+             orMinpathri.set(i,secpathri.x(parsec.x(secApp)))
+          }else{orMinpathri.set(i,0)}
+          orMaxpathri.set(i,secpathri.x(secApp))
+        }
+        
+        appp = orMinpathri.x(i)  
+        if (orMinpathri.x(i)>orMaxpathri.x(i)){
+           orMinpathri.x(i) = orMaxpathri.x(i)
+           orMaxpathri.x(i) = appp
+        }
+        
+        
+        if(optPrint) print "orMinpathri di ",i,"è: ", orMinpathri.x(i)
+        if(optPrint) print "orMaxpathri di ",i,"è: ", orMaxpathri.x(i)
+        
+        
+        eqRa.set(i,eqRa.x(i)/clusterListApp.o(i).size())
+        
+        
+        
+        for (j = 1; j < nCluster; j = j + 1){
+            if (clusterParent.x(j)==i) {eqSection[i] connect eqSection[j](0), clusterParentPos.x(j)} 
+        }       
+        
+        aaa = 0
+        if (SURFFACT_PARTIAL_TOTAL==0 && i>0) {surfFact.set(i,TotOrSurf/TotEqSurf) surfFactRmCm.set(i,TotOrSurf/TotEqSurf)}
+
+    }
+    
+    for (j = 0; j < eqSomaVector.size(); j = j + 1){ 
+        jj = eqSomaVector.x(j)
+        eqSection[jj] {L = eqL.x(jj) diam = eqdiam.x(jj) 
+                       cm=factCm*cmSoma*surfFactRmCm.x(jj)
+                       if($2==0){Ra = factEqRa*eqRa.x(jj)}\
+                       else if($2==1){Ra = factEqRa*eqri2.x(jj)*PI*(diam/2)^2*100/L}\
+                       else if($2==2){Ra = factEqRa*(orMaxpathri.x(jj)-orMinpathri.x(jj))*PI*(diam/2)^2*100/L}
+        } 
+    }       
+    for (j = 0; j < eqTrunkVector.size(); j = j + 1){
+        jj = eqTrunkVector.x(j)
+        eqSection[jj] {L = eqL.x(jj) diam = eqdiam.x(jj) 
+                       cm=factCm*cmSmoothSec*surfFactRmCm.x(jj)
+                       if($2==0){Ra = factEqRa*eqRa.x(jj)}\
+                       else if($2==1){Ra = factEqRa*eqri2.x(jj)*PI*(diam/2)^2*100/L}\
+                       else if($2==2){Ra = factEqRa*(orMaxpathri.x(jj)-orMinpathri.x(jj))*PI*(diam/2)^2*100/L}
+        }         
+    }
+    for (j = 0; j < eqSmoothVector.size(); j = j + 1){
+        jj = eqSmoothVector.x(j)
+        eqSection[jj] {L = eqL.x(jj) diam = eqdiam.x(jj) 
+                       cm=factCm*cmSmoothSec*surfFactRmCm.x(jj)
+                       if($2==0){Ra = factEqRa*eqRa.x(jj)}\
+                       else if($2==1){Ra = factEqRa*eqri2.x(jj)*PI*(diam/2)^2*100/L}\
+                       else if($2==2){Ra = factEqRa*(orMaxpathri.x(jj)-orMinpathri.x(jj))*PI*(diam/2)^2*100/L}
+        } 
+    }
+    for (j = 0; j < eqSpinyVector.size(); j = j + 1){
+        jj = eqSpinyVector.x(j)
+        eqSection[jj] {L = eqL.x(jj) diam = eqdiam.x(jj) 
+                       cm=factCm*cmSpinySect*surfFactRmCm.x(jj)
+                       if($2==0){Ra = factEqRa*eqRa.x(jj)}\
+                       else if($2==1){Ra = factEqRa*eqri2.x(jj)*PI*(diam/2)^2*100/L}\
+                       else if($2==2){Ra = factEqRa*(orMaxpathri.x(jj)-orMinpathri.x(jj))*PI*(diam/2)^2*100/L}
+        } 
+    }    
+    
+    
+    totEq=0
+    for (i = 0; i < nCluster; i = i + 1){
+        eqSection[i] {
+               nseg = int((L/(d_lambda*lambda_f(freqEq))+0.9)/2)*2 + 1  
+               totEq=totEq+nseg
+        } 
+    }       
+      
+    if(optPrint) print "totSegEq: ", totEq
+  
+    sec = 1
+    forsec "eqSection.*" if (!issection("eqSection[0]")){
+	  {eqslsoma=new SectionList() eqrvp=new RangeVarPlot("v")
+	   {eqSection[0]  eqrvp.begin(.5)}  eqrvp.end(.5) eqrvp.list(eqslsoma) }
+	  {eqslroot=new SectionList() eqrvp=new RangeVarPlot("v")
+	   {ss=0 forsec eqslsoma{ {if(ss==1) eqrvp.begin(.5)}  ss=ss+1}}
+	   eqrvp.end(.5)  eqrvp.list(eqslroot)}
+	   
+	  nsecPath = 0 
+	  forsec eqslroot {nsecPath=nsecPath+1 for(x) if(x>0) eqsecpathri.set(sec,eqsecpathri.x(sec)+ri(x))}
+      nsecPath1 = 0
+      forsec eqslroot {
+             nsecPath1=nsecPath1+1 
+             for(x) if(x>0 && nsecPath1<nsecPath) eqsecpathri0.set(sec,eqsecpathri0.x(sec)+ri(x))
+      }      
+        
+	  sec = sec+1
+    }    
+    forsec "eqSection[0]" {for(x) if(x>0) eqsecpathri.set(0,eqsecpathri.x(0)+ri(x))}
+
+    
+    tgAlph = new Vector(0,0)
+    signDx = new Vector(0,0)
+    signDy = new Vector(0,0)
+    
+    access soma[0]
+    distance()
+    xx0 = x3d(1)
+    yy0 = y3d(1)
+    yyPrec = yy0
+
+    iii = 0
+    forsec TrunkSectList{
+         if (distance(0)==0){yyPrec = yy0}
+         if (x3d(1)-xx0==0){
+            tgAlph.append(1e10)
+         }else {tgAlph.append(abs((y3d(1)-yyPrec)/(x3d(1)-xx0)))}
+         if (x3d(1)-xx0>=0){signDx.append(1)}else{signDx.append(-1)}
+         if (y3d(1)-yyPrec>=0){signDy.append(1)}else{signDy.append(-1)}                            
+         //print tgAlph.x(iii)
+         iii =iii+1
+                  
+         yyPrec = yyPrec+y3d(1)-y3d(0)
+    }
+
+    access soma[0]
+    if (x3d(1)-x3d(0)==0){
+     tgAlph0 = 1e10
+    }else {tgAlph0 = abs((y3d(1)-y3d(0))/(x3d(1)-x3d(0)))} 
+
+    appLun = eqSection[0].L
+    access eqSection[0]
+   
+    pt3dclear()
+    DeltaY = appLun*sin(atan(tgAlph0))
+    DeltaX = appLun*cos(atan(tgAlph0))
+    pt3dadd(300,0,0,eqSection[0].diam)
+    pt3dadd(300+DeltaX,DeltaY,0,eqSection[0].diam)
+    
+    
+    for (j = 0; j < 1; j = j + 1){ //eqTrunkVector.size()
+        jj = eqTrunkVector.x(j)
+        jjParent = clusterParent.x(jj)
+        eqSection[jjParent]{xxParent = x3d(1) yyParent = y3d(1)}
+                
+        eqSection[jj] {
+            pt3dclear()
+            DeltaY = L*sin(atan(tgAlph.x(j)))
+            DeltaX = L*cos(atan(tgAlph.x(j)))/10
+        
+            pt3dadd(xxParent,yyParent,0,diam)
+            pt3dadd(xxParent+signDx.x(j)*DeltaX,yyParent+signDy.x(j)*DeltaY,0,diam)        
+        }       
+    }
+
+
+
+    
+}
+
+
+// Useful variables
+objectvar sh
+objectvar shPlot
+objref vbox0, vbox1
+
+strdef app
+objref strobj,rr,gg,bb
+strobj = new StringFunctions()
+
+proc coloringClusterList(){local nCluster,sec,col,i,j
+    clusterListApp = $o1
+    nCluster = clusterListApp.count
+   
+    vbox0 = new VBox()  
+    vbox1 = new VBox()  
+    strdef strApp 
+    
+    vbox0.intercept(1)
+
+    sh = new Shape() //PlotShape
+
+    app = ""
+    sh.action("app = secname() secApp=-1 forall {secApp=secApp+1 if (issection(app)) break} print secApp,app coloringClusterList(clusterListApp)")  
+    
+    vbox0.intercept(0)
+    sprint(strApp, "Plotting %s", str)
+    vbox0.map(strApp, 0, 530, 270, 250)
+    
+    sec = 0
+    forall if (!issection("eqSection.*")){
+           col = 1
+           for (i = 0; i < nCluster; i = i + 1){
+               //print "pippo",i,col,col-int(col/10)
+               if (col-int(col/10)*10==2 || col-int(col/10)*10==0) col = col-int(col/10)*10+1
+               //print "pluto",i,col
+               if (clusterListApp.o(i).contains(sec)&&!issection(app)) sh.color(col)
+               col = col + 1
+           }
+           sec=sec+1
+    }
+    
+    col = 1
+    forsec "eqSection.*" {if (col-int(col/10)*10==2 || col-int(col/10)*10==0) {col = col-int(col/10)*10+1} sh.color(col) col=col+1}    
+    
+    length = strobj.len(app)
+    if (length>0) forsec "eqSection.*" if(issection(app)){sh.color(2)}
+
+    
+    if(optPrint2) {
+        vbox1.intercept(1)
+        shPlot = new PlotShape()
+        shPlot.scale(-70, 0)  //-70,30,-50
+        shPlot.exec_menu("Show Diam")
+        shPlot.exec_menu("Shape Plot")
+        vbox1.intercept(0)
+        vbox1.map(strApp, 400, 295, 500, 420)
+    }
+
+    sh.show(0)
+
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+                   ACCURACY FUNCTION
+  ---------------------------------------------*/
+  
+accu = -1
+fact2 = 0.35
+TmaxNeg = 10
+TmaxPos = 10
+
+// Useful variables
+objectvar vecTTSpikeOrApp, vecTTSpikeEqApp
+
+func accuracy(){local i, j, nn
+     
+    tstop = t
+    vecTTSpikeOrApp = $o1
+    vecTTSpikeEqApp = $o2
+    
+    
+	TP = 0
+	TN = 0
+	FP = 0
+	FN = 0
+	
+	if(vecTTSpikeOrApp.size()==0) vecTTSpikeOrApp.append(tstop)
+	if(vecTTSpikeEqApp.size()==0) vecTTSpikeEqApp.append(tstop)
+	
+	for i = 0,vecTTSpikeOrApp.size()-1{
+        if (i == 0){tprec = 0
+        }else{tprec = vecTTSpikeOrApp.x(i - 1)}
+        if (i == vecTTSpikeOrApp.size()-1){tsucc = tstop
+        }else{tsucc = vecTTSpikeOrApp.x(i + 1)}
+        if (fact2*(vecTTSpikeOrApp.x(i) - tprec) <= TmaxPos){DeltaT1 = fact2*(vecTTSpikeOrApp.x(i) - tprec)
+        }else{DeltaT1 = TmaxPos}
+        if (i == 0){initNeg = 0
+        }else{initNeg = tprec + DeltaT1}
+        fineNeg = vecTTSpikeOrApp.x(i) - DeltaT1
+        initPos = fineNeg
+        if (fact2*(tsucc - vecTTSpikeOrApp.x(i)) <= TmaxPos){DeltaT2 = fact2*(tsucc - vecTTSpikeOrApp.x(i))
+        }else{DeltaT2 = TmaxPos}        
+        finePos = vecTTSpikeOrApp.x(i) + DeltaT2
+        
+        for (nn = initNeg; nn <= fineNeg; nn = nn + TmaxNeg) {
+            
+            inizioInter = nn
+			if (nn + TmaxNeg <= fineNeg) {fineInter = nn + TmaxNeg
+            }else(fineInter = fineNeg)	
+            
+            nEq = 0
+            for j = 0,vecTTSpikeEqApp.size()-1{
+                if (vecTTSpikeEqApp.x(j) > inizioInter && vecTTSpikeEqApp.x(j) < fineInter) nEq = nEq+1
+            }
+            if (nEq == 0) {TN = TN + 1
+            }else{FP = FP + nEq}   
+        }	
+
+        nEq = 0
+        for j = 0,vecTTSpikeEqApp.size()-1{
+            if (vecTTSpikeEqApp.x(j) >= initPos && vecTTSpikeEqApp.x(j) <= finePos) nEq = nEq+1
+        }
+        
+        
+        if (nEq == 0) { FN = FN + 1
+        }else{TP = TP + 1 FP = FP + nEq - 1}        	
+
+
+    }
+		
+    initNeg = finePos
+	fineNeg = tstop
+     
+    
+    for (nn = initNeg; nn <= fineNeg; nn = nn + TmaxNeg) {
+        
+        inizioInter = nn
+		if (nn + TmaxNeg <= fineNeg) {fineInter = nn + TmaxNeg
+        }else(fineInter = fineNeg)	
+        
+        nEq = 0
+        for j = 0,vecTTSpikeEqApp.size()-1{
+            if (vecTTSpikeEqApp.x(j) > inizioInter && vecTTSpikeEqApp.x(j) < fineInter) nEq = nEq+1
+        }
+        if (nEq == 0) {TN = TN + 1
+        }else{FP = FP + nEq}   
+    }    
+   
+    if(TP + TN + FP + FN != 0){ accu = (TP + TN)/(TP + TN + FP + FN) }
+        	
+    
+    return accu
+}
+
+
+surfFactVect = new Vector(2000,1.0)		//set/reset

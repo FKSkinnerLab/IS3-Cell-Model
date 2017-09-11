@@ -1,0 +1,430 @@
+/*---------------------------------------------------------------------
+
+   Written by Alessandro Limongiello
+   University "Federico II" of Naples, 2012-2013
+
+-----------------------------------------------------------------------*/
+
+
+load_file("nrngui.hoc")
+
+/*---------------------------------------------
+                   USEFUL DATA
+  ---------------------------------------------*/
+  
+
+PRESERVINGMETHOD = 0            
+SURFFACT_PARTIAL_TOTAL = 1                                    
+SURFFACT_PARTIAL_METHOD = 2     
+RaMERGINGMETHOD = 1           
+  
+create soma[1]  
+create eqSection[1]  
+                                                       	
+xopen("fixnseg.hoc")            
+
+Ra0 = 250                       //Ohm*cm
+cmSoma = 0.8
+cmSmoothSec = 0.8
+cmSpinySect = 1.5
+gl_LeakSoma = 0.00006
+gl_LeakSmoothSec = 0.00021
+gl_LeakSpinySect = 0.00021
+el_Leak0 = -80
+
+freq = 50
+freqEq = 3
+factRm = 1
+factCm = 1
+factRa = 1
+celsius = 37
+
+xopen("useful&InitProc.hoc") 
+xopen("stimulation1.hoc") 
+
+
+//////   Spike counter//////////
+
+objref apcOr,apcEq
+
+proc insert_APCor() {
+    apcOr = new APCount(0.5)
+    apcOr.thresh = -10
+}
+proc insert_APCeq() {
+    apcEq = new APCount(0.5)
+    apcEq.thresh = -10
+}
+
+proc initStim(){
+    if (StimulationType == 1) {StimulationTypePartial_Total=0 syn_asyn=1
+    }else if (StimulationType == 2) {StimulationTypePartial_Total=1 syn_asyn=1
+    }else if (StimulationType == 3) {StimulationTypePartial_Total=0 syn_asyn=2}
+}
+
+
+/*---------------------------------------------
+                      MAIN
+  ---------------------------------------------*/
+
+
+synNum = 1000
+synType = 0
+noise0 = 1    
+positionSeed = 2058529//9384772//2181150
+poissonSeed = 1421192//6479171//1505849
+
+
+optFactGmaxSyn = 0
+iMorph = 2
+optPrint = 0
+optPrint1 = 1
+optPrint2 = 0
+optPrint3 = 1
+tgraph = 2000
+StimulationTypePartial_Total = 0 // 0 - Total Stimulation / 1 - Partial Stimulation
+StimulationType = 1 // 1- Full / 2- Partial /3- Segregated
+
+
+
+objref vbox3
+
+vbox3 = new VBox()    
+vbox3.intercept(1)
+xpanel("Input Data:")
+xbutton("Cell Morphologies","readingFile()")
+xvalue("freqSyn (Hz)","freqSyn",0,"if(firstInit == -1) firstInit = 0")
+xvalue("Number of Active Synapses","synNum",0,"if(firstInit == -1) firstInit = 0")
+stateFull = 1
+statePartial=0
+stateSegr=0
+xcheckbox("Full Stimulation",&stateFull,"StimulationType=1 statePartial=0 stateSegr=0 initStim()")
+xcheckbox("Partial Stimulation",&statePartial,"StimulationType=2 stateFull=0 stateSegr=0 initStim()")
+xcheckbox("Segregated Stimulation",&stateSegr,"StimulationType=3 stateFull=0 statePartial=0 initStim()")
+
+xpanel()
+vbox3.intercept(0)
+vbox3.map("Input Data", 360, 0, 250, 120)
+
+
+time0=0
+    
+objref vbox4
+
+vbox4 = new VBox()    
+vbox4.intercept(1)
+xpanel("Run Control:")
+xbutton("Run the Full & Reduced Models","{init() integrate()}")
+xbutton("Run the Full Model","goMorph()")
+xbutton("Run the Reduced Model","goEq()")
+xbutton("Stop","{stoprun = 1}")
+xvalue("tstop","tgraph",0)
+xvalue("Simulation Time (sec): ","time0",0)
+xvalue("Accuracy: ","accu",0)
+
+xpanel()
+vbox4.intercept(0)
+vbox4.map("Run Control", 700, 0, 200, 170)    
+    
+    
+firstInit = 1    // 0=file already read but any change in the parameters
+                 // 1=first init
+                 // -1=file already read and no change in the parameters
+                 // 2=file not yet read but any change in the parameters
+
+
+objref graphCum,graphEq,graphMorph,graphMorph1
+objref vbox7
+        
+        
+objref pc
+pc = new ParallelContext()        
+              
+        
+proc init(){
+        
+    t=0
+    tstop = tgraph   
+    
+    while (firstInit==1) {readingFile()} 
+    time00 = pc.time()
+    PurkinjeSetting()
+    
+    if (optPrint3==1) print "InitialSetting Time: ", pc.time() - time00
+    
+
+
+    if (firstInit==0){
+        time00 = pc.time()
+        cellPurkAnalysis()
+        
+        clusterise1PurkinjeCell()
+        
+        stimulationClusterise1()
+        
+        PurkReduction()   
+    
+        {create eqSection[clusterList.count]}
+        createPurkEqCell(clusterList,RaMERGINGMETHOD)
+        
+        
+        if (optPrint3==1) print "cellPurkAnalysis+clusterisePurkinjeCell+PurkReduction+createPurkEqCell Time: ", pc.time() - time00
+        
+        printClusterList(clusterList)
+        
+       
+        objref injCurr, injCurrEq
+        time00 = pc.time()
+        insertPurkSyn(synNum,positionSeed,synType,clusterList)
+        
+        if (optPrint3==1) print "insertPurkSyn Time: ", pc.time() - time00
+        time00 = pc.time()
+        changeSurf(clusterList,synNum)
+        if (optPrint3==1) print "changeSurf Time: ", pc.time() - time00
+        
+
+        firstInit = -1   
+    }
+
+    time00 = pc.time()
+    findSyn(clusterList,optFactGmaxSyn,synNum,synType,iMorph)
+    if (optPrint3==1) print "findSyn Time: ", pc.time() - time00
+  
+    for (i = 0; i < clusterList.count; i = i + 1){print "surfFact",i,": ",surfFact.x(i)}
+
+    time00 = pc.time()
+
+
+
+    for (j = 0; j < eqTrunkVector.size(); j = j + 1){
+        jj = eqTrunkVector.x(j)
+        eqSection[jj] {gl_Leak = factRm*surfFactRmCm.x(jj)*gl_LeakSmoothSec
+                       cm=factCm*cmSmoothSec*surfFactRmCm.x(jj)}    
+    }
+    for (j = 0; j < eqSmoothVector.size(); j = j + 1){
+        jj = eqSmoothVector.x(j)
+        eqSection[jj] {gl_Leak = factRm*surfFactRmCm.x(jj)*gl_LeakSmoothSec
+                       cm=factCm*cmSmoothSec*surfFactRmCm.x(jj)}    
+    }
+    for (j = 0; j < eqSpinyVector.size(); j = j + 1){
+        jj = eqSpinyVector.x(j)
+        eqSection[jj] {gl_Leak = factRm*surfFactRmCm.x(jj)*gl_LeakSpinySect
+                       cm=factCm*cmSpinySect*surfFactRmCm.x(jj)}    
+    }
+    
+   
+    totEq=0
+    for (i = 0; i < clusterList.count; i = i + 1){
+        eqSection[i] {
+               nseg = int((L/(d_lambda*lambda_f(freqEq))+0.9)/2)*2 + 1 
+               totEq=totEq+nseg
+        } 
+    }
+    
+      
+    if (optPrint3==1) print "Nseg Time: ", pc.time() - time00
+
+    printf("Morphology Name: %s\n", strFile)
+    printf("totSegIni: %d\n", totOr)
+    printf("totSegEq: %d\n", totEq)
+    printf("_____________________________\n\n")
+    
+    time00 = pc.time()
+    
+
+    gnabar_NaFSoma0 = 10
+    gcabar_CaP2Soma0 = 0.0005
+    gcabar_CaP20 = 0.004
+  
+    
+    channelsByMiyasho01()
+    initMiyasho01()
+    if (optPrint3==1) print "channelsByMiyasho01+initMiyasho01 Time: ", pc.time() - time00 
+
+    vbox7 = new VBox()    
+    vbox7.intercept(1)
+    
+    graphCum = new Graph()
+    graphCum.addvar("soma[0].v(0.5)",2,1)
+    graphCum.addvar("eqSection[0].v(0.5)",4,1)  
+    graphCum.size(0,tgraph,-70,50)   
+    graphEq = new Graph()
+    graphEq.addvar("eqSection[0].v(0.5)",4,1) 
+    graphEq.size(0,tgraph,-70,50)     
+    graphMorph = new Graph()
+    graphMorph.addvar("soma[0].v(0.5)",2,1)
+    graphMorph.size(0,tgraph,-70,50) 
+
+    
+    vbox7.intercept(0)
+    vbox7.map("graphCum", 980, 0,410, 550)     
+    
+    cumEqMorph = 0
+    
+    coloringStimulatedClusters()
+}
+
+
+objref vecNSpikeOr,vecNSpikeEq,vecISISpikeOr,vecISISpikeEq,vecTTSpikeOr,vecTTSpikeEq
+
+
+proc integrate() {
+    time00 = pc.time()
+    //advance()
+    
+    if (cumEqMorph==0){
+                       
+        vecNSpikeOr= new Vector()
+        vecISISpikeOr= new Vector()
+        vecTTSpikeOr= new Vector()
+        vecNSpikeEq= new Vector()
+        vecISISpikeEq= new Vector()
+        vecTTSpikeEq= new Vector()                       
+                               
+        objref apcOr
+        access soma[0]
+        insert_APCor() 
+        tprecOr=0
+        ttOr=0 
+        firstSpikeOr = 1  
+        
+        objref apcEq
+        access eqSection[0]
+        insert_APCeq() 
+        tprecEq=0   
+        ttEq=0
+        firstSpikeEq = 1        
+        
+    }  
+    
+    doNotify()
+    if(optPrint1) {coloringClusterList(clusterList)}
+        
+    continuerun(tstop)
+
+    time0 = pc.time()-time00
+    print "Time: ",time0
+    
+    if (cumEqMorph==0){
+       accu = accuracy(vecTTSpikeOr,vecTTSpikeEq)
+       print "Accuracy: ",accu
+    }
+}
+
+
+
+cumEqMorph = 0  // 0,1,2
+
+
+proc advance() {
+
+    if(optPrint2) shPlot.flush()
+    
+    if (cumEqMorph==0){
+                                
+        graphCum.plot(t)
+        graphCum.flush()
+        graphEq.plot(t)
+        graphEq.flush()
+        graphMorph.plot(t)
+        graphMorph.flush()
+        
+        if (apcOr.n==1){tprecOr=apcOr.time if(firstSpikeOr){vecTTSpikeOr.append(tprecOr) firstSpikeOr=0 print "TSpikesOr: ",tprecOr }}                   
+        if (apcOr.time>tprecOr && tprecOr!=0){
+           //if (apcOr.n==2){vecTTSpikeOr.append(tprecOr)}
+           vecTTSpikeOr.append(apcOr.time)
+           ttOr = apcOr.time - tprecOr
+           vecISISpikeOr.append(ttOr)
+           print "TSpikesOr: ",apcOr.time 
+           tprecOr=apcOr.time
+        }
+        
+        if (apcEq.n==1){tprecEq=apcEq.time if(firstSpikeEq){vecTTSpikeEq.append(tprecEq) firstSpikeEq=0 print "TSpikesEq: ",tprecEq }}                        
+        if (apcEq.time>tprecEq && tprecEq!=0){
+           //if (apcEq.n==2){vecTTSpikeEq.append(tprecEq)}
+           vecTTSpikeEq.append(apcEq.time)
+           ttEq = apcEq.time - tprecEq
+           vecISISpikeEq.append(ttEq)
+           print "TSpikesEq: ",apcEq.time 
+           tprecEq=apcEq.time
+        }
+        
+    } else if (cumEqMorph==1){
+        graphEq.plot(t)
+        graphEq.flush()
+    } else if (cumEqMorph==2){
+        graphMorph.plot(t)
+        graphMorph.flush()
+    }
+    
+    
+    	
+    fadvance()  
+}
+
+proc goMorph(){
+     
+     init()          
+
+     objectvar StimEqList,Exp2SynEqList,NetConEqList
+     objref stimEqApp,synEqApp,netConEqApp
+
+     forall if (issection("eqSection.*")){
+//         uninsert Leak uninsert NaF uninsert NaP uninsert CaP2 uninsert CaT uninsert CaE 
+//         uninsert Khh uninsert KM uninsert KA uninsert KD uninsert Kh uninsert cad 
+         delete_section()
+     }
+    
+    vbox7 = new VBox()    
+    vbox7.intercept(1)
+    graphMorph = new Graph()
+    graphMorph.addvar("soma[0].v(0.5)",2,1)
+    graphMorph.size(0,tgraph,-70,50)    
+    vbox7.intercept(0)
+    vbox7.map("graphMorph",980,510,410,170)      
+    
+    cumEqMorph = 2 
+    
+    objref apcOr,apcEq
+    access soma[0]
+    insert_APCor() 
+       
+    coloringStimulatedClusters()
+       
+    integrate()
+
+}
+
+proc goEq(){
+     
+     init()          
+
+     objectvar Exp2SynList,NetConList,StimList//,StimEqList,Exp2SynEqList,NetConEqList
+     objref synApp,netConApp//stimApp,stimEqApp,synEqApp,netConEqApp
+
+     forall if (!issection("eqSection.*")){
+//         uninsert Leak uninsert NaF uninsert NaP uninsert CaP2 uninsert CaT uninsert CaE 
+//         uninsert Khh uninsert KM uninsert KA uninsert KD uninsert Kh uninsert cad 
+         delete_section()
+     }
+     
+    vbox7 = new VBox()    
+    vbox7.intercept(1)
+    graphEq = new Graph()
+    graphEq.addvar("eqSection[0].v(0.5)",4,1) 
+    graphEq.size(0,tgraph,-70,50)      
+    vbox7.intercept(0)
+    vbox7.map("graphEq",980,340,410,170)  
+  
+    cumEqMorph = 1
+    
+    objref apcOr,apcEq
+    access eqSection[0]
+    insert_APCeq() 
+    
+    integrate()
+
+
+
+}
+

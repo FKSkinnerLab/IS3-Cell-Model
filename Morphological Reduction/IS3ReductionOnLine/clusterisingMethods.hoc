@@ -1,0 +1,552 @@
+/*---------------------------------------------------------------------
+
+   Written by Alessandro Limongiello
+   University "Federico II" of Naples, 2012-2013
+
+-----------------------------------------------------------------------*/
+
+
+/*---------------------------------------------
+                   CLUSTERISING PROCEDURES
+  ---------------------------------------------*/
+
+objectvar clusterVect         // Vector for the i-th cluster, containing the id-sections 
+objectvar clusterParentVect   // Vector containing the parent sections for the i-th cluster
+objectvar nclusterVect        // Vector containing the number of sections for each cluster
+objectvar cutOffVect          // Vector containing the cutOff-values to clusterise
+
+objectvar eqSomaVector
+objectvar eqTrunkVector
+objectvar eqSmoothVector
+objectvar eqSpinyVector
+objref sectListApp
+objref sectListApp1
+objref SomaSectList
+objref TrunkSectList
+objref TrunkSectListApp
+objref SmoothSectList
+objref SpinySectList
+objref stimulationClusterList 
+objref stimulationClusterVect
+
+
+proc clusterisePurkinjeCell(){local ii,icluster,sec
+
+    eqSomaVector = new Vector(1,0)
+    eqTrunkVector = new Vector(0,0)    
+    eqSmoothVector = new Vector(1,1)
+    eqSpinyVector = new Vector(1,2)
+    
+    SomaSectList = new SectionList()
+    TrunkSectList = new SectionList()
+    SmoothSectList = new SectionList()
+    SpinySectList = new SectionList()  
+
+
+	clusterParent = new Vector(3,0)
+	clusterParentPos = new Vector(3,0)
+
+    // the first cluster is the soma
+    clusterList.append(somaVector)      
+            
+    nclusterVect = new Vector(3,0)
+
+    for ii=0,somaVector.size()-1{
+	  clusterMarker.set(somaVector.x[ii], 0)
+	  nclusterVect.x(0)=nclusterVect.x(0)+1        
+    }
+
+    sec = 0    
+    forall{
+       if (issection("soma.*")){
+           SomaSectList.append()
+       }else if (!issection("soma.*")){            
+           if (strahlerNumbersVect.x(sec)>3){
+              clusterMarker.set(sec, 1)
+        	  nclusterVect.x(1)=nclusterVect.x(1)+1 
+        	  SmoothSectList.append()
+           }else{
+              clusterMarker.set(sec, 2)
+        	  nclusterVect.x(2)=nclusterVect.x(2)+1  
+              SpinySectList.append()          
+           }
+       }
+       sec = sec+1    
+    }
+          
+    clusterParent.set(1,0)
+    clusterParentPos.set(1,1)    
+    clusterParent.set(2,1)
+    clusterParentPos.set(2,0.5)     
+    
+  
+    for ii=1,2{
+        clusterVect = new Vector(nclusterVect.x(ii),0)
+        icluster=0
+        for sec=1,NSEC-1{
+            if (clusterMarker.x(sec)==ii){clusterVect.set(icluster, sec)  icluster=icluster+1}
+        }
+        
+        if (icluster>0) {
+            clusterList.append(clusterVect)
+        }
+    }  
+        
+    
+}
+
+sNumberLimit = 5
+sizeLimit = 80
+possSpiny = 1
+
+proc clusterise1PurkinjeCell(){local ii,icluster,sec,sec1,secPar
+
+    eqSomaVector = new Vector(0,0)
+    eqTrunkVector = new Vector(0,0)    
+    eqSmoothVector = new Vector(0,0)
+    eqSpinyVector = new Vector(0,0)
+    
+    SomaSectList = new SectionList()
+    TrunkSectList = new SectionList()
+    TrunkSectListApp = new SectionList()
+    SmoothSectList = new SectionList()
+    SpinySectList = new SectionList()
+    stimulationClusterList = new List()
+
+	clusterParent = new Vector(0,0)
+	clusterParentPos = new Vector(0,0)
+    nclusterVect = new Vector(0,0)
+
+    // the first cluster is the soma
+    clusterList.append(somaVector)      
+            
+
+    for ii=0,somaVector.size()-1{
+	  clusterMarker.set(somaVector.x[ii], 0)        
+    }
+    nclusterVect.append(somaVector.size())
+    
+    clusterParent.append(0)
+    clusterParentPos.append(0)   
+    eqSomaVector.append(0) 
+    
+    access soma[0]
+    distance()
+    
+    sec = 0   
+    cMark = 0 
+    forall{
+       if (issection("soma.*")){
+           SomaSectList.append()
+       }else if (!issection("soma.*")){             
+           if (strahlerNumbersVect.x(sec)>=sNumberLimit || distance(0)==0){
+                secPar = parsec.x(sec)
+                //print sec,secPar
+                if (clusterMarker.x(secPar)!=-1){
+                    if (distance(0)==0){
+                       clusterParent.append(clusterMarker.x(0)) 
+                       clusterParentPos.append(0.5)
+                    }else{
+                       clusterParent.append(clusterMarker.x(secPar))
+                       clusterParentPos.append(1)
+                    }
+                    
+                    cMark = cMark +1
+                    clusterMarker.x(sec)= cMark
+                    nclusterVect.append(1)
+                    eqTrunkVector.append(cMark)
+                    TrunkSectList.append()
+                }           
+           }
+       }
+       sec = sec+1    
+    }
+      
+ 
+    sec2 = 0
+    nStimulationClusterList = 0
+    forsec TrunkSectList{
+    
+        sectListApp = new SectionList()
+        sectListApp.children()
+        sectListApp.remove(SomaSectList)
+        sectListApp.remove(TrunkSectList)
+        
+        sectListApp1 = new SectionList()
+        
+        if (optPrint==1) print "TrunkSect: ",secname()
+        forsec sectListApp{
+               if (optPrint==1) print "sectListApp: ",secname()
+               sectListApp1.subtree()               
+        }
+               
+        sec1 = 0
+        okSmooth = 0
+        okSpiny = 0
+        stimulationClusterVect = new Vector()
+        forall{
+               ifsec sectListApp1{
+                     if (strahlerNumbersVect.x(sec1)>3){
+                          okSmooth = 1
+                     }else if (strahlerNumbersVect.x(sec1)<=3){
+                          stimulationClusterVect.append(sec1)
+                          okSpiny = 1
+                     } 
+               }
+               sec1 = sec1+1
+        }
+        
+        if (nStimulationClusterList==0){
+           if (stimulationClusterVect.size()>0){
+              stimulationClusterList.append(stimulationClusterVect)
+              nStimulationClusterList = 1
+           }
+        }else if (stimulationClusterVect.size()>0){
+           if (stimulationClusterList.o(nStimulationClusterList-1).size() < sizeLimit){
+               stimulationClusterList.o(nStimulationClusterList-1).append(stimulationClusterVect)                                                
+           }else{
+               stimulationClusterList.append(stimulationClusterVect)
+               nStimulationClusterList = nStimulationClusterList+1           
+           }
+        }
+        
+        currCMark = cMark
+        
+        if (okSmooth){
+           if (okSpiny){
+                clusterParent.append(eqTrunkVector.x(sec2))
+                clusterParentPos.append(1)   
+                nclusterVect.append(0)
+                eqSmoothVector.append(cMark+1)
+                clusterParent.append(cMark+1)
+                clusterParentPos.append(possSpiny)   //0.5 1
+                nclusterVect.append(0)
+                eqSpinyVector.append(cMark+2)  
+                currCMark = cMark+2                    
+           }else {
+                clusterParent.append(eqTrunkVector.x(sec2))
+                clusterParentPos.append(1)   
+                nclusterVect.append(0)
+                eqSmoothVector.append(cMark+1) 
+                currCMark = cMark+1          
+           }
+        }else if (okSpiny){
+                clusterParent.append(eqTrunkVector.x(sec2))
+                clusterParentPos.append(1)   
+                nclusterVect.append(0)
+                eqSpinyVector.append(cMark+1) 
+                currCMark = cMark+1
+        }
+        
+        
+        sec1 = 0
+        //if (sec2<10) {print secname(),": "}
+        forall{
+            ifsec sectListApp1{
+               //if (sec2<10) {print sec1,secNameList.o(sec1).s, cMark}
+               if (strahlerNumbersVect.x(sec1)>3){  
+                    clusterMarker.x(sec1)= cMark+1
+                    nclusterVect.x(cMark+1)=nclusterVect.x(cMark+1)+1
+                    SmoothSectList.append()           
+               }else if (strahlerNumbersVect.x(sec1)<=3){
+                    clusterMarker.x(sec1)= currCMark
+                    nclusterVect.x(currCMark)=nclusterVect.x(currCMark)+1
+                    SpinySectList.append()          
+               }
+           }
+           sec1 = sec1+1 
+        }    
+        cMark = currCMark
+        sec2 = sec2+1 
+    }
+    
+    for ii=1,nclusterVect.size()-1{
+        clusterVect = new Vector(nclusterVect.x(ii),0)
+        icluster=0
+        for sec=1,NSEC-1{
+            if (clusterMarker.x(sec)==ii){clusterVect.set(icluster, sec)  icluster=icluster+1}
+        }
+        //print ii,nclusterVect.x(ii),icluster,clusterParent.x(ii)
+        if (icluster>0) {
+            clusterList.append(clusterVect)
+        }
+    }  
+    
+    for ii = 0,stimulationClusterList.count-1{
+        if (optPrint==1) print "stimulationCluster n.",ii," size: ",stimulationClusterList.o(ii).size()
+        for jj = 0,stimulationClusterList.o(ii).size()-1{
+               stimulatedGroupVect.x(stimulationClusterList.o(ii).x(jj)) = ii+1
+               //print stimulationClusterList.o(ii).x(jj)
+        }        
+    }
+    
+    
+
+}
+
+proc stimulationClusterise(){local ii,icluster,sec,sec1,secPar
+
+    stoprun = 1
+    if (optPrint==1) print "Stimulation Clusterise"
+
+    if (firstInit ==1){
+        forall delete_section()                       
+        readingFile() 
+        xopen(strFile)		// read geometry file
+        firstInit == 0
+    }else{xopen(strFile)}
+    
+    if(firstInit == 0){
+        PurkinjeSetting()
+        cellPurkAnalysis()
+        clusterise1PurkinjeCell()   
+        firstInit = -1
+    }
+    
+}
+
+
+
+objref stimulationCluster2List 
+objref stimulationCluster2Vect
+
+nStimulationClusterList2 = 3
+objref stimulationPercVect
+stimulationPercVect = new Vector(nStimulationClusterList2+1,1/nStimulationClusterList2)
+stimulationPercVect.x(0) = 0
+stimulationPercVect.x(1) = 0.5
+stimulationPercVect.x(2) = 0.7
+stimulationPercVect.x(3) = 1
+
+
+proc stimulationClusterise2(){local ii,sec,maxDist
+
+    stoprun = 1
+    if (optPrint==1) print "Stimulation Clusterise2"
+    if (firstInit ==1){strahlerNumbersComputation()}
+    
+        
+    if(firstInit == 0){
+        stimulationCluster2List = new List()
+        
+        access soma[0]
+        distance()
+                       
+        for (ii=0;ii<nStimulationClusterList2;ii=ii+1){
+            stimulationCluster2Vect = new Vector()
+            stimulationCluster2List.append(stimulationCluster2Vect)
+        }
+            
+        maxDist = 0
+        forall if (!issection("eqSection.*")){
+               if (distance(1)>maxDist) maxDist = distance(1)
+        }
+        //print maxDist
+                      
+            
+        sec = 0  
+        forall if (!issection("eqSection.*")){
+               for (ii=0;ii<nStimulationClusterList2;ii=ii+1){ 
+                   if (distance(1)> stimulationPercVect.x(ii)*maxDist && distance(1)<= stimulationPercVect.x(ii+1)*maxDist \
+                                    && strahlerNumbersVect.x(sec)<=3 && !issection("soma.*")){
+                           stimulationCluster2List.o(ii).append(sec)
+                           break
+                   }
+               }              
+               sec = sec + 1
+        }
+        
+        
+        
+ 
+        stimulatedGroup1Vect=new Vector(sec,0)		    //set/reset
+        
+        for ii = 0,stimulationCluster2List.count-1{
+            //print "stimulationCluster n.",ii," size: ",stimulationCluster2List.o(ii).size()
+            for jj = 0,stimulationCluster2List.o(ii).size()-1{
+                   stimulatedGroup1Vect.x(stimulationCluster2List.o(ii).x(jj)) = ii+1
+                   //print stimulationCluster2List.o(ii).x(jj)
+            }        
+        } 
+ 
+        firstInit = -1
+    }
+    
+}
+
+
+proc findSimAxes(){local mm,x0,y0,x1,y1,dd,alph
+
+     mm = 1
+     access soma[0]
+     x0 = x3d(0.5)
+     y0 = y3d(0.5)
+     minDist = 1e10
+     mmOk = mm
+     for (alph=0; alph<180; alph = alph + 5){
+         numPos = 0
+         numNeg = 0
+         if (alph!=90){
+             mm = sin(alph)/cos(alph)
+             forall if (!issection("eqSection.*")){
+                    x1 = x3d(0.5)
+                    y1 = y3d(0.5)
+                    dd = (y1-mm*x1-(y0-mm*x0))/(sqrt(1+mm^2))
+                    if(dd>=0){numPos = numPos+1
+                    }else{numNeg = numNeg+1}
+             }
+         }
+         if (abs(numPos-numNeg) < minDist && abs(numPos-numNeg)!=0){
+            minDist = abs(numPos-numNeg)
+            mmOk = mm   
+         }
+         print numPos,numNeg,minDist,mmOk
+     }
+
+}
+
+
+objref stimulationCluster1List 
+objref stimulationCluster1Vect
+
+nStimulationClusterList1 = 4
+
+proc stimulationClusterise1(){local ii,sec,xx0,yy0,xx1,yy1,divx,divy,xx,yy, indd
+
+    stoprun = 1
+    if (optPrint==1) print "Stimulation Clusterise1"
+    if (firstInit ==1){strahlerNumbersComputation()}
+    
+    if(firstInit == 0){
+        stimulationCluster1List = new List()
+        
+        xx0 = 1e10   
+        yy0 = 1e10
+        xx1 = -1e10
+        yy1 = -1e10
+        
+        forall if (!issection("eqSection.*")){
+          if (x3d(0)<xx0) xx0 = x3d(0)
+          if (x3d(1)<xx0) xx0 = x3d(1)
+          if (y3d(0)<yy0) yy0 = y3d(0)
+          if (y3d(1)<yy0) yy0 = y3d(1)
+          if (x3d(0)>xx1) xx1 = x3d(0)
+          if (x3d(1)>xx1) xx1 = x3d(1)
+          if (y3d(0)>yy1) yy1 = y3d(0)
+          if (y3d(1)>yy1) yy1 = y3d(1)                  
+        }
+
+        //print xx0,yy0,xx1,yy1
+        divx = 1
+        divy = 1
+        if (nStimulationClusterList1==1) {divx = 1 divy = 1
+        }else if (nStimulationClusterList1==2) {divx = 1 divy = 2
+        }else if (nStimulationClusterList1==3) {divx = 1 divy = 3
+        }else if (nStimulationClusterList1==4) {divx = 2 divy = 2
+        }else if (nStimulationClusterList1==5) {nStimulationClusterList1=4 divx = 2 divy = 2
+        }else if (nStimulationClusterList1==6) {divx = 2 divy = 3
+        }else if (nStimulationClusterList1==7) {nStimulationClusterList1=6 divx = 2 divy = 3
+        }else if (nStimulationClusterList1==8) {divx = 2 divy = 4
+        }else if (nStimulationClusterList1==9) {divx = 3 divy = 3
+        }else if (nStimulationClusterList1==10) {nStimulationClusterList1=9 divx = 3 divy = 3
+        }else if (nStimulationClusterList1==12) {divx = 3 divy = 4
+        }else if (nStimulationClusterList1==11) {nStimulationClusterList1=12 divx = 3 divy = 4
+        }else {nStimulationClusterList1=12 divx = 3 divy = 4}
+        
+        for (ii=0;ii<nStimulationClusterList1;ii=ii+1){
+            stimulationCluster1Vect = new Vector()
+            stimulationCluster1List.append(stimulationCluster1Vect)
+        }
+            
+        sec = 0  
+        forall if (!issection("eqSection.*")){
+               indd = 0
+               inddOk = 0
+               for (yy=yy0+(yy1-yy0)/(2*divy);yy<=yy1;yy=yy+(yy1-yy0)/divy){
+                   for (xx=xx0+(xx1-xx0)/(2*divx);xx<=xx1;xx=xx+(xx1-xx0)/divx){   
+                       if(x3d(0.5)>=xx-(xx1-xx0)/(2*divx) && x3d(0.5)<xx+(xx1-xx0)/(2*divx)\
+                       && y3d(0.5)>=yy-(yy1-yy0)/(2*divy) && y3d(0.5)<yy+(yy1-yy0)/(2*divy)){ 
+                          inddOk = indd
+                       }                      
+                       indd = indd + 1     
+                   }
+               }   
+               if (!issection("soma.*") && strahlerNumbersVect.x(sec)<=3){
+                  //print secname(),x3d(0.5),y3d(0.5),inddOk
+                  stimulationCluster1List.o(inddOk).append(sec)
+               }
+               
+               sec = sec + 1
+        }
+ 
+        stimulatedGroup1Vect=new Vector(sec,0)		    //set/reset
+        
+        for ii = 0,stimulationCluster1List.count-1{
+            if (optPrint==1) print "stimulationCluster n.",ii," size: ",stimulationCluster1List.o(ii).size()
+            for jj = 0,stimulationCluster1List.o(ii).size()-1{
+                   stimulatedGroup1Vect.x(stimulationCluster1List.o(ii).x(jj)) = ii+1
+                   //print stimulationCluster1List.o(ii).x(jj)
+            }        
+        } 
+ 
+        firstInit = -1
+    }
+    
+}
+
+
+proc clusteriseByDestexhe() { local sec,icluster,ii
+     
+     
+    eqSomaVector = new Vector(1,0)
+    eqTrunkVector = new Vector(0,0)    
+    eqSmoothVector = new Vector(1,1)
+    eqSpinyVector = new Vector(1,2)
+    
+    SomaSectList = new SectionList()
+    TrunkSectList = new SectionList()
+    SmoothSectList = new SectionList()
+    SpinySectList = new SectionList()     
+     
+     
+	clusterParent = new Vector(3,0)
+	clusterParentPos = new Vector(3,0)
+                   
+    nclusterVect = new Vector(3,0)
+    cutOffVect = new Vector(4,0)
+    cutOffVect.set(0,0)
+    cutOffVect.set(1,CUTOFF1)
+    cutOffVect.set(2,CUTOFF2)
+    cutOffVect.set(3,1e10)
+    
+    for sec=0,NSEC-1{
+            for ii=1,3{
+        		if(secpathri.x(sec)>=cutOffVect.x(ii-1) && secpathri.x(sec)< cutOffVect.x(ii)) {
+        		  clusterMarker.set(sec, ii-1)
+        		  nclusterVect.x(ii-1)=nclusterVect.x(ii-1)+1
+        		}            
+            } 
+    }  
+    for ii=0,2{
+        clusterVect = new Vector(nclusterVect.x(ii),0)
+        icluster=0
+        for sec=1,NSEC-1{
+            if (clusterMarker.x(sec)==ii){clusterVect.set(icluster, sec)  icluster=icluster+1}
+        }
+        if (icluster>0) {
+            clusterList.append(clusterVect)    
+            clusterParent.set(ii,ii-1)
+    	    clusterParentPos.set(ii,1)    
+        }  
+    }     
+         
+    sec = 0   
+    forall{
+           if(secpathri.x(sec)>=cutOffVect.x(0) && secpathri.x(sec)< cutOffVect.x(1)){ SomaSectList.append()
+           }else if(secpathri.x(sec)>=cutOffVect.x(1) && secpathri.x(sec)< cutOffVect.x(2)){ SmoothSectList.append()
+           }else {SpinySectList.append()}
+       sec = sec+1    
+    }         
+         
+         
+}

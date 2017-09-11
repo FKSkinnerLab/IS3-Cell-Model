@@ -1,0 +1,233 @@
+/*---------------------------------------------------------------------
+
+   Written by Alessandro Limongiello
+   University "Federico II" of Naples, 2012-2013
+
+-----------------------------------------------------------------------*/
+
+
+/*---------------------------------------------
+                   MERGING PROCEDURES
+  ---------------------------------------------*/
+
+// Useful variables
+objectvar clusterVectApp
+
+
+
+// merging procedure for soma sections
+proc mergingSoma(){local nsect,sec,sec0,totsurf,totri,newL,newRa,newri,Ra1,Ra2,L1,L2,diam1,diam2,ri1,ri2,newdiam1
+     clusterVectApp = $o1
+     nsect = clusterVectApp.size()-1
+     sec0 = clusterVectApp.x(0)
+     totsurf = 0
+     totri = 0
+     newL = 0
+     newRa = 0
+     newri = 0
+     for ii=0,nsect {
+         sec = clusterVectApp.x(ii)
+         totsurf = totsurf + secSurf.x(sec)
+         totri = totri + secri.x(sec)
+         newL = newL + secL.x(sec)
+         newRa = newRa + secRa.x(sec)
+         newri = newri + secri.x(sec)
+         secpathri.set(sec,totri)
+     }
+     newRa = newRa/(nsect+1)
+     if (PRESERVINGsomaMETHOD==0){
+        newdiam = sqrt(newRa*newL*4/newri/PI/100)
+     }else if (PRESERVINGsomaMETHOD==1){
+        newdiam = totsurf/(newL*PI)
+     }
+     
+     eqL.set(0,newL)
+     eqdiam.set(0,newdiam)
+     eqri2.set(0,newri)
+     orSurf.set(0,totsurf)
+     orSurf1.set(0,totsurf)
+     eqSurf.set(0,newL*PI*newdiam)
+     surfFact.set(0,surfFactVect.x(0)*orSurf.x(0)/eqSurf.x(0))
+     surfFactRmCm.set(0,surfFactVect.x(0)*orSurf.x(0)/eqSurf.x(0))
+}
+
+
+// merging method for serial sections
+//         input:  {Ra1,Ra2,L1,L2,diam1,diam2,ri1,ri2,surf1,surf2,diamSer1,diamSer2,diamPar1,diamPar2}
+//         output: {newRa,newL,newdiam,newri,newri2,newdiamSer,newdiamPar}
+proc mergingSerialMethod(){local Ra1,Ra2,L1,L2,diam1,diam2,ri1,ri2,surf1,surf2
+    {Ra1=$1 Ra2=$2 L1=$3 L2=$4 diam1 =$5 diam2=$6 ri1=$7 ri2=$8 surf1=$9 surf2=$10 diamSer1=$11 diamSer2=$12 diamPar1=$13 diamPar2=$14 }
+     
+    newRa=(Ra1+Ra2)/2
+    if (LENGTHMERGINGserialMETHOD == -1){ //LENGTHMERGINGserialMETHOD = -1 by Destexhe
+        newL=L1+L2
+    } else if(LENGTHMERGINGserialMETHOD==0) {
+		newL=(L1+L2)/2
+	} else if(LENGTHMERGINGserialMETHOD==1){
+		newL=(L1*diam1+L2*diam2)/(diam1+diam2)
+	} else if(LENGTHMERGINGserialMETHOD==2) {
+		newL=(L1*surf1+L2*surf2)/(surf1+surf2)	
+	}    
+    
+    newri = ri1+ri2   
+    newri2 = newri
+    newSurf = max(surf1,surf2)
+    newdiam = 1      //init value
+    if (PRESERVINGMETHOD==0){             //PRESERVINGMETHOD = 0 DIAMMERGINGserialMETHOD = 0 by Destexhe
+       if (DIAMMERGINGserialMETHOD==0){
+          newdiam = sqrt(newRa*newL*4/newri/PI/100)
+       }else if (DIAMMERGINGserialMETHOD==1 || DIAMMERGINGserialMETHOD==-1){
+          newdiamSer = diamSer1+diamSer2
+          newdiamPar = diamPar1+diamPar2
+       }else if (DIAMMERGINGserialMETHOD==2){
+          newdiam = (diam1+diam2)/2
+       }
+    }else if (PRESERVINGMETHOD==1){
+       newdiam = (surf1+surf2)/(newL*PI)
+    }    
+    
+}
+
+// merging method for parallel sections
+//         input:  {Ra1,Ra2,L1,L2,diam1,diam2,diamSer1,diamSer2,diamPar1,diamPar2}
+//         output: {Ra12,L12,diam12,cross12,surf1,surf2,diam12Ser,diam12Par}
+proc mergingParallelMethod(){local Ra1,Ra2,L1,L2,diam1,diam2
+    {Ra1=$1 Ra2=$2 L1=$3 L2=$4 diam1 =$5 diam2=$6 diamSer1=$7 diamSer2=$8 diamPar1=$9 diamPar2=$10}
+     
+	surf1=L1*PI*diam1
+	surf2=L2*PI*diam2
+    
+    if(LENGTHMERGINGparallelMETHOD==-1) {
+		L12=L1+L2
+	}else if(LENGTHMERGINGparallelMETHOD==0) {
+		L12=(L1+L2)/2
+	} else if(LENGTHMERGINGparallelMETHOD==1){
+		L12=(L1*diam1+L2*diam2)/(diam1+diam2)
+	} else if(LENGTHMERGINGparallelMETHOD==2) {
+		L12=(L1*surf1+L2*surf2)/(surf1+surf2)	
+	} else if(LENGTHMERGINGparallelMETHOD==3) {
+		if (L1>L2) {L12=L1} else {L12=L2}
+	}
+	
+    Ra12 = (Ra1+Ra2)/2
+    diam12 = 1        //init value
+    if (PRESERVINGMETHOD==0){             //PRESERVINGMETHOD = 0 DIAMMERGINGparallelMETHOD=0 by Destexhe
+
+       if (DIAMMERGINGparallelMETHOD==0){
+          diam12=sqrt(diam1^2+diam2^2)
+       }else if (DIAMMERGINGparallelMETHOD==1 || DIAMMERGINGparallelMETHOD==-1){
+          diamSer12 = diamSer1+diamSer2
+          diamPar12 = diamPar1+diamPar2
+       }       
+    }else if (PRESERVINGMETHOD==1){
+       diam12 = (surf1+surf2)/(L12*PI)
+    }         
+    
+    cross12=PI*(diam12^2)/4     
+}
+
+
+
+// merging method for Y_group_sections
+//         input:  {Ra1,Ra2,Ra3,L1,L2,L3,diam1,diam2,diam3,ri1,ri2,ri3,diamSer1,diamSer2,diamSer3,diamPar1,diamPar2,diamPar3}
+//         output: {newRa,newL,newdiam,newri,newri2}
+proc mergingYMethod(){ local Ra1,Ra2,Ra3,L1,L2,L3,diam1,diam2,diam3,ri1,ri2,ri3,ri12,surf3,surf12
+    {Ra1=$1 Ra2=$2 Ra3=$3 L1=$4 L2=$5 L3=$6 diam1 =$7 diam2=$8 diam3=$9 ri1=$10 ri2=$11 
+     ri3=$12 diamSer1=$13 diamSer2=$14 diamSer3=$15 diamPar1=$16 diamPar2=$17 diamPar3=$18}
+
+    mergingParallelMethod(Ra1,Ra2,L1,L2,diam1,diam2,diamSer1,diamSer2,diamPar1,diamPar2)
+	
+	ri12 = Ra12*L12/cross12/100
+	surf12 = L12*diam12*PI
+    surf3 = L3*diam3*PI
+    
+    
+    mergingSerialMethod(Ra12,Ra3,L12,L3,diam12,diam3,ri12,ri3,surf12,surf3,diamSer12,diamSer3,diamPar12,diamPar3)
+  
+    newri2 = (ri1*ri2/(ri1+ri2))+ri3
+    newSurf = max(surf1+surf2,surf3)
+}
+
+
+objectvar weightsVect   // Vector for the i-th cluster, containing the id-sections 
+
+// merging method for all sections after merging parent sections and Y_group_sections
+//         input:  {clusterVectApp,index}
+
+
+proc mergingAllMethod(){local index,nsectOrigin,nsect,sec
+    clusterVectApp = $o1
+    index = $2
+    nsectOrigin = $3
+    nsect = clusterVectApp.size()-1
+    weightsVect = new Vector(nsect+1,1)
+    normalFact = nsect+1
+     
+    maxL=0
+    totsurf=0
+    totdiam=0
+    eqri2Prod = 1
+    eqri2Sum = 0
+    surfSum = 0
+	for ii=0,nsect {
+	    sec = clusterVectApp.x(ii)	
+        if(maxL<mrgL.x(sec)) maxL=mrgL.x(sec)
+        surf=mrgL.x(sec)*PI*mrgdiam.x(sec)
+        //print "mergingAllMethod____:",secNameList.o(sec).s,surf
+        totsurf=totsurf+surf
+        totdiam=totdiam+mrgdiam.x(sec)
+        eqri2Prod = eqri2Prod*mrgri2.x(sec)
+        eqri2Sum = eqri2Sum+mrgri2.x(sec)
+        surfSum = surfSum+mrgSurf.x(sec)
+        
+        if(LENGTHMERGINGparallelMETHOD==-1){
+              normalFact=nsectOrigin weightsVect.set(ii,1)
+        }else if(LENGTHMERGINGparallelMETHOD==0){
+              normalFact=nsect+1 weightsVect.set(ii,1)
+        }else if(LENGTHMERGINGparallelMETHOD==1){
+              normalFact=totdiam weightsVect.set(ii,mrgdiam.x(sec))
+        }else if(LENGTHMERGINGparallelMETHOD==2){
+              normalFact=totsurf weightsVect.set(ii,surf)
+        }else if(LENGTHMERGINGparallelMETHOD==3){
+              normalFact=nsect+1 weightsVect.set(ii,1)}        
+    }    
+   	for ii=0,nsect {
+	    sec = clusterVectApp.x(ii)
+        if(LENGTHMERGINGparallelMETHOD==3) {eqL.set(index, maxL)
+        }else{eqL.set(index, eqL.x(index)+mrgL.x(sec)*weightsVect.x(ii)) }  
+         
+        eqdiamSer.set(index, eqdiamSer.x(index)+ mrgdiamSer.x(sec))    
+        eqdiamPar.set(index, eqdiamPar.x(index)+ mrgdiamPar.x(sec))    
+        
+        if(RESCALEMOD==0){                  
+             eqdiam.set(index, eqdiam.x(index)+mrgdiam.x(sec)^2)
+        }else if (RESCALEMOD==1){
+             newdiam=sqrt((secRa.x(sec)*maxL*4)/(mrgri.x(sec)*PI*100))
+             eqdiam.set(index, eqdiam.x(index)+newdiam^2)
+        }
+    } 
+    if(LENGTHMERGINGparallelMETHOD!=3) {eqL.set(index, eqL.x(index)/normalFact)}
+
+
+
+    if (PRESERVINGMETHOD==0){             //PRESERVINGMETHOD = 0 DIAMMERGINGparallelMETHOD=0 by Destexhe
+       if (DIAMMERGINGparallelMETHOD==-1){
+          eqdiam.set(index, sqrt(eqdiamPar.x(index)))
+       }else if (DIAMMERGINGparallelMETHOD==0){
+          eqdiam.set(index, sqrt(eqdiam.x(index)))
+       }else if (DIAMMERGINGparallelMETHOD==1){
+          eqdiam.set(index, sqrt(sqrt(eqdiamPar.x(index))*eqdiamSer.x(index)/nsectOrigin))
+       }       
+    }else if (PRESERVINGMETHOD==1){
+       eqdiam.set(index, totsurf/(eqL.x(index)*PI))
+    } 
+
+    eqri2.set(index, eqri2Sum/(nsect+1))
+    eqSurf.set(index,eqL.x(index)*PI*eqdiam.x(index))
+    orSurf1.set(index,surfSum)
+    //print "mergingAllMethod: ",totsurf,eqSurf.x(index)
+
+}
+
+
+
