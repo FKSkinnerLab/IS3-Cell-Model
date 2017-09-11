@@ -1,0 +1,9 @@
+ParmFitness: Unnamed multiple run protocol
+	FitnessGenerator: MRF0
+		RegionFitness:	vclamp1.i
+
+	Parameters:
+		"nc.weight[0]", 184.93, -1e+06, 1e+06, 1, 0
+		"syn.tau1", 0.428938, -1e+06, 1e+06, 1, 0
+		"syn.tau2", 0.0535131, -1e+06, 1e+06, 1, 0
+End ParmFitness

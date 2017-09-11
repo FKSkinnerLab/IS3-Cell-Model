@@ -1,0 +1,236 @@
+// This script is used to identify synaptic weights necessary to evoke somatic action potentials at different distance from the soma
+
+// Extra info into programmatically incorporating Multiple Run Fitter: https://www.neuron.yale.edu/phpBB/viewtopic.php?f=23&t=805 & http://www.neuron.yale.edu/neuron/static/docs/optimiz/model/set_up_runfitness.html
+load_file("nrngui.hoc")
+load_file("IS3_M2_Case9StarRevised.hoc") // Loads IS3 model with full morphology & properties (as well as parameters and point processes)
+		
+syncount = 0
+count = 0
+
+// First render the model passive
+gna_Nasoma = 0
+gksoma_Ksoma = 0
+gbar_Ika = 0
+gbar_nap = 0
+forsec Dendrites {
+	gna_Nasoma = 0
+	gksoma_Ksoma = 0
+}
+
+for (dendn = 0; dendn<=57; dendn = dendn+1){
+	print "Section Number: ", dendn
+			
+	for (i = 1; i<=dend[dendn].nseg; i = i+1) {
+		if (dendn > 17 && dendn < 23) { // Skip putting synapses on axonal segments
+		 	dist_vec.x[count] = 0
+			risetime_vec.x[count] = 0
+			decaytime_vec.x[count] = 0
+			minweight_vec.x[count] = 0
+			risetimeinh_vec.x[count] = 0
+			decaytimeinh_vec.x[count] = 0
+			minweightinh_vec.x[count] = 0
+			dendn_vec.x[count] = 0
+			count = count + 1
+		 	break
+		}
+		dendn_vec.x[count] = dendn // Record dendrite number
+	
+		// Specifies proportion along section (i.e. from 0 to 1)
+		prop = ((dend[dendn].L/dend[dendn].nseg)*i - (dend[dendn].L/dend[dendn].nseg)/2)/dend[dendn].L // finds the center of each segment, as defined by its proportional distance along each section; (prop = (i-0.5)/dend[dendn].nseg also works)
+		
+		// Changes Exp2Syn's location to current proportion along section
+		dend[dendn] syn.loc(prop)
+		
+		// Records distance along section according to current proportion along section
+		access dend[dendn]
+		dist_vec.x[count] = distance(prop)
+				
+		tstop = 100 // ms
+				
+		// Optimize excitatory synaptic time constants and weights if in SR layer
+		if (distance(prop)<=300) {
+			synlayer = 1 // for indexing the layer in which the synapse is located
+			access soma
+				
+			// To remove passive reversal potential drive
+			v_init = -70
+			e_pas = -70
+			forsec Dendrites { e_pas = -70 }
+			forsec Axon { e_pas = -70 }
+			
+			// Set voltage clamp	
+			vclamp1.dur[0] = tstop
+			vclamp1.amp[0] = -70 // Clamp membrane voltage to resting potential (Same as EXP)
+			vclamp1.tau1 = 0
+			vclamp1.tau2 = 0
+			
+			noise.stdev = 0 // To faciliate fit to average EPSC (low noise)
+			nc.weight = 0.00000230814*dist_vec.x[count] + 0.00022016666 // Initial Weight (Adjustable)
+			syn.tau1 = 2.9936e-04 // Initial Rise time (Adjustable)
+			syn.tau2 = 2.4216 // Initial Decay time (Adjustable)
+			syn.e = 0 // Reversal Potential (mV) (Fixed)
+				
+			// Record membrane current vector
+			recSI = new Vector()
+			recSI.record(&vclamp1.i)
+			
+			run()
+							
+			// Save EPSC vector
+			sprint(filename4,"modelE_%g_Distance_%g_SingleSynWeight_%g_RiseTime_%g_DecayTime_%g_DendriteNumber.dat",dist_vec.x[count],nc.weight,syn.tau1,syn.tau2,dendn) // Changes filename on each iteration
+			sprint(model_abs_path4, "%s/%s", MODEL_TOPDIR, filename4)
+			frecSI = new File(filename4)
+			frecSI.wopen(model_abs_path4)
+			recSI.printf(frecSI) // Use printf instead of vwrite if you want a text file instead of a binary file
+			frecSI.close()
+				
+			risetime_vec.x[count] = syn.tau1 // Rise Time (ms)
+			decaytime_vec.x[count] = syn.tau2 // Decay Time (ms)
+			minweight_vec.x[count] = nc.weight // Optimized Weight (uS)
+		}		
+		
+		// Optimize excitatory synaptic time constants and weights if in SLM layer
+		if (distance(prop)>300) { // i.e. if greater than 300 um away from soma
+			synlayer = 2 // for indexing the layer in which the synapse is located
+			access soma
+				
+			// To remove passive reversal potential drive
+			v_init = -70
+			e_pas = -70
+			forsec Dendrites { e_pas = -70 }
+			forsec Axon { e_pas = -70 }
+	
+			// Set voltage clamp
+			vclamp1.dur[0] = tstop
+			vclamp1.amp[0] = -70 // Clamp membrane voltage to resting potential (Same as EXP)
+			vclamp1.tau1 = 0
+			vclamp1.tau2 = 0
+
+			noise.stdev = 0 // To faciliate fit to average EPSC (low noise)
+			nc.weight = 0.00000230814*dist_vec.x[count] + 0.00022016666 // Initial Weight (Adjustable)
+			syn.tau1 = 6.1871e-04 // Initial Rise time (Adjustable)
+			syn.tau2 = 3.1975 // Initial Decay time (Adjustable)
+			syn.e = 0 // Reversal Potential (mV) (Fixed)
+					
+			// Record membrane current vector
+			recSI = new Vector()
+			recSI.record(&vclamp1.i)
+			
+			run()
+				
+			// Save EPSC vector
+			sprint(filename4,"modelE_%g_Distance_%g_SingleSynWeight_%g_RiseTime_%g_DecayTime_%g_DendriteNumber.dat",dist_vec.x[count],nc.weight,syn.tau1,syn.tau2,dendn) // Changes filename on each iteration
+			sprint(model_abs_path4, "%s/%s", MODEL_TOPDIR, filename4)
+			frecSI = new File(filename4)
+			frecSI.wopen(model_abs_path4)
+			recSI.printf(frecSI) // Use printf instead of vwrite if you want a text file instead of a binary file
+			frecSI.close()
+				
+			risetime_vec.x[count] = syn.tau1 // Rise Time (ms)
+			decaytime_vec.x[count] = syn.tau2 // Decay Time (ms)
+			minweight_vec.x[count] = nc.weight // Optimized Weight (uS)
+		}
+		
+		// Optimize inhibitory synaptic time constants and weights
+		access soma
+		v_init = 0
+		tstop = 15 // ms
+		vclamp1.dur[0] = tstop
+		vclamp1.amp[0] = 0
+		vclamp1.tau1 = 0
+		vclamp1.tau2 = 0
+			
+		// To remove passive reversal potential drive
+		e_pas = 0
+		forsec Dendrites { e_pas = 0 }
+		forsec Axon { e_pas = 0 }
+	
+		noise.stdev = 0 // To faciliate fit to average EPSC (low noise)
+		nc.weight = 0.00000469125*dist_vec.x[count] + 0.0002695779 // Initial Weight (Adjustable)
+		syn.tau1 = 0.1013 // Initial Rise time (Adjustable)
+		syn.tau2 = 4.8216 // Initial Decay time (Adjustable)
+		syn.e = -70 // Reversal Potential (mV) (Fixed)
+		ns.start = 4.5 // Start Time of Stimulus (ms)
+				
+		// Record membrane current vector
+		recSI_inh = new Vector()
+		recSI_inh.record(&vclamp1.i)
+				
+		run()
+			
+		// Save EPSC vector
+		sprint(filename13,"modelI_%g_Distance_%g_SingleSynWeight_%g_RiseTime_%g_DecayTime_%g_DendriteNumber.dat",dist_vec.x[count],nc.weight,syn.tau1,syn.tau2,dendn) // Changes filename on each iteration
+		sprint(model_abs_path13, "%s/%s", MODEL_TOPDIR, filename13)
+		frecSI_inh = new File(filename13)
+		frecSI_inh.wopen(model_abs_path13)
+		recSI_inh.printf(frecSI_inh) // Use printf instead of vwrite if you want a text file instead of a binary file
+		frecSI_inh.close()
+			
+		risetimeinh_vec.x[count] = syn.tau1 // Rise Time (ms)
+		decaytimeinh_vec.x[count] = syn.tau2 // Decay Time (ms)
+		minweightinh_vec.x[count] = nc.weight // Optimized Weight (uS)
+			
+		v_init = -69.7
+		count = count + 1
+		// Reset Parameters
+		ns.start = 0 // reset start time of synaptic event to 0
+	}	
+}
+		
+// Store all vectors in files
+sprint(filename2, "model_distvec.dat")
+sprint(model_abs_path2, "%s/%s", MODEL_TOPDIR, filename2)
+fdist = new File(filename2)
+fdist.wopen(model_abs_path2)
+dist_vec.printf(fdist) // Use printf instead of vwrite if you want a text file instead of a binary file
+fdist.close()
+
+sprint(filename5, "model_risetimevec.dat")
+sprint(model_abs_path5, "%s/%s", MODEL_TOPDIR, filename5)
+frise = new File(filename5)
+frise.wopen(model_abs_path5)
+risetime_vec.printf(frise)
+frise.close()
+
+sprint(filename6, "model_decaytimevec.dat")
+sprint(model_abs_path6, "%s/%s", MODEL_TOPDIR, filename6)
+fdecay = new File(filename6)
+fdecay.wopen(model_abs_path6)
+decaytime_vec.printf(fdecay)
+fdecay.close()
+
+sprint(filename8, "model_minweightvec.dat")
+sprint(model_abs_path8, "%s/%s", MODEL_TOPDIR, filename8)
+fminweight = new File(filename8)
+fminweight.wopen(model_abs_path8)
+minweight_vec.printf(fminweight)
+fminweight.close()
+
+sprint(filename, "model_risetimeinhvec.dat")
+sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+friseinh = new File(filename)
+friseinh.wopen(model_abs_path)
+risetimeinh_vec.printf(friseinh)
+friseinh.close()
+
+sprint(filename1, "model_decaytimeinhvec.dat")
+sprint(model_abs_path1, "%s/%s", MODEL_TOPDIR, filename1)
+fdecayinh = new File(filename1)
+fdecayinh.wopen(model_abs_path1)
+decaytimeinh_vec.printf(fdecayinh)
+fdecayinh.close()
+
+sprint(filename9, "model_minweightinhvec.dat")
+sprint(model_abs_path9, "%s/%s", MODEL_TOPDIR, filename9)
+fminweightinh = new File(filename9)
+fminweightinh.wopen(model_abs_path9)
+minweightinh_vec.printf(fminweightinh)
+fminweightinh.close()
+	
+sprint(filename15, "model_dendsectionvec.dat")
+sprint(model_abs_path15, "%s/%s", MODEL_TOPDIR, filename15)
+fdendn = new File(filename15)
+fdendn.wopen(model_abs_path15)
+dendn_vec.printf(fdendn)
+fdendn.close()
+	

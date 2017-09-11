@@ -1,0 +1,29 @@
+#!/bin/sh
+#SBATCH -o scheduler_stdout.txt    # Name of stdout output file(%j expands to jobId)
+#SBATCH -e scheduler_stderr.txt    # Name of stderr output file(%j expands to jobId)
+#SBATCH --partition=compute           # submit to the 'large' queue for jobs > 256 nodes
+#SBATCH -J NGBW-JOB-NEURON74_TG-20057D554B934C13941F8311C4B77893        # Job name
+#SBATCH -t 00:6:00         # Run time (hh:mm:ss) - 1.5 hours
+#SBATCH --mail-user=nsgprod@sdsc.edu
+#SBATCH --mail-type=begin
+#SBATCH --mail-type=end
+#The next line is required if the user has more than one project
+# #SBATCH -A A-yourproject  # Allocation name to charge job against
+#SBATCH -A csd403  # Allocation name to charge job against
+#SBATCH --nodes=1              # Total number of nodes requested (16 cores/node)
+#SBATCH --ntasks-per-node=8             # Total number of mpi tasks requested
+source $HOME/.bashrc
+module load gsl
+cd '/projects/ps-nsg/home/nsguser/ngbw/workspace/NGBW-JOB-NEURON74_TG-20057D554B934C13941F8311C4B77893/SaveSessionTest'
+
+echo Job starting at `date` > ../start.txt
+curl https://nsgdev.sdsc.edu:8443/portal2/taskupdate.action?taskId=18459\&status=START
+export CIPRES_THREADSPP=8
+export CIPRES_NP=8
+#export NPROCS=`wc -l < $PBS_NODEFILE`
+/projects/ps-nsg/home/nsguser/ngbw/workspace/NGBW-JOB-NEURON74_TG-20057D554B934C13941F8311C4B77893/./batch_command.cmdline 1>/projects/ps-nsg/home/nsguser/ngbw/workspace/NGBW-JOB-NEURON74_TG-20057D554B934C13941F8311C4B77893/stdout.txt 2>/projects/ps-nsg/home/nsguser/ngbw/workspace/NGBW-JOB-NEURON74_TG-20057D554B934C13941F8311C4B77893/stderr.txt
+cd '/projects/ps-nsg/home/nsguser/ngbw/workspace/NGBW-JOB-NEURON74_TG-20057D554B934C13941F8311C4B77893'
+/bin/tar -cvzf output.tar.gz ./*
+#/bin/tar -cvzf ../output.tar.gz ../*
+echo Job finished at `date` > done.txt
+curl https://nsgdev.sdsc.edu:8443/portal2/taskupdate.action?taskId=18459\&status=DONE

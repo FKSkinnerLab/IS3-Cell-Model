@@ -1,0 +1,561 @@
+// This script is used to identify synaptic weights necessary to evoke somatic action potentials at different distance from the soma
+
+// Extra info into programmatically incorporating Multiple Run Fitter: https://www.neuron.yale.edu/phpBB/viewtopic.php?f=23&t=805 & http://www.neuron.yale.edu/neuron/static/docs/optimiz/model/set_up_runfitness.html
+load_file("nrngui.hoc")
+load_file("IS3_M2_Case8TopModel.hoc") // Loads IS3 model with full morphology & properties (as well as parameters and point processes)
+load_file("Case8TopModelMRF3.ses") // Loads Multiple Run Fitter session file
+ModNum = 2 // 1 = Case 7 Top Model; 2 = Case 8 Top Model; 3 = Case 8 Star Top Model; 4 = Case 9 Star Top Model
+		
+syncount = 0
+count = 0
+
+for (dendn = 0; dendn<=57; dendn = dendn+1){
+	print "Section Number: ", dendn
+			
+	for (i = 1; i<=dend[dendn].nseg; i = i+1) {
+		if (dendn > 17 && dendn < 23) { // Skip putting synapses on axonal segments
+		 	dist_vec.x[count] = 0
+			risetime_vec.x[count] = 0
+			decaytime_vec.x[count] = 0
+			err_vec.x[count] = 0
+			minweight_vec.x[count] = 0
+			risetimeinh_vec.x[count] = 0
+			decaytimeinh_vec.x[count] = 0
+			errinh_vec.x[count] = 0
+			minweightinh_vec.x[count] = 0
+			dendn_vec.x[count] = 0
+			count = count + 1
+		 	break
+		}
+		dendn_vec.x[count] = dendn // Record dendrite number
+	
+		// Specifies proportion along section (i.e. from 0 to 1)
+		prop = ((dend[dendn].L/dend[dendn].nseg)*i - (dend[dendn].L/dend[dendn].nseg)/2)/dend[dendn].L // finds the center of each segment, as defined by its proportional distance along each section; (prop = (i-0.5)/dend[dendn].nseg also works)
+		
+		// Changes Exp2Syn's location to current proportion along section
+		dend[dendn] syn.loc(prop)
+		
+		// Records distance along section according to current proportion along section
+		access dend[dendn]
+		dist_vec.x[count] = distance(prop)
+				
+		tstop = 100 // ms
+				
+		// Optimize excitatory synaptic time constants and weights if in SR layer
+		if (distance(prop)<=300) {
+			synlayer = 1 // for indexing the layer in which the synapse is located
+			access soma
+			vclamp1.dur[0] = tstop
+			vclamp1.amp[0] = -70 // Clamp membrane voltage to resting potential (Same as EXP)
+			vclamp1.tau1 = 0
+			vclamp1.tau2 = 0
+			
+			noise.stdev = 0 // To faciliate fit to average EPSC (low noise)
+			nc.weight = 0 // Initial Weight (Adjustable)
+			syn.tau1 = 0.45 // Initial Rise time (Adjustable)
+			syn.tau2 = 1.41 // Initial Decay time (Adjustable)
+			syn.e = 0 // Reversal Potential (mV) (Fixed)
+			MulRunFitter[0].p.pf.parmlist.object(0).val = 0 // These next three lines are to adjust the values found in the multiple run fitters parameter panel, since they are not reset elsewise
+			MulRunFitter[0].p.pf.parmlist.object(1).val = 0.45
+			MulRunFitter[0].p.pf.parmlist.object(2).val = 1.41
+				
+			// Record membrane current vector
+			recSI = new Vector()
+			recSI.record(&vclamp1.i)
+					
+			MulRunFitter[0].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[0].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[0].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[0].prun() // 4 times for a better fit
+				
+			// Save EPSC vector
+			sprint(filename4,"modelE_%g_Distance_%g_SingleSynWeight_%g_RiseTime_%g_DecayTime_%g_SumSquareErr_%g_DendriteNumber.dat",dist_vec.x[count],nc.weight,syn.tau1,syn.tau2,MulRunFitter[0].opt.minerr,dendn) // Changes filename on each iteration
+			sprint(model_abs_path4, "%s/%s", MODEL_TOPDIR, filename4)
+			frecSI = new File(filename4)
+			frecSI.wopen(model_abs_path4)
+			recSI.printf(frecSI) // Use printf instead of vwrite if you want a text file instead of a binary file
+			frecSI.close()
+				
+			risetime_vec.x[count] = syn.tau1 // Rise Time (ms)
+			decaytime_vec.x[count] = syn.tau2 // Decay Time (ms)
+			err_vec.x[count] = MulRunFitter[0].opt.minerr // Sum of Squared Errors (from optimization)
+			minweight_vec.x[count] = nc.weight // Optimized Weight (uS)
+		}		
+		
+		// Optimize excitatory synaptic time constants and weights if in SLM layer
+		if (distance(prop)>300) { // i.e. if greater than 300 um away from soma
+			synlayer = 2 // for indexing the layer in which the synapse is located
+			access soma
+			vclamp1.dur[0] = tstop
+			vclamp1.amp[0] = -70 // Clamp membrane voltage to resting potential (Same as EXP)
+			vclamp1.tau1 = 0
+			vclamp1.tau2 = 0
+
+			noise.stdev = 0 // To faciliate fit to average EPSC (low noise)
+			nc.weight = 0 // Initial Weight (Adjustable)
+			syn.tau1 = 1.71 // Initial Rise time (Adjustable)
+			syn.tau2 = 5.04 // Initial Decay time (Adjustable)
+			syn.e = 0 // Reversal Potential (mV) (Fixed)
+			MulRunFitter[1].p.pf.parmlist.object(0).val = 0 // These next three lines are to adjust the values found in the multiple run fitters parameter panel, since they are not reset elsewise
+			MulRunFitter[1].p.pf.parmlist.object(1).val = 1.71
+			MulRunFitter[1].p.pf.parmlist.object(2).val = 5.04
+					
+			// Record membrane current vector
+			recSI = new Vector()
+			recSI.record(&vclamp1.i)
+				
+			MulRunFitter[1].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[1].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[1].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[1].prun() // 4 times for a better fit
+				
+			// Save EPSC vector
+			sprint(filename4,"modelE_%g_Distance_%g_SingleSynWeight_%g_RiseTime_%g_DecayTime_%g_SumSquareErr_%g_DendriteNumber.dat",dist_vec.x[count],nc.weight,syn.tau1,syn.tau2,MulRunFitter[1].opt.minerr,dendn) // Changes filename on each iteration
+			sprint(model_abs_path4, "%s/%s", MODEL_TOPDIR, filename4)
+			frecSI = new File(filename4)
+			frecSI.wopen(model_abs_path4)
+			recSI.printf(frecSI) // Use printf instead of vwrite if you want a text file instead of a binary file
+			frecSI.close()
+				
+			risetime_vec.x[count] = syn.tau1 // Rise Time (ms)
+			decaytime_vec.x[count] = syn.tau2 // Decay Time (ms)
+			err_vec.x[count] = MulRunFitter[1].opt.minerr // Sum of Squared Errors (from optimization)
+			minweight_vec.x[count] = nc.weight // Optimized Weight (uS)
+		}
+		
+		// Assign optimized synapse parameter values to 9 excitatory synapses on the compartment
+		access dend[dendn]
+		for (l = 1; l<=9; l = l + 1){
+			synapses[syncount] = new Exp2Syn(prop)
+			dend[dendn] synapses[syncount].loc(prop) // assign to current compartment
+			synapses[syncount].tau1 = syn.tau1
+			synapses[syncount].tau2 = syn.tau2
+			synapses[syncount].e = syn.e
+			nss[syncount] = new NetStim(prop) // for now don't assign any input spikes (optimization still in progress)
+			nss[syncount].number = 0
+			nss[syncount].interval = tstop
+			nss[syncount].start = tstop
+			nss[syncount].noise = 0
+			ncs[syncount] = new NetCon(nss[syncount], synapses[syncount])
+			ncs[syncount].weight = nc.weight
+			synlayer_vec.x[syncount] = synlayer // i.e. denotes stratum layer
+			syncount = syncount + 1
+		}
+		
+		// Optimize inhibitory synaptic time constants and weights
+		access soma
+		v_init = 0
+		tstop = 15 // ms
+		vclamp1.dur[0] = tstop
+		vclamp1.amp[0] = 0
+		vclamp1.tau1 = 0
+		vclamp1.tau2 = 0
+			
+		// Remove ion channel conductances and set passive reversal potential to 0 mV (i.e. because of TTX and Cs-based solution during experimental recordings)
+		if (ModNum == 1){
+			gna_Nasoma = 0
+			gksoma_Ksoma = 0
+			gbar_Ika = 0
+			gbar_nap = 0
+			e_pas = 0
+			forsec Dendrites { e_pas = 0 }
+			forsec Axon { e_pas = 0 }
+		}
+		if (ModNum == 2 || ModNum == 3){
+			gna_Nasoma = 0
+			gksoma_Ksoma = 0
+			gbar_Ika = 0
+			gbar_nap = 0
+			e_pas = 0
+			forsec Dendrites {
+				gna_Nasoma = 0
+				gksoma_Ksoma = 0
+				gbar_Ika = 0
+				e_pas = 0
+			}
+			forsec Axon { e_pas = 0 }
+		}
+		if (ModNum == 4){
+			gna_Nasoma = 0
+			gksoma_Ksoma = 0
+			gbar_Ika = 0
+			gbar_nap = 0
+			e_pas = 0
+			forsec Dendrites {
+				gna_Nasoma = 0
+				gksoma_Ksoma = 0
+				e_pas = 0
+			}
+			forsec Axon { e_pas = 0 }
+		}
+		
+		noise.stdev = 0 // To faciliate fit to average EPSC (low noise)
+		nc.weight = 0 // Initial Weight (Adjustable)
+		syn.tau1 = 0.25 // Initial Rise time (Adjustable)
+		syn.tau2 = 4.14 // Initial Decay time (Adjustable)
+		syn.e = -70 // Reversal Potential (mV) (Fixed)
+		ns.start = 3.5 // Start Time of Stimulus (ms)
+		MulRunFitter[2].p.pf.parmlist.object(0).val = 0 // These next three lines are to adjust the values found in the multiple run fitters parameter panel, since they are not reset elsewise
+		MulRunFitter[2].p.pf.parmlist.object(1).val = 0.25
+		MulRunFitter[2].p.pf.parmlist.object(2).val = 4.14
+		MulRunFitter[2].p.pf.parmlist.object(3).val = 3.5 // ~Halfway to start time of mIPSC
+				
+		// Record membrane current vector
+		recSI_inh = new Vector()
+		recSI_inh.record(&vclamp1.i)
+				
+		MulRunFitter[2].prun() // Run Optimizer (Sessions are preset)
+		MulRunFitter[2].prun() // Run Optimizer (Sessions are preset)
+		MulRunFitter[2].prun() // Run Optimizer (Sessions are preset)
+		MulRunFitter[2].prun() // 4 times for a better fit
+			
+		// Save EPSC vector
+		sprint(filename13,"modelI_%g_Distance_%g_SingleSynWeight_%g_RiseTime_%g_DecayTime_%g_SumSquareErr_%g_StartTime_%g_DendriteNumber.dat",dist_vec.x[count],nc.weight,syn.tau1,syn.tau2,MulRunFitter[2].opt.minerr,ns.start,dendn) // Changes filename on each iteration
+		sprint(model_abs_path13, "%s/%s", MODEL_TOPDIR, filename13)
+		frecSI_inh = new File(filename13)
+		frecSI_inh.wopen(model_abs_path13)
+		recSI_inh.printf(frecSI_inh) // Use printf instead of vwrite if you want a text file instead of a binary file
+		frecSI_inh.close()
+			
+		risetimeinh_vec.x[count] = syn.tau1 // Rise Time (ms)
+		decaytimeinh_vec.x[count] = syn.tau2 // Decay Time (ms)
+		errinh_vec.x[count] = MulRunFitter[2].opt.minerr // Sum of Squared Errors (from optimization)
+		minweightinh_vec.x[count] = nc.weight // Optimized Weight (uS)
+			
+		// Assign optimized synapse parameter values to 2 inhibitory synapses on the compartment
+		access dend[dendn]
+		for (m = 1; m<=2; m = m + 1){
+			synapses[syncount] = new Exp2Syn(prop)
+			dend[dendn] synapses[syncount].loc(prop) // assign to current compartment
+			synapses[syncount].tau1 = syn.tau1
+			synapses[syncount].tau2 = syn.tau2
+			synapses[syncount].e = syn.e
+			nss[syncount] = new NetStim(prop) // for now don't assign any input spikes (optimization still in progress)
+			nss[syncount].number = 0
+			nss[syncount].interval = 100 // tstop for excitatory simulations
+			nss[syncount].start = 100
+			nss[syncount].noise = 0
+			ncs[syncount] = new NetCon(nss[syncount], synapses[syncount])
+			ncs[syncount].weight = nc.weight
+			synlayer_vec.x[syncount] = 3 // i.e. denotes that the synapse is inhibitory
+			syncount = syncount + 1
+		}
+		count = count + 1
+		// Reset Parameters
+		celldef() // reset intrinsic properties of cell (i.e. NaT, NaP, Ka, Kdrf, e_pas)
+		v_init = -69.7
+		ns.start = 0 // reset start time of synaptic event to 0
+	}	
+}
+
+// Add noise, remove voltage clamp, and silence optimization synapse for full input tests
+tstop = 2000 // ms
+noise.stdev = 0.1 // turn noise back on
+noise.dur = tstop
+vclamp1.dur[0] = 0
+vclamp1.amp[0] = 0
+vclamp1.tau1 = 0
+vclamp1.tau2 = 0
+nc.weight = 0
+ns.number = 0
+ns.start = tstop
+	
+// Investigate amount of simultaneous spatially distributed SR inputs required to elicit the model to spike
+syncount = 0
+countradsyns = 1
+for (syncount = 0; syncount <= 2499; syncount = syncount + 1){
+	if (synlayer_vec.x[syncount] == 1){ // if it's excitatory and in radiatum layer
+		if (countradsyns == 1){
+			nss[syncount].number = 1
+			nss[syncount].interval = tstop
+			nss[syncount].start = 0
+			nss[syncount].noise = 0
+		}
+		if (countradsyns != 1){ // i.e. only apply inputs to one excitatory synapse on each compartment in SR
+			nss[syncount].number = 0
+			nss[syncount].interval = tstop
+			nss[syncount].start = tstop
+			nss[syncount].noise = 0
+		}
+		countradsyns = countradsyns + 1
+		if (countradsyns == 9){
+			countradsyns = 1
+		}
+	}
+	if (synlayer_vec.x[syncount] == 2){ // if it's excitatory and in lacunosum-moleculare layer
+		nss[syncount].number = 0
+		nss[syncount].interval = tstop
+		nss[syncount].start = tstop
+		nss[syncount].noise = 0
+	}		
+	if (synlayer_vec.x[syncount] == 3){ // if it's an inhibitory synapse
+		nss[syncount].number = 0
+		nss[syncount].interval = tstop
+		nss[syncount].start = tstop
+		nss[syncount].noise = 0
+	}
+}
+
+// Record membrane potential vector
+recV = new Vector()
+recV.record(&soma.v(0.5))
+run()
+sprint(filename16,"model_SRInputs.dat") // Changes filename on each iteration
+sprint(model_abs_path16, "%s/%s", MODEL_TOPDIR, filename16)
+frecV = new File(filename16)
+frecV.wopen(model_abs_path16)
+recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+frecV.close()
+	
+// Investigate amount of simultaneous spatially distributed SLM inputs required to elicit the model to spike
+syncount = 0
+countlmsyns = 1
+for (syncount = 0; syncount <= 2499; syncount = syncount + 1){
+	if (synlayer_vec.x[syncount] == 1){ // if it's excitatory and in radiatum layer
+		nss[syncount].number = 0
+		nss[syncount].interval = tstop
+		nss[syncount].start = tstop
+		nss[syncount].noise = 0
+	}
+	if (synlayer_vec.x[syncount] == 2){ // if it's excitatory and in lacunosum-moleculare layer
+		if (countlmsyns == 1){
+			nss[syncount].number = 1
+			nss[syncount].interval = tstop
+			nss[syncount].start = 0
+			nss[syncount].noise = 0
+		}
+		if (countlmsyns != 1){
+			nss[syncount].number = 0
+			nss[syncount].interval = tstop
+			nss[syncount].start = tstop
+			nss[syncount].noise = 0
+		}
+		countlmsyns = countlmsyns + 1
+		if (countlmsyns == 9){
+			countlmsyns = 1
+		}
+	}		
+	if (synlayer_vec.x[syncount] == 3){ // if it's an inhibitory synapse
+		nss[syncount].number = 0
+		nss[syncount].interval = tstop
+		nss[syncount].start = tstop
+		nss[syncount].noise = 0
+	}
+}
+
+// Record membrane potential vector
+recV = new Vector()
+recV.record(&soma.v(0.5))
+run()
+sprint(filename17,"model_SLMInputs.dat") // Changes filename on each iteration
+sprint(model_abs_path17, "%s/%s", MODEL_TOPDIR, filename17)
+frecV = new File(filename17)
+frecV.wopen(model_abs_path17)
+recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+frecV.close()
+		
+// Assign randomly timed inputs to synapses	
+syncount = 0
+for (syncount = 0; syncount <= 2499; syncount = syncount + 1){
+	if (synlayer_vec.x[syncount] == 1){ // if it's excitatory and in radiatum layer
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 0
+		nss[syncount].noise = 1
+	}
+	if (synlayer_vec.x[syncount] == 2){ // if it's excitatory and in lacunosum-moleculare layer
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 0
+		nss[syncount].noise = 1
+	}		
+	if (synlayer_vec.x[syncount] == 3){ // if it's an inhibitory synapse
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 0
+		nss[syncount].noise = 1
+	}
+}
+
+// Record membrane potential vector
+recV = new Vector()
+recV.record(&soma.v(0.5))
+run()
+sprint(filename10,"model_RandomInputs.dat") // Changes filename on each iteration
+sprint(model_abs_path10, "%s/%s", MODEL_TOPDIR, filename10)
+frecV = new File(filename10)
+frecV.wopen(model_abs_path10)
+recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+frecV.close()
+	
+// Assign synchronous inhibitory timed inputs and random excitatory timed inputs to synapses	
+syncount = 0
+for (syncount = 0; syncount <= 2499; syncount = syncount + 1){
+	if (synlayer_vec.x[syncount] == 1){ // if it's excitatory and in radiatum layer
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 0
+		nss[syncount].noise = 1
+	}
+	if (synlayer_vec.x[syncount] == 2){ // if it's excitatory and in lacunosum-moleculare layer
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 0
+		nss[syncount].noise = 1
+	}		
+	if (synlayer_vec.x[syncount] == 3){ // if it's an inhibitory synapse
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 0
+		nss[syncount].noise = 0.3
+	}
+}
+// Record membrane potential vector
+recV = new Vector()
+recV.record(&soma.v(0.5))
+run()
+sprint(filename11,"model_SyncInhRandExcInputs.dat") // Changes filename on each iteration
+sprint(model_abs_path11, "%s/%s", MODEL_TOPDIR, filename11)
+frecV = new File(filename11)
+frecV.wopen(model_abs_path11)
+recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+frecV.close()
+	
+// Assign synchronous inhibitory timed inputs and synchronous excitatory timed inputs to synapses	
+syncount = 0
+for (syncount = 0; syncount <= 2499; syncount = syncount + 1){
+	if (synlayer_vec.x[syncount] == 1){ // if it's excitatory and in radiatum layer
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 0
+		nss[syncount].noise = 0.3
+	}
+	if (synlayer_vec.x[syncount] == 2){ // if it's excitatory and in lacunosum-moleculare layer
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 67
+		nss[syncount].noise = 0.3
+	}		
+	if (synlayer_vec.x[syncount] == 3){ // if it's an inhibitory synapse
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 33
+		nss[syncount].noise = 0.3
+	}
+}
+// Record membrane potential vector
+recV = new Vector()
+recV.record(&soma.v(0.5))
+run()
+sprint(filename12,"model_SyncInhExcInputs.dat") // Changes filename on each iteration
+sprint(model_abs_path12, "%s/%s", MODEL_TOPDIR, filename12)
+frecV = new File(filename12)
+frecV.wopen(model_abs_path12)
+recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+frecV.close()
+	
+// Assign synchronous inhibitory timed inputs, synchronous excitatory SLM timed inputs, and SR burst inputs to synapses	
+syncount = 0
+for (syncount = 0; syncount <= 2499; syncount = syncount + 1){
+	if (synlayer_vec.x[syncount] == 1){ // if it's excitatory and in radiatum layer
+		nss[syncount].number = 20
+		nss[syncount].interval = 10 // smaller interval
+		nss[syncount].start = 1000 // start of burst - coincidentally this is also a cycle point where inhibitory and SLM inputs will be at their most silent
+		nss[syncount].noise = 0.3
+	}
+	if (synlayer_vec.x[syncount] == 2){ // if it's excitatory and in lacunosum-moleculare layer
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 67
+		nss[syncount].noise = 0.3
+	}		
+	if (synlayer_vec.x[syncount] == 3){ // if it's an inhibitory synapse
+		nss[syncount].number = 20
+		nss[syncount].interval = 100
+		nss[syncount].start = 33
+		nss[syncount].noise = 0.3
+	}
+}
+// Record membrane potential vector
+recV = new Vector()
+recV.record(&soma.v(0.5))
+run()
+sprint(filename14,"model_SRBurstInputs.dat") // Changes filename on each iteration
+sprint(model_abs_path14, "%s/%s", MODEL_TOPDIR, filename14)
+frecV = new File(filename14)
+frecV.wopen(model_abs_path14)
+recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+frecV.close()
+		
+// Store all other optimization vectors in files
+sprint(filename2, "model_distvec.dat")
+sprint(model_abs_path2, "%s/%s", MODEL_TOPDIR, filename2)
+fdist = new File(filename2)
+fdist.wopen(model_abs_path2)
+dist_vec.printf(fdist) // Use printf instead of vwrite if you want a text file instead of a binary file
+fdist.close()
+
+sprint(filename5, "model_risetimevec.dat")
+sprint(model_abs_path5, "%s/%s", MODEL_TOPDIR, filename5)
+frise = new File(filename5)
+frise.wopen(model_abs_path5)
+risetime_vec.printf(frise)
+frise.close()
+
+sprint(filename6, "model_decaytimevec.dat")
+sprint(model_abs_path6, "%s/%s", MODEL_TOPDIR, filename6)
+fdecay = new File(filename6)
+fdecay.wopen(model_abs_path6)
+decaytime_vec.printf(fdecay)
+fdecay.close()
+
+sprint(filename7, "model_errvec.dat")
+sprint(model_abs_path7, "%s/%s", MODEL_TOPDIR, filename7)
+ferr = new File(filename7)
+ferr.wopen(model_abs_path7)
+err_vec.printf(ferr)
+ferr.close()
+
+sprint(filename8, "model_minweightvec.dat")
+sprint(model_abs_path8, "%s/%s", MODEL_TOPDIR, filename8)
+fminweight = new File(filename8)
+fminweight.wopen(model_abs_path8)
+minweight_vec.printf(fminweight)
+fminweight.close()
+
+sprint(filename, "model_risetimeinhvec.dat")
+sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+friseinh = new File(filename)
+friseinh.wopen(model_abs_path)
+risetimeinh_vec.printf(friseinh)
+friseinh.close()
+
+sprint(filename1, "model_decaytimeinhvec.dat")
+sprint(model_abs_path1, "%s/%s", MODEL_TOPDIR, filename1)
+fdecayinh = new File(filename1)
+fdecayinh.wopen(model_abs_path1)
+decaytimeinh_vec.printf(fdecayinh)
+fdecayinh.close()
+
+sprint(filename3, "model_errinhvec.dat")
+sprint(model_abs_path3, "%s/%s", MODEL_TOPDIR, filename3)
+ferrinh = new File(filename3)
+ferrinh.wopen(model_abs_path3)
+errinh_vec.printf(ferrinh)
+ferrinh.close()
+
+sprint(filename9, "model_minweightinhvec.dat")
+sprint(model_abs_path9, "%s/%s", MODEL_TOPDIR, filename9)
+fminweightinh = new File(filename9)
+fminweightinh.wopen(model_abs_path9)
+minweightinh_vec.printf(fminweightinh)
+fminweightinh.close()
+	
+sprint(filename15, "model_dendsectionvec.dat")
+sprint(model_abs_path15, "%s/%s", MODEL_TOPDIR, filename15)
+fdendn = new File(filename15)
+fdendn.wopen(model_abs_path15)
+dendn_vec.printf(fdendn)
+fdendn.close()
+	
+save_session("./EndSessionFile.ses")

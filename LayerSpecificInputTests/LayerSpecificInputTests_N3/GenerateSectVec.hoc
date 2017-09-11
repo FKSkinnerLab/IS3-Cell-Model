@@ -1,0 +1,30 @@
+// This script is used to identify synaptic weights necessary to evoke somatic action potentials at different distance from the soma
+
+// Extra info into programmatically incorporating Multiple Run Fitter: https://www.neuron.yale.edu/phpBB/viewtopic.php?f=23&t=805 & http://www.neuron.yale.edu/neuron/static/docs/optimiz/model/set_up_runfitness.html
+
+load_file("IS3_M2_Case9Star.hoc") // Loads IS3 model with full morphology & properties (as well as parameters and point processes)
+		
+objectvar dendsec_vec
+dendsec_vec = new Vector(sec_divs,0)
+count = 0
+		
+for (dendn = 0; dendn<=57; dendn = dendn+1){
+	print "Section Number: ", dendn
+			
+	for (i = 1; i<=dend[dendn].nseg; i = i+1) {
+		
+		// Records distance along section according to current proportion along section
+		access dend[dendn]
+		dendsec_vec.x[count] = dendn
+		count = count + 1
+			
+	}
+}
+
+// Store corresponding weight & distance vectors in files
+sprint(filename, "model_dendsectionvec.dat")
+sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+fok = new File(filename)
+fok.wopen(model_abs_path)
+dendsec_vec.printf(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+fok.close()

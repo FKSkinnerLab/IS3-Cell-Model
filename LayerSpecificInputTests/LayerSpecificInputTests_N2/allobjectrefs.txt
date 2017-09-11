@@ -1,0 +1,74 @@
+obp MRF1[0] -> MulRunFitter[1] with 3 refs.
+   obp p[0] -> ParmFitnessGui[1] with 1 refs.
+      obp pf[0] -> ParmFitness[1] with 3 refs.
+         obp parmlist[0] -> List[66] with 1 refs.
+         obp generatorlist[0] -> List[68] with 1 refs.
+         obp pc[0] -> ParallelContext[4] with 1 refs.
+         obp usegen[0] -> NULL
+         obp parmlist_use[0] -> List[67] with 1 refs.
+         obp tobj[0] -> NULL
+         obp sf[0] -> StringFunctions[28] with 1 refs.
+         obp this[0] -> ParmFitness[1] with 3 refs.
+         obp ran[0] -> NULL
+         obp parmvec[0] -> Vector[308] with 1 refs.
+      obp mulfit[0] -> MulRunFitter[1] with 3 refs.
+      obp sf[0] -> StringFunctions[29] with 1 refs.
+      obp symch_[0] -> SymChooser[2] with 1 refs.
+      obp vbox[0] -> VBox[53] with 1 refs.
+      obp hbox[0] -> HBox[9] with 1 refs.
+      obp this[0] -> ParmFitnessGui[1] with 1 refs.
+      obp tobj[0] -> VBox[55] with 1 refs.
+      obp domainlist[0] -> NULL
+      obp parmbox[0] -> NULL
+      obp domainbox[0] -> NULL
+      obp gengui_[0] -> NULL
+      obp genguibox_[0] -> NULL
+      obp usepanelbox_[0] -> NULL
+   obp vbox[0] -> VBox[56] with 1 refs.
+   obp opt[0] -> OptimizerWrap[1] with 1 refs.
+      obp start[0] -> Vector[309] with 1 refs.
+      obp optimizer[0] -> MulfitPraxWrap[3] with 1 refs.
+         obp savepath[0] -> File[10] with 1 refs.
+         obp tl[0] -> NULL
+         obp pf[0] -> ParmFitness[1] with 3 refs.
+            obp parmlist[0] -> List[66] with 1 refs.
+            obp generatorlist[0] -> List[68] with 1 refs.
+            obp pc[0] -> ParallelContext[4] with 1 refs.
+            obp usegen[0] -> NULL
+            obp parmlist_use[0] -> List[67] with 1 refs.
+            obp tobj[0] -> NULL
+            obp sf[0] -> StringFunctions[28] with 1 refs.
+            obp this[0] -> ParmFitness[1] with 3 refs.
+            obp ran[0] -> NULL
+            obp parmvec[0] -> Vector[308] with 1 refs.
+         obp tobj[0] -> NULL
+         obp opt[0] -> NULL
+         obp start[0] -> Vector[310] with 1 refs.
+         obp prin_origargs[0] -> NULL
+         obp prin_val[0] -> NULL
+         obp prin_fac[0] -> NULL
+         obp prin_ax[0] -> NULL
+      obp savepath[0] -> File[9] with 1 refs.
+      obp tl[0] -> NULL
+      obp pf[0] -> ParmFitness[1] with 3 refs.
+         obp parmlist[0] -> List[66] with 1 refs.
+         obp generatorlist[0] -> List[68] with 1 refs.
+         obp pc[0] -> ParallelContext[4] with 1 refs.
+         obp usegen[0] -> NULL
+         obp parmlist_use[0] -> List[67] with 1 refs.
+         obp tobj[0] -> NULL
+         obp sf[0] -> StringFunctions[28] with 1 refs.
+         obp this[0] -> ParmFitness[1] with 3 refs.
+         obp ran[0] -> NULL
+         obp parmvec[0] -> Vector[308] with 1 refs.
+      obp tobj[0] -> NULL
+      obp opt[0] -> NULL
+      obp this[0] -> OptimizerWrap[1] with 1 refs.
+   obp this[0] -> MulRunFitter[1] with 3 refs.
+   obp fspec[0] -> File[7] with 1 refs.
+   obp fdat[0] -> File[8] with 1 refs.
+   obp optbox[0] -> NULL
+   obp nil[0] -> NULL
+   obp tobj[0] -> NULL
+   obp sf[0] -> StringFunctions[27] with 1 refs.
+   obp optimizer[0] -> NULL

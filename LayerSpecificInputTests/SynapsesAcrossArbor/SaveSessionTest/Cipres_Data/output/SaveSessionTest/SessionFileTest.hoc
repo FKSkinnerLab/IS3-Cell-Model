@@ -1,0 +1,9 @@
+// This script is used to identify synaptic weights necessary to evoke somatic action potentials at different distance from the soma
+
+// Extra info into programmatically incorporating Multiple Run Fitter: https://www.neuron.yale.edu/phpBB/viewtopic.php?f=23&t=805 & http://www.neuron.yale.edu/neuron/static/docs/optimiz/model/set_up_runfitness.html
+load_file("nrngui.hoc")
+load_file("IS3_M2_Case9StarRevised.hoc") // Loads IS3 model with full morphology & properties (as well as parameters and point processes)
+load_file("Case9StarModelMRF3.ses") // Loads Multiple Run Fitter session file
+
+val = save_session("./EndSessionFile.ses")
+printf("save_session returned = %d", val)

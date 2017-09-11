@@ -1,0 +1,73 @@
+numprocs=8
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	1 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	1 
+	1 
+	1 
+	0 
+	1 
+	1 
+	1 
+	1 
+	1 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	0 
+	1 
+save_session returned = 0	25 
+	0 
+	1 
+save_session returned = 0	25 
+	0 
+	1 
+save_session returned = 0	25 
+	0 
+	1 
+save_session returned = 0	25 
+	0 
+	0 
+	1 
+save_session returned = 0	25 
+	0 
+	1 
+save_session returned = 0	25 
+	0 
+	1 
+save_session returned = 0	25 
+	1 
+save_session returned = 0	25 

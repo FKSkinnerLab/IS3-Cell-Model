@@ -1,0 +1,171 @@
+// This script is used to identify synaptic weights necessary to evoke somatic action potentials at different distance from the soma
+
+load_file("IS3_M2_Case9Star.hoc") // Loads IS3 model with full morphology & properties
+
+access soma
+distance()
+
+// Set Parameters
+tstop = 100 // (ms)
+v_init = -69.7
+steps_per_ms = 10
+dt = 0.1
+dendn = 0 // Specifies section - still need to adjust distance vector though
+sec_divs = 1 // Specifies spatial resolution for the section being analyzed (e.g. 4 = 5 points along dendrite section, dendn)
+
+// Initialize variables
+objectvar noise, AP_N, syn, nc, ns, weight_vec, dist_vec, fok, fdist, frecV, frecSI, nil, fih, recV, recSI
+strdef filename, filename2, filename3, filename4, MODEL_TOPDIR, model_abs_path, model_abs_path2, model_abs_path3, model_abs_path4
+	
+MODEL_TOPDIR = "/Users/alexgm/Desktop/SkinnerLab/Usages/LayerSpecificInputTests/Case9StarOutput"
+	
+// Initialize vectors
+weight_vec = new Vector((sec_divs+1)*58,0)
+dist_vec = new Vector((sec_divs+1)*58,0)
+
+// Create Point Processes
+soma noise = new InGauss(0) // Simulates stochastic gating
+noise.del = 0
+noise.dur = tstop
+noise.mean = 0
+noise.stdev = 0.01
+
+soma AP_N = new APCount(0.5) // Counts spikes at soma
+AP_N.thresh = -20 // Threshold for rising spike identification
+
+dend[dendn] syn = new Exp2Syn(0) // Creates 1 two state kinetic scheme synapse
+syn.tau1 = 0.45 // Rise time (ms)
+syn.tau2 = 2.175 // Decay time (ms)
+syn.e = 10 // Reversal Potential (mV)
+	
+nc = new NetCon(nil, syn) // Specifies a network connection to syn
+fih = new FInitializeHandler("nc.event(0)") // Creates 1 presynaptic event during initialization targeted to syn
+	
+for (dendn = 0; dendn<=57; dendn = dendn+1){
+	print "Section Number: ", dendn
+	for (i = 0; i<=sec_divs; i = i+1) {
+	
+		if (dendn > 17 && dendn < 23) { // Skip measurements for axon
+			dist_vec.x[i+dendn*2] = 0
+			weight_vec.x[i+dendn*2] = 0
+			break
+		}
+	
+		// Specifies proportion along section (i.e. from 0 to 1)
+		prop = i*(1/2) // Note that any proportions other than 0, 0.5 and 1 don't always function properly with distance() and loc()
+		
+		// Changes Exp2Syn's location to current proportion along section
+		dend[dendn] syn.loc(prop)
+		
+		// Records distance along section according to current proportion along section
+		access dend[dendn]
+		dist_vec.x[i+dendn*2] = distance(prop)
+		
+		//adjust synaptic time constants if in SLM layer
+		if (distance(prop)>300) { // i.e. if greater than 300 um away from soma
+			syn.tau1 = 1.71 // Rise time
+			syn.tau2 = 5.04 // Decay time
+			syn.e = 30 // Reversal Potential (mV)
+		}
+		//adjust synaptic time constants if in SR layer
+		if (distance(prop)<=300) {
+			syn.tau1 = 0.45 // Rise time
+			syn.tau2 = 2.175 // Decay time
+			syn.e = 10 // Reversal Potential (mV)
+		}
+
+		// print "Distance From Soma: ", distance(prop), "um"
+		// print "Rise Time: ", syn.tau1, "ms; Decay Time: ", syn.tau2, "ms"
+		// print "Proportion Along Section: ", prop, "%; Synapse Location on Section: ", syn.get_loc(), "%"
+		access soma
+
+		// Increases weight (uS) incrementally until a somatic spike is identified using APCount
+		for (l = 0; l <= 49; l = l+1) {
+			
+			// Change resolution to larger weight intervals if weight is not small
+			if (l < 10) {
+				nc.weight = (l)*0.001 // Increase weight by 0.001 uS increments
+			}
+			if (l > 9 && l<20) {
+				nc.weight = (l-9)*0.01 // Increase weight by 0.01 uS increments
+			}
+			if (l > 19 && l<30) {
+				nc.weight = (l-19)*0.1 // Increase weight by 0.1 uS increments
+			}
+			if (l > 29 && l<40) {
+				nc.weight = (l-29)*1 // Increase weight by 1 uS increments 
+			}
+			if (l > 39) {
+				nc.weight = (l-39)*10 // Increase weight by 1 uS increments 
+			}
+			
+			// Records voltage vector
+			recV= new Vector()
+			recV.record(&soma.v(0.5))
+				
+			// Record membrane current vector
+			recSI = new Vector()
+			recSI.record(syn,&i)
+				
+			run() // Run simulation
+					
+			if (AP_N.n > 0) {
+				weight_vec.x[i+dendn*2] = nc.weight // Threshold weight (uS)
+					
+				// Save voltage vector
+				sprint(filename3,"modelV_%g_Distance_%g_Weight_%g_DendriteNumber.dat",dist_vec.x[i+dendn*2],weight_vec.x[i+dendn*2],dendn) // Changes filename on each iteration
+				sprint(model_abs_path3, "%s/%s", MODEL_TOPDIR, filename3)
+				frecV = new File(filename3)
+				frecV.wopen(model_abs_path3)
+				recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+				frecV.close()
+					
+				// Save membrane current vector
+				sprint(filename4,"modelI_%g_Distance_%g_Weight_%g_DendriteNumber.dat",dist_vec.x[i+dendn*2],weight_vec.x[i+dendn*2],dendn) // Changes filename on each iteration
+				sprint(model_abs_path4, "%s/%s", MODEL_TOPDIR, filename4)
+				frecSI = new File(filename4)
+				frecSI.wopen(model_abs_path4)
+				recSI.printf(frecSI) // Use printf instead of vwrite if you want a text file instead of a binary file
+				frecSI.close()
+						
+				break
+			}
+			if (l > 48) {
+				weight_vec.x[i+dendn*2] = (l-39)*10 // If weight = 100, then threshold was not attained
+					
+				// Save voltage vector
+				sprint(filename3,"modelV_%g_Distance_%g_Weight_%g_DendriteNumber.dat",dist_vec.x[i+dendn*2],weight_vec.x[i+dendn*2],dendn) // Changes filename on each iteration
+				sprint(model_abs_path3, "%s/%s", MODEL_TOPDIR, filename3)
+				frecV = new File(filename3)
+				frecV.wopen(model_abs_path3)
+				recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+				frecV.close()
+						
+				// Save membrane current vector
+				sprint(filename4,"modelI_%g_Distance_%g_Weight_%g_DendriteNumber.dat",dist_vec.x[i+dendn*2],weight_vec.x[i+dendn*2],dendn) // Changes filename on each iteration
+				sprint(model_abs_path4, "%s/%s", MODEL_TOPDIR, filename4)
+				frecSI = new File(filename4)
+				frecSI.wopen(model_abs_path4)
+				recSI.printf(frecSI) // Use printf instead of vwrite if you want a text file instead of a binary file
+				frecSI.close()
+							
+				break
+			}
+		}
+	}
+}
+
+// Store corresponding weight & distance vectors in files
+sprint(filename, "model_weightvec.dat")
+sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+fok = new File(filename)
+fok.wopen(model_abs_path)
+weight_vec.printf(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+fok.close()
+
+sprint(filename2, "model_distvec.dat")
+sprint(model_abs_path2, "%s/%s", MODEL_TOPDIR, filename2)
+fdist = new File(filename2)
+fdist.wopen(model_abs_path2)
+dist_vec.printf(fdist)
+fdist.close()

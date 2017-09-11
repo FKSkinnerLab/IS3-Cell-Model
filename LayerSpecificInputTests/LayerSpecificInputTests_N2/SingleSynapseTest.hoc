@@ -1,0 +1,338 @@
+// This script is used to identify synaptic weights necessary to evoke somatic action potentials at different distance from the soma
+
+// Extra info into programmatically incorporating Multiple Run Fitter: https://www.neuron.yale.edu/phpBB/viewtopic.php?f=23&t=805 & http://www.neuron.yale.edu/neuron/static/docs/optimiz/model/set_up_runfitness.html
+
+load_file("IS3_M2_Case9Star.hoc") // Loads IS3 model with full morphology & properties (as well as parameters and point processes)
+
+load_file("Case9StarModelMRF.ses") // Loads Multiple Run Fitter session file
+
+// access soma
+// distance()
+// 
+// // Set Parameters
+// tstop = 100 // (ms)
+// v_init = -69.7
+// steps_per_ms = 10
+// dt = 0.1
+// dendn = 0 // Specifies section - still need to adjust distance vector though
+// sec_divs = 221 // total number of segments
+// count = 0 // for indexing
+// 		
+// // Initialize variables
+// objectvar MRF1, vclamp1, noise, AP_N, syn, nc, nc2, ns, NumSpikes_vec, // SpikeInterval_vec, NumSynapses_vec, risetime_vec, decaytime_vec, err_vec, minweight_vec, weight_vec, dist_vec, fok, fdist, frise, fdecay, ferr, fminweight, frecV, frecSI, nil, fih, recV, recSI, fNSynapses, fNumSpikes, fSpikeInterval //
+// strdef MODEL_TOPDIR, filename, filename2, filename3, filename4, filename5, filename6, filename7, filename8, filename9, filename10, filename11, filename12, model_abs_path, model_abs_path2, model_abs_path3, model_abs_path4, model_abs_path5, model_abs_path6, model_abs_path7, model_abs_path8, model_abs_path9, model_abs_path10, model_abs_path11, model_abs_path12 //
+// 	
+// MODEL_TOPDIR = "/Users/alexgm/Desktop/SkinnerLab/Usages/LayerSpecificInputTests/Case7Output" //
+// 	
+// // Initialize vectors
+// weight_vec = new Vector(sec_divs,0)
+// dist_vec = new Vector(sec_divs,0)
+// risetime_vec = new Vector(sec_divs,0)
+// decaytime_vec = new Vector(sec_divs,0)
+// err_vec = new Vector(sec_divs,0)
+// minweight_vec = new Vector(sec_divs,0)
+// NumSynapses_vec = new Vector(sec_divs,0)
+// NumSpikes_vec = new Vector(sec_divs,0)
+// SpikeInterval_vec = new Vector(sec_divs,0)
+// 	
+// // Create Point Processes
+// soma noise = new InGauss(0) // Simulates stochastic gating
+// noise.del = 0
+// noise.dur = tstop
+// noise.mean = 0
+// noise.stdev = 0.01
+// 	
+// soma vclamp1 = new VClamp(0) //Comment this line, since sessions start off in VClamp
+// vclamp1.dur[0] = tstop
+// vclamp1.amp[0] = -70 // Clamp membrane voltage to resting potential
+// vclamp1.tau1 = 0
+// vclamp1.tau2 = 0
+// 		
+// soma AP_N = new APCount(0.5) // Counts spikes at soma
+// AP_N.thresh = -20 // Threshold for rising spike identification
+// 
+// dend[dendn] syn = new Exp2Syn(0) // Creates 1 two state kinetic scheme synapse
+// syn.tau1 = 0.45 // Rise time (ms)
+// syn.tau2 = 2.175 // Decay time (ms)
+// syn.e = 10 // Reversal Potential (mV)
+// 	
+// nc = new NetCon(nil, syn) // Specifies a network connection to syn
+// fih = new FInitializeHandler("nc.event(0)") // Creates 1 presynaptic event during initialization targeted to syn
+// 		
+// ns = new NetStim(0.5)
+// ns.number = 0
+// ns.interval = 0
+// ns.start = 0
+// ns.noise = 0
+// nc2 = new NetCon(ns, syn) // Specifies a NetStim (ns) connection to syn
+// nc2.weight = 0
+		
+for (dendn = 0; dendn<=57; dendn = dendn+1){
+	print "Section Number: ", dendn
+			
+	for (i = 1; i<=dend[dendn].nseg; i = i+1) {
+	
+		// if (dendn > 17 && dendn < 23) { // Skip measurements for axon
+		// 	dist_vec.x[count] = 0
+		// 	weight_vec.x[count] = 0
+		// 	break
+		// }
+	
+		// Specifies proportion along section (i.e. from 0 to 1)
+		prop = ((dend[dendn].L/dend[dendn].nseg)*i - (dend[dendn].L/dend[dendn].nseg)/2)/dend[dendn].L // finds the center of each segment, as defined by its proportional distance along each section; (prop = (i-0.5)/dend[dendn].nseg also works)
+		
+		// Changes Exp2Syn's location to current proportion along section
+		dend[dendn] syn.loc(prop)
+		
+		// Records distance along section according to current proportion along section
+		access dend[dendn]
+		dist_vec.x[count] = distance(prop)
+				
+		//Optimize synaptic time constants if in SR layer
+		if (distance(prop)<=300) {
+			access soma
+			vclamp1.dur[0] = tstop
+			vclamp1.amp[0] = -70 // Clamp membrane voltage to resting potential (Same as EXP)
+			vclamp1.tau1 = 0
+			vclamp1.tau2 = 0
+			
+			noise.stdev = 0 // To faciliate fit to average EPSC (low noise)
+			nc.weight = 0 // Initial Weight (Adjustable)
+			nc2.weight = 0 // Ensure second NetCon weight is set to 0
+			syn.tau1 = 0.45 // Initial Rise time (Adjustable)
+			syn.tau2 = 1.41 // Initial Decay time (Adjustable)
+			syn.e = 10 // Reversal Potential (mV) (Fixed)
+			MulRunFitter[0].p.pf.parmlist.object(0).val = 0 // These next three lines are to adjust the values found in the multiple run fitters parameter panel, since they are not reset elsewise
+			MulRunFitter[0].p.pf.parmlist.object(1).val = 0.45
+			MulRunFitter[0].p.pf.parmlist.object(2).val = 1.41
+				
+			// Record membrane current vector
+			recSI = new Vector()
+			recSI.record(&vclamp1.i)
+					
+			MulRunFitter[0].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[0].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[0].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[0].prun() // 4 times for a better fit
+				
+			// Save EPSC vector
+			sprint(filename4,"modelI_%g_Distance_%g_SingleSynWeight_%g_RiseTime_%g_DecayTime_%g_SumSquareErr_%g_DendriteNumber.dat",dist_vec.x[count],nc.weight,syn.tau1,syn.tau2,MulRunFitter[0].opt.minerr,dendn) // Changes filename on each iteration
+			sprint(model_abs_path4, "%s/%s", MODEL_TOPDIR, filename4)
+			frecSI = new File(filename4)
+			frecSI.wopen(model_abs_path4)
+			recSI.printf(frecSI) // Use printf instead of vwrite if you want a text file instead of a binary file
+			frecSI.close()
+				
+			risetime_vec.x[count] = syn.tau1 // Rise Time (ms)
+			decaytime_vec.x[count] = syn.tau2 // Decay Time (ms)
+			err_vec.x[count] = MulRunFitter[0].opt.minerr // Sum of Squared Errors (from optimization)
+			minweight_vec.x[count] = nc.weight // Optimized Weight (uS)
+		}		
+		
+		//Optimize synaptic time constants if in SLM layer
+		if (distance(prop)>300) { // i.e. if greater than 300 um away from soma
+			access soma
+			vclamp1.dur[0] = tstop
+			vclamp1.amp[0] = -70 // Clamp membrane voltage to resting potential (Same as EXP)
+			vclamp1.tau1 = 0
+			vclamp1.tau2 = 0
+
+			noise.stdev = 0 // To faciliate fit to average EPSC (low noise)
+			nc.weight = 0 // Initial Weight (Adjustable)
+			nc2.weight = 0
+			syn.tau1 = 1.71 // Initial Rise time (Adjustable)
+			syn.tau2 = 5.04 // Initial Decay time (Adjustable)
+			syn.e = 30 // Reversal Potential (mV) (Fixed)
+			MulRunFitter[1].p.pf.parmlist.object(0).val = 0 // These next three lines are to adjust the values found in the multiple run fitters parameter panel, since they are not reset elsewise
+			MulRunFitter[1].p.pf.parmlist.object(1).val = 1.71
+			MulRunFitter[1].p.pf.parmlist.object(2).val = 5.04
+					
+			// Record membrane current vector
+			recSI = new Vector()
+			recSI.record(&vclamp1.i)
+				
+			MulRunFitter[1].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[1].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[1].prun() // Run Optimizer (Sessions are preset)
+			MulRunFitter[1].prun() // 4 times for a better fit
+				
+			// Save EPSC vector
+			sprint(filename4,"modelI_%g_Distance_%g_SingleSynWeight_%g_RiseTime_%g_DecayTime_%g_SumSquareErr_%g_DendriteNumber.dat",dist_vec.x[count],nc.weight,syn.tau1,syn.tau2,MulRunFitter[1].opt.minerr,dendn) // Changes filename on each iteration
+			sprint(model_abs_path4, "%s/%s", MODEL_TOPDIR, filename4)
+			frecSI = new File(filename4)
+			frecSI.wopen(model_abs_path4)
+			recSI.printf(frecSI) // Use printf instead of vwrite if you want a text file instead of a binary file
+			frecSI.close()
+				
+			risetime_vec.x[count] = syn.tau1 // Rise Time (ms)
+			decaytime_vec.x[count] = syn.tau2 // Decay Time (ms)
+			err_vec.x[count] = MulRunFitter[1].opt.minerr // Sum of Squared Errors (from optimization)
+			minweight_vec.x[count] = nc.weight // Optimized Weight (uS)
+		}
+		
+		// Switch off voltage clamp, switch noise back on and reset weight
+		vclamp1.dur[0] = 0
+		vclamp1.amp[0] = 0
+		vclamp1.tau1 = 0
+		vclamp1.tau2 = 0
+		noise.stdev = 0.01
+		SingleSynWeight = nc.weight // Record the weight optimized for a single synapse
+			
+		// Multiplies single synaptic weight value (uS) incrementally until a somatic spike is identified using APCount
+		for (l = 1; l <= 100; l = l+1) {
+			
+			nc.weight = SingleSynWeight*l // Add a synapse on every iteration
+			
+			// Records voltage vector
+			recV = new Vector()
+			recV.record(&soma.v(0.5))
+				
+			run() // Run simulation
+					
+			if (AP_N.n > 0) {
+				weight_vec.x[count] = nc.weight // Threshold weight (uS)
+				NumSynapses_vec.x[count] = l // Number of Synapses
+						
+				// Save voltage vector
+				sprint(filename3,"modelV_%g_Distance_%g_Weight_%g_NSynapses_%g_DendriteNumber.dat",dist_vec.x[count],weight_vec.x[count],l,dendn) // Changes filename on each iteration
+				sprint(model_abs_path3, "%s/%s", MODEL_TOPDIR, filename3)
+				frecV = new File(filename3)
+				frecV.wopen(model_abs_path3)
+				recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+				frecV.close()
+											
+				break
+			}
+			if (l > 99) {
+				weight_vec.x[count] = SingleSynWeight*l // If threshold was not attained
+				NumSynapses_vec.x[count] = l // Number of Synapses
+						
+				// Save voltage vector
+				sprint(filename3,"modelV_%g_Distance_%g_Weight_%g_NSynapses_%g_DendriteNumber.dat",dist_vec.x[count],weight_vec.x[count],l,dendn) // Changes filename on each iteration
+				sprint(model_abs_path3, "%s/%s", MODEL_TOPDIR, filename3)
+				frecV = new File(filename3)
+				frecV.wopen(model_abs_path3)
+				recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+				frecV.close()
+												
+				break
+			}
+		}
+		
+		// Set single NetCon to 0 weight and NetStim NetCon weight to the optimized single synapse weight
+		nc.weight = 0
+		nc2.weight = SingleSynWeight
+		
+		// Doubles the number of presynaptic spikes (...and halves the interspike interval) on every iteration until APCount records a somatic spike (Note that noise = 0)
+		for (l = 1; l <= 100; l = l+1) {
+			
+			ns.number = l
+			ns.interval = tstop/ns.number
+			
+			// Records voltage vector
+			recV = new Vector()
+			recV.record(&soma.v(0.5))
+				
+			run() // Run simulation
+					
+			if (AP_N.n > 0) {
+				
+				// Save voltage vector
+				sprint(filename10,"modelV_%g_Distance_%g_StimInterval_%g_StimSpikeNumber_%g_DendriteNumber.dat",dist_vec.x[count],ns.interval,ns.number,dendn) // Changes filename on each iteration
+				sprint(model_abs_path10, "%s/%s", MODEL_TOPDIR, filename10)
+				frecV = new File(filename10)
+				frecV.wopen(model_abs_path10)
+				recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+				frecV.close()
+					
+				SpikeInterval_vec.x[count] = ns.interval
+				NumSpikes_vec.x[count] = ns.number
+				count = count + 1
+				nc2.weight = 0
+					
+				break
+			}
+			if (l > 99) {
+
+				// Save voltage vector
+				sprint(filename10,"modelV_%g_Distance_%g_StimInterval_%g_StimSpikeNumber_%g_DendriteNumber.dat",dist_vec.x[count],ns.interval,ns.number,dendn) // Changes filename on each iteration
+				sprint(model_abs_path10, "%s/%s", MODEL_TOPDIR, filename10)
+				frecV = new File(filename10)
+				frecV.wopen(model_abs_path10)
+				recV.printf(frecV) // Use printf instead of vwrite if you want a text file instead of a binary file
+				frecV.close()
+				
+				SpikeInterval_vec.x[count] = ns.interval
+				NumSpikes_vec.x[count] = ns.number
+				count = count + 1
+				nc2.weight = 0
+													
+				break
+			}
+		}
+	}
+}
+
+// Store corresponding weight & distance vectors in files
+sprint(filename, "model_weightvec.dat")
+sprint(model_abs_path, "%s/%s", MODEL_TOPDIR, filename)
+fok = new File(filename)
+fok.wopen(model_abs_path)
+weight_vec.printf(fok) // Use printf instead of vwrite if you want a text file instead of a binary file
+fok.close()
+
+sprint(filename2, "model_distvec.dat")
+sprint(model_abs_path2, "%s/%s", MODEL_TOPDIR, filename2)
+fdist = new File(filename2)
+fdist.wopen(model_abs_path2)
+dist_vec.printf(fdist)
+fdist.close()
+
+sprint(filename5, "model_risetimevec.dat")
+sprint(model_abs_path5, "%s/%s", MODEL_TOPDIR, filename5)
+frise = new File(filename5)
+frise.wopen(model_abs_path5)
+risetime_vec.printf(frise)
+frise.close()
+
+sprint(filename6, "model_decaytimevec.dat")
+sprint(model_abs_path6, "%s/%s", MODEL_TOPDIR, filename6)
+fdecay = new File(filename6)
+fdecay.wopen(model_abs_path6)
+decaytime_vec.printf(fdecay)
+fdecay.close()
+
+sprint(filename7, "model_errvec.dat")
+sprint(model_abs_path7, "%s/%s", MODEL_TOPDIR, filename7)
+ferr = new File(filename7)
+ferr.wopen(model_abs_path7)
+err_vec.printf(ferr)
+ferr.close()
+
+sprint(filename8, "model_minweightvec.dat")
+sprint(model_abs_path8, "%s/%s", MODEL_TOPDIR, filename8)
+fminweight = new File(filename8)
+fminweight.wopen(model_abs_path8)
+minweight_vec.printf(fminweight)
+fminweight.close()
+
+sprint(filename9, "model_NSynapsesvec.dat")
+sprint(model_abs_path9, "%s/%s", MODEL_TOPDIR, filename9)
+fNSynapses = new File(filename9)
+fNSynapses.wopen(model_abs_path9)
+NumSynapses_vec.printf(fNSynapses)
+fNSynapses.close()
+
+sprint(filename11, "model_NumSpikes.dat")
+sprint(model_abs_path11, "%s/%s", MODEL_TOPDIR, filename11)
+fNumSpikes = new File(filename11)
+fNumSpikes.wopen(model_abs_path11)
+NumSpikes_vec.printf(fNumSpikes)
+fNumSpikes.close()
+
+sprint(filename12, "model_SpikeInterval.dat")
+sprint(model_abs_path12, "%s/%s", MODEL_TOPDIR, filename12)
+fSpikeInterval = new File(filename12)
+fSpikeInterval.wopen(model_abs_path12)
+SpikeInterval_vec.printf(fSpikeInterval)
+fSpikeInterval.close()
