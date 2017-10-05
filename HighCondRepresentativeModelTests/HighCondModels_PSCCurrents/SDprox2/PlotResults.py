@@ -63,11 +63,11 @@ for x in range(0,len(ParamNums[0])):
 		if y == 0:
 			timevec1 = results[0]
 			currentvec1 = results[1]*1000
-			conductancevec1 = (results[1]*(1**-9))/((holding_potentials[y]-holding_potentials[y+1])*0.001)
+			conductancevec1 = (results[1])/((holding_potentials[y]-holding_potentials[y+1])*0.001) # Results in Nanosiemens
 		elif y == 1:
 			timevec2 = results[0]
 			currentvec2 = results[1]*1000
-			conductancevec2 = (results[1]*(1**-9))/((holding_potentials[y]-holding_potentials[y-1])*0.001)
+			conductancevec2 = (results[1])/((holding_potentials[y]-holding_potentials[y-1])*0.001)
 	f, axarr = matplotlib.pyplot.subplots(1)
 	axarr.plot(timevec1,currentvec1,colors[0])
 	axarr.plot(timevec2,currentvec2,colors[1])
@@ -84,7 +84,7 @@ for x in range(0,len(ParamNums[0])):
 	axarr.plot(timevec1,conductancevec1,colors[0])
 	axarr.plot(timevec2,conductancevec2,colors[1])
 	axarr.set_xlabel('Time (ms)')
-	axarr.set_ylabel('Conductance (S)')
+	axarr.set_ylabel('Conductance (nS)')
 	axarr.set_xlim(1000,10000)
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_Conductance' + '.pdf', bbox_inches='tight')
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_Conductance' + '.png', bbox_inches='tight')
@@ -97,13 +97,13 @@ for x in range(0,len(ParamNums[0])):
 	print 'HC1 = ' + ParamStrs[x] + ', for inhibitory only'
 	timevec1 = results[0]
 	currentvec1 = results[1]*1000
-	conductancevec1 = (results[1]*(1**-9))/((-60-(-70))*0.001)
+	conductancevec1 = (results[1])/((-60-(-70))*0.001)
 
 	results = getMeasures(0,numexc,0,excspikes,1,1000,-60) # i.e. same random seed values for all representative scenarios
 	print 'HC1 = ' + ParamStrs[x] + ', for excitatory only'
 	timevec2 = results[0]
 	currentvec2 = results[1]*1000
-	conductancevec2 = (results[1]*(1**-9))/((-60-(0))*0.001)
+	conductancevec2 = (results[1])/((-60-(0))*0.001)
 	
 	f, axarr = matplotlib.pyplot.subplots(1)
 	axarr.plot(timevec1,currentvec1,colors[0])
@@ -121,7 +121,7 @@ for x in range(0,len(ParamNums[0])):
 	axarr.plot(timevec1,conductancevec1,colors[0])
 	axarr.plot(timevec2,conductancevec2,colors[1])
 	axarr.set_xlabel('Time (ms)')
-	axarr.set_ylabel('Conductance (S)')
+	axarr.set_ylabel('Conductance (nS)')
 	axarr.set_xlim(1000,10000)
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_ConductanceAtRest' + '.pdf', bbox_inches='tight')
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_ConductanceAtRest' + '.png', bbox_inches='tight')
@@ -134,13 +134,13 @@ for x in range(0,len(ParamNums[0])):
 	print 'HC1 = ' + ParamStrs[x] + ', for inhibitory only again'
 	timevec1 = results[0]
 	currentvec1 = results[1]*1000
-	conductancevec1 = (results[1]*(1**-9))/((0-(-70))*0.001)
+	conductancevec1 = (results[1])/((0-(-70))*0.001)
 
 	results = getMeasures(0,numexc,0,excspikes,1,1000,-70) # i.e. same random seed values for all representative scenarios
 	print 'HC1 = ' + ParamStrs[x] + ', for excitatory only again'
 	timevec2 = results[0]
 	currentvec2 = results[1]*1000
-	conductancevec2 = (results[1]*(1**-9))/((-70-(0))*0.001)
+	conductancevec2 = (results[1])/((-70-(0))*0.001)
 	
 	f, axarr = matplotlib.pyplot.subplots(1)
 	axarr.plot(timevec1,currentvec1,colors[0])
@@ -158,7 +158,7 @@ for x in range(0,len(ParamNums[0])):
 	axarr.plot(timevec1,conductancevec1,colors[0])
 	axarr.plot(timevec2,conductancevec2,colors[1])
 	axarr.set_xlabel('Time (ms)')
-	axarr.set_ylabel('Conductance (S)')
+	axarr.set_ylabel('Conductance (nS)')
 	axarr.set_xlim(1000,10000)
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_Conductance2' + '.pdf', bbox_inches='tight')
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_Conductance2' + '.png', bbox_inches='tight')
