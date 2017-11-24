@@ -137,7 +137,7 @@ for x in range(0,len(Examples[0])):
 	e8Hz2[x] = Pxx_den2[f2==8]
 	Areas1[x] = area1
 	Areas2[x] = area2
-	axarr[1].bar(ind+width, [area1, area2, e8Hz1[x], e8Hz2[x]], width, color='k')
+	axarr[1].bar(ind+width, [area1, area2, e8Hz1[x], e8Hz2[x]], width, color=['blue', 'red'])
 	axarr[1].set_xticks(ind+width+width/2)
 	axarr[1].set_xticklabels(('Base\n(4-12Hz)','Theta\n(4-12Hz)','Base\n(8Hz)','Theta\n(8Hz)'))
 	axarr[1].set_ylabel('PSD Magnitude')

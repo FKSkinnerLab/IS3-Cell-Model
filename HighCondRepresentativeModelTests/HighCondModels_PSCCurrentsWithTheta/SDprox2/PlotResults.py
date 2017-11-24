@@ -63,7 +63,7 @@ for x in range(0,len(ParamNums[0])):
 	print 'HC1 = ' + ParamStrs[x] + ', for inhibitory only'
 	timevec1 = results[0]
 	currentvec1 = results[1]*1000
-	conductancevec1 = (results[1])/((0-(-70))*0.001)  # Results in Nanosiemens
+	conductancevec1 = (results[1])/((0-(-70))*0.001) # Results in Nanosiemens
 
 	results = getMeasures(0,numexc,0,excspikes,1,1000,0,numexctheta,1,1,0,0,0,0,0,-70) # i.e. same random seed values for all representative scenarios
 	print 'HC1 = ' + ParamStrs[x] + ', for excitatory only'
@@ -74,9 +74,11 @@ for x in range(0,len(ParamNums[0])):
 	f, axarr = matplotlib.pyplot.subplots(1)
 	axarr.plot(timevec1,currentvec1,colors[0])
 	axarr.plot(timevec2,currentvec2,colors[1])
-	axarr.set_xlabel('Time (ms)')
-	axarr.set_ylabel('Current (pA)')
+	axarr.tick_params(labelsize=20)
+	# axarr.set_xlabel('Time (ms)')
+	# axarr.set_ylabel('Current (pA)')
 	axarr.set_xlim(1000,10000)
+	axarr.set_ylim(-1000,1000)
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_Current' + '.pdf', bbox_inches='tight')
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_Current' + '.png', bbox_inches='tight')
 	pyplot.gcf().clear()
@@ -86,9 +88,11 @@ for x in range(0,len(ParamNums[0])):
 	f, axarr = matplotlib.pyplot.subplots(1)
 	axarr.plot(timevec1,conductancevec1,colors[0])
 	axarr.plot(timevec2,conductancevec2,colors[1])
-	axarr.set_xlabel('Time (ms)')
-	axarr.set_ylabel('Conductance (nS)')
+	axarr.tick_params(labelsize=20)
+	# axarr.set_xlabel('Time (ms)')
+	# axarr.set_ylabel('Conductance (nS)')
 	axarr.set_xlim(1000,10000)
+	axarr.set_ylim(0,14)
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_Conductance' + '.pdf', bbox_inches='tight')
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_Conductance' + '.png', bbox_inches='tight')
 	pyplot.gcf().clear()
@@ -99,9 +103,11 @@ for x in range(0,len(ParamNums[0])):
 	f, axarr = matplotlib.pyplot.subplots(1)
 	axarr.plot(timevec1,currentvec1,colors[0])
 	axarr.plot(timevec2,currentvec2,colors[1])
-	axarr.set_xlabel('Time (ms)')
-	axarr.set_ylabel('Current (pA)')
+	axarr.tick_params(labelsize=20)
+	# axarr.set_xlabel('Time (ms)')
+	# axarr.set_ylabel('Current (pA)')
 	axarr.set_xlim(9000,10000)
+	axarr.set_ylim(-1000,1000)
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_CurrentZoomed' + '.pdf', bbox_inches='tight')
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_CurrentZoomed' + '.png', bbox_inches='tight')
 	pyplot.gcf().clear()
@@ -111,9 +117,11 @@ for x in range(0,len(ParamNums[0])):
 	f, axarr = matplotlib.pyplot.subplots(1)
 	axarr.plot(timevec1,conductancevec1,colors[0])
 	axarr.plot(timevec2,conductancevec2,colors[1])
-	axarr.set_xlabel('Time (ms)')
-	axarr.set_ylabel('Conductance (nS)')
+	axarr.tick_params(labelsize=20)
+	# axarr.set_xlabel('Time (ms)')
+	# axarr.set_ylabel('Conductance (nS)')
 	axarr.set_xlim(9000,10000)
+	axarr.set_ylim(0,14)
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_ConductanceZoomed' + '.pdf', bbox_inches='tight')
 	pyplot.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_ConductanceZoomed' + '.png', bbox_inches='tight')
 	pyplot.gcf().clear()
