@@ -77,8 +77,9 @@ for randix in range(0,5):
 			HC_SpikeTimes_Baseline = HC_SpikeTimes_Baseline[10000:100001]
 			HC_SpikeTimes_Baseline2 = numpy.array(h.apctimes,dtype=numpy.float)
 			
-			axarr2[0].hist(HC_SpikeTimes_Baseline, bins = bin_number, range = bin_range, color = 'b', label = 'Baseline')
+			axarr2[0].hist(HC_SpikeTimes_Baseline, bins = bin_number, range = bin_range, color = 'b', label = r'Baseline')
 			axarr2[0].set_xlim(8000,10000)
+			axarr2[0].set_ylim(0,6)
 			axarr2[0].spines['right'].set_visible(False)
 			axarr2[0].spines['top'].set_visible(False)
 			axarr2[0].spines['bottom'].set_visible(False)
@@ -95,9 +96,10 @@ for randix in range(0,5):
 			HC_SpikeTimes_Rhythm = HC_SpikeTimes_Rhythm[10000:100001]
 			HC_SpikeTimes_Rhythm2 = numpy.array(h.apctimes,dtype=numpy.float)
 			
-			axarr2[1].hist(HC_SpikeTimes_Rhythm, bins = bin_number, range = bin_range, color = 'r', label = 'CA3')
+			axarr2[1].hist(HC_SpikeTimes_Rhythm, bins = bin_number, range = bin_range, color = 'r', label = r'CA3')
 			axarr2[1].axvline(9000, color='k', linestyle='dashed', linewidth=2)
 			axarr2[1].set_xlim(8000,10000)
+			axarr2[1].set_ylim(0,6)
 			axarr2[1].spines['right'].set_visible(False)
 			axarr2[1].spines['top'].set_visible(False)
 			axarr2[1].spines['bottom'].set_visible(False)
@@ -114,10 +116,11 @@ for randix in range(0,5):
 			HC_SpikeTimes_X2Rhythm = HC_SpikeTimes_X2Rhythm[10000:100001]
 			HC_SpikeTimes_X2Rhythm2 = numpy.array(h.apctimes,dtype=numpy.float)
 			
-			axarr2[2].hist(HC_SpikeTimes_X2Rhythm, bins = bin_number, range = bin_range, color = 'g', label = 'CA3/BIS')
+			axarr2[2].hist(HC_SpikeTimes_X2Rhythm, bins = bin_number, range = bin_range, color = 'g', label = r'CA3/SRinh')
 			axarr2[2].axvline(9000, color='k', linestyle='dashed', linewidth=2)
 			axarr2[2].set_ylabel('Spike Count',fontsize=font_size-2)
 			axarr2[2].set_xlim(8000,10000)
+			axarr2[2].set_ylim(0,6)
 			axarr2[2].spines['right'].set_visible(False)
 			axarr2[2].spines['top'].set_visible(False)
 			axarr2[2].spines['bottom'].set_visible(False)
@@ -134,9 +137,10 @@ for randix in range(0,5):
 			HC_SpikeTimes_X3Rhythm = HC_SpikeTimes_X3Rhythm[10000:100001]
 			HC_SpikeTimes_X3Rhythm2 = numpy.array(h.apctimes,dtype=numpy.float)
 			
-			axarr2[3].hist(HC_SpikeTimes_X3Rhythm, bins = bin_number, range = bin_range, color = 'c', label = 'CA3/BIS/IS1')
+			axarr2[3].hist(HC_SpikeTimes_X3Rhythm, bins = bin_number, range = bin_range, color = 'c', label = r'CA3/$2 \times$SRinh')
 			axarr2[3].axvline(9000, color='k', linestyle='dashed', linewidth=2)
 			axarr2[3].set_xlim(8000,10000)
+			axarr2[3].set_ylim(0,6)
 			axarr2[3].spines['right'].set_visible(False)
 			axarr2[3].spines['top'].set_visible(False)
 			axarr2[3].spines['bottom'].set_visible(False)
@@ -153,9 +157,10 @@ for randix in range(0,5):
 			HC_SpikeTimes_X4Rhythm = HC_SpikeTimes_X4Rhythm[10000:100001]
 			HC_SpikeTimes_X4Rhythm2 = numpy.array(h.apctimes,dtype=numpy.float)
 			
-			axarr2[4].hist(HC_SpikeTimes_X4Rhythm, bins = bin_number, range = bin_range, color = 'k', label = 'CA3/BIS/IS1/OLM')
+			axarr2[4].hist(HC_SpikeTimes_X4Rhythm, bins = bin_number, range = bin_range, color = 'k', label = r'CA3/$2 \times$SRinh/SLMinh')
 			axarr2[4].axvline(9000, color='k', linestyle='dashed', linewidth=2)
 			axarr2[4].set_xlim(8000,10000)
+			axarr2[4].set_ylim(0,6)
 			axarr2[4].spines['right'].set_visible(False)
 			axarr2[4].spines['top'].set_visible(False)
 			leg = axarr2[4].legend(loc="upper right", handlelength=0, handletextpad=0, fancybox=True)
@@ -170,7 +175,7 @@ for randix in range(0,5):
 		if y == 0:
 			voltvec_baseline = HC_Trace
 			f, axarr = matplotlib.pyplot.subplots(5, sharex=True)
-			axarr[0].plot(timevec,voltvec_baseline,'b',label = 'Baseline')
+			axarr[0].plot(timevec,voltvec_baseline,'b',label = r'Baseline')
 			axarr[0].set_ylim(-85,30)
 			axarr[0].set_xlim(8000,10000)
 			axarr[0].spines['right'].set_visible(False)
@@ -184,7 +189,7 @@ for randix in range(0,5):
 				item.set_visible(False)
 		elif y == 1:
 			voltvec_X1Rhythm = HC_Trace
-			axarr[1].plot(timevec,voltvec_X1Rhythm,'r',label = 'CA3')
+			axarr[1].plot(timevec,voltvec_X1Rhythm,'r',label = r'CA3')
 			axarr[1].axvline(9000, color='k', linestyle='dashed', linewidth=2)
 			axarr[1].set_ylim(-85,30)
 			axarr[1].set_xlim(8000,10000)
@@ -199,7 +204,7 @@ for randix in range(0,5):
 				item.set_visible(False)
 		elif y == 2:
 			voltvec_X2Rhythm = HC_Trace
-			axarr[2].plot(timevec,voltvec_X2Rhythm,'g',label = 'CA3/BIS')
+			axarr[2].plot(timevec,voltvec_X2Rhythm,'g',label = r'CA3/SRinh')
 			axarr[2].axvline(9000, color='k', linestyle='dashed', linewidth=2)
 			axarr[2].set_ylim(-85,30)
 			axarr[2].set_ylabel('Voltage (mV)',fontsize=font_size-2)
@@ -215,7 +220,7 @@ for randix in range(0,5):
 				item.set_visible(False)
 		elif y == 3:
 			voltvec_X3Rhythm = HC_Trace
-			axarr[3].plot(timevec,voltvec_X3Rhythm,'c',label = 'CA3/BIS/IS1')
+			axarr[3].plot(timevec,voltvec_X3Rhythm,'c',label = r'CA3/$2 \times$SRinh')
 			axarr[3].axvline(9000, color='k', linestyle='dashed', linewidth=2)
 			axarr[3].set_ylim(-85,30)
 			axarr[3].set_xlim(8000,10000)
@@ -230,7 +235,7 @@ for randix in range(0,5):
 				item.set_visible(False)
 		elif y == 4:
 			voltvec_X4Rhythm = HC_Trace
-			axarr[4].plot(timevec,voltvec_X4Rhythm,'k',label = 'CA3/BIS/IS1/OLM')
+			axarr[4].plot(timevec,voltvec_X4Rhythm,'k',label = r'CA3/$2 \times$SRinh/SLMinh')
 			axarr[4].axvline(9000, color='k', linestyle='dashed', linewidth=2)
 			axarr[4].set_ylim(-85,30)
 			axarr[4].set_xlim(8000,10000)
@@ -262,7 +267,7 @@ for randix in range(0,5):
 					SWRVec = numpy.array([],dtype=numpy.float)
 					for q in range(0,len(h.SWRSRBISprespiketrains[randind])): SWRVec = numpy.append(SWRVec,h.SWRSRBISprespiketrains[randind].x[q])
 					SWRVec = numpy.array(SWRVec,dtype=numpy.float)
-					axarr3.vlines(SWRVec,o+j+1.75,o+j+2.25,'k')
+					axarr3.vlines(SWRVec,o+j+1.75,o+j+2.25,color='orange')
 			if SWRIS1SR[y] == 1:
 				for p in range(0,int(h.inhSWRcount)):
 					randind = int(h.IS1randSRSWR.x[p])
@@ -319,7 +324,7 @@ for randix in range(0,5):
 	f4, axarr4 = matplotlib.pyplot.subplots(1, sharex=True)
 	axarr4.bar(ind+width, [heights1, heights2, heights3, heights4, heights5], width, color='k')
 	axarr4.set_xticks(ind+width)
-	axarr4.set_xticklabels(('Base','CA3','CA3/BIS','CA3/BIS/IS1','CA3/BIS/IS1/OLM'),fontsize=font_size-3, fontweight='bold', rotation=45)
+	axarr4.set_xticklabels((r'Base',r'CA3',r'CA3/SRinh',r'CA3/$2 \times$SRinh',r'CA3/$2 \times$SRinh/SLMinh'),fontsize=font_size-3, fontweight='bold', rotation=45)
 	axarr4.set_ylabel('Spike Count During SWR')
 	axarr4.set_xlim(0,5+width)
 	pyplot.tight_layout()

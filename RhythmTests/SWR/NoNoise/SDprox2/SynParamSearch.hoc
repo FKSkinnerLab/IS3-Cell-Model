@@ -640,7 +640,7 @@ proc f() {
 			ExcSWRSRsynsNSS[EXCrandSRSWR.x[p]].number = 5 // dictates the length of the SWR which is somewhere around ~50ms long (Katona et al, 2014; Varga et al, 2014)
 			ExcSWRSRsynsNSS[EXCrandSRSWR.x[p]].start = 9000
 			ExcSWRSRsynsNSS[EXCrandSRSWR.x[p]].noise = 0
-			spSWR.point_mark(ExcSWRSRsyns[EXCrandSRSWR.x[p]],3,"O",2)
+			spSWR.point_mark(ExcSWRSRsyns[EXCrandSRSWR.x[p]],4,"O",2)
 			SWRSRexcprespiketrains[EXCrandSRSWR.x[p]] = new Vector()
 			ExcSWRSRsynsNCS[EXCrandSRSWR.x[p]].record(SWRSRexcprespiketrains[EXCrandSRSWR.x[p]])
 		}
@@ -652,7 +652,7 @@ proc f() {
 			OLMSWRSLMsynsNSS[OLMrandSLMSWR.x[p]].number = 2 // i.e. ~50 ms
 			OLMSWRSLMsynsNSS[OLMrandSLMSWR.x[p]].start = 9006.5 // CA3-CA1-OLM-IS3; also assuming 6.5 ms delay based on Pangalos et al, 2013
 			OLMSWRSLMsynsNSS[OLMrandSLMSWR.x[p]].noise = 0
-			spSWR.point_mark(OLMSWRSLMsyns[OLMrandSLMSWR.x[p]],1,"O",1.5)
+			spSWR.point_mark(OLMSWRSLMsyns[OLMrandSLMSWR.x[p]],7,"O",1.5)
 			SWRSLMOLMprespiketrains[OLMrandSLMSWR.x[p]] = new Vector()
 			OLMSWRSLMsynsNCS[OLMrandSLMSWR.x[p]].record(SWRSLMOLMprespiketrains[OLMrandSLMSWR.x[p]])
 		}
@@ -661,7 +661,7 @@ proc f() {
 			BISSWRSRsynsNSS[BISrandSRSWR.x[p]].number = 6 // i.e. ~50 ms
 			BISSWRSRsynsNSS[BISrandSRSWR.x[p]].start = 9003.25 // CA3-BIS-IS3
 			BISSWRSRsynsNSS[BISrandSRSWR.x[p]].noise = 0
-			spSWR.point_mark(BISSWRSRsyns[BISrandSRSWR.x[p]],6,"O",1.5)
+			spSWR.point_mark(BISSWRSRsyns[BISrandSRSWR.x[p]],5,"O",1.5)
 			SWRSRBISprespiketrains[BISrandSRSWR.x[p]] = new Vector()
 			BISSWRSRsynsNCS[BISrandSRSWR.x[p]].record(SWRSRBISprespiketrains[BISrandSRSWR.x[p]])
 		}
@@ -670,7 +670,7 @@ proc f() {
 			IS1SWRSRsynsNSS[IS1randSRSWR.x[p]].number = 6 // ~50 ms
 			IS1SWRSRsynsNSS[IS1randSRSWR.x[p]].start = 9003.25 // CA3-IS1-IS3
 			IS1SWRSRsynsNSS[IS1randSRSWR.x[p]].noise = 0
-			spSWR.point_mark(IS1SWRSRsyns[IS1randSRSWR.x[p]],7,"O",1.5)
+			spSWR.point_mark(IS1SWRSRsyns[IS1randSRSWR.x[p]],5,"O",1.5)
 			SWRSRIS1prespiketrains[IS1randSRSWR.x[p]] = new Vector()
 			IS1SWRSRsynsNCS[IS1randSRSWR.x[p]].record(SWRSRIS1prespiketrains[IS1randSRSWR.x[p]])
 		}

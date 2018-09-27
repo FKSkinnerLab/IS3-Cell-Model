@@ -22,3 +22,8 @@ PutativeVIPModel/AllenSDK
 *.pptx
 *.zip
 *.ps
+*.png
+*.pdf
+*.tif
+*.tiff
+*/Cipres_Data/*

@@ -37,8 +37,8 @@ def getMeasures(inhsyn,excsyn,inhspikes,excspikes,examplenum,repnum):
 	h.randomize_syns(example,rep) # Randomizes synapse location with a different seed on each repetition
 	h.f(int(inhsyn),int(excsyn),int(inhspikes),int(excspikes),0,example,rep) # Runs Simulation
 	for p in range(0,int(tstop/dt+1)): data[p] = h.recV[p]
-	timevec = numpy.arange(1000,int(tstop),dt)
-	voltage = data[10001:len(data)] # Cut out first second of simulation since there are transient effects still present
+	timevec = numpy.arange(1000.1,int(tstop)+0.1,dt)
+	voltage = data[10001:len(data)] # Cut out first second of simulation since there are transient effects still present and make sure that the last spike repolarizes to -66.7 mV
 	trace = {}
 	trace['T'] = timevec
 	trace['V'] = voltage
@@ -108,11 +108,22 @@ def getMeasures(inhsyn,excsyn,inhspikes,excspikes,examplenum,repnum):
 	HC_Metric = 0
 	HC_Metric = HC_Metric + (MeanVolt_i >= AvgPot_Thresh) + (StdVolt_i >= StdPot_Thresh) + (ISICV_i >= ISICV_Thresh) - 4*((MeanAPamp_i < AMP_DB_Thresh) & (MeanAPamp_i > 0))
 	print 'Vm = ' + str(MeanVolt_i) + ', Vm STD = ' + str(StdVolt_i) + ', ISICV = ' + str(ISICV_i) + ', Amp = ' + str(MeanAPamp_i) + ', HC = ' + str(HC_Metric)
-	outputresults = [rep,HC_Metric]
+	outputresults = [rep,HC_Metric,MeanVolt_i,StdVolt_i,ISICV_i,MeanAPamp_i]
 	return outputresults
 
 # Set up parallel context
-CumulHCs = numpy.zeros((16,), dtype=numpy.float64)
+CumulHCs1 = numpy.zeros((16,), dtype=numpy.float64)
+MeanVm1 = numpy.zeros((16,10), dtype=numpy.float64)
+Vm_STD1 = numpy.zeros((16,10), dtype=numpy.float64)
+ISI_cv1 = numpy.zeros((16,10), dtype=numpy.float64)
+Mean_A1 = numpy.zeros((16,10), dtype=numpy.float64)
+
+CumulHCs2 = numpy.zeros((16,), dtype=numpy.float64)
+MeanVm2 = numpy.zeros((16,10), dtype=numpy.float64)
+Vm_STD2 = numpy.zeros((16,10), dtype=numpy.float64)
+ISI_cv2 = numpy.zeros((16,10), dtype=numpy.float64)
+Mean_A2 = numpy.zeros((16,10), dtype=numpy.float64)
+
 for x in range(0,len(ParamNums[0])):
 	if numpy.sum([ParamNums[0][x], ParamNums[1][x], ParamNums[2][x], ParamNums[3][x]]) == 0:
 		continue
@@ -121,10 +132,32 @@ for x in range(0,len(ParamNums[0])):
 	inhspikes = ParamNums[2][x]
 	excspikes = ParamNums[3][x]
 	for y in range(1,11):
-		results = getMeasures(numinh,numexc,inhspikes,excspikes,x,y)
-		print 'HC1 = ' + str(results[1]) + ', for example #' + str(x) + ' on rep #' + str(y)
-		if results[1] == 3:
-			CumulHCs[x] = CumulHCs[x] + 1
+		for w in range(1,11):
+			for noiseknob in range(0,2):
+				if noiseknob == 0:
+					h.noise.stdev = 0
+					results1 = getMeasures(numinh,numexc,inhspikes,excspikes,x+w,y)
+				if noiseknob == 1:
+					h.noise.stdev = 0.01
+					results2 = getMeasures(numinh,numexc,inhspikes,excspikes,x+w,y)
+			if (results1[4] > 0) and (results2[4] > 0): # This is to avoid simulations where the ISICV calculation generates an error (e.g. not enough spikes or spike indices missing)
+				break
+			elif w == 10:
+				print 'No Error-Free Random Seed Found'
+		print 'HC1 = ' + str(results1[1]) + ', for example #' + str(x) + ' on rep #' + str(y)
+		print 'HC2 = ' + str(results2[1]) + ', for example #' + str(x) + ' on rep #' + str(y)
+		MeanVm1[x][y-1] = results1[2]
+		Vm_STD1[x][y-1] = results1[3]
+		ISI_cv1[x][y-1] = results1[4]
+		Mean_A1[x][y-1] = results1[5]
+		MeanVm2[x][y-1] = results2[2]
+		Vm_STD2[x][y-1] = results2[3]
+		ISI_cv2[x][y-1] = results2[4]
+		Mean_A2[x][y-1] = results2[5]
+		if results1[1] == 3:
+			CumulHCs1[x] = CumulHCs1[x] + 1
+		if results2[1] == 3:
+			CumulHCs2[x] = CumulHCs2[x] + 1
 
 elapsed = time.time() - t
 print elapsed

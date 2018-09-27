@@ -17,6 +17,12 @@ numpy.save('NPYfiles/' + Case + '_MeanVoltIndex.npy',MeanVoltIndex)
 numpy.save('NPYfiles/' + Case + '_StdVoltIndex.npy',StdVoltIndex)
 numpy.save('NPYfiles/' + Case + '_ISICVIndex.npy',ISICVIndex)
 
+# HCMetrics = numpy.load('NPYfiles/' + Case + '_HCMetrics.npy')
+# SpikeRateIndex = numpy.load('NPYfiles/' + Case + '_SpikeRateIndex.npy')
+# MeanVoltIndex = numpy.load('NPYfiles/' + Case + '_MeanVoltIndex.npy')
+# StdVoltIndex = numpy.load('NPYfiles/' + Case + '_StdVoltIndex.npy')
+# ISICVIndex = numpy.load('NPYfiles/' + Case + '_ISICVIndex.npy')
+
 # Plot HC Metrics for each representative model
 excnum_Mesh = numpy.zeros((10,10), dtype=numpy.float64)
 inhnum_Mesh = numpy.zeros((10,10), dtype=numpy.float64)
@@ -38,13 +44,13 @@ for x in range(0,len(ParamNums[0])):
 	
 	HCMetrics_Mesh = HCMetrics[x]
 	
-	surf = pyplot.imshow(numpy.transpose(HCMetrics_Mesh), interpolation='nearest', origin='lower', extent=[excnum_Mesh.min()-0.5, excnum_Mesh.max()+0.5, inhnum_Mesh.min()-0.5, inhnum_Mesh.max()+0.5])
+	surf = pyplot.imshow(numpy.transpose(HCMetrics_Mesh), vmin=1, vmax=3, cmap = 'jet', interpolation='nearest', origin='lower', extent=[excnum_Mesh.min()-0.5, excnum_Mesh.max()+0.5, inhnum_Mesh.min()-0.5, inhnum_Mesh.max()+0.5])
 	
 	# Add a color bar which maps values to colors.
-	cb = fig.colorbar(surf, shrink=0.5, aspect=5)
-	cb.set_label('HC Metric')
-	ax.set_xlabel('Number of Common Excitatory')
-	ax.set_ylabel('Number of Common Inhibitory')
+    # cb = fig.colorbar(surf, shrink=0.5, aspect=5)
+    # cb.set_label('HC Metric')
+    # ax.set_xlabel('Number of Common Excitatory')
+    # ax.set_ylabel('Number of Common Inhibitory')
 	
 	fig.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_HCMetric' + '.pdf', bbox_inches='tight')
 	fig.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_HCMetric' + '.png', bbox_inches='tight')
@@ -66,13 +72,13 @@ for x in range(0,len(ParamNums[0])):
 	
 	SpikeRateIndex_Mesh = SpikeRateIndex[x]
 	
-	surf = pyplot.imshow(numpy.transpose(SpikeRateIndex_Mesh), interpolation='nearest', origin='lower', extent=[excnum_Mesh.min()-0.5, excnum_Mesh.max()+0.5, inhnum_Mesh.min()-0.5, inhnum_Mesh.max()+0.5])
+	surf = pyplot.imshow(numpy.transpose(SpikeRateIndex_Mesh), vmin=0, vmax=23, cmap = 'jet', interpolation='nearest', origin='lower', extent=[excnum_Mesh.min()-0.5, excnum_Mesh.max()+0.5, inhnum_Mesh.min()-0.5, inhnum_Mesh.max()+0.5])
 	
 	# Add a color bar which maps values to colors.
-	cb = fig.colorbar(surf, shrink=0.5, aspect=5)
-	cb.set_label('Spike Rate (Hz)')
-	ax.set_xlabel('Number of Common Excitatory')
-	ax.set_ylabel('Number of Common Inhibitory')
+    # cb = fig.colorbar(surf, shrink=0.5, aspect=5)
+    # cb.set_label('Spike Rate (Hz)')
+    # ax.set_xlabel('Number of Common Excitatory')
+    # ax.set_ylabel('Number of Common Inhibitory')
 	
 	fig.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_SpikeRate' + '.pdf', bbox_inches='tight')
 	fig.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_SpikeRate' + '.png', bbox_inches='tight')
@@ -94,13 +100,13 @@ for x in range(0,len(ParamNums[0])):
 	
 	MeanVoltIndex_Mesh = MeanVoltIndex[x]
 	
-	surf = pyplot.imshow(numpy.transpose(MeanVoltIndex_Mesh), interpolation='nearest', origin='lower', extent=[excnum_Mesh.min()-0.5, excnum_Mesh.max()+0.5, inhnum_Mesh.min()-0.5, inhnum_Mesh.max()+0.5])
+	surf = pyplot.imshow(numpy.transpose(MeanVoltIndex_Mesh), vmin=-66.3, vmax=-59.8, cmap = 'jet', interpolation='nearest', origin='lower', extent=[excnum_Mesh.min()-0.5, excnum_Mesh.max()+0.5, inhnum_Mesh.min()-0.5, inhnum_Mesh.max()+0.5])
 	
-	# Add a color bar which maps values to colors.
-	cb = fig.colorbar(surf, shrink=0.5, aspect=5)
-	cb.set_label('Average Subthreshold Membrane Potential (mV)')
-	ax.set_xlabel('Number of Common Excitatory')
-	ax.set_ylabel('Number of Common Inhibitory')
+    # Add a color bar which maps values to colors.
+    # cb = fig.colorbar(surf, shrink=0.5, aspect=5)
+    # cb.set_label('Average Subthreshold Membrane Potential (mV)')
+    # ax.set_xlabel('Number of Common Excitatory')
+    # ax.set_ylabel('Number of Common Inhibitory')
 	
 	fig.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_MeanVolt' + '.pdf', bbox_inches='tight')
 	fig.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_MeanVolt' + '.png', bbox_inches='tight')
@@ -122,13 +128,13 @@ for x in range(0,len(ParamNums[0])):
 	
 	StdVoltIndex_Mesh = StdVoltIndex[x]
 	
-	surf = pyplot.imshow(numpy.transpose(StdVoltIndex_Mesh), interpolation='nearest', origin='lower', extent=[excnum_Mesh.min()-0.5, excnum_Mesh.max()+0.5, inhnum_Mesh.min()-0.5, inhnum_Mesh.max()+0.5])
+	surf = pyplot.imshow(numpy.transpose(StdVoltIndex_Mesh), vmin=1.15, vmax=3.65, cmap = 'jet', interpolation='nearest', origin='lower', extent=[excnum_Mesh.min()-0.5, excnum_Mesh.max()+0.5, inhnum_Mesh.min()-0.5, inhnum_Mesh.max()+0.5])
 	
 	# Add a color bar which maps values to colors.
-	cb = fig.colorbar(surf, shrink=0.5, aspect=5)
-	cb.set_label('Subthreshold Membrane Potential Standard Deviation (mV)')
-	ax.set_xlabel('Number of Common Excitatory')
-	ax.set_ylabel('Number of Common Inhibitory')
+    # cb = fig.colorbar(surf, shrink=0.5, aspect=5)
+    # cb.set_label('Subthreshold Membrane Potential Standard Deviation (mV)')
+    # ax.set_xlabel('Number of Common Excitatory')
+    # ax.set_ylabel('Number of Common Inhibitory')
 	
 	fig.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_StdVolt' + '.pdf', bbox_inches='tight')
 	fig.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_StdVolt' + '.png', bbox_inches='tight')
@@ -150,13 +156,13 @@ for x in range(0,len(ParamNums[0])):
 	
 	ISICVIndex_Mesh = ISICVIndex[x]
 	
-	surf = pyplot.imshow(numpy.transpose(ISICVIndex_Mesh), interpolation='nearest', origin='lower', extent=[excnum_Mesh.min()-0.5, excnum_Mesh.max()+0.5, inhnum_Mesh.min()-0.5, inhnum_Mesh.max()+0.5])
+	surf = pyplot.imshow(numpy.transpose(ISICVIndex_Mesh), vmin=0, vmax=2.05, cmap = 'jet', interpolation='nearest', origin='lower', extent=[excnum_Mesh.min()-0.5, excnum_Mesh.max()+0.5, inhnum_Mesh.min()-0.5, inhnum_Mesh.max()+0.5])
 	
 	# Add a color bar which maps values to colors.
-	cb = fig.colorbar(surf, shrink=0.5, aspect=5)
-	cb.set_label('Interspike Interval Coefficient of Variation')
-	ax.set_xlabel('Number of Common Excitatory')
-	ax.set_ylabel('Number of Common Inhibitory')
+    # cb = fig.colorbar(surf, shrink=0.5, aspect=5)
+    # cb.set_label('Interspike Interval Coefficient of Variation')
+    # ax.set_xlabel('Number of Common Excitatory')
+    # ax.set_ylabel('Number of Common Inhibitory')
 	
 	fig.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_ISICV' + '.pdf', bbox_inches='tight')
 	fig.savefig('PLOTfiles/' + Case + '_' + ParamStrs[x] + '_ISICV' + '.png', bbox_inches='tight')

@@ -91,7 +91,7 @@ NHC_Index = numpy.random.permutation(NHC_Index)
 # Divide HC models into pools & print numbers
 execfile("PoolDivide.py")
 print '-------------------------------------------------'
-print '-------------High-Conductance Pools--------------'
+print '-------------In Vivo-Like Pools--------------'
 print '-------------------------------------------------'
 print 'Number Of High Conductance Models (HC Metric = 3) For Case ' + Case + ' = ' + str(len(HC_Index))
 HC_PoolStrings_HC_PoolNums = PoolDivide(HC_NumInh,HC_NumExc,HC_InhSpikes,HC_ExcSRSpikes,"HC")
@@ -155,7 +155,7 @@ DB_PoolNumsMat[3][3] = DB_PoolNums[5]
 print DB_PoolNumsMat
 
 print '-------------------------------------------------'
-print '-----------Non-High-Conductance Pools------------'
+print '-----------Non-In Vivo-Like Pools------------'
 print '-------------------------------------------------'
 print 'Number Of Non-High Conductance Models (HC Metric = 0) For Case ' + Case + ' = ' + str(len(NHC_Index))
 NHC_PoolStrings_NHC_PoolNums = PoolDivide(NHC_NumInh,NHC_NumExc,NHC_InhSpikes,NHC_ExcSRSpikes,"NHC")
@@ -186,7 +186,7 @@ NHC_PoolNumsMat[3][3] = NHC_PoolNums[5]
 
 print NHC_PoolNumsMat
 
-# High-Conductance to Depolarization Block Ratios
+# In Vivo-Like to Depolarization Block Ratios
 HCDBRatios = (HC_PoolNums+1)/(DB_PoolNums+1)
 Rat_PoolNumsMat = numpy.zeros((4,4), dtype=numpy.float)
 
@@ -215,7 +215,7 @@ Rat_PoolNumsMat[Rat_PoolNumsMat < 1] = 0
 Rat_PoolNumsMat[Rat_PoolNumsMat > 1] = 1
 print Rat_PoolNumsMat
 
-# High-Conductance to Non-High Conductance Ratios
+# In Vivo-Like to Non-High Conductance Ratios
 HCNHCRatios = (NHC_PoolNums+1)/(HC_PoolNums+1)
 Rat2_PoolNumsMat = numpy.zeros((4,4), dtype=numpy.float)
 
@@ -245,16 +245,16 @@ Rat2_PoolNumsMat[Rat2_PoolNumsMat > 1] = 1
 print Rat2_PoolNumsMat
 
 # Plot Pools as Heat Plots
-pyplot.imshow(HC_PoolNumsMat, cmap='viridis', interpolation='nearest')
+pyplot.imshow(HC_PoolNumsMat, vmin=0, vmax =7500, cmap='viridis', interpolation='nearest')
 cb = pyplot.colorbar()
-cb.set_label('Number of High-Conductance Models (HC = 3)')
+cb.set_label('Number of In Vivo-Like Models (HC = 3)')
 pyplot.axis('off')
 pyplot.savefig(Case + "_HCPools.png", bbox_inches='tight')
 pyplot.cla()
 pyplot.clf()
 pyplot.close()
 
-pyplot.imshow(DB_PoolNumsMat, cmap='viridis', interpolation='nearest')
+pyplot.imshow(DB_PoolNumsMat, vmin=0, vmax =25500, cmap='viridis', interpolation='nearest')
 cb = pyplot.colorbar()
 cb.set_label('Number of Models Nearing Depolarization Block (HC < 0)')
 pyplot.axis('off')
@@ -263,9 +263,9 @@ pyplot.cla()
 pyplot.clf()
 pyplot.close()
 
-pyplot.imshow(NHC_PoolNumsMat, cmap='viridis', interpolation='nearest')
+pyplot.imshow(NHC_PoolNumsMat, vmin=0, vmax =17500, cmap='viridis', interpolation='nearest')
 cb = pyplot.colorbar()
-cb.set_label('Number of Non-High-Conductance Models (HC = 0)')
+cb.set_label('Number of Non-In Vivo-Like Models (HC = 0)')
 pyplot.axis('off')
 pyplot.savefig(Case + "_NHCPools.png", bbox_inches='tight')
 pyplot.cla()
@@ -274,7 +274,7 @@ pyplot.close()
 
 pyplot.imshow(Rat_PoolNumsMat, cmap='viridis', interpolation='nearest')
 cb = pyplot.colorbar()
-cb.set_label('Ratio of High-Conductance Models to Depolarization Block Models ')
+cb.set_label('Ratio of In Vivo-Like Models to Depolarization Block Models ')
 pyplot.axis('off')
 pyplot.savefig(Case + "_HCDBRatioPools.png", bbox_inches='tight')
 pyplot.cla()
@@ -283,7 +283,7 @@ pyplot.close()
 
 pyplot.imshow(Rat2_PoolNumsMat, cmap='viridis', interpolation='nearest')
 cb = pyplot.colorbar()
-cb.set_label('Ratio of Non-High-Conductance Models to High-Conductance Models')
+cb.set_label('Ratio of Non-In Vivo-Like Models to In Vivo-Like Models')
 pyplot.axis('off')
 pyplot.savefig(Case + "_HCNHCRatioPools.png", bbox_inches='tight')
 pyplot.cla()

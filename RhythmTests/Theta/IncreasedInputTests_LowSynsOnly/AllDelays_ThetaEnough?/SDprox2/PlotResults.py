@@ -26,6 +26,15 @@ synspikesrandseedvec1 = numpy.array([10,1,89189,76511,23884976]) # Note that I u
 synspikesrandseedvec2 = numpy.array([15,77716,267826,47246,28])
 synlocrandseedvec1 = numpy.array([5,889829,294,76161,299835])
 synlocrandseedvec2 = numpy.array([2,26556284,42,189,9817])
+e8HzRandix_Baseline = numpy.zeros(5)
+e8HzRandix_ThetaX1 = numpy.zeros(5)
+e8HzRandix_ThetaX2 = numpy.zeros(5)
+e8HzRandix_ThetaX3 = numpy.zeros(5)
+
+tracesRandix_Baseline = numpy.zeros((5,100001))
+tracesRandix_ThetaX1 = numpy.zeros((5,100001))
+tracesRandix_ThetaX2 = numpy.zeros((5,100001))
+tracesRandix_ThetaX3 = numpy.zeros((5,100001))
 
 # HC Treshold Measurement Values
 tstop = 10 # seconds
@@ -59,24 +68,28 @@ for randix in range(0,5):
 		voltvec = HC_Trace[1:len(HC_Trace)]
 		
 		if y == 0:
+			tracesRandix_Baseline[randix] = voltvec
 			HC_Trace_Baseline = HC_Trace[10000:100001]
 			HC_SpikeTimes_Baseline = numpy.zeros((len(HC_Trace),), dtype=numpy.float)
 			for i in range(0,len(h.apctimes)): HC_SpikeTimes_Baseline[int(h.apctimes.x[i]/dt)] = h.apctimes.x[i]
 			HC_SpikeTimes_Baseline = HC_SpikeTimes_Baseline[10000:100001]
 			HC_SpikeTimes_Baseline2 = numpy.array(h.apctimes,dtype=numpy.float)
 		elif y == 1:
+			tracesRandix_ThetaX1[randix] = voltvec
 			HC_Trace_Rhythm = HC_Trace[10000:100001]
 			HC_SpikeTimes_Rhythm = numpy.zeros((len(HC_Trace),), dtype=numpy.float)
 			for i in range(0,len(h.apctimes)): HC_SpikeTimes_Rhythm[int(h.apctimes.x[i]/dt)] = h.apctimes.x[i]
 			HC_SpikeTimes_Rhythm = HC_SpikeTimes_Rhythm[10000:100001]
 			HC_SpikeTimes_Rhythm2 = numpy.array(h.apctimes,dtype=numpy.float)
 		elif y == 2:
+			tracesRandix_ThetaX2[randix] = voltvec
 			HC_Trace_X2Rhythm = HC_Trace[10000:100001]
 			HC_SpikeTimes_X2Rhythm = numpy.zeros((len(HC_Trace),), dtype=numpy.float)
 			for i in range(0,len(h.apctimes)): HC_SpikeTimes_X2Rhythm[int(h.apctimes.x[i]/dt)] = h.apctimes.x[i]
 			HC_SpikeTimes_X2Rhythm = HC_SpikeTimes_X2Rhythm[10000:100001]
 			HC_SpikeTimes_X2Rhythm2 = numpy.array(h.apctimes,dtype=numpy.float)
 		elif y == 3:
+			tracesRandix_ThetaX3[randix] = voltvec
 			HC_Trace_X3Rhythm = HC_Trace[10000:100001]
 			HC_SpikeTimes_X3Rhythm = numpy.zeros((len(HC_Trace),), dtype=numpy.float)
 			for i in range(0,len(h.apctimes)): HC_SpikeTimes_X3Rhythm[int(h.apctimes.x[i]/dt)] = h.apctimes.x[i]
@@ -166,6 +179,10 @@ for randix in range(0,5):
 	e8Hz2 = Pxx_den2[f2==8]
 	e8Hz3 = Pxx_den3[f3==8]
 	e8Hz4 = Pxx_den4[f4==8]
+	e8HzRandix_Baseline[randix] = e8Hz1
+	e8HzRandix_ThetaX1[randix] = e8Hz2
+	e8HzRandix_ThetaX2[randix] = e8Hz3
+	e8HzRandix_ThetaX3[randix] = e8Hz4
 	axarr[1].bar(ind+width, [Area1, Area2, Area3, Area4, e8Hz1, e8Hz2, e8Hz3, e8Hz4], width, color='k')
 	axarr[1].set_xticks(ind+width)
 	axarr[1].set_xticklabels(('Base\n(4-12Hz)','ThetaX1\n(4-12Hz)', 'ThetaX2\n(4-12Hz)', 'ThetaX3\n(4-12Hz)', 'Base\n(8Hz)','ThetaX1\n(8Hz)','ThetaX2\n(8Hz)','ThetaX3\n(8Hz)'),fontsize=font_size-3, fontweight='bold', rotation=45)
@@ -480,9 +497,152 @@ for randix in range(0,5):
 	pyplot.cla()
 	pyplot.clf()
 	pyplot.close()
+	
+	tvec1split = numpy.split(timevec[10000:100000],72)
+	Baselinesplit = numpy.split(tracesRandix_Baseline[randix][10000:100000],72)
+	ThetaX1split = numpy.split(tracesRandix_ThetaX1[randix][10000:100000],72)
+	ThetaX2split = numpy.split(tracesRandix_ThetaX2[randix][10000:100000],72)
+	ThetaX3split = numpy.split(tracesRandix_ThetaX3[randix][10000:100000],72)
+	Baselinemean = numpy.mean(Baselinesplit,axis=0)
+	ThetaX1mean = numpy.mean(ThetaX1split,axis=0)
+	ThetaX2mean = numpy.mean(ThetaX2split,axis=0)
+	ThetaX3mean = numpy.mean(ThetaX3split,axis=0)
+	Baselinestd = numpy.std(Baselinesplit,axis=0)
+	ThetaX1std = numpy.std(ThetaX1split,axis=0)
+	ThetaX2std = numpy.std(ThetaX2split,axis=0)
+	ThetaX3std = numpy.std(ThetaX3split,axis=0)
+	f, axarr = matplotlib.pyplot.subplots(4)
+	f.text(0.04, 0.5, 'Voltage (mV)', va='center', rotation='vertical',fontsize=12)
+	axarr[0].fill_between(tvec1split[0],Baselinemean-Baselinestd,Baselinemean+Baselinestd,facecolor='b', alpha=0.5)
+	axarr[0].plot(tvec1split[0],Baselinemean,color='b')
+	axarr[1].fill_between(tvec1split[0],ThetaX1mean-ThetaX1std,ThetaX1mean+ThetaX1std,facecolor='r', alpha=0.5)
+	axarr[1].plot(tvec1split[0],ThetaX1mean,color='r')	
+	axarr[2].fill_between(tvec1split[0],ThetaX2mean-ThetaX2std,ThetaX2mean+ThetaX2std,facecolor='g', alpha=0.5)
+	axarr[2].plot(tvec1split[0],ThetaX2mean,color='g')	
+	axarr[3].fill_between(tvec1split[0],ThetaX3mean-ThetaX3std,ThetaX3mean+ThetaX3std,facecolor='c', alpha=0.5)
+	axarr[3].plot(tvec1split[0],ThetaX3mean,color='c')	
+	axarr[3].tick_params(labelsize=10)
+	axarr[3].set_xlabel('Theta Phase',fontsize=12)
+    # axarr.set_ylabel('Voltage (mV)',fontsize=12)
+	axarr[0].set_xlim(1000,1125)
+	axarr[0].set_ylim(-80,20)
+	axarr[1].set_xlim(1000,1125)
+	axarr[1].set_ylim(-80,20)
+	axarr[2].set_xlim(1000,1125)
+	axarr[2].set_ylim(-80,20)
+	axarr[3].set_xlim(1000,1125)
+	axarr[3].set_ylim(-80,20)
+	axarr[0].set_xticks([])
+	axarr[1].set_xticks([])
+	axarr[2].set_xticks([])
+	axarr[3].set_xticks([1000, 1031.25, 1062.5, 1093.75, 1125])
+	axarr[3].set_xticklabels([r"$0^\circ$", r"$90^\circ$", r"$180^\circ$", r"$270^\circ$", r"$360^\circ$"])
+	axarr[0].spines['right'].set_visible(False)
+	axarr[0].spines['top'].set_visible(False)
+	axarr[0].spines['bottom'].set_visible(False)
+	for tic in axarr[0].xaxis.get_major_ticks():
+		tic.tick1On = tic.tick2On = False
+	axarr[1].spines['right'].set_visible(False)
+	axarr[1].spines['top'].set_visible(False)
+	axarr[1].spines['bottom'].set_visible(False)
+	for tic in axarr[1].xaxis.get_major_ticks():
+		tic.tick1On = tic.tick2On = False
+	axarr[2].spines['right'].set_visible(False)
+	axarr[2].spines['top'].set_visible(False)
+	axarr[2].spines['bottom'].set_visible(False)
+	for tic in axarr[2].xaxis.get_major_ticks():
+		tic.tick1On = tic.tick2On = False
+	axarr[3].spines['right'].set_visible(False)
+	axarr[3].spines['top'].set_visible(False)
+	pyplot.savefig('PLOTfiles/' + Case + '_VoltCycleAvg_' + str(randix) + '_randix_' + ExampleString + '.pdf', bbox_inches='tight')
+	pyplot.savefig('PLOTfiles/' + Case + '_VoltCycleAvg_' + str(randix) + '_randix_' + ExampleString + '.png', bbox_inches='tight')
+	pyplot.gcf().clear()
+	pyplot.cla()
+	pyplot.clf()
+	pyplot.close()
+	
+	f, axarr = matplotlib.pyplot.subplots(2)
+    # f.text(0.04, 0.5, 'Voltage (mV)', va='center', rotation='vertical',fontsize=12)
+	axarr[0].fill_between(tvec1split[0],Baselinemean-Baselinestd,Baselinemean+Baselinestd,facecolor='b', alpha=0.5)
+	axarr[0].plot(tvec1split[0],Baselinemean,color='b')
+	axarr[1].fill_between(tvec1split[0],ThetaX1mean-ThetaX1std,ThetaX1mean+ThetaX1std,facecolor='r', alpha=0.5)
+	axarr[1].plot(tvec1split[0],ThetaX1mean,color='r')
+	axarr[1].tick_params(labelsize=10)
+    # axarr[1].set_xlabel('Theta Phase',fontsize=12)
+    # axarr.set_ylabel('Voltage (mV)',fontsize=12)
+	axarr[0].set_xlim(1000,1125)
+	axarr[0].set_ylim(-80,20)
+	axarr[1].set_xlim(1000,1125)
+	axarr[1].set_ylim(-80,20)
+	axarr[0].set_xticks([])
+	axarr[1].set_xticks([1000, 1031.25, 1062.5, 1093.75, 1125])
+	axarr[1].set_xticklabels([r"$0^\circ$", r"$90^\circ$", r"$180^\circ$", r"$270^\circ$", r"$360^\circ$"])
+	axarr[0].spines['right'].set_visible(False)
+	axarr[0].spines['top'].set_visible(False)
+	axarr[0].spines['bottom'].set_visible(False)
+	for tic in axarr[0].xaxis.get_major_ticks():
+		tic.tick1On = tic.tick2On = False
+	axarr[1].spines['right'].set_visible(False)
+	axarr[1].spines['top'].set_visible(False)
+	pyplot.savefig('PLOTfiles/' + Case + '_VoltCycleAvgX1Only_' + str(randix) + '_randix_' + ExampleString + '.pdf', bbox_inches='tight')
+	pyplot.savefig('PLOTfiles/' + Case + '_VoltCycleAvgX1Only_' + str(randix) + '_randix_' + ExampleString + '.png', bbox_inches='tight')
+	pyplot.gcf().clear()
+	pyplot.cla()
+	pyplot.clf()
+	pyplot.close()
 
 numpy.save('NPYfiles/' + Case + '_Areas.npy',numpy.array([Area1,Area2,Area3,Area4],dtype=numpy.float))
 numpy.save('NPYfiles/' + Case + '_e8Hz.npy',numpy.array([e8Hz1,e8Hz2,e8Hz3,e8Hz4],dtype=numpy.float))
+numpy.save('NPYfiles/' + Case + '_e8HzRandix_Baseline.npy',e8HzRandix_Baseline)
+numpy.save('NPYfiles/' + Case + '_e8HzRandix_ThetaX1.npy',e8HzRandix_ThetaX1)
+numpy.save('NPYfiles/' + Case + '_e8HzRandix_ThetaX2.npy',e8HzRandix_ThetaX2)
+numpy.save('NPYfiles/' + Case + '_e8HzRandix_ThetaX3.npy',e8HzRandix_ThetaX3)
+numpy.save('NPYfiles/' + Case + '_TracesRandix_Baseline.npy',tracesRandix_Baseline)
+numpy.save('NPYfiles/' + Case + '_TracesRandix_ThetaX1.npy',tracesRandix_ThetaX1)
+numpy.save('NPYfiles/' + Case + '_TracesRandix_ThetaX2.npy',tracesRandix_ThetaX2)
+numpy.save('NPYfiles/' + Case + '_TracesRandix_ThetaX3.npy',tracesRandix_ThetaX3)
+
+e8HzRandix_Baseline_mean = numpy.mean(e8HzRandix_Baseline)
+e8HzRandix_ThetaX1_mean = numpy.mean(e8HzRandix_ThetaX1)
+e8HzRandix_ThetaX2_mean = numpy.mean(e8HzRandix_ThetaX2)
+e8HzRandix_ThetaX3_mean = numpy.mean(e8HzRandix_ThetaX3)
+
+e8HzRandix_Baseline_std = numpy.std(e8HzRandix_Baseline)
+e8HzRandix_ThetaX1_std = numpy.std(e8HzRandix_ThetaX1)
+e8HzRandix_ThetaX2_std = numpy.std(e8HzRandix_ThetaX2)
+e8HzRandix_ThetaX3_std = numpy.std(e8HzRandix_ThetaX3)
+
+f, axarr = matplotlib.pyplot.subplots(1)
+ind = numpy.arange(4)
+width = 0.4
+axarr.bar(ind+width, [e8HzRandix_Baseline_mean, e8HzRandix_ThetaX1_mean, e8HzRandix_ThetaX2_mean, e8HzRandix_ThetaX3_mean], width, color='k', yerr=[e8HzRandix_Baseline_std, e8HzRandix_ThetaX1_std, e8HzRandix_ThetaX2_std, e8HzRandix_ThetaX3_std], ecolor='r')
+axarr.set_xticks(ind+width)
+axarr.set_xticklabels(('Base\n(8Hz)','ThetaX1\n(8Hz)','ThetaX2\n(8Hz)','ThetaX3\n(8Hz)'),fontsize=font_size-3, fontweight='bold', rotation=45)
+axarr.set_ylabel(r'$PSD (Spikes^2 / Hz)$')
+axarr.set_xlim(0,3+2*width)
+pyplot.tight_layout()
+pyplot.savefig('PLOTfiles/' + Case + '_AveragePSD8Hz_' + ExampleString + '.pdf', bbox_inches='tight')
+pyplot.savefig('PLOTfiles/' + Case + '_AveragePSD8Hz_' + ExampleString + '.png', bbox_inches='tight')
+pyplot.gcf().clear()
+pyplot.cla()
+pyplot.clf()
+pyplot.close()
+
+f, axarr = matplotlib.pyplot.subplots(1)
+ind = numpy.arange(2)
+width = 0.4
+axarr.bar(ind+width, [e8HzRandix_Baseline_mean, e8HzRandix_ThetaX1_mean], width, color='k', yerr=[e8HzRandix_Baseline_std, e8HzRandix_ThetaX1_std], ecolor='r')
+axarr.set_xticks(ind+width)
+axarr.set_xticklabels(('Base\n(8Hz)','Theta\n(8Hz)'),fontsize=font_size-3, fontweight='bold', rotation=45)
+axarr.set_ylabel(r'$PSD (Spikes^2 / Hz)$')
+axarr.set_xlim(0,1+2*width)
+pyplot.tight_layout()
+pyplot.savefig('PLOTfiles/' + Case + '_AveragePSD8HzX1Only_' + ExampleString + '.pdf', bbox_inches='tight')
+pyplot.savefig('PLOTfiles/' + Case + '_AveragePSD8HzX1Only_' + ExampleString + '.png', bbox_inches='tight')
+pyplot.gcf().clear()
+pyplot.cla()
+pyplot.clf()
+pyplot.close()
 
 # LNI_LNE_LIS_LES
 # HNI_LNE_LIS_LES
